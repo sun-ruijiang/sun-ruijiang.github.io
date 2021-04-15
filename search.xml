@@ -9,7 +9,7 @@
 <h2 id="现在开始"><a href="#现在开始" class="headerlink" title="现在开始"></a>现在开始</h2><h3 id="创建一篇博客"><a href="#创建一篇博客" class="headerlink" title="创建一篇博客"></a>创建一篇博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new post &lt;My New Post&gt;</span><br></pre></td></tr></table></figure>
 
 <p>如果不想使用命令行，直接在<code>source/_post</code>文件夹创建即可</p>
-<p>需要注意的是，在文件编写的开头需要加上，<code>title</code>、<code>date</code>、<code>tag</code>、<code>category</code>、<code>author</code>、<code>img</code>、<code>Topping</code>这几个信息</p>
+<p>需要注意的是，在文件编写的开头需要加上，<code>title</code>、<code>date</code>、<code>tag</code>、<code>category</code>、<code>author</code>、<code>Topping</code>这几个信息</p>
 <h3 id="打开hexo服务器"><a href="#打开hexo服务器" class="headerlink" title="打开hexo服务器"></a>打开<code>hexo</code>服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
 <p>打开一个shell，输入这行命令</p>
@@ -29,6 +29,7 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+        <tag>tutorial</tag>
       </tags>
   </entry>
   <entry>
