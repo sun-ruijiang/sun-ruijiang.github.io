@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="Hexo,ayer,代码,博客" />
+   
+  <meta name="description" content="welcome to Sung&#39;s Blog" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    深入理解计算机系统——LAB-3_BombLab |  Sung&#39;s Blog
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="Sung's Blog" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-深入理解计算机系统——LAB-3_BombLab"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  深入理解计算机系统——LAB-3_BombLab
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/04/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/" class="article-date">
+  <time datetime="2021-04-27T16:00:00.000Z" itemprop="datePublished">2021-04-28</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CS-APP/">CS:APP</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">13 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="深入理解计算机系统——LAB-3-Bomb-Lab"><a href="#深入理解计算机系统——LAB-3-Bomb-Lab" class="headerlink" title="深入理解计算机系统——LAB-3_Bomb_Lab"></a>深入理解计算机系统——LAB-3_Bomb_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>作者学校的课程作业，<code>Bomb Lab</code>对应<code>CS:APP</code>中第三章内容：<strong>程序的机器级表示的<code>lab</code></strong></p>
+<p>程序运行在**<code>linux</code>环境**中。</p>
+<p>程序运行中有6个关卡（6个<code>phase</code>），每个<code>phase</code>需要用户在终端上<strong>输入特定的字符或者数字</strong>才能<strong>通关</strong>，否则会引爆炸弹！</p>
+<p>那么如何才能知道输入什么内容呢？</p>
+<p>这需要你使用<code>gdb</code>工具<strong>反汇编</strong>出汇编代码，结合c语言文件找到<strong>每个关卡的入口函数</strong>。</p>
+<p>然后<strong>分析汇编代码</strong>，找到在每个phase程序段中，引导程序<strong>跳转到<code>explode_bomb</code>程序段</strong>的地方，并分<strong>析其成功跳转的条件</strong>，以此为突破口寻找应该在命令行输入何种字符通关。</p>
+<h2 id="实验环境和使用工具"><a href="#实验环境和使用工具" class="headerlink" title="实验环境和使用工具"></a>实验环境和使用工具</h2><ul>
+<li><p>主机为<code>Windows10</code></p>
+</li>
+<li><p>运行炸弹的虚拟机<code>Ubuntu12.04.5</code></p>
+</li>
+<li><p><code>gdb7.4</code>版本</p>
+</li>
+<li><p><code>objdump2.22</code>版本</p>
+</li>
+<li><p><code>VS code</code>编辑器，下载了<code>x86 and x86_64 Assembly</code>插件，提供汇编代码高亮功能</p>
+</li>
+</ul>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="准备工作，研究bomb-c源代码"><a href="#准备工作，研究bomb-c源代码" class="headerlink" title="准备工作，研究bomb.c源代码"></a>准备工作，研究<code>bomb.c</code>源代码</h3><p>一共有两个文件：<code>bomb.c</code>和<code>bomb</code>。</p>
+<p><code>bomb.c</code>编译得到<code>bomb</code>文件，所以我先研究一下<code>bomb.c</code>的代码</p>
+<ul>
+<li>代码如下（随便看看）：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***************************************************************************</span></span><br><span class="line"><span class="comment"> * Dr. Evil&#x27;s Insidious Bomb, Version 1.1</span></span><br><span class="line"><span class="comment"> * Copyright 2011, Dr. Evil Incorporated. All rights reserved.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * LICENSE:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Dr. Evil Incorporated (the PERPETRATOR) hereby grants you (the</span></span><br><span class="line"><span class="comment"> * VICTIM) explicit permission to use this bomb (the BOMB).  This is a</span></span><br><span class="line"><span class="comment"> * time limited license, which expires on the death of the VICTIM.</span></span><br><span class="line"><span class="comment"> * The PERPETRATOR takes no responsibility for damage, frustration,</span></span><br><span class="line"><span class="comment"> * insanity, bug-eyes, carpal-tunnel syndrome, loss of sleep, or other</span></span><br><span class="line"><span class="comment"> * harm to the VICTIM.  Unless the PERPETRATOR wants to take credit,</span></span><br><span class="line"><span class="comment"> * that is.  The VICTIM may not distribute this bomb source code to</span></span><br><span class="line"><span class="comment"> * any enemies of the PERPETRATOR.  No VICTIM may debug,</span></span><br><span class="line"><span class="comment"> * reverse-engineer, run &quot;strings&quot; on, decompile, decrypt, or use any</span></span><br><span class="line"><span class="comment"> * other technique to gain knowledge of and defuse the BOMB.  BOMB</span></span><br><span class="line"><span class="comment"> * proof clothing may not be worn when handling this program.  The</span></span><br><span class="line"><span class="comment"> * PERPETRATOR will not apologize for the PERPETRATOR&#x27;s poor sense of</span></span><br><span class="line"><span class="comment"> * humor.  This license is null and void where the BOMB is prohibited</span></span><br><span class="line"><span class="comment"> * by law.</span></span><br><span class="line"><span class="comment"> ***************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;support.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;phases.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * Note to self: Remember to erase this file so my victims will have no</span></span><br><span class="line"><span class="comment"> * idea what is going on, and so they will all blow up in a</span></span><br><span class="line"><span class="comment"> * spectaculary fiendish explosion. -- Dr. Evil </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">FILE *infile;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *input;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Note to self: remember to port this bomb to Windows and put a </span></span><br><span class="line"><span class="comment">     * fantastic GUI on it. */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* When run with no arguments, the bomb reads its input lines </span></span><br><span class="line"><span class="comment">     * from standard input. */</span></span><br><span class="line">    <span class="keyword">if</span> (argc == <span class="number">1</span>) &#123;  </span><br><span class="line">	infile = <span class="built_in">stdin</span>;</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="comment">/* When run with one argument &lt;file&gt;, the bomb reads from &lt;file&gt; </span></span><br><span class="line"><span class="comment">     * until EOF, and then switches to standard input. Thus, as you </span></span><br><span class="line"><span class="comment">     * defuse each phase, you can add its defusing string to &lt;file&gt; and</span></span><br><span class="line"><span class="comment">     * avoid having to retype it. */</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (argc == <span class="number">2</span>) &#123;</span><br><span class="line">	<span class="keyword">if</span> (!(infile = fopen(argv[<span class="number">1</span>], <span class="string">&quot;r&quot;</span>))) &#123;</span><br><span class="line">	    <span class="built_in">printf</span>(<span class="string">&quot;%s: Error: Couldn&#x27;t open %s\n&quot;</span>, argv[<span class="number">0</span>], argv[<span class="number">1</span>]);</span><br><span class="line">	    <span class="built_in">exit</span>(<span class="number">8</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* You can&#x27;t call the bomb with more than 1 command line argument. */</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Usage: %s [&lt;input_file&gt;]\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">8</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Do all sorts of secret stuff that makes the bomb harder to defuse. */</span></span><br><span class="line">    initialize_bomb();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Welcome to my fiendish little bomb. You have 6 phases with\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;which to blow yourself up. Have a nice day!\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Hmm...  Six phases must be more secure than one phase! */</span></span><br><span class="line">    input = read_line();             <span class="comment">/* Get input                   */</span></span><br><span class="line">    phase_1(input);                  <span class="comment">/* Run the phase               */</span></span><br><span class="line">    phase_defused();                 <span class="comment">/* Drat!  They figured it out!</span></span><br><span class="line"><span class="comment">				      * Let me know how they did it. */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Phase 1 defused. How about the next one?\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* The second phase is harder.  No one will ever figure out</span></span><br><span class="line"><span class="comment">     * how to defuse this... */</span></span><br><span class="line">    input = read_line();</span><br><span class="line">    phase_2(input);</span><br><span class="line">    phase_defused();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;That&#x27;s number 2.  Keep going!\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* I guess this is too easy so far.  Some more complex code will</span></span><br><span class="line"><span class="comment">     * confuse people. */</span></span><br><span class="line">    input = read_line();</span><br><span class="line">    phase_3(input);</span><br><span class="line">    phase_defused();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Halfway there!\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Oh yeah?  Well, how good is your math?  Try on this saucy problem! */</span></span><br><span class="line">    input = read_line();</span><br><span class="line">    phase_4(input);</span><br><span class="line">    phase_defused();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;So you got that one.  Try this one.\n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Round and &#x27;round in memory we go, where we stop, the bomb blows! */</span></span><br><span class="line">    input = read_line();</span><br><span class="line">    phase_5(input);</span><br><span class="line">    phase_defused();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Good work!  On to the next...\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* This phase will never be used, since no one will get past the</span></span><br><span class="line"><span class="comment">     * earlier ones.  But just in case, make this one extra hard. */</span></span><br><span class="line">    input = read_line();</span><br><span class="line">    phase_6(input);</span><br><span class="line">    phase_defused();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Wow, they got it!  But isn&#x27;t something... missing?  Perhaps</span></span><br><span class="line"><span class="comment">     * something they overlooked?  Mua ha ha ha ha! */</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>首先，我们看到一个有趣的<code>license</code>，（Google翻译）意思是</p>
+<blockquote>
+<p>Evil Incorporated博士（PERPETRATOR）特此授予您（VICTIM）使用该炸弹（BOMB）的明确许可。 </p>
+<p>这是一个有时间限制的许可证，在VICTIM死亡时到期。 </p>
+<p>PERPETRATOR对损坏，挫败，精神错乱，虫眼，腕隧道综合症，睡眠不足或对VICTIM造成的其他伤害不承担任何责任。 除非PERPETRATOR想要获得信誉，否则就是这样。</p>
+<p> VICTIM不得将此炸弹源代码分发给PERPETRATOR的任何敌人。                     <strong>//重点，问问别人</strong></p>
+<p> VICTIM不得调试，反向工程，在其上运行“字符串”，反编译，解密或使用任何其他技术来了解和拆除BOMB。 处理此程序时，不能穿防弹衣。                                                                                                <strong>//重点，使用上述所提到的技术拆除炸弹，穿防弹衣</strong></p>
+<p>PERPETRATOR不会因PERPETRATOR糟糕的幽默感而道歉。                            <strong>//哈哈（强颜欢笑）</strong></p>
+<p> 在法律禁止BOMB的情况下，此许可无效。                                                                </p>
+</blockquote>
+</li>
+<li><p>,四个头文件，波浪线的两个我们没有，很好，过！<br><img src="%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210428143806306.png" alt="image-20210428143806306"></p>
+</li>
+<li><p>注释意思是</p>
+<blockquote>
+<p>提醒自己：记得把这个文件删掉，这样我的受害者就不会知道发生了什么事，这样他们就会在一场可怕的恐怖爆炸中全部引爆。——邪恶博士                                                                                                           <strong>//重点，看这个文件，我们就知道炸弹怎么做的了</strong></p>
+</blockquote>
+</li>
+<li><p><code>FILE *infile；</code>全局变量，文件指针，接下来要用到</p>
+</li>
+<li><p><code>int main(int argc, char *argv[])</code>主函数，参数<code>argc</code>是提供给主函数的参数个数，参数<code>argv[]</code>是参数的字符串数组的指针。</p>
+<blockquote>
+<p>举例：./bomb answer.txt   此时，argc=2，argv[0]=”./bomb”，argv[1]=”answer.txt”</p>
+</blockquote>
+</li>
+<li><p><code>char *input;</code>输入字符串用的变量</p>
+</li>
+<li><p>注释环节</p>
+<blockquote>
+<p>提醒自己：记得将炸弹移植到Windows并在上面放上精美的GUI。                     //老师拿来考试的</p>
+</blockquote>
+</li>
+<li><p>后面的太多了，又看注释又看代码太累，我直接写意思，用法：</p>
+<ol>
+<li><code>./bomb</code>，然后自己一个一个输入</li>
+<li><code>./bomb xxx.txt</code>，不用输入，直接看炸没炸</li>
+</ol>
+<p>显然我们选第二种，一个一个答案存起来。</p>
+</li>
+<li><p><code>initialize_bomb();</code>做炸弹函数，我们显然没有这个函数所需要的头文件。</p>
+</li>
+<li><p>输出文件开始执行的提示信息</p>
+</li>
+<li><p>接下来是6个<code>phase</code>，<code>phase</code>流程：</p>
+<ul>
+<li><code>input=read_line();</code>没有函数所需的头文件，功能就是输入字符串或者数字，也就是<code>phase</code>的答案</li>
+<li><code>phase_x(input);</code>将输入作为参数运行第x个<code>phase</code>函数</li>
+<li><code>phase_defused();</code>看答案是否匹配。</li>
+<li>输出成功的提示信息</li>
+</ul>
+</li>
+<li><p>至此，<code>bomb.c</code>已经看完了，我们已经知道炸弹是怎么做的了！</p>
+</li>
+<li><p>接下来，我们需要反汇编<code>bomb</code>文件，看看这些<code>phase</code>函数都是干什么的！</p>
+</li>
+</ul>
+<h3 id="反汇编bomb文件"><a href="#反汇编bomb文件" class="headerlink" title="反汇编bomb文件"></a>反汇编<code>bomb</code>文件</h3><ul>
+<li>在<code>Ubuntu</code>虚拟机中，实验文件夹下，我们执行命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objdump -d bomb &gt; bomb.asm</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后将<code>bomb.asm</code>移动到本机，用<code>vscode</code>打开，有1716行汇编代码<br><img src="%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210428154937224.png" alt="image-20210428154937224">、</li>
+<li>用<code>objdump</code>反汇编得到的文件，方便我们全局查找，<code>gdb</code>用来调试</li>
+</ul>
+<h3 id="分析汇编代码"><a href="#分析汇编代码" class="headerlink" title="分析汇编代码"></a>分析汇编代码</h3><p>上千行的汇编代码，我们不是一行一行看的，而是一个函数一个函数看的。</p>
+<p>而且我们需要看的是关键部分。</p>
+<ul>
+<li><p>在文件夹下输入命令行使用gdb反汇编函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gdb bomb</span><br><span class="line">gdb&gt; disassemble &lt;函数名&gt;           </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="read-line："><a href="#read-line：" class="headerlink" title="read_line："></a><code>read_line</code>：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">Dump of assembler code for function read_line:</span><br><span class="line">   0x0804911d &lt;+0&gt;:	sub    $0x2c,%esp</span><br><span class="line">   0x08049120 &lt;+3&gt;:	mov    %ebx,0x20(%esp)</span><br><span class="line">   0x08049124 &lt;+7&gt;:	mov    %esi,0x24(%esp)</span><br><span class="line">   0x08049128 &lt;+11&gt;:	mov    %edi,0x28(%esp)</span><br><span class="line">   0x0804912c &lt;+15&gt;:	call   0x80490b0 &lt;skip&gt;</span><br><span class="line">   0x08049131 &lt;+20&gt;:	test   %eax,%eax</span><br><span class="line">   0x08049133 &lt;+22&gt;:	jne    0x80491a1 &lt;read_line+132&gt;</span><br><span class="line">   0x08049135 &lt;+24&gt;:	mov    0x804c3a4,%eax</span><br><span class="line">   0x0804913a &lt;+29&gt;:	cmp    %eax,0x804c3d0</span><br><span class="line">   0x08049140 &lt;+35&gt;:	jne    0x804915a &lt;read_line+61&gt;</span><br><span class="line">   0x08049142 &lt;+37&gt;:	movl   $0x804a383,(%esp)</span><br><span class="line">   0x08049149 &lt;+44&gt;:	call   0x8048800 &lt;puts@plt&gt;</span><br><span class="line">   0x0804914e &lt;+49&gt;:	movl   $0x8,(%esp)</span><br><span class="line">   0x08049155 &lt;+56&gt;:	call   0x8048840 &lt;exit@plt&gt;</span><br><span class="line">   0x0804915a &lt;+61&gt;:	movl   $0x804a3a1,(%esp)</span><br><span class="line">   0x08049161 &lt;+68&gt;:	call   0x80487f0 &lt;getenv@plt&gt;</span><br><span class="line">   0x08049166 &lt;+73&gt;:	test   %eax,%eax</span><br><span class="line">   0x08049168 &lt;+75&gt;:	je     0x8049176 &lt;read_line+89&gt;</span><br><span class="line">   0x0804916a &lt;+77&gt;:	movl   $0x0,(%esp)</span><br><span class="line">   0x08049171 &lt;+84&gt;:	call   0x8048840 &lt;exit@plt&gt;</span><br><span class="line">   0x08049176 &lt;+89&gt;:	mov    0x804c3a4,%eax</span><br><span class="line">   0x0804917b &lt;+94&gt;:	mov    %eax,0x804c3d0</span><br><span class="line">   0x08049180 &lt;+99&gt;:	call   0x80490b0 &lt;skip&gt;</span><br><span class="line">   0x08049185 &lt;+104&gt;:	test   %eax,%eax</span><br><span class="line">   0x08049187 &lt;+106&gt;:	jne    0x80491a1 &lt;read_line+132&gt;</span><br><span class="line">   0x08049189 &lt;+108&gt;:	movl   $0x804a383,(%esp)</span><br><span class="line">   0x08049190 &lt;+115&gt;:	call   0x8048800 &lt;puts@plt&gt;</span><br><span class="line">   0x08049195 &lt;+120&gt;:	movl   $0x0,(%esp)</span><br><span class="line">   0x0804919c &lt;+127&gt;:	call   0x8048840 &lt;exit@plt&gt;</span><br><span class="line">   0x080491a1 &lt;+132&gt;:	mov    0x804c3cc,%edx</span><br><span class="line">   0x080491a7 &lt;+138&gt;:	lea    (%edx,%edx,4),%ebx</span><br><span class="line">   0x080491aa &lt;+141&gt;:	shl    $0x4,%ebx</span><br><span class="line">   0x080491ad &lt;+144&gt;:	add    $0x804c3e0,%ebx</span><br><span class="line">   0x080491b3 &lt;+150&gt;:	mov    %ebx,%edi</span><br><span class="line">   0x080491b5 &lt;+152&gt;:	mov    $0x0,%eax</span><br><span class="line">   0x080491ba &lt;+157&gt;:	mov    $0xffffffff,%ecx</span><br><span class="line">   0x080491bf &lt;+162&gt;:	repnz scas %es:(%edi),%al</span><br><span class="line">   0x080491c1 &lt;+164&gt;:	not    %ecx</span><br><span class="line">   0x080491c3 &lt;+166&gt;:	sub    $0x1,%ecx</span><br><span class="line">   0x080491c6 &lt;+169&gt;:	cmp    $0x4e,%ecx</span><br><span class="line">   0x080491c9 &lt;+172&gt;:	jle    0x8049202 &lt;read_line+229&gt;</span><br><span class="line">   0x080491cb &lt;+174&gt;:	movl   $0x804a3ac,(%esp)</span><br><span class="line">   0x080491d2 &lt;+181&gt;:	call   0x8048800 &lt;puts@plt&gt;</span><br><span class="line">   0x080491d7 &lt;+186&gt;:	mov    0x804c3cc,%eax</span><br><span class="line">   0x080491dc &lt;+191&gt;:	lea    0x1(%eax),%edx</span><br><span class="line">   0x080491df &lt;+194&gt;:	mov    %edx,0x804c3cc</span><br><span class="line">   0x080491e5 &lt;+200&gt;:	imul   $0x50,%eax,%eax</span><br><span class="line">   0x080491e8 &lt;+203&gt;:	add    $0x804c3e0,%eax</span><br><span class="line">   0x080491ed &lt;+208&gt;:	mov    $0x804a3c7,%edx</span><br><span class="line">   0x080491f2 &lt;+213&gt;:	mov    $0x4,%ecx</span><br><span class="line">   0x080491f7 &lt;+218&gt;:	mov    %eax,%edi</span><br><span class="line">   0x080491f9 &lt;+220&gt;:	mov    %edx,%esi</span><br><span class="line">   0x080491fb &lt;+222&gt;:	rep movsl %ds:(%esi),%es:(%edi)</span><br><span class="line">   0x080491fd &lt;+224&gt;:	call   0x80490f6 &lt;explode_bomb&gt;</span><br><span class="line">   0x08049202 &lt;+229&gt;:	lea    (%edx,%edx,4),%eax</span><br><span class="line">   0x08049205 &lt;+232&gt;:	shl    $0x4,%eax</span><br><span class="line">   0x08049208 &lt;+235&gt;:	movb   $0x0,0x804c3df(%ecx,%eax,1)</span><br><span class="line">   0x08049210 &lt;+243&gt;:	add    $0x1,%edx</span><br><span class="line">   0x08049213 &lt;+246&gt;:	mov    %edx,0x804c3cc</span><br><span class="line">   0x08049219 &lt;+252&gt;:	mov    %ebx,%eax</span><br><span class="line">   0x0804921b &lt;+254&gt;:	mov    0x20(%esp),%ebx</span><br><span class="line">   0x0804921f &lt;+258&gt;:	mov    0x24(%esp),%esi</span><br><span class="line">   0x08049223 &lt;+262&gt;:	mov    0x28(%esp),%edi</span><br><span class="line">   0x08049227 &lt;+266&gt;:	add    $0x2c,%esp</span><br><span class="line">   0x0804922a &lt;+269&gt;:	ret    </span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>我们可以得出，<code>read_line</code>函数将输入的字符串地址存在<code>0x20(%esp)</code>地址</li>
+</ul>
+<h4 id="phase-1："><a href="#phase-1：" class="headerlink" title="phase_1："></a><code>phase_1</code>：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Dump of assembler code for function phase_1:   </span><br><span class="line">   0x08048b50 &lt;+0&gt;:	    sub    $0x1c,%esp                           </span><br><span class="line">   &#x2F;&#x2F;栈指针%esp-0x1c，即该操作是为了给当前帧开辟一个大小为0x1c字节的空间</span><br><span class="line">   0x08048b53 &lt;+3&gt;:     movl   $0x804a1c4,0x4(%esp)</span><br><span class="line">   &#x2F;&#x2F;将0x804a1c4（正确的字符串在内存中存放的地址）赋给(0x4+%esp)内存地址</span><br><span class="line">   0x08048b5b &lt;+11&gt;:	mov    0x20(%esp),%eax</span><br><span class="line">   &#x2F;&#x2F;将*(0x20+%esp)的地址赋给寄存器%eax，其实就是输入的字符串地址</span><br><span class="line">   0x08048b5f &lt;+15&gt;:	mov    %eax,(%esp)</span><br><span class="line">   &#x2F;&#x2F;将寄存器%eax中的值赋给*(%esp)地址</span><br><span class="line">   0x08048b62 &lt;+18&gt;:	call   0x8048fe4 &lt;strings_not_equal&gt; </span><br><span class="line">    &#x2F;&#x2F;比较两字符串是否相等，根据结果给%eax赋值</span><br><span class="line">   0x08048b67 &lt;+23&gt;:	test   %eax,%eax</span><br><span class="line">   &#x2F;&#x2F;将两个值进行逻辑与操作，可以影响zf的值</span><br><span class="line">   0x08048b69 &lt;+25&gt;:	je     0x8048b70 &lt;phase_1+32&gt;</span><br><span class="line">   &#x2F;&#x2F;如果eax&#x3D;0，则zf&#x3D;1，则跳转进入0x8048b70</span><br><span class="line">   0x08048b6b &lt;+27&gt;:	call   0x80490f6 &lt;explode_bomb&gt;</span><br><span class="line">   &#x2F;&#x2F;没有跳转则执行这一行指令，爆炸</span><br><span class="line">   0x08048b70 &lt;+32&gt;:	add    $0x1c,%esp</span><br><span class="line">   &#x2F;&#x2F;栈指针%esp+0x1c，函数执行完成，释放空间</span><br><span class="line">   0x08048b73 &lt;+35&gt;:	ret</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>为了搞清楚这个过程，我们需要进行<code>gdb</code>调试，下面是一些<code>gdb</code>命令（列出来的我都用了）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gdb&gt; break *&lt;&lt;函数名&gt;+&lt;偏移值&gt;&gt;                             &#x2F;&#x2F;设置断点</span><br><span class="line">gdb&gt; run                                                  &#x2F;&#x2F;运行</span><br><span class="line">gdb&gt; step                                                 &#x2F;&#x2F;下一步</span><br><span class="line">gdb&gt; info registers &lt;寄存器&gt;                               &#x2F;&#x2F;列出寄存器的值，寄存器可选</span><br><span class="line">gdb&gt; set var &lt;寄存器或者变量&gt;&#x3D;&lt;0x111&gt;                        &#x2F;&#x2F;改变寄存器的值</span><br><span class="line">gdb&gt; set *&lt;内存地址&gt;&#x3D;&lt;0x11&gt;                                 &#x2F;&#x2F;改变内存的值</span><br><span class="line">gdb&gt; x&#x2F;nfu &lt;内存地址&gt;                  &#x2F;&#x2F;查看内存地址的值，examine简写为x，n长度，f显示格式，u一个地址单元的长度</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>执行命令，查看正确字符串<br><img src="%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210428220435495.png" alt="image-20210428220435495"></p>
+</li>
+<li><p>运行，输入正确字符串，提示炸弹已经被拆，下一关！<br><img src="%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210428220713564.png" alt="image-20210428220713564"></p>
+</li>
+</ul>
+<h4 id="phase-2："><a href="#phase-2：" class="headerlink" title="phase_2："></a><code>phase_2</code>：</h4> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/04/28/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LAB/" rel="tag">LAB</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/04/27/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BC%9A%E5%9C%BA%E5%AE%89%E6%8E%92%E9%97%AE%E9%A2%98/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">贪心算法——会场安排问题</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> Sung
+      </li>
+    </ul>
+    <!-- <ul>
+      <li>
+        
+        
+        
+        powered_by
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul> -->
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Sung&#39;s Blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+  </div>
+</body>
+
+</html>
