@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">277</span>
+            <span class="post-count">377</span>
         </span>
     </span>
 
@@ -130,6 +130,17 @@
 
 <p>部署命令·，可能出错，如果出现<code>SSL Connection</code>错误，就是因为网络不好</p>
 <p>再次输入部署命令就好了</p>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p>为了实现插入图片，我们需要进行这几个操作：</p>
+<ul>
+<li><p>安装<code>hexo</code>插件：<code>npm install hexo-renderer-marked</code></p>
+</li>
+<li><p>修改配置文件<code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>Typora</code>的偏好设置中，我们将图片存储到指定路径<code>./$&#123;filename&#125;</code></p>
+</li>
+<li><p>具体使用：随便粘贴一张图到文章中，<code>ctrl+f</code>寻找<code>&lt;md文件名&gt;/</code>将它替换为空</p>
+</li>
+</ul>
  
       <!-- reward -->
       
