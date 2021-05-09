@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">253</span>
+            <span class="post-count">570</span>
         </span>
     </span>
 
@@ -127,8 +127,27 @@ var _hmt = _hmt || [];
 <p>（像我一样比较穷的人，可以直接在作者本人的博客上学习<a target="_blank" rel="noopener" href="https://cuiqingcai.com/5052.html">Python3 网络爬虫开发实战教程</a>）</p>
 <h2 id="1-开发环境的配置"><a href="#1-开发环境的配置" class="headerlink" title="1 - 开发环境的配置"></a>1 - 开发环境的配置</h2><p>主系统的Python版本是3.9.2，我是采用<code>vscode</code>编辑器写的，每一个项目的库都是用什么装什么。</p>
 <p>上来先放了一堆安装，我们先不装。</p>
-<h2 id="2-爬虫基础"><a href="#2-爬虫基础" class="headerlink" title="2 - 爬虫基础"></a>2 - 爬虫基础</h2><p>在写爬虫之前，我们还需要了解一些基础知识，如 HTTP 原理、网页的基础知识、爬虫的基本原理、Cookies 的基本原理等。</p>
-<p>本章中，我们就对这些基础知识做一个简单的总结。</p>
+<h2 id="2-爬虫基础"><a href="#2-爬虫基础" class="headerlink" title="2 - 爬虫基础"></a>2 - 爬虫基础</h2><p>基础知识在书里很详细了，我这里只做一些我觉得比较重要的。</p>
+<h3 id="2-3-爬虫基础"><a href="#2-3-爬虫基础" class="headerlink" title="2.3 - 爬虫基础"></a>2.3 - 爬虫基础</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><ol>
+<li>获取网页。向网站的服务器发送一个请求，返回的响应体便是网页源代码。<ul>
+<li>Python 提供了许多库如 urllib、requests 等。我们可以用这些库来帮助我们实现 HTTP 请求操作</li>
+<li>得到响应之后只需要解析数据结构中的 Body 部分即可，即得到网页的源代码</li>
+</ul>
+</li>
+<li>提取信息。获取网页源代码后，接下来就是分析网页源代码，从中提取我们想要的数据。<ul>
+<li>最通用的方法便是采用正则表达式提取，这是一个万能的方法，但是在构造正则表达式时比较复杂且容易出错。</li>
+<li>据网页节点属性、CSS 选择器或 XPath 来提取网页信息的库，如 Beautiful Soup、pyquery、lxml 等。</li>
+<li>提取信息是爬虫非常重要的部分，它可以使杂乱的数据变得条理清晰，以便我们后续处理和分析数据。</li>
+</ul>
+</li>
+<li>保存数据。提取信息后，我们一般会将提取到的数据保存到某处以便后续使用。<ul>
+<li>可以简单保存为 TXT 文本或 JSON 文本</li>
+<li>可以保存到数据库，如 MySQL 和 MongoDB 等</li>
+<li>也可保存至远程服务器，如借助 SFTP 进行操作等。</li>
+</ul>
+</li>
+<li>自动化程序。爬虫是代替我们来完成这份爬取工作的自动化程序。</li>
+</ol>
  
       <!-- reward -->
       
@@ -206,11 +225,11 @@ var _hmt = _hmt || [];
    
   <nav class="article-nav">
     
-      <a href="/2021/05/09/Python%E2%80%94%E2%80%94%E7%88%AC%E8%99%AB%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" class="article-nav-link">
+      <a href="/2021/05/09/%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Python——爬虫使用体验
+            健康打卡
           
         </div>
       </a>
