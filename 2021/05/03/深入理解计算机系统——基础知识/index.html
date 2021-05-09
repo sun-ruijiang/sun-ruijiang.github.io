@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">878</span>
+            <span class="post-count">1.2k</span>
         </span>
     </span>
 
@@ -106,7 +106,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -141,6 +141,7 @@ var _hmt = _hmt || [];
 </ul>
 <ul>
 <li><code>ESP</code> 专门用作堆栈指针，被形象地称为<strong>栈顶指针</strong>，堆栈的顶部是地址小的区域，压入堆栈的数据越多，<strong>ESP也就越来越小</strong>。在<strong>32位系统</strong>中，<code>ESP</code><strong>每次减少4字节</strong>。</li>
+<li>使用惯例：<code>eax</code>,<code>edx</code>,<code>ecx</code>被划分为<strong>调用者</strong>保存寄存器；<code>ebx</code>,<code>esi</code>,<code>edi</code>被划分为<strong>被调用者</strong>保存寄存器</li>
 </ul>
 <h2 id="专用寄存器"><a href="#专用寄存器" class="headerlink" title="专用寄存器"></a>专用寄存器</h2><ul>
 <li><p><code>EIP</code>指令指针（Instruction Pointer.）。代码段中下一个指令的指针。自动更新。</p>
@@ -182,7 +183,7 @@ var _hmt = _hmt || [];
 </tbody></table>
 <h2 id="EFLAGS寄存器"><a href="#EFLAGS寄存器" class="headerlink" title="EFLAGS寄存器"></a>EFLAGS寄存器</h2><p><code>EFLAGS(program status and control) register</code>主要用于<strong>提供程序的状态</strong>及<strong>进行相应的控制</strong></p>
 <p><code>EFLAGS</code> 标志。<code>cpu</code>中各种条件的状态。 <code>EFLAGS</code>寄存器的各个位的用途如下所述：</p>
-<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210508092423969.png" alt="image-20210508092423969"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210508092423969.png" alt="image-20210508092423969"></p>
 <ul>
 <li><code>00 Carry (CF)</code>：保存加法后的进位或者减法后的借位。 也指示错误情况。</li>
 <li><code>02 Parity (PF)</code>：奇数位数为0，偶数位数为1。<code>80x86</code>的过时功能。</li>
@@ -196,14 +197,127 @@ var _hmt = _hmt || [];
 <li><code>12 and 13 I/O privilege level (IOPL)</code>：保持代码必须运行的特权级别，以便执行任何与输入输出相关的指令。00是最高的。</li>
 <li><code>14 Trap Nested Task (NT)</code>：当一个系统任务在保护模式下通过<code>call</code>指令调用另一个系统任务时设置。</li>
 </ul>
-<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210508102645978.png" alt="image-20210508102645978"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210508102645978.png" alt="image-20210508102645978"></p>
 <ul>
 <li>下半部分不记录了，用不到</li>
 </ul>
-<h2 id="对栈帧进行改变的指令"><a href="#对栈帧进行改变的指令" class="headerlink" title="对栈帧进行改变的指令"></a>对栈帧进行改变的指令</h2><p><code>call</code>指令</p>
-<p><code>ret</code>指令</p>
-<p><code>push</code>指令</p>
-<p><code>pop</code>指令</p>
+<h2 id="一些容易忽略的指令"><a href="#一些容易忽略的指令" class="headerlink" title="一些容易忽略的指令"></a>一些容易忽略的指令</h2><ul>
+<li><p><code>call</code>指令：过程调用，将返回地址入栈，并跳转到被调用过程的起始处。返回地址就是紧跟在<code>call</code>后的那条指令的地址。</p>
+</li>
+<li><p><code>ret</code>指令：从过程调用中返回，将返回地址出栈，并跳转到返回地址。</p>
+</li>
+<li><p><code>push</code>指令：入栈，<code>esp</code>减4字节，操作数就是入栈的数据</p>
+</li>
+<li><p><code>pop</code>指令：出栈，<code>esp</code>加4字节，操作数就是出栈的数据保存的地址</p>
+</li>
+<li><p><code>cmp</code>指令：比较指令，<code>cmp s2,s1</code>基于<code>s1-s2</code>，只设置条件码</p>
+</li>
+<li><p><code>test</code>指令：测试指令，<code>test s2,s1</code>基于<code>s1&amp;s2</code>，只设置条件码</p>
+</li>
+<li><p><code>leave</code>指令：为返回准备栈，等价于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movl  %ebp,%esp            &#x2F;&#x2F;栈指针设置为帧指针</span><br><span class="line">popl  %ebp                 &#x2F;&#x2F;ebp存储一开始被保存的旧的ebp,esp指向返回地址的节点</span><br></pre></td></tr></table></figure>
+<h2 id="栈帧图"><a href="#栈帧图" class="headerlink" title="栈帧图"></a>栈帧图</h2></li>
+</ul>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/OIP.we3zQsK494hBkOLbzxQIiwHaFH" alt="img"></p>
+<p>用c语言描述函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">( (<span class="keyword">void</span>)arrgument <span class="number">1</span>, (<span class="keyword">void</span>)arrgument <span class="number">2</span>, ....... ,(<span class="keyword">void</span>)arrgument n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">void</span> local variable <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">void</span> local variable <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">void</span> local variable <span class="number">3</span>;</span><br><span class="line">    ......</span><br><span class="line">    <span class="keyword">void</span> local variable n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>图中的地址从上往下递减的，栈顶在下，栈底在上。</p>
+<p><code>Return address</code>和<code>Previous frame pointer</code>分别是<strong>返回地址</strong>和<strong>调用者的帧指针</strong>。</p>
+<h2 id="跳转指令"><a href="#跳转指令" class="headerlink" title="跳转指令"></a>跳转指令</h2><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">功能</th>
+<th align="center">条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>JE</code></td>
+<td align="center">相等则跳转</td>
+<td align="center"><code>ZF</code>=1</td>
+</tr>
+<tr>
+<td align="center"><code>JNE</code></td>
+<td align="center">不相等则跳转</td>
+<td align="center"><code>ZF</code>=0</td>
+</tr>
+<tr>
+<td align="center"><code>JA</code></td>
+<td align="center">无符号大于则跳转</td>
+<td align="center"><code>CF</code>=0 and<code>ZF</code>=0</td>
+</tr>
+<tr>
+<td align="center"><code>JG</code></td>
+<td align="center">有符号大于则跳转</td>
+<td align="center"><code>SF</code>=<code>OF</code>or <code>ZF</code>=0</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
  
       <!-- reward -->
       
