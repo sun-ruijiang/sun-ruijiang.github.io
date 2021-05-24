@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">5.4k</span>
+            <span class="post-count">5.9k</span>
         </span>
     </span>
 
@@ -106,7 +106,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">19 min</span>
+            <span class="post-count">20 min</span>
         </span>
     </span>
 </div>
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
 <p> <strong>从机器级代码到数据流图：</strong></p>
 <ul>
 <li><strong>机器级代码</strong><br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522120656135.png" alt="image-20210522120656135"></li>
-<li><strong>第一步</strong>，如图所示：<strong>左边的</strong>方框和线给出各个指令是如何使用和更新寄存器的，<strong>顶部的</strong>方框表示开始时的寄存器值，<strong>底部的</strong>方框表示最后寄存器的值，<strong>右边的</strong>是各种操作，<strong>弧线</strong>表示操作产生的不对应于任何寄存器的值。</li>
+<li><strong>第一步</strong>，<strong>将机器级代码译码成操作</strong>。如图所示：<strong>左边的</strong>方框和线给出各个指令是如何使用和更新寄存器的，<strong>顶部的</strong>方框表示开始时的寄存器值，<strong>底部的</strong>方框表示最后寄存器的值，<strong>右边的</strong>是各种操作，<strong>弧线</strong>表示操作产生的不对应于任何寄存器的值，相连的两个操作具有相关性（A-&gt;B，指必须等A结束，B才能进行）。</li>
 </ul>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522121059669.png" alt="image-20210522121059669"></p>
 <ul>
@@ -327,7 +327,27 @@ var _hmt = _hmt || [];
 <p><strong>提高并行性</strong>，因为<strong>数据相关</strong>，虽然<strong>功能单元</strong>能够做到<strong>采用流水线一个周期开始一个新的操作</strong>，但是它只会<strong>每L（延迟）个周期开始一个新的操作</strong>。我们需要打破这种顺序相关，得到比延迟界限更好性能的方法。</p>
 <ul>
 <li><strong>多个累计变量</strong>，<strong>多个关键路径并行</strong>，这种方法利用了<strong>功能单元的流水线</strong>能力。在k更大一些，CPE不会更低是因为功能单元已经在最大负荷下工作了，也就是吞吐量界限。</li>
-<li><strong>重新结合变换</strong>，<strong>减少关键路径上操作的数量</strong>，另一种打破顺序相关从而使性能提高到延迟界限之外的方法。另一条数据相关链可以很快得进行处理，不会影响程序性能。</li>
+<li><strong>重新结合变换</strong>，<strong>减少关键路径上操作的数量</strong>，另一种打破顺序相关从而使性能提高到延迟界限之外的方法。另一条数据相关链可以很快得进行处理，不会影响程序性能。样例中<code>(x * array[n-1]) * array[n] =&gt; x * (array[n-1] * array[n]) </code></li>
+</ul>
+<h2 id="理解存储器性能"><a href="#理解存储器性能" class="headerlink" title="理解存储器性能"></a>理解存储器性能</h2><p><strong>加载操作对性能的影响</strong></p>
+<ul>
+<li><p>加载操作是将内存中的数据读出到寄存器中。</p>
+</li>
+<li><p>一个包含加载操作的程序的性能既依赖于流水线的能力，也依赖于加载单元的延迟。</p>
+</li>
+<li><p>由于加载单元的每个时钟周期只能启动一条加载操作，所以CPE不可能小于1。</p>
+</li>
+<li><p>对于每个被计算的元素必须加载k个值的应用，我们不可能获得低于k的CPE</p>
+</li>
+<li><p>计算当前加载地址，需要先获取上一轮的地址，由此加载操作之间就存在数据相关，就需要考虑加载延迟了</p>
+</li>
+</ul>
+<p><strong>存储操作对性能的影响</strong></p>
+<ul>
+<li>存储操作是将寄存器中的数据保存到内存中，所以存储操作不会产生数据相关，但是存储操作会影响加载操作，出现<strong>写/读相关</strong></li>
+<li>首先需要先了解加载和存储单元的细节。在存储单元中会有一个<strong>存储缓冲区</strong>，用来保存发射到存储单元但是还未保存到数据高速缓存的存储操作的地址和数据，由此避免存储操作之间的等待。</li>
+<li>加载操作会检查存储缓冲区中是否有需要的地址，如果有，则直接将存储缓冲区中的数据作为加载操作的结果。</li>
+<li>要在更大范围观察<strong>写/读相关</strong>，不一定存在一个迭代中，可能在相邻迭代中，只要发现<strong>有存储操作，而后执行相同地址的加载操作</strong>，就会有写/读相关，<strong>必须等存储操作进行完成，才能进行加载操作</strong>。</li>
 </ul>
 <h2 id="存储器层次"><a href="#存储器层次" class="headerlink" title="存储器层次"></a>存储器层次</h2><p><strong>存储器层次的中心思想</strong>，对于每个位于k层的更快、更小的存储设备<strong>作为</strong>位于k+1层的更大、更慢的存储设备的<strong>缓存</strong>。</p>
 <p><strong>存储层次为什么有效？</strong>由于<strong>局部性</strong>，相对于层次 k+1 的数据，程序趋向于更<strong>频繁访问层次 k 的数据</strong>。因此，允许层次 k+1 的存取速度更慢，空间更大，单位价格更便宜。</p>
