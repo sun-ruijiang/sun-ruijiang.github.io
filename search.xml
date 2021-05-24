@@ -617,6 +617,7 @@
 <p><strong>消除循环的低效率</strong>，<code>for(i=0;i&lt;vec_length();i++)</code>调用函数作为循环的测试条件，意味着我们需要调用很多次函数，这是非常低效的。<strong>代码移动</strong>可以优化事变要执行很多次却不改变计算结果的计算，在本例中，我们将<strong>循环内部的的函数调用移到循环前面</strong>。</p>
 <p><strong>减少过程调用</strong>，还是减少循环中函数的调用，这次是<strong>用数组直接取值来代替用函数取值</strong>。</p>
 <p><strong>消除不必要的存储器引用</strong>，直接用指针来取值会对<strong>存储器</strong>进行读出或写入的操作，我们用<strong>临时变量来代替指针取值</strong>，可以直接在<strong>寄存器</strong>上操作，这会大大增强函数性能。</p>
+<h2 id="算术运算的延迟和发射时间"><a href="#算术运算的延迟和发射时间" class="headerlink" title="算术运算的延迟和发射时间"></a>算术运算的延迟和发射时间</h2><p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210524204719636.png" alt="image-20210524204719636"></p>
 <h2 id="利用微处理器微体系结构的优化"><a href="#利用微处理器微体系结构的优化" class="headerlink" title="利用微处理器微体系结构的优化"></a>利用微处理器微体系结构的优化</h2><p><strong>指令级并行</strong>指，在实际的处理器中，是<strong>同时对多条指令求值</strong>。在代码级上，似乎是一次执行一条指令，每条指令都包括从寄存器或存储器取值，执行一个操作，并把结果存回到一个寄存器或存储器位置。但是复杂奇异的微处理器结构让多条指令可以并行地执行，同时又呈现一种简单地顺序执行指令的表象。</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522105640532.png" alt="image-20210522105640532"></p>
 <p><strong>两种界限描述了程序的最大性能</strong>：</p>
@@ -902,7 +903,11 @@
   <entry>
     <title>深入理解计算机系统——课程作业5</title>
     <url>/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/</url>
-    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业5"><a href="#深入理解计算机系统——课程作业5" class="headerlink" title="深入理解计算机系统——课程作业5"></a>深入理解计算机系统——课程作业5</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>突然要做作业不会做，昨天</p>
+    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业5"><a href="#深入理解计算机系统——课程作业5" class="headerlink" title="深入理解计算机系统——课程作业5"></a>深入理解计算机系统——课程作业5</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>突然要做作业不会做，昨天学了一手，今天开始写</p>
+<h2 id="题一：p376家庭作业5-15"><a href="#题一：p376家庭作业5-15" class="headerlink" title="题一：p376家庭作业5.15"></a>题一：p376家庭作业5.15</h2><h3 id="A、画关键路径"><a href="#A、画关键路径" class="headerlink" title="A、画关键路径"></a>A、画关键路径</h3><p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524172744364.png" alt="image-20210524172744364"></p>
+<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524174834951.png" alt="image-20210524174834951"></p>
+<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524175909779.png" alt="image-20210524175909779"></p>
+<h3 id="B、对于float数据类型，关键路径决定的CPE下限是什么"><a href="#B、对于float数据类型，关键路径决定的CPE下限是什么" class="headerlink" title="B、对于float数据类型，关键路径决定的CPE下限是什么"></a>B、对于float数据类型，关键路径决定的CPE下限是什么</h3><p>float类型对应的add指令的是3</p>
 ]]></content>
       <categories>
         <category>CS:APP</category>
