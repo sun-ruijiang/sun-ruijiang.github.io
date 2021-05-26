@@ -725,25 +725,23 @@
 </ul>
 <p><strong>当所要访问的块在高一层存储器中时，如何找到该块?（查找算法）</strong><br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522215621798.png" alt="image-20210522215621798"></p>
 <ul>
-<li><p>定位到<strong>组</strong></p>
-</li>
-<li><p>检查组内任意行是否与<strong>标记</strong>匹配。如果匹配且行有效，则命中</p>
-</li>
-<li><p> 以<strong>偏移量</strong>定位数据</p>
-</li>
-<li><p><em>当发生失效时，应替换哪一块？ （替换算法）</em>*</p>
-</li>
-<li><p>直接映像cache，如果不匹配，那么就将新行替换旧行。</p>
-</li>
-<li><p>E-路组相连Cache，如果不匹配，任选中组内最近最少被使用的一行替换</p>
-</li>
+<li>定位到<strong>组</strong></li>
+<li>检查组内任意行是否与<strong>标记</strong>匹配。如果匹配且行有效，则命中</li>
+<li>以<strong>偏移量</strong>定位数据</li>
+</ul>
+<p><strong>当发生失效时，应替换哪一块？ （替换算法）</strong></p>
+<ul>
+<li>直接映像cache，如果不匹配，那么就将新行替换旧行。</li>
+<li>E-路组相连Cache，如果不匹配，任选中组内最近最少被使用的一行替换</li>
 </ul>
 <p><strong>当进行写访问时，应进行哪些操作（写策略）</strong></p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20201015223402749.png" alt="img"></p>
 <h2 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h2><p>一个编写良好的程序倾向于<strong>引用最近引用过的数据本身</strong>，或者<strong>引用的数据项邻近于其最近引用过的数据项</strong></p>
 <ul>
-<li>**时间局部性(Temporal locality)**：最近被引用过的数据很可能很快会被多次引用</li>
-<li>**空间局部性(Spatial locality)**：一个存储位置被引用了一次，很可能很快其 附近存储位置也会被引用。</li>
+<li><p><strong>时间局部性(Temporal locality)：</strong>最近被引用过的数据很可能很快会被多次引用</p>
+</li>
+<li><p><strong>空间局部性(Spatial locality)：</strong>一个存储位置被引用了一次，很可能很快其附近存储位置也会被引用。</p>
+</li>
 </ul>
 <p><strong>步长：</strong>按顺序、连续的对 v 的引用，我们称为<strong>步长为1的引用模式。</strong>同理，在一个连续的向量中，每隔k个元素对向量进行访问，称为<strong>步长为k的引用。</strong>一般来说，<strong>随着步长的增加，空间局部性会下降</strong>。</p>
 <p><strong>取指令的局部性</strong>：<strong>指令存在于存储器中</strong>，cpu 要读指令就必须取出指令。所以也能评价对于取指令的局部性。在循环中，循环体内的指令多次被执行，所以有<strong>良好的时间和空间局部性</strong>。</p>
@@ -955,8 +953,16 @@
 <h3 id="A、解释为什么任何版本的内积过程都不能达到比2更小的CPE"><a href="#A、解释为什么任何版本的内积过程都不能达到比2更小的CPE" class="headerlink" title="A、解释为什么任何版本的内积过程都不能达到比2更小的CPE"></a>A、解释为什么任何版本的内积过程都不能达到比2更小的CPE</h3><p>由于加载单元每个时钟周期只能启动一条加载操作。</p>
 <p>如果每次计算时要从两个存储器位置中加载数据，就要分两次进行，所以CPE不可能小于2</p>
 <h3 id="B、为什么浮点数据的性能不会通过循环展开得到提高。"><a href="#B、为什么浮点数据的性能不会通过循环展开得到提高。" class="headerlink" title="B、为什么浮点数据的性能不会通过循环展开得到提高。"></a>B、为什么浮点数据的性能不会通过循环展开得到提高。</h3><p>因为关键路径还是limit个浮点加法，虽然迭代次数减半了，但是每次迭代中还是有两个顺序的加法操作。</p>
-<h2 id="题三：p376家庭作业5-20"><a href="#题三：p376家庭作业5-20" class="headerlink" title="题三：p376家庭作业5.20"></a>题三：p376家庭作业5.20</h2><h3 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">polyh</span><span class="params">(<span class="keyword">double</span> a[], <span class="keyword">double</span> x, <span class="keyword">int</span> degree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">double</span> x2 = x * x;</span><br><span class="line">	<span class="keyword">double</span> x3 = x2 * x;</span><br><span class="line">	<span class="keyword">double</span> result1;</span><br><span class="line">    <span class="keyword">double</span> result2;</span><br><span class="line">    <span class="keyword">double</span> result3 = a[degree];</span><br><span class="line">	<span class="keyword">for</span> (i = degree - <span class="number">1</span>; i &gt;= <span class="number">9</span>; i -= <span class="number">9</span>) &#123;</span><br><span class="line">		result1 = result3 * x3 + (a[i - <span class="number">2</span>] + x * a[i - <span class="number">1</span>] + x2 * a[i]);</span><br><span class="line">		result2 = result1 * x3 + (a[i - <span class="number">5</span>] + x * a[i - <span class="number">4</span>] + x2 * a[i - <span class="number">3</span>]);</span><br><span class="line">		result3 = result2 * x3 + (a[i - <span class="number">8</span>] + x * a[i - <span class="number">7</span>] + x2 * a[i - <span class="number">6</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">		result3 = a[i] + x * result3;</span><br><span class="line">	<span class="keyword">return</span> result3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="题三：p376家庭作业5-20"><a href="#题三：p376家庭作业5-20" class="headerlink" title="题三：p376家庭作业5.20"></a>题三：p376家庭作业5.20</h2><h3 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">poly_optimized</span><span class="params">(<span class="keyword">double</span> a[], <span class="keyword">double</span> x, <span class="keyword">int</span> degree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">double</span> result = a[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">double</span> xpwr = x;</span><br><span class="line">	<span class="keyword">double</span> x2 = x * x;</span><br><span class="line">	<span class="keyword">double</span> x3 = x2 * x;</span><br><span class="line">	<span class="keyword">double</span> x4 = x3 * x;</span><br><span class="line">	<span class="keyword">double</span> x5 = x4 * x;</span><br><span class="line">	<span class="keyword">double</span> x6 = x5 * x;</span><br><span class="line">	<span class="keyword">int</span> limit = degree - <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= limit; i += <span class="number">6</span>) &#123;</span><br><span class="line">		<span class="keyword">double</span> result1 = a[i] + a[i + <span class="number">1</span>] * x;</span><br><span class="line">		<span class="keyword">double</span> result2 = a[i + <span class="number">2</span>] * x2 + a[i + <span class="number">3</span>] * x3;</span><br><span class="line">		<span class="keyword">double</span> result3 = a[i + <span class="number">4</span>] * x4 + a[i + <span class="number">5</span>] * x5;</span><br><span class="line">		result += (rseult1 + result2 + result3) * xpwr;</span><br><span class="line">		xpwr *= x6;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt;= degree; i++) &#123;</span><br><span class="line">		result += a[i] * xpwr;</span><br><span class="line">		xpwr *= x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><p>代码采用的是直接求值的方法，不是Homer法。</p>
+<p>优化的方法有：</p>
+<ol>
+<li>消除循环的低效率，limit=degree-5，不用每次都计算degree-5；</li>
+<li>循环展开，展开六次，每次算六个a；</li>
+<li>三路并行，临时变量存储；</li>
+<li>关键路径决定的CPE是双精度乘法延迟的六分之一，但是因为加载操作每个周期一次，所以CPE还是1.</li>
+</ol>
 ]]></content>
       <categories>
         <category>CS:APP</category>
@@ -966,8 +972,28 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/</url>
-    <content><![CDATA[]]></content>
+    <title>深入理解计算机系统——课程作业6</title>
+    <url>/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/</url>
+    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业6"><a href="#深入理解计算机系统——课程作业6" class="headerlink" title="深入理解计算机系统——课程作业6"></a>深入理解计算机系统——课程作业6</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>今天做作业6</p>
+<h2 id="题一：家庭作业6-30"><a href="#题一：家庭作业6-30" class="headerlink" title="题一：家庭作业6.30"></a>题一：家庭作业6.30</h2><h3 id="A、地址格式"><a href="#A、地址格式" class="headerlink" title="A、地址格式"></a>A、地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525211625958.png" alt="image-20210525211625958"></p>
+<h3 id="B、读写操作顺序执行结果"><a href="#B、读写操作顺序执行结果" class="headerlink" title="B、读写操作顺序执行结果"></a>B、读写操作顺序执行结果</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525212521139.png" alt="image-20210525212521139"></p>
+<h2 id="题二：家庭作业6-31"><a href="#题二：家庭作业6-31" class="headerlink" title="题二：家庭作业6.31"></a>题二：家庭作业6.31</h2><h3 id="A、高速缓存C的大小"><a href="#A、高速缓存C的大小" class="headerlink" title="A、高速缓存C的大小"></a>A、高速缓存C的大小</h3><p><code>C = S * E * B = 128</code>，大小为128字节</p>
+<h3 id="B、地址格式"><a href="#B、地址格式" class="headerlink" title="B、地址格式"></a>B、地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213035291.png" alt="image-20210525213035291"></p>
+<h2 id="题三：家庭作业6-32"><a href="#题三：家庭作业6-32" class="headerlink" title="题三：家庭作业6.32"></a>题三：家庭作业6.32</h2><h3 id="A、0x0718地址格式"><a href="#A、0x0718地址格式" class="headerlink" title="A、0x0718地址格式"></a>A、0x0718地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213634359.png" alt="image-20210525213634359"></p>
+<h3 id="B、存储器引用"><a href="#B、存储器引用" class="headerlink" title="B、存储器引用"></a>B、存储器引用</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213953712.png" alt="image-20210525213953712"></p>
+<h2 id="题四：家庭作业6-37"><a href="#题四：家庭作业6-37" class="headerlink" title="题四：家庭作业6.37"></a>题四：家庭作业6.37</h2><h3 id="A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少"><a href="#A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少" class="headerlink" title="A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少"></a>A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少</h3><p>不命中率是100%，因为直接映射，<code>x</code>数组大小为<code>256 * 2 * 4 = 2048</code>字节，<code>x[0][i]</code>和<code>x[1][i]</code>对应同一个高速缓存数据块，所以每次都会容量不命中。</p>
+<h3 id="B、假设高速缓存的2048字节，其他同上"><a href="#B、假设高速缓存的2048字节，其他同上" class="headerlink" title="B、假设高速缓存的2048字节，其他同上"></a>B、假设高速缓存的2048字节，其他同上</h3><p>不命中率是12.5%，因为缓存足够大，所以只有冷不命中，也就是4/32 = 1/8</p>
+<h3 id="C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少"><a href="#C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少" class="headerlink" title="C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少"></a>C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少</h3><p>只有冷不命中，不命中率为12.5%。</p>
+<h3 id="D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？"><a href="#D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？" class="headerlink" title="D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？"></a>D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？</h3><p>不会降低，因为块大小不变时，冷不命中的概率不可能被减小。</p>
+<h3 id="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"><a href="#E、对于情况3，更大的块大小帮助降低不命中率吗？原因？" class="headerlink" title="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"></a>E、对于情况3，更大的块大小帮助降低不命中率吗？原因？</h3><p>会降低，因为一个块的大小增加，冷不命中的频率就降低。</p>
+<h2 id="题五：家庭作业6-42"><a href="#题五：家庭作业6-42" class="headerlink" title="题五：家庭作业6.42"></a>题五：家庭作业6.42</h2><p>每行只有4个字节，那只可能是循环中后三个命中，第一个不命中，不命中率为0.25。</p>
+<h2 id="题六：家庭作业6-43"><a href="#题六：家庭作业6-43" class="headerlink" title="题六：家庭作业6.43"></a>题六：家庭作业6.43</h2><p>每行只有4个字节，每次要写一个char，不命中率仍然为0.25</p>
+]]></content>
+      <categories>
+        <category>CS:APP</category>
+      </categories>
+      <tags>
+        <tag>课程作业</tag>
+      </tags>
   </entry>
 </search>
