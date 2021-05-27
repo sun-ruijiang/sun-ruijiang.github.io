@@ -690,12 +690,6 @@
 <p>DRAM动态随机访问存储器，一个电容和一个访问晶体管组成，便宜速度慢。</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522205457630.png" alt="image-20210522205457630"></p>
 <h2 id="高速缓存cache"><a href="#高速缓存cache" class="headerlink" title="高速缓存cache"></a>高速缓存cache</h2><p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214639517.png" alt="image-20210522214639517"></p>
-<p><strong>cache分类：</strong></p>
-<ul>
-<li><strong>全相连Cache：</strong>S=1，只有一组，包括所有的行</li>
-<li><strong>E-路组相连Cache：</strong>E=E，每组有E行</li>
-<li><strong>直接映像Cache：</strong>E=1，每组只有一行</li>
-</ul>
 <p>CPU向cache<strong>请求数据块</strong>，会发生两种情况：</p>
 <ul>
 <li><p><strong>命中：</strong>我们需要的<strong>数据块存在于高速缓存中</strong>，就命中了。</p>
@@ -705,34 +699,40 @@
 <li><strong>冷不命中：</strong>如果<strong>k层缓存是空的</strong>，则对任何数据的访问都是不命中的。属于<strong>短暂事件</strong>，在缓存暖身后不会出现。</li>
 <li><strong>冲突不命中：</strong><ul>
 <li><strong>k层缓存</strong>比k +1层缓存空间更小，<strong>只能存放k+1层缓存数据块的子集</strong> 。<br>例如，k+1层的块 i 必须放在 k层 的 (i mod 4) 块中 （严格放置策略），</li>
-<li>缓存够大，但是<strong>所需的多个数据块都被映射到同一个缓存块</strong>中，导致一直发 生冲突不命中<br>例如，块0和块8映射到同一个缓存块，反复引用块 0, 8, 0, 8, 0, 8, … 那么每次都会产生冲突</li>
+<li>缓存够大，但是<strong>所需的多个数据块都被映射到同一个缓存块</strong>中，导致一直发生<strong>冲突不命中</strong><br>例如，块0和块8映射到同一个缓存块，反复引用块 0, 8, 0, 8, 0, 8, … 那么每次都会产生冲突</li>
 </ul>
 </li>
-<li><strong>容量不命中：</strong>需访问<strong>相对稳定不变的数据集合</strong>，这个块的集合称之为<strong>工作集</strong> (working set) ， 其<strong>大小超过缓存大小</strong>。</li>
+<li><strong>容量不命中：</strong>如果程序执行时，因为<strong>请求的数据块大小超过cache大小</strong>，所需的块不能全部调入Cache 中，则<strong>当某些块被替换后，若又重新被访问，就会发生失效</strong>。这种失效称为<strong>容量失效</strong>。</li>
 </ul>
 </li>
-<li><p><strong>不命中率：</strong></p>
-</li>
+</ul>
+<p><strong>不命中率：</strong>不命中次数所占的百分比。具体计算：</p>
+<ul>
+<li>在c语言中，数组是以<strong>行优先的方式</strong>去保存在存储器中的。</li>
+<li>如果我们按<code>a[0][0]、a[0][1]、......、a[0][n]</code>的顺序去访问或者读取，那么强制不命中率=单个元素字节数/cache数据块大小</li>
+<li>如果我们按<code>a[0][0]、a[1][0]、......、a[n][0]</code>的顺序去访问或者读取，那么强制不命中率=100%</li>
+<li>若Cache<strong>命中</strong>时间是<strong>1周期</strong>，则其<strong>不命中</strong>处罚时间达到<strong>100周期</strong>，所以<strong>命中率为97%和99%<strong>的</strong>周期数分别是2和4</strong>，差距很大。</li>
 </ul>
 <p><strong>当把一个数据块调入高一层(靠近CPU)存储器时，可以放在哪些位置上？（映像规则）</strong>，一共有三种：</p>
 <ul>
-<li><p><strong>全相联映像</strong>：主存中的任一块可以被放置到Cache中的<strong>任意一个位置</strong>。空间利用率最高，冲突概率最低，实现最复杂。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214311584.png" alt="image-20210522214311584"></p>
-</li>
-<li><p><strong>直接映象</strong>：主存中的每一块只能被放置到Cache中<strong>唯一的一个位置</strong>。空间利用率最低，冲突概率最高，实现最简单<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214332643.png" alt="image-20210522214332643"></p>
-</li>
-<li><p><strong>组相连映象：</strong>主存中的每一块可以被放置到Cache中<strong>唯一的一个组中的任何一个位置</strong>。作为两种映像的折中。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214350625.png" alt="image-20210522214350625"></p>
-</li>
+<li><strong>全相联映像</strong>：主存中的任一块可以被放置到Cache中的<strong>任意一个位置</strong>。空间利用率最高，冲突概率最低，实现最复杂。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214311584.png" alt="image-20210522214311584"><br><strong>全相连Cache：</strong>S=1，只有一组，包括所有的行</li>
+<li><strong>直接映象</strong>：主存中的每一块只能被放置到Cache中<strong>唯一的一个位置</strong>。空间利用率最低，冲突概率最高，实现最简单<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214332643.png" alt="image-20210522214332643"><br><strong>E-路组相连Cache：</strong>E=E，每组有E行</li>
+<li><strong>组相连映象：</strong>主存中的每一块可以被放置到Cache中<strong>唯一的一个组中的任何一个位置</strong>。作为两种映像的折中。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214350625.png" alt="image-20210522214350625"><br><strong>E-路组相连Cache：</strong>E=E，每组有E行</li>
 </ul>
-<p><strong>当所要访问的块在高一层存储器中时，如何找到该块?（查找算法）</strong><br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522215621798.png" alt="image-20210522215621798"></p>
+<p><strong>当所要访问的块在高一层存储器中时，如何找到该块?（查找算法）</strong><br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522215621798.png" alt="image-20210522215621798"><br>我们通过一个地址在cache查找数据块，地址组成：标记t、组索引s、偏移量b</p>
 <ul>
 <li>定位到<strong>组</strong></li>
-<li>检查组内任意行是否与<strong>标记</strong>匹配。如果匹配且行有效，则命中</li>
+<li>检查组内任意行是否与<strong>标记</strong>匹配。如果<strong>匹配</strong>且<strong>行</strong>有效（有效位为1），则命中</li>
 <li>以<strong>偏移量</strong>定位数据</li>
 </ul>
 <p><strong>当发生失效时，应替换哪一块？ （替换算法）</strong></p>
 <ul>
-<li>直接映像cache，如果不匹配，那么就将新行替换旧行。</li>
-<li>E-路组相连Cache，如果不匹配，任选中组内最近最少被使用的一行替换</li>
+<li><p><strong>先进先出法(FIFO)：</strong>如果不匹配，新行替换旧行。</p>
+</li>
+<li><p><strong>随机法：</strong>为了均匀使用组中的各块，这种方法随机地选择被替换的块。</p>
+</li>
+<li><p><strong>最近最少使用法LRU (Least Recently Used)：</strong>选择近期最少被访问的块作为被替换的块。但由于实现比较困难，现在实际上实现的LRU都只是选择最久没有被访问过的块作为被替换的块。</p>
+</li>
 </ul>
 <p><strong>当进行写访问时，应进行哪些操作（写策略）</strong></p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20201015223402749.png" alt="img"></p>
@@ -745,14 +745,12 @@
 </ul>
 <p><strong>步长：</strong>按顺序、连续的对 v 的引用，我们称为<strong>步长为1的引用模式。</strong>同理，在一个连续的向量中，每隔k个元素对向量进行访问，称为<strong>步长为k的引用。</strong>一般来说，<strong>随着步长的增加，空间局部性会下降</strong>。</p>
 <p><strong>取指令的局部性</strong>：<strong>指令存在于存储器中</strong>，cpu 要读指令就必须取出指令。所以也能评价对于取指令的局部性。在循环中，循环体内的指令多次被执行，所以有<strong>良好的时间和空间局部性</strong>。</p>
-<p><strong>评价局部性的简单原则</strong>：</p>
+<p><strong>对cache友好</strong>的代码要有良好的<strong>局限性</strong>，我们对代码<strong>评价局部性的简单原则</strong>：</p>
 <ol>
-<li><p><strong>重复引用同一个变量</strong>有良好的时间局部性</p>
-</li>
-<li><p>对于步长为k的引用的程序，<strong>步长越小，空间局部性越好。</strong></p>
-</li>
-<li><p>对于<strong>取指令</strong>来说、<strong>循环</strong>有较好的时间和空间局部性。</p>
-</li>
+<li><strong>重复引用同一个变量</strong>有良好的<strong>时间局部性</strong></li>
+<li>对于步长为k的引用的程序，<strong>步长越小，空间局部性越好。</strong></li>
+<li>对于<strong>取指令</strong>来说、<strong>循环</strong>有较好的时间和空间局部性。</li>
+<li>我们需要优化内循环内部的引用（例如：矩阵分块），大部分计算和存储器的访问都在这里。</li>
 </ol>
 ]]></content>
       <categories>
@@ -912,6 +910,12 @@
 </li>
 <li><p>5月25日</p>
 <blockquote>
+<p>晚九点散步</p>
+</blockquote>
+</li>
+<li><p>5月26日</p>
+<blockquote>
+<p>帮舍友一起跑了</p>
 </blockquote>
 </li>
 </ul>
