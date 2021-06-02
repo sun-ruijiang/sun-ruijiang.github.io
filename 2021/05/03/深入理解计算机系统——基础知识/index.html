@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">8.5k</span>
+            <span class="post-count">9k</span>
         </span>
     </span>
 
@@ -106,7 +106,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">29 min</span>
+            <span class="post-count">31 min</span>
         </span>
     </span>
 </div>
@@ -460,7 +460,7 @@ var _hmt = _hmt || [];
 </li>
 <li>夹在ELF头和节头部表之间的都是<strong>节</strong>。一个典型的ELF可重定位目标文件包含下面几个节：<ul>
 <li><strong>.text：</strong>已编译程序的机器代码。</li>
-<li><strong>.rodata：</strong>只读数据。比如printf语句中的格式串和开关语句的跳转表。</li>
+<li><strong>.rodata：</strong>只读数据。比如printf语句中的格式串和switch语句的跳转表。</li>
 <li><strong>.data：</strong>已初始化的全局C变量。局部C变量在运行时保存在栈中，链接器不关心它。</li>
 <li><strong>.bss：</strong>未初始化的全局C变量。在目标文件中，未初始化变量不需要占据任何实际的磁盘空间，仅仅是为了空间效率的占位符。</li>
 <li><strong>.symtab：</strong>一个符号表，它存放在程序中定义和引用的函数和全局变量的信息。</li>
@@ -471,7 +471,18 @@ var _hmt = _hmt || [];
 <li><strong>.strtab：</strong>一个字符串表，其内容包括.symtab和.debug节中的符号表，以及节头部中的节名字。</li>
 </ul>
 </li>
-<li><strong>节头部表</strong>描述不同节的位置和大小，目标文件中每个节都有一个固定大小的条目（entry）。</li>
+<li><strong>节头部表</strong>描述不同节的位置和大小，目标文件中每个节都有一个固定大小的<strong>条目（entry）</strong>。</li>
+</ul>
+<p>下图是一种<strong>ELF（Executable and Linkable Format，可执行可链接的格式）可执行文件</strong>格式。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210601202041685.png" alt="image-20210601202041685"></p>
+<ul>
+<li><strong>ELF头</strong>，描述文件的总体格式。</li>
+<li><strong>段头部表</strong>，将连续的节映射到存储器段。</li>
+<li><strong>节</strong>部分，与可重定位目标文件相似，不同之处在于<ul>
+<li><strong>.init节</strong>定义了一个函数_init，<strong>程序初始化</strong>会调用它。</li>
+<li>因为已经重定位完成，所以不再需要**.rel前缀的节**了</li>
+</ul>
+</li>
 </ul>
 <h2 id="链接器符号和符号表"><a href="#链接器符号和符号表" class="headerlink" title="链接器符号和符号表"></a>链接器符号和符号表</h2><p><strong>链接器符号是什么？符号表又是什么？</strong></p>
 <ul>
@@ -497,6 +508,32 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>.symtab节的中包含的ELF符号表举例：</strong></p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210529134717830.png" alt="image-20210529134717830"></p>
+<h2 id="重定位"><a href="#重定位" class="headerlink" title="重定位"></a>重定位</h2><p>在符号解析完成之后，进行<strong>重定位，分为两步</strong>：</p>
+<ul>
+<li><strong>重定位节和符号定义</strong>。链接器将所有<strong>相同类型的节</strong>合并成同一类型的新的<strong>聚合节</strong>。然后，链接器将<strong>运行时存储器地址</strong>赋给新的<strong>聚合节</strong>。程序的<strong>每个指令和全局变量</strong>都有<strong>唯一的运行时存储器地址</strong>。</li>
+<li><strong>重定位节中的符号引用</strong>。链接器依赖<strong>重定位条目</strong>修改代码节和数据节中对每个<strong>符号的引用</strong>，使得它们<strong>指向正确的运行时地址</strong>。</li>
+</ul>
+<p><strong>重定位条目的格式：</strong></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210530231721288.png" alt="image-20210530231721288"></p>
+<ul>
+<li><strong>offset</strong>是需要被修改的<strong>引用的节偏移</strong>。</li>
+<li><strong>symbol标识</strong>被修改的<strong>引用应该指向的符号</strong>，就是<strong>符号名</strong>。</li>
+<li><strong>type</strong>告知链接器<strong>如何修改新的引用</strong>，也就是<strong>重定位类型</strong>。</li>
+</ul>
+<p><strong>两种最基本的重定位类型：</strong></p>
+<ul>
+<li><strong>R_386_PC32：</strong>重定位一个使用32位<strong>PC相对地址</strong>的引用。<strong>PC相对地址</strong>就是距离<strong>程序计数器PC</strong>的<strong>当前运行时值的偏移量</strong>，PC值就是<strong>下一条指令的地址</strong>，PC=PC+value。</li>
+<li><strong>R_386_32：</strong>重定位一个使用32位<strong>绝对地址</strong>的引用。</li>
+</ul>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210530233504042.png" alt="image-20210530233504042"></p>
+<ul>
+<li><p>refptr = .text + r.offset，重定位条目r的偏移加上.text节开始的位置，即需要被重定位的32位地址</p>
+</li>
+<li><p><strong>对于R_386_PC32 类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr - refaddr(我认为等于reptr)，所以 *reptr 修改为<strong>引用与修改位置的相对距离</strong>与<strong>现在位置的值</strong>相加。</p>
+</li>
+<li><p><strong>对于R_386_32类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr ，所以 *reptr 修改为<strong>引用的绝对位置</strong>与<strong>现在位置的值</strong>相加。</p>
+</li>
+</ul>
 <h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><p><strong>静态库（.a存档文件集）：</strong> <strong>一组</strong>连接起来的<strong>可重定位目标文件</strong>集合，有一个<strong>头部</strong>用来<strong>描述每个成员目标文件的大小和位置。</strong>允许增量更新</p>
 <p><strong>使用静态库的链接器行为：</strong>通过在一个或多个<strong>存档</strong>中<strong>查找符号</strong>来<strong>解析外部引用</strong>。若一个存档成员文件<strong>解析了引用</strong>，则可将其<strong>连接到可执行文件</strong>。</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210529212040663.png" alt="image-20210529212040663"></p>
@@ -517,7 +554,7 @@ var _hmt = _hmt || [];
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210529223133606.png" alt="image-20210529223133606"></p>
 <ul>
 <li>在静态链接时，没有任何数据和代码被拷贝到可执行文件中。反之，链接器拷贝到一些<strong>重定位信息和符号信息</strong>，它们使得<strong>运行时可以解析对共享库中代码和数据的引用</strong>。</li>
-<li>在动态链接时，动态链接器通过<strong>重定位共享库到存储器段</strong>和<strong>重定位可执行文件所有由存储器定义的符号和引用</strong>，完成链接任务。</li>
+<li>在加载时，执行<strong>动态链接</strong>，根据静态链接得到的信息，比如.interp节中的动态链接器的路径名，重定位共享库的<strong>数据和代码</strong>到<strong>存储器段</strong>和重定位可执行文件中所有由共享库定义的<strong>符号的引用</strong>，完成链接任务。</li>
 </ul>
 <p><strong>使用共享库，运行时的动态链接：</strong>将<strong>动态生成内容</strong>的每个<strong>函数</strong>打包在共享库中。</p>
  

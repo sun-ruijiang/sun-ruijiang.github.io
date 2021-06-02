@@ -121,12 +121,12 @@ var _hmt = _hmt || [];
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="深入理解计算机系统——LAB-3-Bomb-Lab"><a href="#深入理解计算机系统——LAB-3-Bomb-Lab" class="headerlink" title="深入理解计算机系统——LAB-3_Bomb_Lab"></a>深入理解计算机系统——LAB-3_Bomb_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>Bomb Lab</code>对应<code>CS:APP</code>中第三章内容：<strong>程序的机器级表示的<code>lab</code></strong></p>
-<p>程序运行在**<code>linux</code>环境**中。</p>
-<p>程序运行中有6个关卡（6个<code>phase</code>），每个<code>phase</code>需要用户在终端上<strong>输入特定的字符或者数字</strong>才能<strong>通关</strong>，否则会引爆炸弹！</p>
-<p>那么如何才能知道输入什么内容呢？</p>
-<p>这需要你使用<code>gdb</code>工具<strong>反汇编</strong>出汇编代码，结合c语言文件找到<strong>每个关卡的入口函数</strong>。</p>
-<p>然后<strong>分析汇编代码</strong>，找到在每个phase程序段中，引导程序<strong>跳转到<code>explode_bomb</code>程序段</strong>的地方，并分<strong>析其成功跳转的条件</strong>，以此为突破口寻找应该在命令行输入何种字符通关。</p>
+  <h1 id="深入理解计算机系统——LAB-3-Bomb-Lab"><a href="#深入理解计算机系统——LAB-3-Bomb-Lab" class="headerlink" title="深入理解计算机系统——LAB-3_Bomb_Lab"></a>深入理解计算机系统——LAB-3_Bomb_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>二进制炸弹实验。</strong></p>
+<p>二进制炸弹是一个作为<strong>可执行目标代码文件</strong>提供给学生们的程序。</p>
+<p>运行时，它提示用户<strong>输入6个不同的字符串</strong>。</p>
+<p>如果其中的任何一个不正确，炸弹就会“爆炸”，打印一条错误信息，并且在一个分级服务器记录事件日志。</p>
+<p>学生们必须通过对程序<strong>反汇编和逆向工程</strong>来测定应该是哪6个字符串，从而拆除他们各自炸弹的雷管。</p>
+<p>该实验教会学生<strong>理解汇编语言</strong>，并且强制他们学习怎样<strong>使用调试器</strong>。</p>
 <h2 id="实验环境和使用工具"><a href="#实验环境和使用工具" class="headerlink" title="实验环境和使用工具"></a>实验环境和使用工具</h2><ul>
 <li><p>主机为<code>Windows10</code></p>
 </li>

@@ -179,12 +179,12 @@
   <entry>
     <title>深入理解计算机系统——LAB-3_BombLab</title>
     <url>/2021/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/</url>
-    <content><![CDATA[<h1 id="深入理解计算机系统——LAB-3-Bomb-Lab"><a href="#深入理解计算机系统——LAB-3-Bomb-Lab" class="headerlink" title="深入理解计算机系统——LAB-3_Bomb_Lab"></a>深入理解计算机系统——LAB-3_Bomb_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>Bomb Lab</code>对应<code>CS:APP</code>中第三章内容：<strong>程序的机器级表示的<code>lab</code></strong></p>
-<p>程序运行在**<code>linux</code>环境**中。</p>
-<p>程序运行中有6个关卡（6个<code>phase</code>），每个<code>phase</code>需要用户在终端上<strong>输入特定的字符或者数字</strong>才能<strong>通关</strong>，否则会引爆炸弹！</p>
-<p>那么如何才能知道输入什么内容呢？</p>
-<p>这需要你使用<code>gdb</code>工具<strong>反汇编</strong>出汇编代码，结合c语言文件找到<strong>每个关卡的入口函数</strong>。</p>
-<p>然后<strong>分析汇编代码</strong>，找到在每个phase程序段中，引导程序<strong>跳转到<code>explode_bomb</code>程序段</strong>的地方，并分<strong>析其成功跳转的条件</strong>，以此为突破口寻找应该在命令行输入何种字符通关。</p>
+    <content><![CDATA[<h1 id="深入理解计算机系统——LAB-3-Bomb-Lab"><a href="#深入理解计算机系统——LAB-3-Bomb-Lab" class="headerlink" title="深入理解计算机系统——LAB-3_Bomb_Lab"></a>深入理解计算机系统——LAB-3_Bomb_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>二进制炸弹实验。</strong></p>
+<p>二进制炸弹是一个作为<strong>可执行目标代码文件</strong>提供给学生们的程序。</p>
+<p>运行时，它提示用户<strong>输入6个不同的字符串</strong>。</p>
+<p>如果其中的任何一个不正确，炸弹就会“爆炸”，打印一条错误信息，并且在一个分级服务器记录事件日志。</p>
+<p>学生们必须通过对程序<strong>反汇编和逆向工程</strong>来测定应该是哪6个字符串，从而拆除他们各自炸弹的雷管。</p>
+<p>该实验教会学生<strong>理解汇编语言</strong>，并且强制他们学习怎样<strong>使用调试器</strong>。</p>
 <h2 id="实验环境和使用工具"><a href="#实验环境和使用工具" class="headerlink" title="实验环境和使用工具"></a>实验环境和使用工具</h2><ul>
 <li><p>主机为<code>Windows10</code></p>
 </li>
@@ -791,7 +791,7 @@
 </li>
 <li>夹在ELF头和节头部表之间的都是<strong>节</strong>。一个典型的ELF可重定位目标文件包含下面几个节：<ul>
 <li><strong>.text：</strong>已编译程序的机器代码。</li>
-<li><strong>.rodata：</strong>只读数据。比如printf语句中的格式串和开关语句的跳转表。</li>
+<li><strong>.rodata：</strong>只读数据。比如printf语句中的格式串和switch语句的跳转表。</li>
 <li><strong>.data：</strong>已初始化的全局C变量。局部C变量在运行时保存在栈中，链接器不关心它。</li>
 <li><strong>.bss：</strong>未初始化的全局C变量。在目标文件中，未初始化变量不需要占据任何实际的磁盘空间，仅仅是为了空间效率的占位符。</li>
 <li><strong>.symtab：</strong>一个符号表，它存放在程序中定义和引用的函数和全局变量的信息。</li>
@@ -802,7 +802,18 @@
 <li><strong>.strtab：</strong>一个字符串表，其内容包括.symtab和.debug节中的符号表，以及节头部中的节名字。</li>
 </ul>
 </li>
-<li><strong>节头部表</strong>描述不同节的位置和大小，目标文件中每个节都有一个固定大小的条目（entry）。</li>
+<li><strong>节头部表</strong>描述不同节的位置和大小，目标文件中每个节都有一个固定大小的<strong>条目（entry）</strong>。</li>
+</ul>
+<p>下图是一种<strong>ELF（Executable and Linkable Format，可执行可链接的格式）可执行文件</strong>格式。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210601202041685.png" alt="image-20210601202041685"></p>
+<ul>
+<li><strong>ELF头</strong>，描述文件的总体格式。</li>
+<li><strong>段头部表</strong>，将连续的节映射到存储器段。</li>
+<li><strong>节</strong>部分，与可重定位目标文件相似，不同之处在于<ul>
+<li><strong>.init节</strong>定义了一个函数_init，<strong>程序初始化</strong>会调用它。</li>
+<li>因为已经重定位完成，所以不再需要**.rel前缀的节**了</li>
+</ul>
+</li>
 </ul>
 <h2 id="链接器符号和符号表"><a href="#链接器符号和符号表" class="headerlink" title="链接器符号和符号表"></a>链接器符号和符号表</h2><p><strong>链接器符号是什么？符号表又是什么？</strong></p>
 <ul>
@@ -828,6 +839,32 @@
 </ul>
 <p><strong>.symtab节的中包含的ELF符号表举例：</strong></p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210529134717830.png" alt="image-20210529134717830"></p>
+<h2 id="重定位"><a href="#重定位" class="headerlink" title="重定位"></a>重定位</h2><p>在符号解析完成之后，进行<strong>重定位，分为两步</strong>：</p>
+<ul>
+<li><strong>重定位节和符号定义</strong>。链接器将所有<strong>相同类型的节</strong>合并成同一类型的新的<strong>聚合节</strong>。然后，链接器将<strong>运行时存储器地址</strong>赋给新的<strong>聚合节</strong>。程序的<strong>每个指令和全局变量</strong>都有<strong>唯一的运行时存储器地址</strong>。</li>
+<li><strong>重定位节中的符号引用</strong>。链接器依赖<strong>重定位条目</strong>修改代码节和数据节中对每个<strong>符号的引用</strong>，使得它们<strong>指向正确的运行时地址</strong>。</li>
+</ul>
+<p><strong>重定位条目的格式：</strong></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210530231721288.png" alt="image-20210530231721288"></p>
+<ul>
+<li><strong>offset</strong>是需要被修改的<strong>引用的节偏移</strong>。</li>
+<li><strong>symbol标识</strong>被修改的<strong>引用应该指向的符号</strong>，就是<strong>符号名</strong>。</li>
+<li><strong>type</strong>告知链接器<strong>如何修改新的引用</strong>，也就是<strong>重定位类型</strong>。</li>
+</ul>
+<p><strong>两种最基本的重定位类型：</strong></p>
+<ul>
+<li><strong>R_386_PC32：</strong>重定位一个使用32位<strong>PC相对地址</strong>的引用。<strong>PC相对地址</strong>就是距离<strong>程序计数器PC</strong>的<strong>当前运行时值的偏移量</strong>，PC值就是<strong>下一条指令的地址</strong>，PC=PC+value。</li>
+<li><strong>R_386_32：</strong>重定位一个使用32位<strong>绝对地址</strong>的引用。</li>
+</ul>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210530233504042.png" alt="image-20210530233504042"></p>
+<ul>
+<li><p>refptr = .text + r.offset，重定位条目r的偏移加上.text节开始的位置，即需要被重定位的32位地址</p>
+</li>
+<li><p><strong>对于R_386_PC32 类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr - refaddr(我认为等于reptr)，所以 *reptr 修改为<strong>引用与修改位置的相对距离</strong>与<strong>现在位置的值</strong>相加。</p>
+</li>
+<li><p><strong>对于R_386_32类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr ，所以 *reptr 修改为<strong>引用的绝对位置</strong>与<strong>现在位置的值</strong>相加。</p>
+</li>
+</ul>
 <h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><p><strong>静态库（.a存档文件集）：</strong> <strong>一组</strong>连接起来的<strong>可重定位目标文件</strong>集合，有一个<strong>头部</strong>用来<strong>描述每个成员目标文件的大小和位置。</strong>允许增量更新</p>
 <p><strong>使用静态库的链接器行为：</strong>通过在一个或多个<strong>存档</strong>中<strong>查找符号</strong>来<strong>解析外部引用</strong>。若一个存档成员文件<strong>解析了引用</strong>，则可将其<strong>连接到可执行文件</strong>。</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210529212040663.png" alt="image-20210529212040663"></p>
@@ -848,7 +885,7 @@
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210529223133606.png" alt="image-20210529223133606"></p>
 <ul>
 <li>在静态链接时，没有任何数据和代码被拷贝到可执行文件中。反之，链接器拷贝到一些<strong>重定位信息和符号信息</strong>，它们使得<strong>运行时可以解析对共享库中代码和数据的引用</strong>。</li>
-<li>在动态链接时，动态链接器通过<strong>重定位共享库到存储器段</strong>和<strong>重定位可执行文件所有由存储器定义的符号和引用</strong>，完成链接任务。</li>
+<li>在加载时，执行<strong>动态链接</strong>，根据静态链接得到的信息，比如.interp节中的动态链接器的路径名，重定位共享库的<strong>数据和代码</strong>到<strong>存储器段</strong>和重定位可执行文件中所有由共享库定义的<strong>符号的引用</strong>，完成链接任务。</li>
 </ul>
 <p><strong>使用共享库，运行时的动态链接：</strong>将<strong>动态生成内容</strong>的每个<strong>函数</strong>打包在共享库中。</p>
 ]]></content>
@@ -1028,6 +1065,29 @@
 <p>晚九点半跑步，买夜宵。</p>
 </blockquote>
 </li>
+<li><p>5月29日</p>
+<blockquote>
+<p>有跑</p>
+</blockquote>
+</li>
+<li><p>5月30日</p>
+<blockquote>
+<p>跑了</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第四周（5-31——6-6）"><a href="#第四周（5-31——6-6）" class="headerlink" title="第四周（5.31——6.6）"></a>第四周（5.31——6.6）</h2><ul>
+<li><p>5月31日</p>
+<blockquote>
+<p>坐公交车了。。</p>
+</blockquote>
+</li>
+<li><p>6月1日</p>
+<blockquote>
+<p>买茶颜顺便跑了</p>
+<p>发现人果然是活在当下的生物，昨天的我和今天的我完全不是一个人</p>
+</blockquote>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -1113,7 +1173,9 @@
   <entry>
     <title>深入理解计算机系统——LAB-4_BufLab</title>
     <url>/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/</url>
-    <content><![CDATA[<h1 id="深入理解计算机系统——LAB-4-Buf-Lab"><a href="#深入理解计算机系统——LAB-4-Buf-Lab" class="headerlink" title="深入理解计算机系统——LAB-4_Buf_Lab"></a>深入理解计算机系统——LAB-4_Buf_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>这是一次关于内存溢出攻击的实验。</p>
+    <content><![CDATA[<h1 id="深入理解计算机系统——LAB-4-Buf-Lab"><a href="#深入理解计算机系统——LAB-4-Buf-Lab" class="headerlink" title="深入理解计算机系统——LAB-4_Buf_Lab"></a>深入理解计算机系统——LAB-4_Buf_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>缓冲区溢出实验。</strong></p>
+<p>要求学生们通过利用一个<strong>缓冲区溢出漏洞</strong>，来<strong>修改</strong>一个<strong>二进制可执行文件的运行时行为</strong>。</p>
+<p>这个实验教会学生们<strong>栈的原理</strong>，并让他们了解到写那种<strong>易于遭受缓冲区溢出攻击的代码</strong>的<strong>危险性</strong>。</p>
 <h2 id="实验环境和使用工具"><a href="#实验环境和使用工具" class="headerlink" title="实验环境和使用工具"></a>实验环境和使用工具</h2><ul>
 <li><p>主机为<code>Windows10</code></p>
 </li>
@@ -1146,6 +1208,89 @@
 
 <p>请问通过分离编译、链接后，屏幕打印输出是什么（请贴图为证）？</p>
 <p>结合链接一章所学相关知识，请分析解释为什么会有这个结果，可结合 objdump, readelf, nm 等工具辅助分析（请呈现你的分析过程）。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p><strong>输出结果如下</strong></p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602093820902.png" alt="image-20210602093820902"></p>
+<p>我们想知道到底输出了什么，使用objdump查看反汇编代码，查看p和main函数的指令</p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602115531512.png" alt="image-20210602115531512"></p>
+<p>发现最后输出0x804a020地址的内容，于是我们使用gdb调试下断点在*main+24，就是输出之前的位置，然后运行调试</p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602123845576.png" alt="image-20210602123845576"></p>
+<p>我们发现0x804a020地址的内容，在运行之前是0x00000000 0x00000000，运行到断点处是0x00000000 0x3ff00000</p>
+<p>所以最后输出的是0x00000000也就是0</p>
+<p><strong>分析原因：</strong>double类型是8字节的，按照%d输出四个字节的话，不会输出0x3ff0000000000000（double 1.0）而是它的后四个字节0x00000000（int 0）</p>
+<h2 id="题二"><a href="#题二" class="headerlink" title="题二"></a>题二</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>现有两段代码（分别是两个.c文件），如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> d = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> x = <span class="number">200</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	p( );</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;d = % d, x = % d\n&quot;</span>, d, x);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//p.c</span></span><br><span class="line"><span class="keyword">double</span> d;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">( )</span> </span>&#123;</span><br><span class="line">	d = <span class="number">1.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>请问通过分离编译、链接后，屏幕打印输出是什么（请贴图为证）？</p>
+<p>结合链接一章所学相关知识，请分析解释为什么会有这个结果，可结合 objdump, readelf, nm 等工具辅助分析（请呈现你的分析过程）。</p>
+<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>输出结果如下<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602130523997.png" alt="image-20210602130523997"></p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602130414470.png" alt="image-20210602130414470"></p>
+<p>分析原因：从汇编代码中我们可以知道，函数p还是赋给d一个0x3ff0000000000000（double 1.0），调试验证确实是double 1.0，然后先输出0x804a014地址的值0x00000000（int 0），然后输出0x804a018地址的值0x3ff00000（int 1072693248）<br>![image-20210602134224920]image-20210602134224920.png)</p>
+<h2 id="题三：P476-家庭作业7-12"><a href="#题三：P476-家庭作业7-12" class="headerlink" title="题三：P476 家庭作业7.12"></a>题三：P476 家庭作业7.12</h2><table>
+<thead>
+<tr>
+<th align="center">图7-10中的行号</th>
+<th align="center">地址</th>
+<th align="center">值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">15（bufp0）</td>
+<td align="center">0x080483cb</td>
+<td align="center">0x0804945c</td>
+</tr>
+<tr>
+<td align="center">16（buf[1]）</td>
+<td align="center">0x080483d0</td>
+<td align="center">0x08049458</td>
+</tr>
+<tr>
+<td align="center">18（bufp1）</td>
+<td align="center">0x080483d8</td>
+<td align="center">0x08049548</td>
+</tr>
+<tr>
+<td align="center">18（buf[1]）</td>
+<td align="center">0x080483dc</td>
+<td align="center">0x08049458</td>
+</tr>
+<tr>
+<td align="center">23（bufp1）</td>
+<td align="center">0x080483e7</td>
+<td align="center">0x08049548</td>
+</tr>
+</tbody></table>
+<h2 id="题四：P478-家庭作业7-14"><a href="#题四：P478-家庭作业7-14" class="headerlink" title="题四：P478 家庭作业7.14"></a>题四：P478 家庭作业7.14</h2><h3 id="A、-text节重定位修改的指令"><a href="#A、-text节重定位修改的指令" class="headerlink" title="A、.text节重定位修改的指令"></a>A、.text节重定位修改的指令</h3><p>.text存放的是已编译程序的机器代码</p>
+<p>第7,10,12,13,15行的指令，因为不是32位的地址，不需要重定位。</p>
+<table>
+<thead>
+<tr>
+<th align="center">节偏移</th>
+<th align="center">重定位类型</th>
+<th align="center">符号名字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0x11</td>
+<td align="center">R_386_32</td>
+<td align="center">.rodata</td>
+</tr>
+</tbody></table>
+<h3 id="B、-rodata节修改的数据"><a href="#B、-rodata节修改的数据" class="headerlink" title="B、.rodata节修改的数据"></a>B、.rodata节修改的数据</h3><p>.rodata在这里存放的是switch语句的跳转表。<br>| 节偏移 | 重定位类型 | 符号名字 |<br>| :—-: | :——–: | :——: |<br>|  0x0   |  R_386_32  |  relo3   |<br>|  0x4   |  R_386_32  |  relo3   |<br>|  0x8   |  R_386_32  |  relo3   |<br>|  0xc   |  R_386_32  |  relo3   |<br>|  0x10  |  R_386_32  |  relo3   |<br>|  0x14  |  R_386_32  |  relo3   |</p>
+<h2 id="题五：P479-家庭作业7-15"><a href="#题五：P479-家庭作业7-15" class="headerlink" title="题五：P479 家庭作业7.15"></a>题五：P479 家庭作业7.15</h2><h3 id="A、libc-a和libm-a的版本中包含多少目标文件？"><a href="#A、libc-a和libm-a的版本中包含多少目标文件？" class="headerlink" title="A、libc.a和libm.a的版本中包含多少目标文件？"></a>A、libc.a和libm.a的版本中包含多少目标文件？</h3><p>在Ubuntu12.04.5系统下进行</p>
+<p>先使用locate命令寻找.a文件</p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602083937856.png" alt="image-20210602083937856"></p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602084001274.png" alt="image-20210602084001274"></p>
+<p>然后使用nm命令查看文件，发现：</p>
+<ul>
+<li>libc.a有101个目标文件</li>
+<li>libm.a有150个目标文件</li>
+</ul>
+<h3 id="B、gcc-O2产生的可执行代码和gcc-O2-g产生的不同？"><a href="#B、gcc-O2产生的可执行代码和gcc-O2-g产生的不同？" class="headerlink" title="B、gcc -O2产生的可执行代码和gcc -O2 -g产生的不同？"></a>B、gcc -O2产生的可执行代码和gcc -O2 -g产生的不同？</h3><p>-g选项生成的可执行目标文件多两个节</p>
+<p><strong>.debug：</strong>一个调试符号表。包括局部变量、全局变量以及原始的C源文件。</p>
+<p><strong>.line：</strong>原始C源程序中的行号和.text节中机器指令之间的映射。</p>
+<h3 id="C、GCC驱动程序使用的是什么共享库？"><a href="#C、GCC驱动程序使用的是什么共享库？" class="headerlink" title="C、GCC驱动程序使用的是什么共享库？"></a>C、GCC驱动程序使用的是什么共享库？</h3><p><strong>libc.so共享库</strong></p>
 ]]></content>
       <categories>
         <category>CS:APP</category>
