@@ -1224,8 +1224,22 @@
 </li>
 <li><p><code>makecookie</code>：根据userid（用户id）生成一个“cookie”</p>
 <ul>
-<li><p>````c<br> unix&gt; ./makecookie bovik<br> 0x1005b2b7</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line">  * cookie是由8个十六进制数字组成的字符串，不出意外与userid一一对应</span><br><span class="line"></span><br><span class="line">  * 在五次缓冲区攻击中的四次攻击中，我们的目标是将cookie放在他一般不该出现的地方。</span><br><span class="line"></span><br><span class="line">* &#96;hex2raw&#96;：一个帮助在字符串格式之间进行转换的程序</span><br><span class="line"></span><br><span class="line">  * 输入两个一组的16进制数字以空格或者换行符分隔，也就是16进制格式的exploit string，转换为ASCII码格式字符串。支持c语言风格的注释</span><br><span class="line"></span><br><span class="line">  * 你能通过设置一系列管道去通过&#96;hex2raw&#96;传递字符串：</span><br><span class="line"></span><br><span class="line">    &#96;&#96;&#96;&#96;c</span><br><span class="line">    unix&gt; cat exploit.txt | .&#x2F;hex2raw | .&#x2F;bufbomb -u bovik</span><br></pre></td></tr></table></figure></li>
+<li><p>用法示例：</p>
+ <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; ./makecookie bovik</span><br><span class="line"><span class="number">0x1005b2b7</span></span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>cookie是由8个十六进制数字组成的字符串，不出意外与userid一一对应</p>
+</li>
+<li><p>在五次缓冲区攻击中的四次攻击中，我们的目标是将cookie放在他一般不该出现的地方。</p>
+</li>
+</ul>
+</li>
+<li><p><code>hex2raw</code>：一个帮助在字符串格式之间进行转换的程序</p>
+<ul>
+<li><p>输入两个一组的16进制数字以空格或者换行符分隔，也就是16进制格式的exploit string，转换为ASCII码格式字符串。支持c语言风格的注释</p>
+</li>
+<li><p>你能通过设置一系列管道去通过<code>hex2raw</code>传递字符串：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; cat exploit.txt | ./hex2raw | ./bufbomb -u bovik</span><br></pre></td></tr></table></figure></li>
 <li><p>你能存储原始字符串在一个文件，然后通过使用I/O重定向去提交给<code>bufbomb</code>：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; ./hex2raw &lt; exploit.txt &gt; exploit-raw.txt</span><br><span class="line">unix&gt; ./bufbomb -u bovik &lt; exploit-raw.txt</span><br></pre></td></tr></table></figure>
 
