@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">9k</span>
+            <span class="post-count">9.1k</span>
         </span>
     </span>
 
@@ -529,9 +529,9 @@ var _hmt = _hmt || [];
 <ul>
 <li><p>refptr = .text + r.offset，重定位条目r的偏移加上.text节开始的位置，即需要被重定位的32位地址</p>
 </li>
-<li><p><strong>对于R_386_PC32 类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr - refaddr(我认为等于reptr)，所以 *reptr 修改为<strong>引用与修改位置的相对距离</strong>与<strong>现在位置的值</strong>相加。</p>
+<li><p><strong>对于R_386_PC32 类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr - refaddr(我认为等于reptr)，所以 *reptr 修改为<strong>重定位条目间隔位置与修改位置的相对距离</strong>与<strong>现在位置的值</strong>相加，也就是<strong>4字节地址末尾与重定位条目符号地址的相对距离</strong>。</p>
 </li>
-<li><p><strong>对于R_386_32类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr ，所以 *reptr 修改为<strong>引用的绝对位置</strong>与<strong>现在位置的值</strong>相加。</p>
+<li><p><strong>对于R_386_32类型</strong>，将这32位的值* refptr修改为ADDR(r.symbol)+ *reptr ，所以 *reptr 修改为<strong>引用的绝对位置</strong>与<strong>现在可重定位条目间隔确定的位置的值</strong>相加。</p>
 </li>
 </ul>
 <h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><p><strong>静态库（.a存档文件集）：</strong> <strong>一组</strong>连接起来的<strong>可重定位目标文件</strong>集合，有一个<strong>头部</strong>用来<strong>描述每个成员目标文件的大小和位置。</strong>允许增量更新</p>
