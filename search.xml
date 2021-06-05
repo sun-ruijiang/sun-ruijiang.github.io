@@ -1369,14 +1369,26 @@
 <li>诀窍是利用nop指令。它用一个字节(代码0x90)编码。在CS:APP2e教材的第262页上阅读关于“nop sleds”的内容可能会有所帮助</li>
 </ul>
 <h4 id="题解：-4"><a href="#题解：-4" class="headerlink" title="题解："></a>题解：</h4><ul>
-<li>查看<code>getbufn</code>函数的汇编代码，缓冲区首地址为<code>ebp-0x208</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200855918.png" alt="image-20210604200855918"></li>
-<li>查看<code>testn</code>将<code>eax</code>返回值赋给<code>val</code>的指令地址为<code>0x8048ce2</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200930760.png" alt="image-20210604200930760"></li>
-<li>我们这一题的思路是：因为这一等级缓冲区首地址会变化，所以我们不能直接GDB调试去得到一个确切的起始地址，我们需要用到nop指令，将有效机器指令尽可能往较大的地址处放，前面填充nop指令，这样跳转到哪里我们都能成功执行我们的恶意代码。</li>
-<li>编写恶意代码实现恢复ebp、cookie作为返回值、下一条指令地址压入栈中、返回地址出栈。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212313389.png" alt="image-20210604212313389"></li>
-<li>gcc和objdump得到代码的字节序列。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212418838.png" alt="image-20210604212418838"></li>
-<li>gcc得到大概的几个首地址，这里取的是最大的<code>0x55682e48</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212514423.png" alt="image-20210604212514423"></li>
-<li>构造exploit string<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212346929.png" alt="image-20210604212346929"></li>
-<li>验证，成功，实验结束。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212437957.png" alt="image-20210604212437957"></li>
+<li><p>查看<code>getbufn</code>函数的汇编代码，缓冲区首地址为<code>ebp-0x208</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200855918.png" alt="image-20210604200855918"></p>
+</li>
+<li><p>查看<code>testn</code>将<code>eax</code>返回值赋给<code>val</code>的指令地址为<code>0x8048ce2</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200930760.png" alt="image-20210604200930760"></p>
+</li>
+<li><p>我们这一题的思路是：因为这一等级缓冲区首地址会变化，所以我们不能直接GDB调试去得到一个确切的起始地址，我们需要用到nop指令，将有效机器指令尽可能往较大的地址处放，前面填充nop指令，这样跳转到哪里我们都能成功执行我们的恶意代码。</p>
+</li>
+<li><p>查看<code>testn</code><br><code>mov %esp,%ebp</code> 此时esp和ebp相等</p>
+<p><code>push %ebx</code> 此时ebp=esp+0x4</p>
+<p><code>sub $0x24,%esp</code> 这个时候执行完后，ebp=esp+0x28，这就是esp和ebp每次的变化关系，通过esp来恢复我们的每次的ebp<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604235350148.png" alt="image-20210604235350148"></p>
+</li>
+<li><p>编写恶意代码实现恢复ebp、cookie作为返回值、下一条指令地址压入栈中、返回地址出栈。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212313389.png" alt="image-20210604212313389"></p>
+</li>
+<li><p>gcc和objdump得到代码的字节序列。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212418838.png" alt="image-20210604212418838"></p>
+</li>
+<li><p>gcc得到大概的几个首地址，这里取的是最大的<code>0x55682e48</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212514423.png" alt="image-20210604212514423"></p>
+</li>
+<li><p>构造exploit string<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212346929.png" alt="image-20210604212346929"></p>
+</li>
+<li><p>验证，成功，实验结束。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212437957.png" alt="image-20210604212437957"></p>
+</li>
 </ul>
 <h2 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h2><p>这次实验时间很紧张，主要是我的原因，到现在终于圆满完成，还是值得庆祝的。</p>
 <p>花费时间最长的部分其实是英文文档的阅读，读起来太过吃力。</p>
