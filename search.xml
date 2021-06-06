@@ -888,7 +888,7 @@
 <li>在加载时，执行<strong>动态链接</strong>，根据静态链接得到的信息，比如.interp节中的动态链接器的路径名，重定位共享库的<strong>数据和代码</strong>到<strong>存储器段</strong>和重定位可执行文件中所有由共享库定义的<strong>符号的引用</strong>，完成链接任务。</li>
 </ul>
 <p><strong>使用共享库，运行时的动态链接：</strong>将<strong>动态生成内容</strong>的每个<strong>函数</strong>打包在共享库中。</p>
-]]></content>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2>]]></content>
       <categories>
         <category>CS:APP</category>
       </categories>
@@ -941,169 +941,6 @@
       </categories>
       <tags>
         <tag>课程作业</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>健康打卡</title>
-    <url>/2021/05/10/%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/</url>
-    <content><![CDATA[<h1 id="健康打卡"><a href="#健康打卡" class="headerlink" title="健康打卡"></a>健康打卡</h1><blockquote>
-<p>截止目前，乐跑才3次。。。明天乐跑要跑起来了！</p>
-<p>立个flag！每天跑1.6公里，走也得走完！每周一结！</p>
-</blockquote>
-<h2 id="第一周（5-10——5-16）"><a href="#第一周（5-10——5-16）" class="headerlink" title="第一周（5.10——5.16）"></a>第一周（5.10——5.16）</h2><ul>
-<li><p>5月10日</p>
-<blockquote>
-<p>晚九点夜跑，2.5公里配速接近7分，最后冲刺一圈，差点死在荫马塘。</p>
-<p>感受：</p>
-<blockquote>
-<p>明天要一定穿短裤跑步，汗流浃背是真的难受。</p>
-<p>茶颜晚十点的人是真的少，很好。</p>
-<p>今天跑完有点头晕，希望明天能好一点。</p>
-</blockquote>
-</blockquote>
-</li>
-<li><p>5月11日</p>
-<blockquote>
-<p>晚九点半夜跑，2.1公里配速7</p>
-<p>感受：下了30秒的雨也没有阻止我，获得成就：风雨无阻！</p>
-</blockquote>
-</li>
-<li><p>5月12日</p>
-<blockquote>
-<p>晚九点夜跑，2.3公里配速6</p>
-<p>感受：有点心急，早早回来了，坚持！（没买到茶颜）</p>
-</blockquote>
-</li>
-<li><p>5月13日</p>
-<blockquote>
-<p>没跑，乐公交了，配速3是真的快。</p>
-</blockquote>
-</li>
-<li><p>5月14日</p>
-<blockquote>
-<p>打完王者晚八点半夜跑。1,6公里配速5，没去荫马塘，就在园区</p>
-<p>感受：王者是真的累，感觉比跑步要累。。。</p>
-<p>绕我们宿舍楼三圈就是1.6公里，没有用的冷知识get！</p>
-</blockquote>
-</li>
-<li><p>5月15日</p>
-<blockquote>
-<p>晚九点夜跑，应该说散步，1.6公里，配速6，感觉跟散步没区别。。。</p>
-<p>今天终于上了王者，算是没有遗憾了</p>
-</blockquote>
-</li>
-<li><p>5月16日</p>
-<blockquote>
-<p>晚九点夜跑，散步，买夜宵。</p>
-<p>我这个人是真的恶心:)</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="第二周（5-17——5-23）"><a href="#第二周（5-17——5-23）" class="headerlink" title="第二周（5.17——5.23）"></a>第二周（5.17——5.23）</h2><ul>
-<li><p>5月17日</p>
-<blockquote>
-<p>晚九点半，散步</p>
-</blockquote>
-</li>
-<li><p>5月18日</p>
-<blockquote>
-<p>晚九点，散步</p>
-</blockquote>
-</li>
-<li><p>5月19日</p>
-<blockquote>
-<p>晚九点，散步</p>
-</blockquote>
-</li>
-<li><p>5月20日</p>
-<blockquote>
-<p>晚十点小班做完，极限运动，勉强完成。</p>
-<p>不限制速度的跑步不叫跑步！</p>
-</blockquote>
-</li>
-<li><p>5月21日</p>
-<blockquote>
-<p> 雨很大，没跑完，累成狗了配速也不够。</p>
-<p>大半夜在楼道跑来跑去的我像个sb。</p>
-</blockquote>
-</li>
-<li><p>5月22日</p>
-<blockquote>
-<p>晚上跑步</p>
-</blockquote>
-</li>
-<li><p>5月23日</p>
-<blockquote>
-<p>今天好累，休息一天</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="第三周（5-24——5-30）"><a href="#第三周（5-24——5-30）" class="headerlink" title="第三周（5.24——5.30）"></a>第三周（5.24——5.30）</h2><ul>
-<li><p>5月24日</p>
-<blockquote>
-<p>下雨天跑回来路程不够，在天台散步了一会。</p>
-</blockquote>
-</li>
-<li><p>5月25日</p>
-<blockquote>
-<p>晚九点散步</p>
-</blockquote>
-</li>
-<li><p>5月26日</p>
-<blockquote>
-<p>晚10点帮舍友一起跑了</p>
-</blockquote>
-</li>
-<li><p>5月27日</p>
-<blockquote>
-<p>今天体测，1000米耗时3min56s（老师放水），顺便刷了乐跑。</p>
-<p>头晕脚疼，但是恢复很快，虽然还是很弱，但也算是这几天有所提升吧。</p>
-</blockquote>
-</li>
-<li><p>5月28日</p>
-<blockquote>
-<p>晚九点半跑步，买夜宵。</p>
-</blockquote>
-</li>
-<li><p>5月29日</p>
-<blockquote>
-<p>有跑</p>
-</blockquote>
-</li>
-<li><p>5月30日</p>
-<blockquote>
-<p>跑了</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="第四周（5-31——6-6）"><a href="#第四周（5-31——6-6）" class="headerlink" title="第四周（5.31——6.6）"></a>第四周（5.31——6.6）</h2><ul>
-<li><p>5月31日</p>
-<blockquote>
-<p>坐公交车了。。</p>
-</blockquote>
-</li>
-<li><p>6月1日</p>
-<blockquote>
-<p>买茶颜顺便跑了</p>
-<p>发现人果然是活在当下的生物，昨天的我和今天的我完全不是一个人</p>
-</blockquote>
-</li>
-<li><p>6月2日</p>
-<blockquote>
-<p>电动车真不错</p>
-</blockquote>
-</li>
-<li><p>6月3日</p>
-<blockquote>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-      <tags>
-        <tag>打卡</tag>
       </tags>
   </entry>
   <entry>
@@ -1375,9 +1212,10 @@
 </li>
 <li><p>我们这一题的思路是：因为这一等级缓冲区首地址会变化，所以我们不能直接GDB调试去得到一个确切的起始地址，我们需要用到nop指令，将有效机器指令尽可能往较大的地址处放，前面填充nop指令，这样跳转到哪里我们都能成功执行我们的恶意代码。</p>
 </li>
-<li><p>查看<code>testn</code><br><code>mov %esp,%ebp</code> 此时esp和ebp相等</p>
-<p><code>push %ebx</code> 此时ebp=esp+0x4</p>
-<p><code>sub $0x24,%esp</code> 这个时候执行完后，ebp=esp+0x28，这就是esp和ebp每次的变化关系，通过esp来恢复我们的每次的ebp<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604235350148.png" alt="image-20210604235350148"></p>
+<li><p>因为要恢复ebp存储<code>testn</code>的帧指针，查看<code>testn</code>的汇编代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov %esp,%ebp</span><br><span class="line"># 此时esp和ebp相等</span><br><span class="line">push %ebx</span><br><span class="line"># 此时ebp&#x3D;esp+0x4</span><br><span class="line">sub $0x24,%esp</span><br><span class="line"># 这个时候执行完后，ebp&#x3D;esp+0x28，这就是esp和ebp每次的变化关系，通过esp来恢复我们的每次的ebp</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604235350148.png" alt="image-20210604235350148"></p>
 </li>
 <li><p>编写恶意代码实现恢复ebp、cookie作为返回值、下一条指令地址压入栈中、返回地址出栈。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212313389.png" alt="image-20210604212313389"></p>
 </li>
@@ -1542,6 +1380,200 @@
       </categories>
       <tags>
         <tag>课程作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《谈论爱情时我们都在说些什么》</title>
+    <url>/2021/06/06/%E3%80%8A%E8%B0%88%E8%AE%BA%E7%88%B1%E6%83%85%E6%97%B6%E6%88%91%E4%BB%AC%E9%83%BD%E5%9C%A8%E8%AF%B4%E4%BA%9B%E4%BB%80%E4%B9%88%E3%80%8B/</url>
+    <content><![CDATA[<h1 id="《谈论爱情时我们都在说些什么》"><a href="#《谈论爱情时我们都在说些什么》" class="headerlink" title="《谈论爱情时我们都在说些什么》"></a>《谈论爱情时我们都在说些什么》</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>雷蒙德·卡佛是美国20世纪 下半叶最具影响力的小说家之 一。《伦敦时报》评论他为“美国契 诃夫”。文学界普遍认为他的作品 确标志着美国“一种新的语调和 文学质地”的出现。他的短篇小说 集《谈论爱情时我们说些什么》知 名度颇高，其中收录的同名小说 更是脍炙人口。 《谈论爱情时我们说些什么》 围绕着两对情侣关于爱情的讨论 展开。四位主人公（叙述者尼克与 妻子劳拉、心脏科医生梅尔与妻 子特芮）喝着酒小聚，话题由特芮 提到向自己施虐却又因自己离开 而自杀的前夫从而关及爱情。她 的现任丈夫完全无法同意把充满 伤害和暴力的行为称为爱情，所 以他迫不及待地想解释清楚什么 是爱情，进而在他的引领下，四人 展开了一场关于爱情本质的讨 论。但直至夜幕降临，四人也没能 讨论出爱情的真谛。</p>
+]]></content>
+      <categories>
+        <category>Others</category>
+      </categories>
+      <tags>
+        <tag>literature</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>乐跑打卡</title>
+    <url>/2021/05/10/%E4%B9%90%E8%B7%91%E6%89%93%E5%8D%A1/</url>
+    <content><![CDATA[<h1 id="乐跑打卡"><a href="#乐跑打卡" class="headerlink" title="乐跑打卡"></a>乐跑打卡</h1><blockquote>
+<p>截止目前，乐跑才3次。。。明天乐跑要跑起来了！</p>
+<p>立个flag！每天跑1.6公里，走也得走完！每周一结！</p>
+</blockquote>
+<h2 id="第一周（5-10——5-16）"><a href="#第一周（5-10——5-16）" class="headerlink" title="第一周（5.10——5.16）"></a>第一周（5.10——5.16）</h2><ul>
+<li><p>5月10日</p>
+<blockquote>
+<p>晚九点夜跑，2.5公里配速接近7分，最后冲刺一圈，差点死在荫马塘。</p>
+<p>感受：</p>
+<blockquote>
+<p>明天要一定穿短裤跑步，汗流浃背是真的难受。</p>
+<p>茶颜晚十点的人是真的少，很好。</p>
+<p>今天跑完有点头晕，希望明天能好一点。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>5月11日</p>
+<blockquote>
+<p>晚九点半夜跑，2.1公里配速7</p>
+<p>感受：下了30秒的雨也没有阻止我，获得成就：风雨无阻！</p>
+</blockquote>
+</li>
+<li><p>5月12日</p>
+<blockquote>
+<p>晚九点夜跑，2.3公里配速6</p>
+<p>感受：有点心急，早早回来了，坚持！（没买到茶颜）</p>
+</blockquote>
+</li>
+<li><p>5月13日</p>
+<blockquote>
+<p>没跑，乐公交了，配速3是真的快。</p>
+</blockquote>
+</li>
+<li><p>5月14日</p>
+<blockquote>
+<p>打完王者晚八点半夜跑。1,6公里配速5，没去荫马塘，就在园区</p>
+<p>感受：王者是真的累，感觉比跑步要累。。。</p>
+<p>绕我们宿舍楼三圈就是1.6公里，没有用的冷知识get！</p>
+</blockquote>
+</li>
+<li><p>5月15日</p>
+<blockquote>
+<p>晚九点夜跑，应该说散步，1.6公里，配速6，感觉跟散步没区别。。。</p>
+<p>今天终于上了王者，算是没有遗憾了</p>
+</blockquote>
+</li>
+<li><p>5月16日</p>
+<blockquote>
+<p>晚九点夜跑，散步，买夜宵。</p>
+<p>我这个人是真的恶心:)</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第二周（5-17——5-23）"><a href="#第二周（5-17——5-23）" class="headerlink" title="第二周（5.17——5.23）"></a>第二周（5.17——5.23）</h2><ul>
+<li><p>5月17日</p>
+<blockquote>
+<p>晚九点半，散步</p>
+</blockquote>
+</li>
+<li><p>5月18日</p>
+<blockquote>
+<p>晚九点，散步</p>
+</blockquote>
+</li>
+<li><p>5月19日</p>
+<blockquote>
+<p>晚九点，散步</p>
+</blockquote>
+</li>
+<li><p>5月20日</p>
+<blockquote>
+<p>晚十点小班做完，极限运动，勉强完成。</p>
+<p>不限制速度的跑步不叫跑步！</p>
+</blockquote>
+</li>
+<li><p>5月21日</p>
+<blockquote>
+<p> 雨很大，没跑完，累成狗了配速也不够。</p>
+<p>大半夜在楼道跑来跑去的我像个sb。</p>
+</blockquote>
+</li>
+<li><p>5月22日</p>
+<blockquote>
+<p>晚上跑步</p>
+</blockquote>
+</li>
+<li><p>5月23日</p>
+<blockquote>
+<p>今天好累，休息一天</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第三周（5-24——5-30）"><a href="#第三周（5-24——5-30）" class="headerlink" title="第三周（5.24——5.30）"></a>第三周（5.24——5.30）</h2><ul>
+<li><p>5月24日</p>
+<blockquote>
+<p>下雨天跑回来路程不够，在天台散步了一会。</p>
+</blockquote>
+</li>
+<li><p>5月25日</p>
+<blockquote>
+<p>晚九点散步</p>
+</blockquote>
+</li>
+<li><p>5月26日</p>
+<blockquote>
+<p>晚10点帮舍友一起跑了</p>
+</blockquote>
+</li>
+<li><p>5月27日</p>
+<blockquote>
+<p>今天体测，1000米耗时3min56s（老师放水），顺便刷了乐跑。</p>
+<p>头晕脚疼，但是恢复很快，虽然还是很弱，但也算是这几天有所提升吧。</p>
+</blockquote>
+</li>
+<li><p>5月28日</p>
+<blockquote>
+<p>晚九点半跑步，买夜宵。</p>
+</blockquote>
+</li>
+<li><p>5月29日</p>
+<blockquote>
+<p>有跑</p>
+</blockquote>
+</li>
+<li><p>5月30日</p>
+<blockquote>
+<p>跑了</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第四周（5-31——6-6）"><a href="#第四周（5-31——6-6）" class="headerlink" title="第四周（5.31——6.6）"></a>第四周（5.31——6.6）</h2><ul>
+<li><p>5月31日</p>
+<blockquote>
+<p>坐公交车了。。</p>
+</blockquote>
+</li>
+<li><p>6月1日</p>
+<blockquote>
+<p>买茶颜顺便跑了</p>
+<p>发现人果然是活在当下的生物，昨天的我和今天的我完全不是一个人</p>
+</blockquote>
+</li>
+<li><p>6月2日</p>
+<blockquote>
+<p>电动车真不错</p>
+</blockquote>
+</li>
+<li><p>6月3日</p>
+<blockquote>
+<p>跑了</p>
+</blockquote>
+</li>
+<li><p>6月4日</p>
+<blockquote>
+<p>今天跑到那个商场，里面停了很多跑车，挺热闹的。</p>
+</blockquote>
+</li>
+<li><p>6月5日</p>
+<blockquote>
+<p>院楼回来公交车</p>
+<p>妈妈今天打电话说：“看到高三同学放学，总觉得你也在里面。”</p>
+<p>我有点想哭，时间过得真快啊，两年了。。</p>
+</blockquote>
+</li>
+<li><p>6月6日</p>
+<blockquote>
+<p>打疫苗时坐公交车刷掉</p>
+<p>哆啦A梦！</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>打卡</tag>
       </tags>
   </entry>
 </search>
