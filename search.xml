@@ -532,6 +532,22 @@
 <ul>
 <li>下半部分不记录了，用不到</li>
 </ul>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>一个浮点数由三部分组成：</p>
+<ol>
+<li>符号。1为负，0为正，数值0特殊处理</li>
+<li>阶码，移码（将补码的符号位取反减一）表示，所以我们将阶码加1取反符号位得到的就是指数。</li>
+<li>尾数，顺序排列尾数。如1000 0000表示的是0.1</li>
+</ol>
+<p>规格化数，1.f * 2^E，E在区间（-126，127）<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213403180.png" alt="image-20210615213403180"></p>
+<p>非规格化数，0.f * 2^(-126)<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213416002.png" alt="image-20210615213416002"></p>
+<p>特殊值</p>
+<ol>
+<li><p>NAN，不是一个数<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213454261.png" alt="image-20210615213454261"></p>
+</li>
+<li><p>无穷大</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213441105.png" alt="image-20210615213441105"></p>
+</li>
+</ol>
 <h2 id="一些容易忽略的指令"><a href="#一些容易忽略的指令" class="headerlink" title="一些容易忽略的指令"></a>一些容易忽略的指令</h2><ul>
 <li><p><code>call</code>指令：过程调用，将返回地址入栈，并跳转到被调用过程的起始处。返回地址就是紧跟在<code>call</code>后的那条指令的地址。</p>
 </li>
@@ -605,7 +621,17 @@
 </tbody></table>
 <h2 id="优化程序性能"><a href="#优化程序性能" class="headerlink" title="优化程序性能"></a>优化程序性能</h2><p><strong>程序优化的第一步</strong>就是<strong>消除不必要的内容</strong>，让代码尽可能有效地执行它期望的工作。<strong>这包括消除不必要的函数调用、条件测试和存储器引用</strong>。使用<strong>图形数据流表示法</strong>，可以使处理器对指令的执行形象化，我们还可以利用它预测程序的性能。、</p>
 <p><strong>程序优化的第二步</strong>，<strong>利用处理器提供的指令级并行能力，同时执行多条指令</strong>。</p>
-<p><strong>Amdahl定律</strong>，可以量化对系统某个部分进行优化所带来的整体效果。<strong>主要思想</strong>是当我们加快系统一个部分的速度时，对系统整体性能的影响依赖于<strong>这个部分有多重要</strong>和<strong>速度提高了多少</strong>。所以<strong>要想大幅度提高系统的速度，我们必须按提高系统很大一部分的速度。</strong></p>
+<p><strong>Amdahl定律</strong>，可以量化对系统某个部分进行优化所带来的整体效果。<strong>主要思想</strong>是当我们加快系统一个部分的速度时，对系统整体性能的影响依赖于<strong>这个部分有多重要</strong>和<strong>速度提高了多少</strong>。所以<strong>要想大幅度提高系统的速度，我们必须按提高系统很大一部分的速度。</strong><br>$$<br>S=\frac{1}{(1-a+\frac{a}{n})}<br>$$<br>说明：</p>
+<ol>
+<li><p>S为全局加速倍数（原来总时间/加速后总时间）</p>
+</li>
+<li><p>a为并行计算所占比例（可以并行计算代码量/总代码量），就是可以优化的部分。</p>
+</li>
+<li><p>n为并行节点处理个数，可以理解为CPU的核心数，就是可以优化的倍数。</p>
+</li>
+<li><p>所以这个公式其实就是，将可以优化的部分优化n倍。</p>
+</li>
+</ol>
 <p><strong>关键路径</strong>是在循环的反腐执行过程中形成的<strong>数据相关链</strong>，常常通过确认关键路径来决定<strong>执行一个循环所需要的时间</strong>。</p>
 <p><strong>存储器别名使用</strong>是指两个指针可能同时指向同一个存储器的位置的情况。在只考虑执行安全的优化中，编译器必须假设不同的指针可能会指向存储器的同一个位置，这造成了<strong>第一个妨碍优化的因素</strong>，这也是可能严重限制编译器产生优化代码机会的程序的一个方面。如果编译器不能确定指针的指向，它就会假设所有的情况都有可能，所以我们需要做的就是在<strong>编写程序的时候明确指针的指向</strong>。</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">*q=y; *p=x;</span><br><span class="line">t1=*q;      <span class="comment">//t1= x or y?</span></span><br></pre></td></tr></table></figure>
@@ -691,6 +717,7 @@
 <p>DRAM动态随机访问存储器，一个电容和一个访问晶体管组成，便宜速度慢。</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522205457630.png" alt="image-20210522205457630"></p>
 <h2 id="高速缓存cache"><a href="#高速缓存cache" class="headerlink" title="高速缓存cache"></a>高速缓存cache</h2><p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214639517.png" alt="image-20210522214639517"></p>
+<p>其中行就是cache块</p>
 <p>CPU向cache<strong>请求数据块</strong>，会发生两种情况：</p>
 <ul>
 <li><p><strong>命中：</strong>我们需要的<strong>数据块存在于高速缓存中</strong>，就命中了。</p>
@@ -717,7 +744,7 @@
 <p><strong>当把一个数据块调入高一层(靠近CPU)存储器时，可以放在哪些位置上？（映像规则）</strong>，一共有三种：</p>
 <ul>
 <li><strong>全相联映像</strong>：主存中的任一块可以被放置到Cache中的<strong>任意一个位置</strong>。空间利用率最高，冲突概率最低，实现最复杂。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214311584.png" alt="image-20210522214311584"><br><strong>全相连Cache：</strong>S=1，只有一组，包括所有的行</li>
-<li><strong>直接映象</strong>：主存中的每一块只能被放置到Cache中<strong>唯一的一个位置</strong>。空间利用率最低，冲突概率最高，实现最简单<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214332643.png" alt="image-20210522214332643"><br><strong>E-路组相连Cache：</strong>E=E，每组有E行</li>
+<li><strong>直接映射</strong>：主存中的每一块只能被放置到Cache中<strong>唯一的一个位置</strong>。空间利用率最低，冲突概率最高，实现最简单<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214332643.png" alt="image-20210522214332643"><br><strong>直接映射Cache：</strong>E=1，每组有1行</li>
 <li><strong>组相连映象：</strong>主存中的每一块可以被放置到Cache中<strong>唯一的一个组中的任何一个位置</strong>。作为两种映像的折中。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214350625.png" alt="image-20210522214350625"><br><strong>E-路组相连Cache：</strong>E=E，每组有E行</li>
 </ul>
 <p><strong>当所要访问的块在高一层存储器中时，如何找到该块?（查找算法）</strong><br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522215621798.png" alt="image-20210522215621798"><br>我们通过一个地址在cache查找数据块，地址组成：标记t、组索引s、偏移量b</p>
@@ -736,6 +763,7 @@
 </li>
 </ul>
 <p><strong>当进行写访问时，应进行哪些操作（写策略）</strong></p>
+<p>写命中：就是cache行有效位为1，反之则不命中</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20201015223402749.png" alt="img"></p>
 <h2 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h2><p>一个编写良好的程序倾向于<strong>引用最近引用过的数据本身</strong>，或者<strong>引用的数据项邻近于其最近引用过的数据项</strong></p>
 <ul>
@@ -888,7 +916,73 @@
 <li>在加载时，执行<strong>动态链接</strong>，根据静态链接得到的信息，比如.interp节中的动态链接器的路径名，重定位共享库的<strong>数据和代码</strong>到<strong>存储器段</strong>和重定位可执行文件中所有由共享库定义的<strong>符号的引用</strong>，完成链接任务。</li>
 </ul>
 <p><strong>使用共享库，运行时的动态链接：</strong>将<strong>动态生成内容</strong>的每个<strong>函数</strong>打包在共享库中。</p>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2>]]></content>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p><strong>异常</strong>就是控制流中的突变，用来响应处理器状态中的某些变化。状态变化称为<strong>事件</strong>。</p>
+<p>在任何情况下，当处理器检测到有事件发生时，它会通过一张叫<strong>异常表</strong>的跳转表，调用一个专门用来处理这类事件的操作系统子程序。</p>
+<p>当异常处理程序<strong>处理完异常之后</strong>，情况有三种：</p>
+<ul>
+<li>返回，当事件发生时，正在执行的指令</li>
+<li>返回，如果没有发生异常，将会执行的下一条指令</li>
+<li>终止被中断的程序</li>
+</ul>
+<p><strong>异常的类别</strong></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610170528892.png" alt="image-20210610170528892"></p>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>经典定义：进程就是<strong>一个执行中的程序</strong>。也就是说，我们每运行一个程序，都会创建一个新的进程。</p>
+<p>我们不关注它如何实现，我们关注它所提供的应用程序的关键抽象：</p>
+<ul>
+<li>一个独立的<strong>逻辑控制流</strong>。并不是独占处理器，而是多个进程去轮流使用处理器。</li>
+<li>一个私立的<strong>地址空间</strong>。并不是独占地使用系统地址空间，而是一个进程给每个程序提供它自己的私有地址空间，理论上不能被其他进程读写。这是由虚拟存储器实现的。</li>
+</ul>
+<p><strong>并发</strong>是指多个逻辑控制流并发执行，注意与<strong>并行</strong>区别开。</p>
+<p><strong>多任务</strong>是指多个进程轮流执行。因为进程的控制流的一部分的时间段叫做<strong>时间片</strong>，所以<strong>多任务</strong>也称为<strong>时间分片</strong>。</p>
+<p>内核为<strong>每个进程</strong>维持一个<strong>上下文</strong>。<strong>上下文</strong>就是内核重新启动一个被抢占的进程所需的<strong>状态</strong>，它由<strong>一些对象的值组成</strong>。</p>
+<p><strong>操作系统</strong>通过使用<strong>上下文切换</strong>的较高层形式的异常控制流来实现<strong>多任务</strong>，这个过程有三步：</p>
+<ol>
+<li>保存当前上下文</li>
+<li>恢复先前被抢占的进程被保存的上下文</li>
+<li>将控制传递给这个新恢复的进程。</li>
+</ol>
+<p>下图是<strong>进程A和B上下文切换</strong>的一个实例，执行系统调用read到内核，内核中的陷阱程序请求磁盘控制器DMA传输，在传输完成后磁盘中断处理器。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610193402041.png" alt="image-20210610193402041"></p>
+<p>从程序员角度，<strong>进程有三种状态</strong>：</p>
+<ol>
+<li><strong>运行</strong>。进程正在执行，或者等待被内核调度。</li>
+<li><strong>停止</strong>。被挂起，不会被调度。当收到信号时，再次开始运行。</li>
+<li><strong>终止</strong>。进程永远停止了。原因主要有：收到的信号的行为是终止进程、从主程序中返回、调用<code>void exit(int status)</code>函数</li>
+</ol>
+<p><strong>进程控制</strong>，也就是从C程序中操作进程的系统调用。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unisd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Linux系统中，pit_t被types.h定义为int */</span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">getpid</span><span class="params">(<span class="keyword">void</span>)</span></span>;          <span class="comment">//返回调用进程的PID(唯一的正数进程ID)</span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">getpid</span><span class="params">(<span class="keyword">void</span>)</span></span>;          <span class="comment">//返回父进程的PID，父进程指创建调用进程的进程</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/************************************************************</span></span><br><span class="line"><span class="comment">** 子进程与父进程几乎但不完全相同。它们最大的区别是PID，除此之外相同。</span></span><br><span class="line"><span class="comment">** 所以当父进程调用fork时，子进程可以读写父进程中打开的任何文件 </span></span><br><span class="line"><span class="comment">*************************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">fork</span><span class="params">(<span class="keyword">void</span>)</span></span>;            <span class="comment">//父进程通过fork函数创建一个新的运行子进程</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">waitpid</span><span class="params">(<span class="keyword">pid_t</span> pid, <span class="keyword">int</span> *status, <span class="keyword">int</span> options)</span>    <span class="comment">//调用waitpid函数来等待它的子进程终止或停止</span></span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">wait</span><span class="params">(<span class="keyword">int</span> *status)</span>      <span class="comment">//waitpid函数的简化版本，等价于调用waitpid(-1, status, 0)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">sleep</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> secs)</span>   <span class="comment">//让进程休眠secs秒，返回值为剩余秒数，如果收到中断信号，则可能不为0</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pause</span><span class="params">(<span class="keyword">void</span>)</span>              <span class="comment">//让进城休眠直到等到一个信号，总是返回-1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">execve</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename, <span class="keyword">const</span> <span class="keyword">char</span> *argv[], <span class="keyword">const</span> <span class="keyword">char</span> *envp[])</span></span></span><br><span class="line"><span class="function"><span class="comment">//execve函数加载并运行可执行文件filename，参数列表argv和环境列表envp。</span></span></span><br><span class="line"><span class="function"><span class="comment">//如果成功，则不返回；如果错误，返回-1</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>子进程和父进程执行的特点：</strong></p>
+<ol>
+<li><strong>fork调用一次返回两次</strong>，一次子进程返回0，一次父进程返回PID，可以用来分辨处于子进程还是父进程。。</li>
+<li><strong>并发执行。</strong>父进程子进程相互独立，并发执行。先后顺序不一定。</li>
+<li><strong>相同但是独立的地址空间。</strong>除了私有地址空间之外，代码、变量值完全相同，因此<strong>对数据做出的改变都是独立的</strong>。</li>
+<li><strong>共享文件。</strong>子进程会继承父进程打开的文件，当父进程调用fork时，std文件打开所以子进程不用再打开一次std文件，而是直接输出</li>
+</ol>
+<p><strong>fork的执行过程理解</strong>：当执行fork函数时，可以理解为分支，也就是从fork位置开始分成两支，并发执行接下来的代码。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610204730139.png" alt="image-20210610204730139"></p>
+<p><strong>加载一个可执行文件</strong>需要的<strong>命令行参数列表</strong>和<strong>环境列表</strong>：</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610210812718.png" alt="image-20210610210812718"></p>
+<p>新的程序开始时，一个<strong>典型的用户栈结构</strong>：</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610211302212.png" alt="image-20210610211302212"></p>
+<h2 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h2><p><strong>Unix信号</strong>是一种更高层的软件形式的<strong>异常</strong>，<strong>允许进程中断其他进程</strong>。</p>
+<p>一个<strong>信号</strong>就是一条小消息，它通知进程系统中发生了一个某种类型的<strong>事件</strong>。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610212141906.png" alt="image-20210610212141906"></p>
+<h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p><strong>虚拟存储器</strong>：一个由存放在<strong>磁盘</strong>上的<strong>N个连续</strong>的<strong>字节大小的单元</strong>组成的数组。每个字节和虚拟地址是<strong>一一对应</strong>的。</p>
+<p><strong>虚拟地址：</strong>就是<strong>磁盘</strong>上<strong>数组的索引</strong>。要比物理地址大很多。VPN作为页表的索引。VPO有p位定位业内的字节位置。</p>
+<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210617153531081.png" alt="image-20210617153531081"></p>
+<p><strong>解决4 GB内存空间的不足问题：</strong>只将磁盘中的一部分放入内存中，以后根据实际的需要随时从硬盘中调入内容。</p>
+<p><strong>物理寻址和虚拟寻址</strong></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610220900167.png" alt="image-20210610220900167"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610220914701.png" alt="image-20210610220914701"></p>
+<p><strong>磁盘</strong>：在<strong>存储器层次</strong>是处于<strong>主存</strong>之下的一层。</p>
+<p><strong>虚拟页和物理页：</strong>VM系统将<strong>虚拟存储器</strong>分割为<strong>虚拟页（VP）</strong>的固定大小的<strong>块</strong>来进行与主存间的传输，<strong>大小为P字节</strong>，<strong>物理页（PP）</strong>同样也是<strong>P字节</strong>大小</p>
+<p><strong>页表：</strong>就是一个<strong>页表条目（PTE）</strong>的数组。 为了判定一个虚拟页在哪个物理页，未命中判断虚拟页存放在磁盘的哪个位置，然后选择一个物理页作为牺牲页进行替换。</p>
+<p><strong>页表条目：</strong>一个<strong>有效位</strong>和<strong>n位地址</strong>组成。如果<strong>设置有效位</strong>，那么<strong>地址</strong>表示DRAM中<strong>物理页的起始位置</strong>，这个物理页<strong>缓存了该虚拟页</strong>。如果<strong>没有设置有效位</strong>，那么空地址表示该<strong>虚拟页未被分配</strong>。</p>
+<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210616224133179.png" alt="image-20210616224133179"></p>
+<p><strong>VM页命中：</strong>对VP2的一个字的引用就会命中。也就是已经缓存在DRAM的</p>
+<p><strong>VM缺页：</strong>对<strong>VP3的引用不命中</strong>，从而触发缺页。然后选择<strong>VP4作为牺牲页</strong>，并从磁盘<strong>用VP3的拷贝来取代它</strong>。在缺页处理程序重新启动后，该指令将从存储器中正常读取字，而不会产生异常。</p>
+]]></content>
       <categories>
         <category>CS:APP</category>
       </categories>
@@ -1415,6 +1509,28 @@
 </blockquote>
 </li>
 </ul>
+<h2 id="第五周（6-7——6-14）"><a href="#第五周（6-7——6-14）" class="headerlink" title="第五周（6.7——6.14）"></a>第五周（6.7——6.14）</h2><ul>
+<li><p>6月7日</p>
+<blockquote>
+<p>上课公交车</p>
+</blockquote>
+</li>
+<li><p>6月8日</p>
+<blockquote>
+<p>蹭电动车</p>
+</blockquote>
+</li>
+<li><p>6月9日</p>
+<blockquote>
+<p>吃饭买东西走路刷掉。</p>
+</blockquote>
+</li>
+<li><p>6月10日</p>
+<blockquote>
+<p>英语课公交车，小笼包好吃！</p>
+</blockquote>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>life</category>
@@ -1547,11 +1663,8 @@
 <p>先使用locate命令寻找.a文件</p>
 <p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602083937856.png" alt="image-20210602083937856"></p>
 <p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602084001274.png" alt="image-20210602084001274"></p>
-<p>然后使用nm命令查看文件，发现：</p>
-<ul>
-<li>libc.a有101个目标文件</li>
-<li>libm.a有150个目标文件</li>
-</ul>
+<p>然后查看文件，发现：</p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210612221510633.png" alt="image-20210612221510633"></p>
 <h3 id="B、gcc-O2产生的可执行代码和gcc-O2-g产生的不同？"><a href="#B、gcc-O2产生的可执行代码和gcc-O2-g产生的不同？" class="headerlink" title="B、gcc -O2产生的可执行代码和gcc -O2 -g产生的不同？"></a>B、gcc -O2产生的可执行代码和gcc -O2 -g产生的不同？</h3><p>-g选项生成的可执行目标文件多两个节</p>
 <p><strong>.debug：</strong>一个调试符号表。包括局部变量、全局变量以及原始的C源文件。</p>
 <p><strong>.line：</strong>原始C源程序中的行号和.text节中机器指令之间的映射。</p>
@@ -1562,6 +1675,197 @@
       </categories>
       <tags>
         <tag>课程作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法导论——基本内容介绍</title>
+    <url>/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h1 id="算法导论——基本内容介绍"><a href="#算法导论——基本内容介绍" class="headerlink" title="算法导论——基本内容介绍"></a>算法导论——基本内容介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>因为学校的书看不懂，所以想换本书看看</p>
+<p>我在网上找到的是第三版，所以都是基于第三版做的学习笔记</p>
+<h2 id="大致介绍"><a href="#大致介绍" class="headerlink" title="大致介绍"></a>大致介绍</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>算法是计算的核心。本书提供了对当代计算机算法研究的一个全面的、综合性的介绍。</p>
+<p><img src="/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/image-20210610130216994.png" alt="image-20210610130216994"></p>
+<p>确实是大家的希望（dog）！中国大学生苦答案久矣！</p>
+<h3 id="第一部分：基础知识"><a href="#第一部分：基础知识" class="headerlink" title="第一部分：基础知识"></a>第一部分：基础知识</h3><p>这一部分将引导读者开始<strong>思考算法的设计和分析问题</strong>，<strong>简单介绍算法的表达方法</strong>、将在本书中<strong>用到的一些设计策略</strong>，以及<strong>算法分析中用到的许多基本思想</strong>。本章节后面的内容都是建立在这些基础知识之上的。</p>
+<h4 id="第1章是对算法及其在现代计算系统中地位的一个综述。"><a href="#第1章是对算法及其在现代计算系统中地位的一个综述。" class="headerlink" title="第1章是对算法及其在现代计算系统中地位的一个综述。"></a>第1章是对算法及其在现代计算系统中地位的一个综述。</h4><p>本章给出了<strong>算法的定义</strong>和<strong>一些算法的例子</strong>。</p>
+<p>此外，本章还说明了<strong>算法是一项技术</strong>，就像快速的硬件、图形用户界面、面向对象系统和网络一样。</p>
+<h4 id="在第2章中，我们给出了书中的第一批算法，它们解决的是对n个数进行排序的问题。"><a href="#在第2章中，我们给出了书中的第一批算法，它们解决的是对n个数进行排序的问题。" class="headerlink" title="在第2章中，我们给出了书中的第一批算法，它们解决的是对n个数进行排序的问题。"></a>在第2章中，我们给出了书中的第一批算法，它们解决的是对n个数进行排序的问题。</h4><p>这些算法是用一种<strong>伪代码</strong>形式给出的，这种伪代码尽管不能直接翻译为任何常规的程序设计语言，但是足够清晰地表达了算法的结构，以便任何一位能力比较强的程序员都能用自己选择的语言将算法实现出来。</p>
+<p>我们分析的排序算法是<strong>插入排序</strong>，它采用了一种增量式的做法;</p>
+<p>另外还分析了<strong>归并排序</strong>，它采用了一种递归技术，称为“<strong>分治法</strong>”。</p>
+<p>尽管这两种算法所需的运行时间都随n的值而增长，但增长的速度是不同的。</p>
+<p>我们在第2章分析了这两种算法的运行时间，并<strong>给出了一种有用的表示方法来表达这些运行时间</strong>。</p>
+<h4 id="第3章给出了这种表示法的准确定义，称为渐近表示。"><a href="#第3章给出了这种表示法的准确定义，称为渐近表示。" class="headerlink" title="第3章给出了这种表示法的准确定义，称为渐近表示。"></a>第3章给出了这种表示法的准确定义，称为渐近表示。</h4><p>在第3章的一开始，首先<strong>定义几种渐近符号</strong>，它们主要用于<strong>表示算法运行时间</strong>的<strong>上界和下界</strong>。</p>
+<p>第3章余下的部分主要给出了一些<strong>数学表示方法</strong>。这一部分的作用更多的是为了确保读者所用的记号能与本书的记号体系相匹配，而不是教授新的数学概念。</p>
+<h4 id="第4章更深人地讨论了第2章引入的分治法，给出了更多分治法的例子，包括用于两方阵相乘的Strassen方法。"><a href="#第4章更深人地讨论了第2章引入的分治法，给出了更多分治法的例子，包括用于两方阵相乘的Strassen方法。" class="headerlink" title="第4章更深人地讨论了第2章引入的分治法，给出了更多分治法的例子，包括用于两方阵相乘的Strassen方法。"></a>第4章更深人地讨论了第2章引入的分治法，给出了更多分治法的例子，包括用于两方阵相乘的Strassen方法。</h4><p>第4章包含了<strong>求解递归式的方法</strong>。<strong>递归式用于描述递归算法的运行时间。</strong></p>
+<p><strong>“主方法”</strong>是一种功能很强的技术，通常用于<strong>解决分治算法中出现的递归式。</strong></p>
+<p>虽然第4章中的相当一部分内容都是在<strong>证明主方法的正确性</strong>，但是如果跳过这一部分证明内容，也没有什么太大的影响。</p>
+<h4 id="第5章介绍概率分析和随机化算法。"><a href="#第5章介绍概率分析和随机化算法。" class="headerlink" title="第5章介绍概率分析和随机化算法。"></a>第5章介绍概率分析和随机化算法。</h4><p><strong>概率分析一般用于确定一些算法的运行时间</strong>，在这些算法中，由于<strong>同一规模的不同输人</strong>可能有着内在的概率分布，因而在这些不同输人之下，<strong>算法的运行时间可能有所不同</strong>。</p>
+<p>在有些情况下，我们假定算法的<strong>输人服从某种已知的概率分布</strong>，于是，<strong>算法的运行时间就是</strong>在所有可能的输入之下，<strong>运行时间的平均值</strong>。</p>
+<p>在其他情况下，<strong>概率分布</strong>不是来自于输人，而是<strong>来自于算法执行过程中所做出的随机选择</strong>。</p>
+<p>如果一个算法的行为不仅由其输人决定，还要由一个随机数生成器生成的值来决定，那么它就是一个<strong>随机化算法</strong>。</p>
+<p>我们可以利用<strong>随机化算法</strong>强行<strong>使算法的输入服从某种概率分布</strong>，从而<strong>确保不会有某一输入会始终导致算法的性能变坏</strong>;</p>
+<p>或者，对于那些<strong>允许产生不正确结果的算法</strong>，甚至能够将其<strong>错误率限制在某个范围之内</strong>。</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法导论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法导论——第1章</title>
+    <url>/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC1%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="算法导论——第1章-算法在计算中的作用"><a href="#算法导论——第1章-算法在计算中的作用" class="headerlink" title="算法导论——第1章 算法在计算中的作用"></a>算法导论——第1章 算法在计算中的作用</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>什么是算法？为什么算法值得研究？相对于计算机使用的其他技术来说算法的作用是什么？</p>
+<p>本章我们将回答这些问题。</p>
+<h2 id="1-1-算法"><a href="#1-1-算法" class="headerlink" title="1.1 算法"></a>1.1 算法</h2><p><strong>算法</strong>就是<strong>任何良定义（well-defined）的计算过程</strong>，该过程取某个值或值的集合作为<strong>输入</strong>并<strong>产生</strong>某个值或值的集合作为<strong>输出</strong>。</p>
+<blockquote>
+<p>良定义（well defined）就是指<strong>无歧义的、不会导致矛盾的、符合其应满足的所有要求</strong>的定义</p>
+</blockquote>
+<p><strong>问题陈述</strong>说明了期望的输入和输出之间的<strong>关系</strong>。<strong>算法</strong>描述实现这个关系的<strong>计算过程</strong>。</p>
+<p><strong>问题实例</strong>由计算该问题所必须的（满足问题陈述中的各种约束条件的）<strong>输入</strong>组成。</p>
+<p>若对每个<strong>输入实例</strong>，算法都以<strong>正确的输出</strong>停机，则称该算法是<strong>正确的</strong>，并称该算法<strong>解决了</strong>给定的计算问题。</p>
+<p><strong>算法解决的问题：</strong></p>
+<ol>
+<li><strong>人类基因工程。</strong>识别人类DNA中的所有10万个基因，确定构成DNA的30亿个化学基对的序列，在数据库中<strong>存储这类信息</strong>并<strong>为数据分析开发工具</strong>。</li>
+<li><strong>互联网</strong>使得全世界的人都能快速地访问与检索大量信息。借助于一些聪明的算法，互联网上的网站能够<strong>管吗理和处理这些海量数据</strong>。必须使用算法的问题示例包括为<strong>数据传输寻找好的路由</strong>（求解这些问题的技术在第24章给出），<strong>使用一个搜索引擎来快速地找到特定信息所在的网页</strong>（有关技术在11章和32章中）</li>
+<li><strong>电子商务</strong>使得货物与服务能够以电子方式洽谈与交换，并且它依赖于像信用卡号、密码和银行结单这类个人信息的保密性。电子商务中使用的核心技术包括(第31章中包含的)<strong>公钥密码与数字签名，它们以数值算法和数论为基础</strong>。</li>
+<li>制造业和其他商务企业常常需要<strong>按最有益的方式来分配稀有资源</strong>。一家石油公司也许希望知道在什么地方设置其油井，以便最大化其预期的利润。一位政治候选人也许想确定在什么地方花钱购买竞选广告，以便最大化赢得竞选的机会。一家航空公司也许希望按尽可能最廉价的方式把乘务员分配到班机上，以确保每个航班被覆盖并且满足政府有关乘务员调度的法规。一个互联网服务提供商也许希望确定在什么地方放置附加的资源，以便更有效地服务其顾客。所有这些都是可以用<strong>线性规划</strong>来求解的问题的例子，我们将在第29章学习这种技术。 </li>
+</ol>
+<p><strong>更加具体的问题：</strong></p>
+<ol>
+<li>给定一张交通图，上面标记了每对相邻十字路口之间的距离，我们希望确定从一个十字路口到另一个十字路口的<strong>最短道路</strong>。<br>即使不允许穿过自身的道路，可能路线的数量也会很大。在所有可能路线中，我们如何选择哪一条是最短的？<br>这里首先把交通图(它本身就是实际道路的一个模型)<strong>建模为一个图</strong>(第六部分和附录B将涉及这个概念)，然后<strong>寻找图中</strong>从一个顶点到另一个顶点的<strong>最短路径</strong>。第24章将介绍如何有效地求解这个问题。</li>
+<li>给定两个<strong>有序的符号序列X和Y</strong>，求出X和Y的<strong>最长公共子序列</strong>。<br>X的<strong>子序列就是去掉一些元素</strong>(可能是所有，也可能一个没有)后的X。例如，(A，B，C，D，E，F，G)的一个子序列是(B，C，E，G)。X和Y的<strong>最长公共子序列的长度度量了这两个序列的相似程度</strong>。例如，若两个序列是DNA链中的基对则当它们具有长的公共子序列时我们认为它们是相似的。<br>若X有m个符号且Y有n个符号，则X和Y分别有2^m和2^n个可能的子序列。除非m和n很小，否则选择X和Y的所有可能子序列做匹配将花费使人望而却步多的时间。第15章将介绍如何使用一种称为<strong>动态规划</strong>的一般技术来有效地求解这个问题。</li>
+<li>给定一个依据部件库的机械设计，其中每个部件可能包含其他部件的实例，<strong>我们需要依次列出这些部件，以使每个部件出现在使用它的任何部件之前</strong>。若该<strong>设计由n个部件组成</strong>，则<strong>存在n!种可能的顺序</strong>，其中n!表示阶乘函数。<br>因为阶乘函数甚至比指数函数增长还快，（除非我们只有几个部件，否则）先生成每种可能的顺序，再验证按该顺序每个部件出现在使用它的部件之前，是不可行的。这个问题是<strong>拓扑排序</strong>的一个实例，第22章将介绍如何有效地求解这个问题。</li>
+<li>给定平面上的n个点，我们希望寻找这些点的凸壳。<strong>凸壳就是包含这些点的最小的凸多边形</strong>。直观上，我们可以把每个点看成由从一块木板钉出的一颗钉子来表示。凸壳则由一根拉紧的环绕所有钉子的橡皮筋来表示。如果橡皮筋因绕过某颗钉子而转弯，那么这颗钉子就是凸壳的一个顶点(例子参见图33-6)。<br>n个点的2”个子集中的任何一个都可能是凸壳的顶点集。仅知道哪些点是凸壳的顶点还很不够，因为我们还必须知道它们出现的顺序。所以为求凸壳的顶点，存在许多选择。<strong>第33章将给出两种用于求凸壳的好方法。</strong></li>
+</ol>
+<p>从上述问题中，<strong>算法问题共有的两个特征</strong>：</p>
+<ol>
+<li><strong>存在许多候选解</strong>，但绝大多数候选解都没有解决手头的问题。<strong>寻找一个真正的解或一个最好的解</strong>可能是一个很大的挑战。</li>
+<li><strong>存在实际应用。</strong>在上面所列的问题中，<strong>最短路径问题</strong>提供了最易懂的例子。一家运输公司(如公路运输或铁路运输公司)对如何在公路或铁路网中找出最短路径，有着经济方面的利益，因为采用的路径越短，其人力和燃料的开销就越低。互联网上的一个路由结点为了快速地发送一条消息可能需要寻找通过网络的最短路径。</li>
+</ol>
+<p><strong>数据结构</strong>是一种存储和组织数据的方式，旨在便于访问和修改。</p>
+<p><strong>技术。</strong>虽然可以把本书当做一本有关算法的“菜谱”来使用，但是也许在某一天你会遇到一个问题，一时无法很快找到一个已有的算法来解决它（例如本书中的许多练习和思考题就是这样的情况）。<br>本书将教你一些<strong>算法设计与分析的技术</strong>，以便你能<strong>自行设计算法、证明其正确性和理解其效率。</strong><br>不同的章介绍算法问题求解的不同方面。有些章处理特定的问题，例如，<strong>第9章</strong>的求中位数和顺序统计量，<strong>第23章</strong>的计算最小生成树，<strong>第26章</strong>的确定网络中的最大流。其他章介绍一些技术，例如<strong>第4章</strong>的分治策略，<strong>第15章</strong>的动态规划，<strong>第17章</strong>的摊还分析。</p>
+<p><strong>难题。NP完全问题</strong>中每个问题的复杂度与整个类的复杂度有关联性，假如其中任意一个问题在多项式时间内可解的，则这一类问题都是多项式时间可解。这类问题没有已知的有效算法，但我们可以找到一些<strong>“近似算法”</strong>。</p>
+<p><strong>并行性。</strong>为了从多核计算机获得最佳的性能，<strong>设计算法时必须考虑并行性</strong>。第27章给出了<strong>充分利用多核的“多线程”算法</strong>的一个模型。从理论的角度来看，该模型具有一些优点，它形成了几个成功的计算机程序的基础，包括一个国际象棋博弈程序。</p>
+<h2 id="1-2-作为一种技术的算法"><a href="#1-2-作为一种技术的算法" class="headerlink" title="1.2 作为一种技术的算法"></a>1.2 作为一种技术的算法</h2><p><strong>有效的算法</strong>可以帮助我们明智地去使<strong>用时间（计算时间）和空间（存储器空间）资源</strong>。</p>
+<p><strong>效率。</strong>为<strong>求解相同问题</strong>而设计的<strong>不同算法</strong>在<strong>效率方面</strong>常常有<strong>显著差别</strong>，这些差别可能比<strong>由于硬件和软件造成的差别</strong>要重要得多。</p>
+<p>我们应该像计算机硬件一样把<strong>算法看成一种技术</strong>，因为整个系统的性能不但依赖于快速的硬件也依赖于有效的算法。</p>
+<p><strong>相对于其他先进技术</strong>，算法也是十分重要的技术。因为所有这些都广泛地使用算法，<strong>算法</strong>是当代计算机中使用的<strong>大多数技术的核心</strong>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这章概述算法这种技术，让读者认识一些<strong>算法概念</strong>，知道算法的地位和<strong>重要性</strong>。</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法导论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法期末复习</title>
+    <url>/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="算法期末复习"><a href="#算法期末复习" class="headerlink" title="算法期末复习"></a>算法期末复习</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本想整个《算法导论》来进行系统学习，后来发现高估自己了。</p>
+<p>还是用别人的思维导图吧。</p>
+<h2 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173740232.png" alt="算法概述"></p>
+<h2 id="递归分治"><a href="#递归分治" class="headerlink" title="递归分治"></a>递归分治</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219190206679.png" alt="递归与分治策略"></p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173858421.png" alt="动态规划"></p>
+<h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173922373.png" alt="贪心算法"></p>
+<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173946942.png" alt="回溯法"></p>
+<h2 id="分支界限"><a href="#分支界限" class="headerlink" title="分支界限"></a>分支界限</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219174007775.png" alt="分支限界法"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>转载于csdn： <a href="https://blog.csdn.net/ruvikm/article/details/111408012">算法期末复习</a></p>
+<p>可以到这个网站去看一个算法的运行过程：<a href="https://visualgo.net/">一个可视化算法网站</a></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>考试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法导论——第2章</title>
+    <url>/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="算法导论——第2章-算法基础"><a href="#算法导论——第2章-算法基础" class="headerlink" title="算法导论——第2章 算法基础"></a>算法导论——第2章 算法基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本章将要<strong>介绍一个贯穿本书的框架</strong>，后续的算法设计与分析都是在这个框架中进行的。</p>
+<p>这一部分内容基本上是独立的，但也有对第3章和第4章中一些内容的引用（本章也包含几个求和的式子，附录A将给出如何求和）。</p>
+<p>首先，我们<strong>考察</strong>求解第1章中引入的排序问题的<strong>插入排序算法</strong>。我们定义一种对于已经编写过计算机程序的读者来说应该熟悉的“<strong>伪代码</strong>”，并用它来<strong>表明我们将如何说明算法</strong>。</p>
+<p>然后，在说明了插入排序算法后，我们将<strong>证明该算法能正确地排序并分析其运行时间</strong>。这种分析引入了一种<strong>记号</strong>，该记号关注<strong>时间</strong>如何随着将被排序的项数而增加。</p>
+<p>在讨论完插入排序之后，我们<strong>引入</strong>用于<strong>算法设计</strong>的<strong>分治法</strong>并使用这种方法<strong>开发</strong>一个称为<strong>归并排序的算法</strong>。</p>
+<p>最后，我们<strong>分析归并排序的运行时间</strong>。</p>
+<h2 id="2-1-插入排序"><a href="#2-1-插入排序" class="headerlink" title="2.1 插入排序"></a>2.1 插入排序</h2><p><strong>排序问题</strong>的<strong>问题陈述：</strong></p>
+<blockquote>
+<p>输入：n个数的一个序列</p>
+<p>输出：输入序列的一个递增排序</p>
+</blockquote>
+<p><strong>插入排序</strong>类似于排序手中的扑克牌，对于少量元素，它是一个有效的算法。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//insertion-sort(A):</span></span><br><span class="line"><span class="keyword">for</span> j=<span class="number">2</span> to A.length</span><br><span class="line">    key = A[j]</span><br><span class="line">    <span class="comment">//insert a[j] into the sorted sequence A[1..j-1]</span></span><br><span class="line">    i = j - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> A[i]&gt;key</span><br><span class="line">        A[i+<span class="number">1</span>] = A[i]</span><br><span class="line">        i = i<span class="number">-1</span></span><br><span class="line">    A[i+<span class="number">1</span>] = key</span><br></pre></td></tr></table></figure>
+
+<p><strong>插入排序</strong>的<strong>循环不变式</strong>为<code>A[1..j-1]</code>。<strong>循环不变式</strong>主要用来帮助我们理解算法的正确性。需要满足三条性质：</p>
+<ol>
+<li><strong>初始化</strong>：循环的第一次迭代前，它为真</li>
+<li><strong>保持</strong>：如果在循环的某次迭代之前它为真，那么下次迭代之前它仍为真。</li>
+<li><strong>终止</strong>：在循环终止时，不变式为我们提供一个有用的性质，该性质帮助证明算法是正确的。</li>
+</ol>
+<p><strong>伪代码</strong>中的一些<strong>约定</strong>：</p>
+<ol>
+<li><code>//</code>表示该行后面部分是注释。</li>
+<li><code>for X to / downto Y by M</code>表示将X每次递增（to）M或者递减（downto）M到Y</li>
+<li>缩进表示块结构</li>
+<li>变量若不显式说明，一般为局部变量</li>
+<li><code>A[i]</code>表示A数组的第i个元素</li>
+</ol>
+<h2 id="2-2-分析算法"><a href="#2-2-分析算法" class="headerlink" title="2.2 分析算法"></a>2.2 分析算法</h2><p><strong>分析算法</strong>的结果意味着需要<strong>预测算法所需要的资源</strong>。</p>
+<p><strong>插入排序算法的分析。</strong>我们通常把一个程序的<strong>运行时间</strong>描述成其<strong>输入规模的函数</strong>。为此我们需要定义<strong>运行时间</strong>和<strong>输入规模</strong>。</p>
+<p><strong>输入规模的最佳概念依赖于研究的问题。</strong>对于研究的每个问题，我们将指出所使用的<strong>输入规模量度</strong>。</p>
+<p>一个算法的在特定输入上的<strong>运行时间</strong>是指<strong>执行的基本操作数或步数</strong>。</p>
+<p><strong>分析插入排序算法的过程：</strong></p>
+<ol>
+<li>首先给出<strong>伪代码</strong>中，每条语句的<strong>执行时间</strong>和<strong>执行次数</strong>。<br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612155737763.png" alt="image-20210612155737763"></li>
+<li>将<strong>代价</strong>与<strong>次数</strong>列对应元素之积求和，求得该算法的<strong>运行时间</strong><br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612170827577.png" alt="image-20210612170827577"></li>
+<li><strong>最佳情况</strong>（也就是全都排列好了）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n+b<br>$$<br>它是n的*<em>线性函数。</em></em><br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612180456773.png" alt="image-20210612180456773"></li>
+<li><strong>最差情况</strong>（也就是数组反向排序）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n^2  + b</em>n + c<br>$$<br>它是n的<strong>二次函数。</strong><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612192159007.png" alt="image-20210612192159007"> </li>
+</ol>
+<p><strong>一般情况</strong>下，我们习惯于研究<strong>最差情况</strong>。在某些<strong>特殊的情况</strong>下，我们会对一个算法的<strong>平均情况</strong>运行时间感兴趣。</p>
+<p>我们真正感兴趣的是运算时间的<strong>增长率</strong>和<strong>增长量级</strong>。所以我们<strong>只考虑</strong>公式中最重要的项，就是<strong>高阶项</strong>，而<strong>忽略低阶项和常数项</strong>。</p>
+<h2 id="2-3-设计算法"><a href="#2-3-设计算法" class="headerlink" title="2.3 设计算法"></a>2.3 设计算法</h2><p>本节我们考查另一种称为“<strong>分治法</strong>”的设计方法。第4章将更深入地探究该方法。</p>
+<p>我们将用<strong>分治法</strong>来<strong>设计一个排序算法</strong>，该算法的最坏情况运行时间比插入排序要少得多。</p>
+<p><strong>分治算法的优点之一</strong>是，通过使用第4章介绍的技术往往<strong>很容易确定其运行时间</strong>。</p>
+<h3 id="2-3-1-分治法"><a href="#2-3-1-分治法" class="headerlink" title="2.3.1 分治法"></a>2.3.1 分治法</h3><p><strong>分治法的思想</strong>：将原问题<strong>分解</strong>成几个规模较小但类似于原问题的子问题。<strong>递归地求解</strong>这些子问题，然后再<strong>合并这些子问题的解</strong>来建立原问题的解。</p>
+<p><strong>归并排序</strong>算法完全<strong>遵循分治模式</strong>。直观上其<strong>操作如下</strong>:</p>
+<ol>
+<li><strong>分解：</strong>分解待排序的n个元素的序列成各具n/2个元素的两个子序列。</li>
+<li><strong>解决：</strong>使用归并排序递归地排序两个子序列。</li>
+<li><strong>合并：</strong>合并两个已排序的子序列以产生已排序的答案。</li>
+</ol>
+<p>调用<code>Merge(A,p,q,r)</code>将已排序数组<code>A[p..q]</code>和<code>A[q+1..r]</code><strong>合并</strong>，伪代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Merge(A, p, q, r)</span></span><br><span class="line">n1 = q - p + <span class="number">1</span>;</span><br><span class="line">n2 = r - q;</span><br><span class="line">Let L[<span class="number">1.</span>.n1+<span class="number">1</span>] <span class="keyword">and</span> R[<span class="number">1.</span>.n2+<span class="number">1</span>] be <span class="keyword">new</span> arrays</span><br><span class="line"><span class="keyword">for</span> i=<span class="number">1</span> to n1</span><br><span class="line">    L[i] = A[p+i<span class="number">-1</span>];</span><br><span class="line"><span class="keyword">for</span> j=<span class="number">1</span> to n2</span><br><span class="line">    R[j] = A[q+j];</span><br><span class="line">L[n1+<span class="number">1</span>] = \infity;</span><br><span class="line">R[n2+<span class="number">1</span>] = \infity;</span><br><span class="line">i=<span class="number">1</span>;</span><br><span class="line">j=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> k=p to r</span><br><span class="line">    <span class="keyword">if</span> L[i] &lt;= R[j]</span><br><span class="line">        A[k] = L[i]</span><br><span class="line">        i = i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        A[k] = R[j]</span><br><span class="line">        j = j+<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>循环不变式</strong>为<code>A[p,k-1]</code>，为了证明算法正确性，它需要满足：</p>
+<ol>
+<li><strong>初始化：</strong>迭代前<code>k=p</code>时，<code>A[p..k-1]</code>为空。它为真</li>
+<li><strong>保持：</strong>因为L和R数组都是已经排序好的数组，所以每次选出来的确实是最小值。如果L[i]&lt;=R[j]，将L[i]复制给A[k]，增加i和k的值后，为下次迭代建立了该循环不变式，反之亦然。</li>
+<li><strong>终止：</strong>终止时<code>k=r+1</code>，<code>A[p..k-1]</code>就是<code>A[p..r]</code>且按照从小到大的顺序包含L和R数组除了哨兵之外的所有元素。</li>
+</ol>
+<p><code>Merge</code>的<strong>运行时间</strong>是：<br>$$<br>\theta(n)<br>$$<br>所以<strong>归并排序</strong>算法的伪代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//merge-sort(A, p, r)</span></span><br><span class="line"><span class="keyword">if</span> p&lt;r</span><br><span class="line">    q= (p+r)/<span class="number">2</span></span><br><span class="line">    merge-sort(A, p, q)</span><br><span class="line">    merge-sort(A, q+<span class="number">1</span>, r)</span><br><span class="line">    merge(A, p, q, r)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-2-分析分治算法"><a href="#2-3-2-分析分治算法" class="headerlink" title="2.3.2 分析分治算法"></a>2.3.2 分析分治算法</h3><p>当一个算法包含<strong>对其自身的递归调用</strong>时，我们往往可以用<strong>递归方程</strong>或<strong>递归式</strong>来描述其<strong>运行时间</strong>。</p>
+<p>该方程根据<strong>在较小输入上的运行时间</strong>来描述在<strong>规模为n的问题上的总运行时间</strong>。</p>
+<p>然后我们可以使用数学工具来求解该<strong>递归式</strong>并给出算法性能的界。</p>
+<p><strong>分治算法运行时间的递归式</strong>来自<strong>基本模式</strong>的三个步骤，假设T(n)是规模为n的一个问题的运行时间：</p>
+<ol>
+<li><strong>分解</strong>。将原问题分解成<strong>a个子问题</strong>，每个<strong>子问题的规模</strong>是原问题的<strong>1/b</strong>，a不一定等于b。分解问题**所需的时间为D(n)**。</li>
+<li><strong>解决</strong>。对于一个<strong>规模为n/b的子问题</strong>，需要T(n/b)的运行时间，所以需要<strong>aT(n/b)的时间来求解a个子问题</strong>。</li>
+<li><strong>合并</strong>。将子问题的解<strong>合并成原问题的解</strong>需要**时间C(n)**。</li>
+</ol>
+<p>若<strong>问题规模n</strong>小于等于<strong>某个常量c</strong>时，可以<strong>直接求得运行时间</strong>，那么得到<strong>递归式</strong>：<br>$$<br>T(n)=<br>\begin{cases}<br>\theta(1)，&amp; \text{若 }n \leq c \<br>aT(n/b) + D(n) + C(n)，&amp; \text{其他 }<br>\end{cases}<br>$$<br>为了对<strong>归并排序</strong>算法进行<strong>分析</strong>，我们建立<strong>归并排序n个数</strong>的<strong>最坏情况</strong>运行时间T(n)的<strong>递归式</strong>：</p>
+<ol>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法导论</tag>
       </tags>
   </entry>
 </search>

@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">9.1k</span>
+            <span class="post-count">11.1k</span>
         </span>
     </span>
 
@@ -106,7 +106,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">31 min</span>
+            <span class="post-count">39 min</span>
         </span>
     </span>
 </div>
@@ -201,6 +201,22 @@ var _hmt = _hmt || [];
 <ul>
 <li>下半部分不记录了，用不到</li>
 </ul>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>一个浮点数由三部分组成：</p>
+<ol>
+<li>符号。1为负，0为正，数值0特殊处理</li>
+<li>阶码，移码（将补码的符号位取反减一）表示，所以我们将阶码加1取反符号位得到的就是指数。</li>
+<li>尾数，顺序排列尾数。如1000 0000表示的是0.1</li>
+</ol>
+<p>规格化数，1.f * 2^E，E在区间（-126，127）<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213403180.png" alt="image-20210615213403180"></p>
+<p>非规格化数，0.f * 2^(-126)<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213416002.png" alt="image-20210615213416002"></p>
+<p>特殊值</p>
+<ol>
+<li><p>NAN，不是一个数<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213454261.png" alt="image-20210615213454261"></p>
+</li>
+<li><p>无穷大</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210615213441105.png" alt="image-20210615213441105"></p>
+</li>
+</ol>
 <h2 id="一些容易忽略的指令"><a href="#一些容易忽略的指令" class="headerlink" title="一些容易忽略的指令"></a>一些容易忽略的指令</h2><ul>
 <li><p><code>call</code>指令：过程调用，将返回地址入栈，并跳转到被调用过程的起始处。返回地址就是紧跟在<code>call</code>后的那条指令的地址。</p>
 </li>
@@ -274,7 +290,17 @@ var _hmt = _hmt || [];
 </tbody></table>
 <h2 id="优化程序性能"><a href="#优化程序性能" class="headerlink" title="优化程序性能"></a>优化程序性能</h2><p><strong>程序优化的第一步</strong>就是<strong>消除不必要的内容</strong>，让代码尽可能有效地执行它期望的工作。<strong>这包括消除不必要的函数调用、条件测试和存储器引用</strong>。使用<strong>图形数据流表示法</strong>，可以使处理器对指令的执行形象化，我们还可以利用它预测程序的性能。、</p>
 <p><strong>程序优化的第二步</strong>，<strong>利用处理器提供的指令级并行能力，同时执行多条指令</strong>。</p>
-<p><strong>Amdahl定律</strong>，可以量化对系统某个部分进行优化所带来的整体效果。<strong>主要思想</strong>是当我们加快系统一个部分的速度时，对系统整体性能的影响依赖于<strong>这个部分有多重要</strong>和<strong>速度提高了多少</strong>。所以<strong>要想大幅度提高系统的速度，我们必须按提高系统很大一部分的速度。</strong></p>
+<p><strong>Amdahl定律</strong>，可以量化对系统某个部分进行优化所带来的整体效果。<strong>主要思想</strong>是当我们加快系统一个部分的速度时，对系统整体性能的影响依赖于<strong>这个部分有多重要</strong>和<strong>速度提高了多少</strong>。所以<strong>要想大幅度提高系统的速度，我们必须按提高系统很大一部分的速度。</strong><br>$$<br>S=\frac{1}{(1-a+\frac{a}{n})}<br>$$<br>说明：</p>
+<ol>
+<li><p>S为全局加速倍数（原来总时间/加速后总时间）</p>
+</li>
+<li><p>a为并行计算所占比例（可以并行计算代码量/总代码量），就是可以优化的部分。</p>
+</li>
+<li><p>n为并行节点处理个数，可以理解为CPU的核心数，就是可以优化的倍数。</p>
+</li>
+<li><p>所以这个公式其实就是，将可以优化的部分优化n倍。</p>
+</li>
+</ol>
 <p><strong>关键路径</strong>是在循环的反腐执行过程中形成的<strong>数据相关链</strong>，常常通过确认关键路径来决定<strong>执行一个循环所需要的时间</strong>。</p>
 <p><strong>存储器别名使用</strong>是指两个指针可能同时指向同一个存储器的位置的情况。在只考虑执行安全的优化中，编译器必须假设不同的指针可能会指向存储器的同一个位置，这造成了<strong>第一个妨碍优化的因素</strong>，这也是可能严重限制编译器产生优化代码机会的程序的一个方面。如果编译器不能确定指针的指向，它就会假设所有的情况都有可能，所以我们需要做的就是在<strong>编写程序的时候明确指针的指向</strong>。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*q=y; *p=x;</span><br><span class="line">t1=*q;      <span class="comment">//t1= x or y?</span></span><br></pre></td></tr></table></figure>
@@ -360,6 +386,7 @@ var _hmt = _hmt || [];
 <p>DRAM动态随机访问存储器，一个电容和一个访问晶体管组成，便宜速度慢。</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522205457630.png" alt="image-20210522205457630"></p>
 <h2 id="高速缓存cache"><a href="#高速缓存cache" class="headerlink" title="高速缓存cache"></a>高速缓存cache</h2><p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214639517.png" alt="image-20210522214639517"></p>
+<p>其中行就是cache块</p>
 <p>CPU向cache<strong>请求数据块</strong>，会发生两种情况：</p>
 <ul>
 <li><p><strong>命中：</strong>我们需要的<strong>数据块存在于高速缓存中</strong>，就命中了。</p>
@@ -386,7 +413,7 @@ var _hmt = _hmt || [];
 <p><strong>当把一个数据块调入高一层(靠近CPU)存储器时，可以放在哪些位置上？（映像规则）</strong>，一共有三种：</p>
 <ul>
 <li><strong>全相联映像</strong>：主存中的任一块可以被放置到Cache中的<strong>任意一个位置</strong>。空间利用率最高，冲突概率最低，实现最复杂。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214311584.png" alt="image-20210522214311584"><br><strong>全相连Cache：</strong>S=1，只有一组，包括所有的行</li>
-<li><strong>直接映象</strong>：主存中的每一块只能被放置到Cache中<strong>唯一的一个位置</strong>。空间利用率最低，冲突概率最高，实现最简单<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214332643.png" alt="image-20210522214332643"><br><strong>E-路组相连Cache：</strong>E=E，每组有E行</li>
+<li><strong>直接映射</strong>：主存中的每一块只能被放置到Cache中<strong>唯一的一个位置</strong>。空间利用率最低，冲突概率最高，实现最简单<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214332643.png" alt="image-20210522214332643"><br><strong>直接映射Cache：</strong>E=1，每组有1行</li>
 <li><strong>组相连映象：</strong>主存中的每一块可以被放置到Cache中<strong>唯一的一个组中的任何一个位置</strong>。作为两种映像的折中。<br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522214350625.png" alt="image-20210522214350625"><br><strong>E-路组相连Cache：</strong>E=E，每组有E行</li>
 </ul>
 <p><strong>当所要访问的块在高一层存储器中时，如何找到该块?（查找算法）</strong><br><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210522215621798.png" alt="image-20210522215621798"><br>我们通过一个地址在cache查找数据块，地址组成：标记t、组索引s、偏移量b</p>
@@ -405,6 +432,7 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <p><strong>当进行写访问时，应进行哪些操作（写策略）</strong></p>
+<p>写命中：就是cache行有效位为1，反之则不命中</p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20201015223402749.png" alt="img"></p>
 <h2 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h2><p>一个编写良好的程序倾向于<strong>引用最近引用过的数据本身</strong>，或者<strong>引用的数据项邻近于其最近引用过的数据项</strong></p>
 <ul>
@@ -557,7 +585,73 @@ var _hmt = _hmt || [];
 <li>在加载时，执行<strong>动态链接</strong>，根据静态链接得到的信息，比如.interp节中的动态链接器的路径名，重定位共享库的<strong>数据和代码</strong>到<strong>存储器段</strong>和重定位可执行文件中所有由共享库定义的<strong>符号的引用</strong>，完成链接任务。</li>
 </ul>
 <p><strong>使用共享库，运行时的动态链接：</strong>将<strong>动态生成内容</strong>的每个<strong>函数</strong>打包在共享库中。</p>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2> 
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p><strong>异常</strong>就是控制流中的突变，用来响应处理器状态中的某些变化。状态变化称为<strong>事件</strong>。</p>
+<p>在任何情况下，当处理器检测到有事件发生时，它会通过一张叫<strong>异常表</strong>的跳转表，调用一个专门用来处理这类事件的操作系统子程序。</p>
+<p>当异常处理程序<strong>处理完异常之后</strong>，情况有三种：</p>
+<ul>
+<li>返回，当事件发生时，正在执行的指令</li>
+<li>返回，如果没有发生异常，将会执行的下一条指令</li>
+<li>终止被中断的程序</li>
+</ul>
+<p><strong>异常的类别</strong></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610170528892.png" alt="image-20210610170528892"></p>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>经典定义：进程就是<strong>一个执行中的程序</strong>。也就是说，我们每运行一个程序，都会创建一个新的进程。</p>
+<p>我们不关注它如何实现，我们关注它所提供的应用程序的关键抽象：</p>
+<ul>
+<li>一个独立的<strong>逻辑控制流</strong>。并不是独占处理器，而是多个进程去轮流使用处理器。</li>
+<li>一个私立的<strong>地址空间</strong>。并不是独占地使用系统地址空间，而是一个进程给每个程序提供它自己的私有地址空间，理论上不能被其他进程读写。这是由虚拟存储器实现的。</li>
+</ul>
+<p><strong>并发</strong>是指多个逻辑控制流并发执行，注意与<strong>并行</strong>区别开。</p>
+<p><strong>多任务</strong>是指多个进程轮流执行。因为进程的控制流的一部分的时间段叫做<strong>时间片</strong>，所以<strong>多任务</strong>也称为<strong>时间分片</strong>。</p>
+<p>内核为<strong>每个进程</strong>维持一个<strong>上下文</strong>。<strong>上下文</strong>就是内核重新启动一个被抢占的进程所需的<strong>状态</strong>，它由<strong>一些对象的值组成</strong>。</p>
+<p><strong>操作系统</strong>通过使用<strong>上下文切换</strong>的较高层形式的异常控制流来实现<strong>多任务</strong>，这个过程有三步：</p>
+<ol>
+<li>保存当前上下文</li>
+<li>恢复先前被抢占的进程被保存的上下文</li>
+<li>将控制传递给这个新恢复的进程。</li>
+</ol>
+<p>下图是<strong>进程A和B上下文切换</strong>的一个实例，执行系统调用read到内核，内核中的陷阱程序请求磁盘控制器DMA传输，在传输完成后磁盘中断处理器。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610193402041.png" alt="image-20210610193402041"></p>
+<p>从程序员角度，<strong>进程有三种状态</strong>：</p>
+<ol>
+<li><strong>运行</strong>。进程正在执行，或者等待被内核调度。</li>
+<li><strong>停止</strong>。被挂起，不会被调度。当收到信号时，再次开始运行。</li>
+<li><strong>终止</strong>。进程永远停止了。原因主要有：收到的信号的行为是终止进程、从主程序中返回、调用<code>void exit(int status)</code>函数</li>
+</ol>
+<p><strong>进程控制</strong>，也就是从C程序中操作进程的系统调用。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unisd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Linux系统中，pit_t被types.h定义为int */</span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">getpid</span><span class="params">(<span class="keyword">void</span>)</span></span>;          <span class="comment">//返回调用进程的PID(唯一的正数进程ID)</span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">getpid</span><span class="params">(<span class="keyword">void</span>)</span></span>;          <span class="comment">//返回父进程的PID，父进程指创建调用进程的进程</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/************************************************************</span></span><br><span class="line"><span class="comment">** 子进程与父进程几乎但不完全相同。它们最大的区别是PID，除此之外相同。</span></span><br><span class="line"><span class="comment">** 所以当父进程调用fork时，子进程可以读写父进程中打开的任何文件 </span></span><br><span class="line"><span class="comment">*************************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">fork</span><span class="params">(<span class="keyword">void</span>)</span></span>;            <span class="comment">//父进程通过fork函数创建一个新的运行子进程</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">waitpid</span><span class="params">(<span class="keyword">pid_t</span> pid, <span class="keyword">int</span> *status, <span class="keyword">int</span> options)</span>    <span class="comment">//调用waitpid函数来等待它的子进程终止或停止</span></span></span><br><span class="line"><span class="function"><span class="keyword">pid_t</span> <span class="title">wait</span><span class="params">(<span class="keyword">int</span> *status)</span>      <span class="comment">//waitpid函数的简化版本，等价于调用waitpid(-1, status, 0)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">sleep</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> secs)</span>   <span class="comment">//让进程休眠secs秒，返回值为剩余秒数，如果收到中断信号，则可能不为0</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pause</span><span class="params">(<span class="keyword">void</span>)</span>              <span class="comment">//让进城休眠直到等到一个信号，总是返回-1</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">execve</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename, <span class="keyword">const</span> <span class="keyword">char</span> *argv[], <span class="keyword">const</span> <span class="keyword">char</span> *envp[])</span></span></span><br><span class="line"><span class="function"><span class="comment">//execve函数加载并运行可执行文件filename，参数列表argv和环境列表envp。</span></span></span><br><span class="line"><span class="function"><span class="comment">//如果成功，则不返回；如果错误，返回-1</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>子进程和父进程执行的特点：</strong></p>
+<ol>
+<li><strong>fork调用一次返回两次</strong>，一次子进程返回0，一次父进程返回PID，可以用来分辨处于子进程还是父进程。。</li>
+<li><strong>并发执行。</strong>父进程子进程相互独立，并发执行。先后顺序不一定。</li>
+<li><strong>相同但是独立的地址空间。</strong>除了私有地址空间之外，代码、变量值完全相同，因此<strong>对数据做出的改变都是独立的</strong>。</li>
+<li><strong>共享文件。</strong>子进程会继承父进程打开的文件，当父进程调用fork时，std文件打开所以子进程不用再打开一次std文件，而是直接输出</li>
+</ol>
+<p><strong>fork的执行过程理解</strong>：当执行fork函数时，可以理解为分支，也就是从fork位置开始分成两支，并发执行接下来的代码。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610204730139.png" alt="image-20210610204730139"></p>
+<p><strong>加载一个可执行文件</strong>需要的<strong>命令行参数列表</strong>和<strong>环境列表</strong>：</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610210812718.png" alt="image-20210610210812718"></p>
+<p>新的程序开始时，一个<strong>典型的用户栈结构</strong>：</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610211302212.png" alt="image-20210610211302212"></p>
+<h2 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h2><p><strong>Unix信号</strong>是一种更高层的软件形式的<strong>异常</strong>，<strong>允许进程中断其他进程</strong>。</p>
+<p>一个<strong>信号</strong>就是一条小消息，它通知进程系统中发生了一个某种类型的<strong>事件</strong>。</p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610212141906.png" alt="image-20210610212141906"></p>
+<h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p><strong>虚拟存储器</strong>：一个由存放在<strong>磁盘</strong>上的<strong>N个连续</strong>的<strong>字节大小的单元</strong>组成的数组。每个字节和虚拟地址是<strong>一一对应</strong>的。</p>
+<p><strong>虚拟地址：</strong>就是<strong>磁盘</strong>上<strong>数组的索引</strong>。要比物理地址大很多。VPN作为页表的索引。VPO有p位定位业内的字节位置。</p>
+<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210617153531081.png" alt="image-20210617153531081"></p>
+<p><strong>解决4 GB内存空间的不足问题：</strong>只将磁盘中的一部分放入内存中，以后根据实际的需要随时从硬盘中调入内容。</p>
+<p><strong>物理寻址和虚拟寻址</strong></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610220900167.png" alt="image-20210610220900167"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610220914701.png" alt="image-20210610220914701"></p>
+<p><strong>磁盘</strong>：在<strong>存储器层次</strong>是处于<strong>主存</strong>之下的一层。</p>
+<p><strong>虚拟页和物理页：</strong>VM系统将<strong>虚拟存储器</strong>分割为<strong>虚拟页（VP）</strong>的固定大小的<strong>块</strong>来进行与主存间的传输，<strong>大小为P字节</strong>，<strong>物理页（PP）</strong>同样也是<strong>P字节</strong>大小</p>
+<p><strong>页表：</strong>就是一个<strong>页表条目（PTE）</strong>的数组。 为了判定一个虚拟页在哪个物理页，未命中判断虚拟页存放在磁盘的哪个位置，然后选择一个物理页作为牺牲页进行替换。</p>
+<p><strong>页表条目：</strong>一个<strong>有效位</strong>和<strong>n位地址</strong>组成。如果<strong>设置有效位</strong>，那么<strong>地址</strong>表示DRAM中<strong>物理页的起始位置</strong>，这个物理页<strong>缓存了该虚拟页</strong>。如果<strong>没有设置有效位</strong>，那么空地址表示该<strong>虚拟页未被分配</strong>。</p>
+<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210616224133179.png" alt="image-20210616224133179"></p>
+<p><strong>VM页命中：</strong>对VP2的一个字的引用就会命中。也就是已经缓存在DRAM的</p>
+<p><strong>VM缺页：</strong>对<strong>VP3的引用不命中</strong>，从而触发缺页。然后选择<strong>VP4作为牺牲页</strong>，并从磁盘<strong>用VP3的拷贝来取代它</strong>。在缺页处理程序重新启动后，该指令将从存储器中正常读取字，而不会产生异常。</p>
+ 
       <!-- reward -->
       
     </div>

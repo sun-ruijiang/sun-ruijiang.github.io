@@ -14,7 +14,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    深入理解计算机系统——课程作业7 |  Sung&#39;s Blog
+    算法导论——第2章 |  Sung&#39;s Blog
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
     <main class="content on">
       <section class="outer">
   <article
-  id="post-深入理解计算机系统——课程作业7"
+  id="post-算法导论——第2章"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -78,18 +78,18 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  深入理解计算机系统——课程作业7
+  算法导论——第2章
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/" class="article-date">
-  <time datetime="2021-05-28T16:00:00.000Z" itemprop="datePublished">2021-05-29</time>
+      <a href="/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/" class="article-date">
+  <time datetime="2021-06-09T16:00:00.000Z" itemprop="datePublished">2021-06-10</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/CS-APP/">CS:APP</a>
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
   </div>
   
 <div class="word_count">
@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">879</span>
+            <span class="post-count">1.9k</span>
         </span>
     </span>
 
@@ -106,7 +106,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">7 min</span>
         </span>
     </span>
 </div>
@@ -121,133 +121,82 @@ var _hmt = _hmt || [];
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="深入理解计算机系统——课程作业7"><a href="#深入理解计算机系统——课程作业7" class="headerlink" title="深入理解计算机系统——课程作业7"></a>深入理解计算机系统——课程作业7</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>正准备做buflab突然发现了新的课程作业，先做简单的。</p>
-<h2 id="题一"><a href="#题一" class="headerlink" title="题一"></a>题一</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>现有两段代码（分别是两个.c文件），如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> d = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	x = <span class="number">100</span>;</span><br><span class="line">	p();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;d=%d\n&quot;</span>, d);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;x=%d\n&quot;</span>, x);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <h1 id="算法导论——第2章-算法基础"><a href="#算法导论——第2章-算法基础" class="headerlink" title="算法导论——第2章 算法基础"></a>算法导论——第2章 算法基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本章将要<strong>介绍一个贯穿本书的框架</strong>，后续的算法设计与分析都是在这个框架中进行的。</p>
+<p>这一部分内容基本上是独立的，但也有对第3章和第4章中一些内容的引用（本章也包含几个求和的式子，附录A将给出如何求和）。</p>
+<p>首先，我们<strong>考察</strong>求解第1章中引入的排序问题的<strong>插入排序算法</strong>。我们定义一种对于已经编写过计算机程序的读者来说应该熟悉的“<strong>伪代码</strong>”，并用它来<strong>表明我们将如何说明算法</strong>。</p>
+<p>然后，在说明了插入排序算法后，我们将<strong>证明该算法能正确地排序并分析其运行时间</strong>。这种分析引入了一种<strong>记号</strong>，该记号关注<strong>时间</strong>如何随着将被排序的项数而增加。</p>
+<p>在讨论完插入排序之后，我们<strong>引入</strong>用于<strong>算法设计</strong>的<strong>分治法</strong>并使用这种方法<strong>开发</strong>一个称为<strong>归并排序的算法</strong>。</p>
+<p>最后，我们<strong>分析归并排序的运行时间</strong>。</p>
+<h2 id="2-1-插入排序"><a href="#2-1-插入排序" class="headerlink" title="2.1 插入排序"></a>2.1 插入排序</h2><p><strong>排序问题</strong>的<strong>问题陈述：</strong></p>
+<blockquote>
+<p>输入：n个数的一个序列</p>
+<p>输出：输入序列的一个递增排序</p>
+</blockquote>
+<p><strong>插入排序</strong>类似于排序手中的扑克牌，对于少量元素，它是一个有效的算法。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//insertion-sort(A):</span></span><br><span class="line"><span class="keyword">for</span> j=<span class="number">2</span> to A.length</span><br><span class="line">    key = A[j]</span><br><span class="line">    <span class="comment">//insert a[j] into the sorted sequence A[1..j-1]</span></span><br><span class="line">    i = j - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i&gt;<span class="number">0</span> <span class="keyword">and</span> A[i]&gt;key</span><br><span class="line">        A[i+<span class="number">1</span>] = A[i]</span><br><span class="line">        i = i<span class="number">-1</span></span><br><span class="line">    A[i+<span class="number">1</span>] = key</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//pl.c</span></span><br><span class="line"><span class="keyword">double</span> x = <span class="number">0.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	x = <span class="number">1.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>插入排序</strong>的<strong>循环不变式</strong>为<code>A[1..j-1]</code>。<strong>循环不变式</strong>主要用来帮助我们理解算法的正确性。需要满足三条性质：</p>
+<ol>
+<li><strong>初始化</strong>：循环的第一次迭代前，它为真</li>
+<li><strong>保持</strong>：如果在循环的某次迭代之前它为真，那么下次迭代之前它仍为真。</li>
+<li><strong>终止</strong>：在循环终止时，不变式为我们提供一个有用的性质，该性质帮助证明算法是正确的。</li>
+</ol>
+<p><strong>伪代码</strong>中的一些<strong>约定</strong>：</p>
+<ol>
+<li><code>//</code>表示该行后面部分是注释。</li>
+<li><code>for X to / downto Y by M</code>表示将X每次递增（to）M或者递减（downto）M到Y</li>
+<li>缩进表示块结构</li>
+<li>变量若不显式说明，一般为局部变量</li>
+<li><code>A[i]</code>表示A数组的第i个元素</li>
+</ol>
+<h2 id="2-2-分析算法"><a href="#2-2-分析算法" class="headerlink" title="2.2 分析算法"></a>2.2 分析算法</h2><p><strong>分析算法</strong>的结果意味着需要<strong>预测算法所需要的资源</strong>。</p>
+<p><strong>插入排序算法的分析。</strong>我们通常把一个程序的<strong>运行时间</strong>描述成其<strong>输入规模的函数</strong>。为此我们需要定义<strong>运行时间</strong>和<strong>输入规模</strong>。</p>
+<p><strong>输入规模的最佳概念依赖于研究的问题。</strong>对于研究的每个问题，我们将指出所使用的<strong>输入规模量度</strong>。</p>
+<p>一个算法的在特定输入上的<strong>运行时间</strong>是指<strong>执行的基本操作数或步数</strong>。</p>
+<p><strong>分析插入排序算法的过程：</strong></p>
+<ol>
+<li>首先给出<strong>伪代码</strong>中，每条语句的<strong>执行时间</strong>和<strong>执行次数</strong>。<br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612155737763.png" alt="image-20210612155737763"></li>
+<li>将<strong>代价</strong>与<strong>次数</strong>列对应元素之积求和，求得该算法的<strong>运行时间</strong><br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612170827577.png" alt="image-20210612170827577"></li>
+<li><strong>最佳情况</strong>（也就是全都排列好了）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n+b<br>$$<br>它是n的*<em>线性函数。</em></em><br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612180456773.png" alt="image-20210612180456773"></li>
+<li><strong>最差情况</strong>（也就是数组反向排序）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n^2  + b</em>n + c<br>$$<br>它是n的<strong>二次函数。</strong><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612192159007.png" alt="image-20210612192159007"> </li>
+</ol>
+<p><strong>一般情况</strong>下，我们习惯于研究<strong>最差情况</strong>。在某些<strong>特殊的情况</strong>下，我们会对一个算法的<strong>平均情况</strong>运行时间感兴趣。</p>
+<p>我们真正感兴趣的是运算时间的<strong>增长率</strong>和<strong>增长量级</strong>。所以我们<strong>只考虑</strong>公式中最重要的项，就是<strong>高阶项</strong>，而<strong>忽略低阶项和常数项</strong>。</p>
+<h2 id="2-3-设计算法"><a href="#2-3-设计算法" class="headerlink" title="2.3 设计算法"></a>2.3 设计算法</h2><p>本节我们考查另一种称为“<strong>分治法</strong>”的设计方法。第4章将更深入地探究该方法。</p>
+<p>我们将用<strong>分治法</strong>来<strong>设计一个排序算法</strong>，该算法的最坏情况运行时间比插入排序要少得多。</p>
+<p><strong>分治算法的优点之一</strong>是，通过使用第4章介绍的技术往往<strong>很容易确定其运行时间</strong>。</p>
+<h3 id="2-3-1-分治法"><a href="#2-3-1-分治法" class="headerlink" title="2.3.1 分治法"></a>2.3.1 分治法</h3><p><strong>分治法的思想</strong>：将原问题<strong>分解</strong>成几个规模较小但类似于原问题的子问题。<strong>递归地求解</strong>这些子问题，然后再<strong>合并这些子问题的解</strong>来建立原问题的解。</p>
+<p><strong>归并排序</strong>算法完全<strong>遵循分治模式</strong>。直观上其<strong>操作如下</strong>:</p>
+<ol>
+<li><strong>分解：</strong>分解待排序的n个元素的序列成各具n/2个元素的两个子序列。</li>
+<li><strong>解决：</strong>使用归并排序递归地排序两个子序列。</li>
+<li><strong>合并：</strong>合并两个已排序的子序列以产生已排序的答案。</li>
+</ol>
+<p>调用<code>Merge(A,p,q,r)</code>将已排序数组<code>A[p..q]</code>和<code>A[q+1..r]</code><strong>合并</strong>，伪代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Merge(A, p, q, r)</span></span><br><span class="line">n1 = q - p + <span class="number">1</span>;</span><br><span class="line">n2 = r - q;</span><br><span class="line">Let L[<span class="number">1.</span>.n1+<span class="number">1</span>] <span class="keyword">and</span> R[<span class="number">1.</span>.n2+<span class="number">1</span>] be <span class="keyword">new</span> arrays</span><br><span class="line"><span class="keyword">for</span> i=<span class="number">1</span> to n1</span><br><span class="line">    L[i] = A[p+i<span class="number">-1</span>];</span><br><span class="line"><span class="keyword">for</span> j=<span class="number">1</span> to n2</span><br><span class="line">    R[j] = A[q+j];</span><br><span class="line">L[n1+<span class="number">1</span>] = \infity;</span><br><span class="line">R[n2+<span class="number">1</span>] = \infity;</span><br><span class="line">i=<span class="number">1</span>;</span><br><span class="line">j=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> k=p to r</span><br><span class="line">    <span class="keyword">if</span> L[i] &lt;= R[j]</span><br><span class="line">        A[k] = L[i]</span><br><span class="line">        i = i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        A[k] = R[j]</span><br><span class="line">        j = j+<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>请问通过分离编译、链接后，屏幕打印输出是什么（请贴图为证）？</p>
-<p>结合链接一章所学相关知识，请分析解释为什么会有这个结果，可结合 objdump, readelf, nm 等工具辅助分析（请呈现你的分析过程）。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p><strong>输出结果如下</strong></p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602093820902.png" alt="image-20210602093820902"></p>
-<p>我们想知道到底输出了什么，使用objdump查看反汇编代码，查看p和main函数的指令</p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602115531512.png" alt="image-20210602115531512"></p>
-<p>发现最后输出0x804a020地址的内容，于是我们使用gdb调试下断点在*main+24，就是输出之前的位置，然后运行调试</p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602123845576.png" alt="image-20210602123845576"></p>
-<p>我们发现0x804a020地址的内容，在运行之前是0x00000000 0x00000000，运行到断点处是0x00000000 0x3ff00000</p>
-<p>所以最后输出的是0x00000000也就是0</p>
-<p><strong>分析原因：</strong>double类型是8字节的，按照%d输出四个字节的话，不会输出0x3ff0000000000000（double 1.0）而是它的后四个字节0x00000000（int 0）</p>
-<h2 id="题二"><a href="#题二" class="headerlink" title="题二"></a>题二</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>现有两段代码（分别是两个.c文件），如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> d = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> x = <span class="number">200</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	p( );</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;d = % d, x = % d\n&quot;</span>, d, x);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>循环不变式</strong>为<code>A[p,k-1]</code>，为了证明算法正确性，它需要满足：</p>
+<ol>
+<li><strong>初始化：</strong>迭代前<code>k=p</code>时，<code>A[p..k-1]</code>为空。它为真</li>
+<li><strong>保持：</strong>因为L和R数组都是已经排序好的数组，所以每次选出来的确实是最小值。如果L[i]&lt;=R[j]，将L[i]复制给A[k]，增加i和k的值后，为下次迭代建立了该循环不变式，反之亦然。</li>
+<li><strong>终止：</strong>终止时<code>k=r+1</code>，<code>A[p..k-1]</code>就是<code>A[p..r]</code>且按照从小到大的顺序包含L和R数组除了哨兵之外的所有元素。</li>
+</ol>
+<p><code>Merge</code>的<strong>运行时间</strong>是：<br>$$<br>\theta(n)<br>$$<br>所以<strong>归并排序</strong>算法的伪代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//merge-sort(A, p, r)</span></span><br><span class="line"><span class="keyword">if</span> p&lt;r</span><br><span class="line">    q= (p+r)/<span class="number">2</span></span><br><span class="line">    merge-sort(A, p, q)</span><br><span class="line">    merge-sort(A, q+<span class="number">1</span>, r)</span><br><span class="line">    merge(A, p, q, r)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//p.c</span></span><br><span class="line"><span class="keyword">double</span> d;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">p</span><span class="params">( )</span> </span>&#123;</span><br><span class="line">	d = <span class="number">1.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>请问通过分离编译、链接后，屏幕打印输出是什么（请贴图为证）？</p>
-<p>结合链接一章所学相关知识，请分析解释为什么会有这个结果，可结合 objdump, readelf, nm 等工具辅助分析（请呈现你的分析过程）。</p>
-<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>输出结果如下<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602130523997.png" alt="image-20210602130523997"></p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602130414470.png" alt="image-20210602130414470"></p>
-<p>分析原因：从汇编代码中我们可以知道，函数p还是赋给d一个0x3ff0000000000000（double 1.0），调试验证确实是double 1.0，然后先输出0x804a014地址的值0x00000000（int 0），然后输出0x804a018地址的值0x3ff00000（int 1072693248）<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602134224920.png" alt="image-20210602134224920"></p>
-<h2 id="题三：P476-家庭作业7-12"><a href="#题三：P476-家庭作业7-12" class="headerlink" title="题三：P476 家庭作业7.12"></a>题三：P476 家庭作业7.12</h2><table>
-<thead>
-<tr>
-<th align="center">图7-10中的行号</th>
-<th align="center">地址</th>
-<th align="center">值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">15（bufp0）</td>
-<td align="center">0x080483cb</td>
-<td align="center">0x0804945c</td>
-</tr>
-<tr>
-<td align="center">16（buf[1]）</td>
-<td align="center">0x080483d0</td>
-<td align="center">0x08049458</td>
-</tr>
-<tr>
-<td align="center">18（bufp1）</td>
-<td align="center">0x080483d8</td>
-<td align="center">0x08049548</td>
-</tr>
-<tr>
-<td align="center">18（buf[1]）</td>
-<td align="center">0x080483dc</td>
-<td align="center">0x08049458</td>
-</tr>
-<tr>
-<td align="center">23（bufp1）</td>
-<td align="center">0x080483e7</td>
-<td align="center">0x08049548</td>
-</tr>
-</tbody></table>
-<h2 id="题四：P478-家庭作业7-14"><a href="#题四：P478-家庭作业7-14" class="headerlink" title="题四：P478 家庭作业7.14"></a>题四：P478 家庭作业7.14</h2><h3 id="A、-text节重定位修改的指令"><a href="#A、-text节重定位修改的指令" class="headerlink" title="A、.text节重定位修改的指令"></a>A、.text节重定位修改的指令</h3><p>.text存放的是已编译程序的机器代码</p>
-<p>第7,10,12,13,15行的指令，因为不是32位的地址，不需要重定位。</p>
-<table>
-<thead>
-<tr>
-<th align="center">节偏移</th>
-<th align="center">重定位类型</th>
-<th align="center">符号名字</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0x11</td>
-<td align="center">R_386_32</td>
-<td align="center">.rodata</td>
-</tr>
-</tbody></table>
-<h3 id="B、-rodata节修改的数据"><a href="#B、-rodata节修改的数据" class="headerlink" title="B、.rodata节修改的数据"></a>B、.rodata节修改的数据</h3><p>.rodata在这里存放的是switch语句的跳转表。</p>
-<table>
-<thead>
-<tr>
-<th align="center">节偏移</th>
-<th align="center">重定位类型</th>
-<th align="center">符号名字</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0x0</td>
-<td align="center">R_386_32</td>
-<td align="center">relo3</td>
-</tr>
-<tr>
-<td align="center">0x4</td>
-<td align="center">R_386_32</td>
-<td align="center">relo3</td>
-</tr>
-<tr>
-<td align="center">0x8</td>
-<td align="center">R_386_32</td>
-<td align="center">relo3</td>
-</tr>
-<tr>
-<td align="center">0xc</td>
-<td align="center">R_386_32</td>
-<td align="center">relo3</td>
-</tr>
-<tr>
-<td align="center">0x10</td>
-<td align="center">R_386_32</td>
-<td align="center">relo3</td>
-</tr>
-<tr>
-<td align="center">0x14</td>
-<td align="center">R_386_32</td>
-<td align="center">relo3</td>
-</tr>
-</tbody></table>
-<h2 id="题五：P479-家庭作业7-15"><a href="#题五：P479-家庭作业7-15" class="headerlink" title="题五：P479 家庭作业7.15"></a>题五：P479 家庭作业7.15</h2><h3 id="A、libc-a和libm-a的版本中包含多少目标文件？"><a href="#A、libc-a和libm-a的版本中包含多少目标文件？" class="headerlink" title="A、libc.a和libm.a的版本中包含多少目标文件？"></a>A、libc.a和libm.a的版本中包含多少目标文件？</h3><p>在Ubuntu12.04.5系统下进行</p>
-<p>先使用locate命令寻找.a文件</p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602083937856.png" alt="image-20210602083937856"></p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210602084001274.png" alt="image-20210602084001274"></p>
-<p>然后查看文件，发现：</p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/image-20210612221510633.png" alt="image-20210612221510633"></p>
-<h3 id="B、gcc-O2产生的可执行代码和gcc-O2-g产生的不同？"><a href="#B、gcc-O2产生的可执行代码和gcc-O2-g产生的不同？" class="headerlink" title="B、gcc -O2产生的可执行代码和gcc -O2 -g产生的不同？"></a>B、gcc -O2产生的可执行代码和gcc -O2 -g产生的不同？</h3><p>-g选项生成的可执行目标文件多两个节</p>
-<p><strong>.debug：</strong>一个调试符号表。包括局部变量、全局变量以及原始的C源文件。</p>
-<p><strong>.line：</strong>原始C源程序中的行号和.text节中机器指令之间的映射。</p>
-<h3 id="C、GCC驱动程序使用的是什么共享库？"><a href="#C、GCC驱动程序使用的是什么共享库？" class="headerlink" title="C、GCC驱动程序使用的是什么共享库？"></a>C、GCC驱动程序使用的是什么共享库？</h3><p><strong>libc.so共享库</strong></p>
+<h3 id="2-3-2-分析分治算法"><a href="#2-3-2-分析分治算法" class="headerlink" title="2.3.2 分析分治算法"></a>2.3.2 分析分治算法</h3><p>当一个算法包含<strong>对其自身的递归调用</strong>时，我们往往可以用<strong>递归方程</strong>或<strong>递归式</strong>来描述其<strong>运行时间</strong>。</p>
+<p>该方程根据<strong>在较小输入上的运行时间</strong>来描述在<strong>规模为n的问题上的总运行时间</strong>。</p>
+<p>然后我们可以使用数学工具来求解该<strong>递归式</strong>并给出算法性能的界。</p>
+<p><strong>分治算法运行时间的递归式</strong>来自<strong>基本模式</strong>的三个步骤，假设T(n)是规模为n的一个问题的运行时间：</p>
+<ol>
+<li><strong>分解</strong>。将原问题分解成<strong>a个子问题</strong>，每个<strong>子问题的规模</strong>是原问题的<strong>1/b</strong>，a不一定等于b。分解问题**所需的时间为D(n)**。</li>
+<li><strong>解决</strong>。对于一个<strong>规模为n/b的子问题</strong>，需要T(n/b)的运行时间，所以需要<strong>aT(n/b)的时间来求解a个子问题</strong>。</li>
+<li><strong>合并</strong>。将子问题的解<strong>合并成原问题的解</strong>需要**时间C(n)**。</li>
+</ol>
+<p>若<strong>问题规模n</strong>小于等于<strong>某个常量c</strong>时，可以<strong>直接求得运行时间</strong>，那么得到<strong>递归式</strong>：<br>$$<br>T(n)=<br>\begin{cases}<br>\theta(1)，&amp; \text{若 }n \leq c \<br>aT(n/b) + D(n) + C(n)，&amp; \text{其他 }<br>\end{cases}<br>$$<br>为了对<strong>归并排序</strong>算法进行<strong>分析</strong>，我们建立<strong>归并排序n个数</strong>的<strong>最坏情况</strong>运行时间T(n)的<strong>递归式</strong>：</p>
+<ol>
+<li></li>
+</ol>
  
       <!-- reward -->
       
@@ -312,12 +261,12 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/" rel="tag">课程作业</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/" rel="tag">算法导论</a></li></ul>
 
     </footer>
   </div>
@@ -325,19 +274,19 @@ var _hmt = _hmt || [];
    
   <nav class="article-nav">
     
-      <a href="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/" class="article-nav-link">
+      <a href="/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            深入理解计算机系统——LAB-4_BufLab
+            算法导论——基本内容介绍
           
         </div>
       </a>
     
     
-      <a href="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/" class="article-nav-link">
+      <a href="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">深入理解计算机系统——课程作业6</div>
+        <div class="article-nav-title">深入理解计算机系统——LAB-4_BufLab</div>
       </a>
     
   </nav>
