@@ -970,7 +970,7 @@
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610212141906.png" alt="image-20210610212141906"></p>
 <h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p><strong>虚拟存储器</strong>：一个由存放在<strong>磁盘</strong>上的<strong>N个连续</strong>的<strong>字节大小的单元</strong>组成的数组。每个字节和虚拟地址是<strong>一一对应</strong>的。</p>
 <p><strong>虚拟地址：</strong>就是<strong>磁盘</strong>上<strong>数组的索引</strong>。要比物理地址大很多。VPN作为页表的索引。VPO有p位定位业内的字节位置。</p>
-<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210617153531081.png" alt="image-20210617153531081"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210617153531081.png" alt="image-20210617153531081"></p>
 <p><strong>解决4 GB内存空间的不足问题：</strong>只将磁盘中的一部分放入内存中，以后根据实际的需要随时从硬盘中调入内容。</p>
 <p><strong>物理寻址和虚拟寻址</strong></p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610220900167.png" alt="image-20210610220900167"></p>
@@ -979,7 +979,7 @@
 <p><strong>虚拟页和物理页：</strong>VM系统将<strong>虚拟存储器</strong>分割为<strong>虚拟页（VP）</strong>的固定大小的<strong>块</strong>来进行与主存间的传输，<strong>大小为P字节</strong>，<strong>物理页（PP）</strong>同样也是<strong>P字节</strong>大小</p>
 <p><strong>页表：</strong>就是一个<strong>页表条目（PTE）</strong>的数组。 为了判定一个虚拟页在哪个物理页，未命中判断虚拟页存放在磁盘的哪个位置，然后选择一个物理页作为牺牲页进行替换。</p>
 <p><strong>页表条目：</strong>一个<strong>有效位</strong>和<strong>n位地址</strong>组成。如果<strong>设置有效位</strong>，那么<strong>地址</strong>表示DRAM中<strong>物理页的起始位置</strong>，这个物理页<strong>缓存了该虚拟页</strong>。如果<strong>没有设置有效位</strong>，那么空地址表示该<strong>虚拟页未被分配</strong>。</p>
-<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210616224133179.png" alt="image-20210616224133179"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210616224133179.png" alt="image-20210616224133179"></p>
 <p><strong>VM页命中：</strong>对VP2的一个字的引用就会命中。也就是已经缓存在DRAM的</p>
 <p><strong>VM缺页：</strong>对<strong>VP3的引用不命中</strong>，从而触发缺页。然后选择<strong>VP4作为牺牲页</strong>，并从磁盘<strong>用VP3的拷贝来取代它</strong>。在缺页处理程序重新启动后，该指令将从存储器中正常读取字，而不会产生异常。</p>
 ]]></content>
@@ -1530,7 +1530,11 @@
 <p>英语课公交车，小笼包好吃！</p>
 </blockquote>
 </li>
+<li><p>其他的都忘记了</p>
+</li>
 </ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>打卡后面都有点烦，开始还准备好好跑步来着。。。</p>
+<p>日记可能有点累，但是我觉得隔一段时间去记录一下自己的生活是很有必要的。</p>
 ]]></content>
       <categories>
         <category>life</category>
@@ -1783,7 +1787,7 @@
   </entry>
   <entry>
     <title>算法导论——第2章</title>
-    <url>/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/</url>
+    <url>/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/</url>
     <content><![CDATA[<h1 id="算法导论——第2章-算法基础"><a href="#算法导论——第2章-算法基础" class="headerlink" title="算法导论——第2章 算法基础"></a>算法导论——第2章 算法基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本章将要<strong>介绍一个贯穿本书的框架</strong>，后续的算法设计与分析都是在这个框架中进行的。</p>
 <p>这一部分内容基本上是独立的，但也有对第3章和第4章中一些内容的引用（本章也包含几个求和的式子，附录A将给出如何求和）。</p>
 <p>首先，我们<strong>考察</strong>求解第1章中引入的排序问题的<strong>插入排序算法</strong>。我们定义一种对于已经编写过计算机程序的读者来说应该熟悉的“<strong>伪代码</strong>”，并用它来<strong>表明我们将如何说明算法</strong>。</p>
@@ -1818,10 +1822,10 @@
 <p>一个算法的在特定输入上的<strong>运行时间</strong>是指<strong>执行的基本操作数或步数</strong>。</p>
 <p><strong>分析插入排序算法的过程：</strong></p>
 <ol>
-<li>首先给出<strong>伪代码</strong>中，每条语句的<strong>执行时间</strong>和<strong>执行次数</strong>。<br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612155737763.png" alt="image-20210612155737763"></li>
-<li>将<strong>代价</strong>与<strong>次数</strong>列对应元素之积求和，求得该算法的<strong>运行时间</strong><br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612170827577.png" alt="image-20210612170827577"></li>
-<li><strong>最佳情况</strong>（也就是全都排列好了）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n+b<br>$$<br>它是n的*<em>线性函数。</em></em><br><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612180456773.png" alt="image-20210612180456773"></li>
-<li><strong>最差情况</strong>（也就是数组反向排序）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n^2  + b</em>n + c<br>$$<br>它是n的<strong>二次函数。</strong><img src="/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612192159007.png" alt="image-20210612192159007"> </li>
+<li>首先给出<strong>伪代码</strong>中，每条语句的<strong>执行时间</strong>和<strong>执行次数</strong>。<br><img src="/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612155737763.png" alt="image-20210612155737763"></li>
+<li>将<strong>代价</strong>与<strong>次数</strong>列对应元素之积求和，求得该算法的<strong>运行时间</strong><br><img src="/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612170827577.png" alt="image-20210612170827577"></li>
+<li><strong>最佳情况</strong>（也就是全都排列好了）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n+b<br>$$<br>它是n的*<em>线性函数。</em></em><br><img src="/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612180456773.png" alt="image-20210612180456773"></li>
+<li><strong>最差情况</strong>（也就是数组反向排序）的<strong>运行时间</strong>，可以表示为<br>$$<br>a<em>n^2  + b</em>n + c<br>$$<br>它是n的<strong>二次函数。</strong><img src="/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/image-20210612192159007.png" alt="image-20210612192159007"> </li>
 </ol>
 <p><strong>一般情况</strong>下，我们习惯于研究<strong>最差情况</strong>。在某些<strong>特殊的情况</strong>下，我们会对一个算法的<strong>平均情况</strong>运行时间感兴趣。</p>
 <p>我们真正感兴趣的是运算时间的<strong>增长率</strong>和<strong>增长量级</strong>。所以我们<strong>只考虑</strong>公式中最重要的项，就是<strong>高阶项</strong>，而<strong>忽略低阶项和常数项</strong>。</p>

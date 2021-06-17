@@ -639,7 +639,7 @@ var _hmt = _hmt || [];
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610212141906.png" alt="image-20210610212141906"></p>
 <h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p><strong>虚拟存储器</strong>：一个由存放在<strong>磁盘</strong>上的<strong>N个连续</strong>的<strong>字节大小的单元</strong>组成的数组。每个字节和虚拟地址是<strong>一一对应</strong>的。</p>
 <p><strong>虚拟地址：</strong>就是<strong>磁盘</strong>上<strong>数组的索引</strong>。要比物理地址大很多。VPN作为页表的索引。VPO有p位定位业内的字节位置。</p>
-<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210617153531081.png" alt="image-20210617153531081"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210617153531081.png" alt="image-20210617153531081"></p>
 <p><strong>解决4 GB内存空间的不足问题：</strong>只将磁盘中的一部分放入内存中，以后根据实际的需要随时从硬盘中调入内容。</p>
 <p><strong>物理寻址和虚拟寻址</strong></p>
 <p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210610220900167.png" alt="image-20210610220900167"></p>
@@ -648,7 +648,7 @@ var _hmt = _hmt || [];
 <p><strong>虚拟页和物理页：</strong>VM系统将<strong>虚拟存储器</strong>分割为<strong>虚拟页（VP）</strong>的固定大小的<strong>块</strong>来进行与主存间的传输，<strong>大小为P字节</strong>，<strong>物理页（PP）</strong>同样也是<strong>P字节</strong>大小</p>
 <p><strong>页表：</strong>就是一个<strong>页表条目（PTE）</strong>的数组。 为了判定一个虚拟页在哪个物理页，未命中判断虚拟页存放在磁盘的哪个位置，然后选择一个物理页作为牺牲页进行替换。</p>
 <p><strong>页表条目：</strong>一个<strong>有效位</strong>和<strong>n位地址</strong>组成。如果<strong>设置有效位</strong>，那么<strong>地址</strong>表示DRAM中<strong>物理页的起始位置</strong>，这个物理页<strong>缓存了该虚拟页</strong>。如果<strong>没有设置有效位</strong>，那么空地址表示该<strong>虚拟页未被分配</strong>。</p>
-<p><img src="/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210616224133179.png" alt="image-20210616224133179"></p>
+<p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/image-20210616224133179.png" alt="image-20210616224133179"></p>
 <p><strong>VM页命中：</strong>对VP2的一个字的引用就会命中。也就是已经缓存在DRAM的</p>
 <p><strong>VM缺页：</strong>对<strong>VP3的引用不命中</strong>，从而触发缺页。然后选择<strong>VP4作为牺牲页</strong>，并从磁盘<strong>用VP3的拷贝来取代它</strong>。在缺页处理程序重新启动后，该指令将从存储器中正常读取字，而不会产生异常。</p>
  
