@@ -164,7 +164,7 @@ var _hmt = _hmt || [];
 <p> 在法律禁止BOMB的情况下，此许可无效。                                                                </p>
 </blockquote>
 </li>
-<li><p>,四个头文件，波浪线的两个我们没有，很好，过！<br><img src="/2021/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210428143806306.png" alt="image-20210428143806306"></p>
+<li><p>,四个头文件，波浪线的两个我们没有，很好，过！<br><img src="/2021/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210428143806306.png" alt="image-20210428143806306"></p>
 </li>
 <li><p>注释意思是</p>
 <blockquote>
@@ -257,7 +257,7 @@ var _hmt = _hmt || [];
 <li><code>__isoc99_sscanf@plt</code>的第二个参数是<code>0x804a3e3</code>，以字符串的形式查看内存，所以我们知道后两个参数地址存的都是整数。<br><img src="/2021/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210430191833050.png" alt="image-20210430191833050">、</li>
 <li><code>0x08048bed &lt;+49&gt;:    cmpl   $0x7,0x18(%esp)</code>可知，第一个整数范围是0-7，不能是负数因为<code>ja</code>是无符号比较，出范围就爆炸</li>
 <li><code>0x08048bf8 &lt;+60&gt;:    jmp    *0x804a220(,%eax,4)</code>可知，根据第一个整数，决定跳转到什么位置<ul>
-<li>查看这8个不同跳转位置<br><img src="/2021/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210430200908533.png" alt="image-20210430200908533"></li>
+<li>查看这8个不同跳转位置<br><img src="/2021/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/image-20210430200908533.png" alt="image-20210430200908533"></li>
 <li>因此我们得到了八个不同的输入组合：<br><code>0 813</code>、<code>1  643</code>、<code>2  876</code>、<code>3  987</code>、<code>4  365</code>、<code>5  977</code>、<code>6  971</code>、<code>7 540 </code></li>
 <li>经验证，这几个都是符合的答案</li>
 </ul>
