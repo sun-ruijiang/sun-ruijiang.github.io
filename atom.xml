@@ -6,7 +6,7 @@
   <link href="https://sun-ruijiang.github.io/atom.xml" rel="self"/>
   
   <link href="https://sun-ruijiang.github.io/"/>
-  <updated>2021-06-17T14:49:18.679Z</updated>
+  <updated>2021-07-04T06:04:36.302Z</updated>
   <id>https://sun-ruijiang.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你真的了解你的电脑吗</title>
+    <link href="https://sun-ruijiang.github.io/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/"/>
+    <id>https://sun-ruijiang.github.io/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/</id>
+    <published>2021-06-29T16:00:00.000Z</published>
+    <updated>2021-07-04T06:04:36.302Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="你真的了解你的电脑吗？"><a href="#你真的了解你的电脑吗？" class="headerlink" title="你真的了解你的电脑吗？"></a>你真的了解你的电脑吗？</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>认识计算机，了解自己的电脑。</p><p>因为下意识它是个比较复杂的问题，很久以来，我一直去回避这个问题。</p><p>我想认真地去看看我的笔记本，它到底是怎么组成的，褪去它神秘的面纱。</p><h2 id="从装机的角度了解电脑"><a href="#从装机的角度了解电脑" class="headerlink" title="从装机的角度了解电脑"></a>从装机的角度了解电脑</h2><h3 id="1-电脑组成"><a href="#1-电脑组成" class="headerlink" title="1. 电脑组成"></a>1. 电脑组成</h3><p><strong>电脑外设：</strong>显示器、主机、鼠标、键盘等。</p><p><strong>电脑内部：</strong>CPU、内存条、硬盘、显卡、声卡、网卡、电源、主板、散热扇。</p><p>接下来会选择其中几项进行介绍。</p><h3 id="2-CPU"><a href="#2-CPU" class="headerlink" title="2. CPU"></a>2. CPU</h3><p>CPU即中央处理器，是一台计算机的运算核心和控制核心。其功能主要是解释计算机指令以及处理计算机软件中的数据。</p><p>CPU由<strong>运算器</strong>、<strong>控制器</strong>、<strong>寄存器</strong>、<strong>高速缓存</strong>及实现它们之间联系的数据、控制及状态的总线构成。</p><p>作为整个系统的核心，CPU也是整个系统最高的执行单元，因此CPU已成为决定电脑性能的核心部件，很多用户都以它为标准来判断电脑的档次。</p><p><strong>工作过程</strong>：在控制器控制下，CPU问高速缓存要一条指令（如果高速缓存没有就向主存要，主存没有向磁盘要）， 通过寄存器和运算器去执行这个指令， 如果是个跳转指令的话，就问高速缓存要跳转的目标地址（地址经过MMU翻译成物理地址）的那一条指令， 继续执行。</p><h4 id="2-1-生产CPU厂商"><a href="#2-1-生产CPU厂商" class="headerlink" title="2.1 生产CPU厂商"></a>2.1 生产CPU厂商</h4><ol><li><p><strong>英特尔</strong></p><p>英特尔公司是全球最大的半导体芯片制造商，它成立于1968年，具有44年产品创新和市场领导的历史。1971年，英特尔推出了全球第一个微处理器。微处理器所带来的计算机和互联网革命，改变了整个世界</p></li><li><p><strong>AMD</strong></p><p>AMD公司专门为计算机、通信和消费电子行业设计和制造各种创新的微处理器（CPU、GPU、APU、主板芯片组、电视卡芯片等)、闪存和低功率处理器解决方案，AMD 致力为技术用户——从企业、政府机构到个人消费者——提供基于标准的、以客户为中心的解决方案。</p><p>AMD是目前业内唯一一个可以提供高性能CPU、高性能独立显卡GPU、主板芯片组三大组件的半导体公司，为了明确其优势，AMD提出3A平台的新标志，在笔记本领域有“AMD VISION”标志的就表示该电脑采用3A构建方案。AMD 有超过70% 的收入都来自于国际市场，是一家真正意义上的跨国公司。</p></li><li><p><strong>其它</strong></p><p>Cyrix、IBM公司、国产龙芯、VIA中国威盛</p></li></ol><h4 id="2-2-Intel处理器型号"><a href="#2-2-Intel处理器型号" class="headerlink" title="2.2 Intel处理器型号"></a>2.2 Intel处理器型号</h4><p><strong>英特尔处理器：</strong>奔腾 、赛扬 、酷睿 、至强。其中奔腾和赛扬系列定位低端，酷睿系列又细分为酷睿i3、i5、i7、以及i9。分别代表中低端、中高端、高端以及超高端。至强系列主要应用为服务器处理器。</p><p><strong>酷睿系列（CORE）：</strong>通常分为i3、i5、i7、以及i9，分别对应中低端、中高端、高端以及超高端。字母i代表是英特尔(intel)公司的CPU，一般来说i后面这位数字越大，代表的性能越好，但不是绝对的，<strong>还要结合后面的几位数字来综合考虑</strong>。</p><ol><li><strong>i几之后第一位数字</strong>，代表是第几代CPU，从2代到9代，每一代都会有更多的新技术，通常来说数字越大，性能越好。</li><li>第二部分是一组数字，如果是3位数字，则是该型号第一代产品；如果是4位数字，第一个数字表示是第几代产品</li><li>一般还能看到，<strong>这组数字之后还会附带有字母后缀</strong>，通常是一位或两位字母或者数字与字母的组合，用来区分处理器的类型或版本。</li></ol><blockquote><p>不带后缀：表示CPU已锁频，也就是它的最高频率已经固定，性能也是相对稳定的。</p><p>K：表示CPU不锁频，可以对CPU进行超频操作，发挥它更高的性能。</p><p>S：表示低电压的台式机处理器。</p><p>T：表示超低电压的台式机处理器。</p><p>P：表示已屏蔽核显的台式机处理器。</p><p>F：表示没有核显的台式机处理器。</p><p>X：表示最高性能的台式机处理器。</p><p>M：表示标准电压的笔记本双核处理器，可拆卸。</p><p>QM：表示标准电压的笔记本四核处理器，可拆卸。</p><p>U：表示低电压的笔记本处理器，可拆卸。</p><p>Y：表示超低电压的笔记本处理器，且不可拆卸。</p><p>XM：表示最高性能的笔记本处理器，可拆卸。</p><p>H：表示高电压的处理器，且不可拆卸。</p><p>HQ：表示高电压的笔记本四核处理器，可拆卸</p></blockquote><ol start="4"><li><p>另外，<strong>影响 CPU 性能的一个重要指标是频率。</strong>一般说来，频率越高的 CPU 性能越强。不过，这要同时结合 CPU 的其他参数来比较：是第几代，有几核等。</p><p>举个简单的例子，一个四核的 CPU 虽然频率小于 双核 CPU，但它的性能可能会高于后者。同样的道理，一个一代的 CPU 虽然频率稍高，但它的性能可能要落后于一个四代的 CPU。</p></li><li><p><strong>影响 CPU 性能的另一项关键指标是核心数</strong>，当然，核心数越多越好。不过要注意，这里的核心数是指物理核心数。比如，双核四线程是物理双核而不是物理四核。如i3全系列都是双核四线程，i5台式机大多为四核四线程，i7台式机多为四核八线程。（笔记本i5是双核）</p></li><li><p>最后，请注意是否具有一些“辅助技术”，例如超线程技术。一般说来， i3 不带超线程技术，而 i5、i7 不仅带有超线程技术，还具备睿频加速技术，因而性能会更胜一筹。<strong>超线程技术</strong>可以让<strong>一个物理核模拟两个虚拟核，每个核两个线程</strong>。通过超线程技术可以实现单个物理核实现线程级别的并行计算，但是<strong>性能比不上两个物理核</strong>。</p></li></ol><p>核心、线程和进程的关系：</p><ol><li><p>每个线程分配给独立的核心，线程同时运行，这就是并行。<br>多个线程在单个核心运行，同一时间一个线程运行，系统不停切换线程，看起来像同时运行，实际上是线程不停切换，这就是并发。</p></li><li><p>线程是共享本线程的资源和地址空间。<br>进程相互之间是独立的地址空间和资源。<br>如果一个进程崩溃不会对其他进程影响，而一个线程崩溃，这个进程就崩溃了。<br>线程的开销包括：上下文切换、创建和收回、保存。</p></li></ol><h4 id="2-3-我的笔记本的CPU"><a href="#2-3-我的笔记本的CPU" class="headerlink" title="2.3 我的笔记本的CPU"></a>2.3 我的笔记本的CPU</h4><p>根据上面的知识，我们可以判断自己的CPU属于什么类型，性能如何。</p><p><img src="/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/image-20210701225553734.png" alt="CPU"></p><p>以我的笔记本的CPU为例：<strong>Intel core i7 第九代高电压处理器，不可拆卸，6核12线程，基准速度是2.59 GHz。</strong></p><h3 id="3-内存条"><a href="#3-内存条" class="headerlink" title="3. 内存条"></a>3. 内存条</h3><p>随机存取存储器（英语：Random Access Memory，缩写：RAM），也叫主存，是与CPU直接交换数据的内部存储器。</p><p>它可以随时读写（刷新时除外），而且速度很快，通常作为操作系统或其他正在运行中的程序的临时数据存储介质。</p><p>RAM工作时可以随时从任何一个指定的地址写入（存入）或读出（取出）信息。</p><p>它与ROM的最大区别是数据的易失性，即一旦断电所存储的数据将随之丢失。RAM在计算机和数字系统中用来暂时存储程序、数据和中间结果。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;你真的了解你的电脑吗？&quot;&gt;&lt;a href=&quot;#你真的了解你的电脑吗？&quot; class=&quot;headerlink&quot; title=&quot;你真的了解你的电脑吗？&quot;&gt;&lt;/a&gt;你真的了解你的电脑吗？&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;head</summary>
+      
+    
+    
+    
+    <category term="Others" scheme="https://sun-ruijiang.github.io/categories/Others/"/>
+    
+    
+    <category term="computer" scheme="https://sun-ruijiang.github.io/tags/computer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机漏洞安全相关的概念</title>
+    <link href="https://sun-ruijiang.github.io/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%BC%8F%E6%B4%9E%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/"/>
+    <id>https://sun-ruijiang.github.io/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%BC%8F%E6%B4%9E%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/</id>
+    <published>2021-06-23T16:00:00.000Z</published>
+    <updated>2021-06-30T00:56:21.504Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="计算机漏洞安全相关的概念"><a href="#计算机漏洞安全相关的概念" class="headerlink" title="计算机漏洞安全相关的概念"></a>计算机漏洞安全相关的概念</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本专业相关概念，放在这里方便自己查询</p><h2 id="POC"><a href="#POC" class="headerlink" title="POC"></a>POC</h2><p><em>POC，Proof of Concept</em>，中文意思是“观点证明”。</p><p>这个短语会在漏洞报告中使用，漏洞报告中的<em>POC</em>则是一段说明或者一个攻击的样例，使得读者能够确认这个漏洞是真实存在的。</p><h2 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h2><p><em>EXP，Exploit</em>，中文意思是“漏洞利用”。</p><p>意思是一段对漏洞如何利用的详细说明或者一个演示的漏洞攻击代码，可以使得读者完全了解漏洞的机理以及利用的方法。</p><h2 id="VUL"><a href="#VUL" class="headerlink" title="VUL"></a>VUL</h2><p><em>VUL，Vulnerability</em>的缩写，泛指漏洞。</p><h2 id="CVE漏洞编号"><a href="#CVE漏洞编号" class="headerlink" title="CVE漏洞编号"></a>CVE漏洞编号</h2><p><em>CVE</em>的英文全称是<em>“Common Vulnerabilities &amp; Exposures”</em>，翻译为通用漏洞披露，例如CVE-2015-0057、CVE-1999-0001等等。</p><p><em>CVE</em>就好像是一个字典表，为广泛认同的信息安全漏洞或者已经暴露出来的弱点给出一个公共的名称。</p><p>如果在一个漏洞报告中指明的一个漏洞，如果有<em>CVE</em>名称，你就可以快速地在任何其它<em>CVE</em>兼容的数据库中找到相应修补的信息，解决安全问题。</p><h2 id="0-DAY漏洞和0-DAY攻击"><a href="#0-DAY漏洞和0-DAY攻击" class="headerlink" title="0 DAY漏洞和0 DAY攻击"></a>0 DAY漏洞和0 DAY攻击</h2><p>在计算机领域中，<em>Zero-day exploit</em>通常是指还没有补丁的安全漏洞，而<em>Zero-day attack</em>则是指利用这种漏洞进行的攻击。</p><p>提供该漏洞细节或者利用程序的人通常是该漏洞的发现者。</p><p><em>Zero-day exploit</em>的利用程序对网络安全具有巨大威胁，因此零日漏洞不但是黑客的最爱，掌握多少零日漏洞也成为评价黑客技术水平的一个重要参数。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;计算机漏洞安全相关的概念&quot;&gt;&lt;a href=&quot;#计算机漏洞安全相关的概念&quot; class=&quot;headerlink&quot; title=&quot;计算机漏洞安全相关的概念&quot;&gt;&lt;/a&gt;计算机漏洞安全相关的概念&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;</summary>
+      
+    
+    
+    
+    <category term="security" scheme="https://sun-ruijiang.github.io/categories/security/"/>
+    
+    
+    <category term="Vulnerabilities" scheme="https://sun-ruijiang.github.io/tags/Vulnerabilities/"/>
+    
+  </entry>
   
   <entry>
     <title>算法期末复习</title>
