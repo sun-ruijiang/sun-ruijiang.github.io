@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta name="baidu-site-verification" content="code-3rVA1ADdSj" />
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="Hexo,ayer,代码,博客" />
+   
+  <meta name="description" content="welcome to Sung&#39;s Blog" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    单片机相关知识 |  Sung&#39;s Blog
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?80b2f48cd548787f831c320e7eb27d4c";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Sung's Blog" type="application/atom+xml">
+</head>
+</html>
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-小学期"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  单片机相关知识
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F/" class="article-date">
+  <time datetime="2021-07-05T16:00:00.000Z" itemprop="datePublished">2021-07-06</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Others/">Others</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">4.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">16 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="单片机相关知识"><a href="#单片机相关知识" class="headerlink" title="单片机相关知识"></a>单片机相关知识</h1><h2 id="学习机制作"><a href="#学习机制作" class="headerlink" title="学习机制作"></a>学习机制作</h2><h3 id="2-1-焊接前准备"><a href="#2-1-焊接前准备" class="headerlink" title="2.1 焊接前准备"></a>2.1 焊接前准备</h3><p>焊接前先要认识并熟悉各个元器件以及电烙铁。</p>
+<p><img src="/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F/6e12b1f3e03575a1689ac0345784efe2.jpg" alt="img"></p>
+<p><img src="/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F/b69f07dad201aa1b7b135df1e69b19f5.jpg" alt="img"></p>
+<p><img src="/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F/R-C.4345cfe170b3290f0afe5f3ce2551266" alt="电焊台"></p>
+<p>训练题：</p>
+<ol>
+<li>视频中出现的焊台型号是（ ATTEN936）</li>
+<li>视频中电焊台的电源开关在（右边 ）</li>
+<li>烙铁处于加热状态时，电焊台面板上的指示灯（ 红灯闪烁）</li>
+<li>电焊台工作时，烙铁温度适宜的调整范围是（ 300-350 ℃）</li>
+<li>焊接操作图片中出现的烙铁头的形状是（ K型（刀头型））</li>
+<li>关于正常工作的烙铁头最恰当地描述是（焊接部位无氧化现象，能正常发热，上锡后能很快浸润 ）</li>
+<li>电焊台工作时，建议将烙铁温度调到多少（ 320 ℃）</li>
+<li>烙铁头出现以下哪种（ 烙铁头发黑，不能粘锡）现象，判断烙铁头不正常。</li>
+<li>正确手拿烙铁的把握方式是（ 握笔式）</li>
+</ol>
+<h3 id="2-2-按键焊接"><a href="#2-2-按键焊接" class="headerlink" title="2.2 按键焊接"></a>2.2 按键焊接</h3><p>按键无方向、无正负极、正面插入安装，一共有16个焊点，每个按键4个焊点。</p>
+<p>有四个按键需要安装，安装位置分别为K1、K2、K3、RST，焊接步骤：</p>
+<ol>
+<li>将按键的四个引脚分别对准相应焊盘，插入电路板的正确位置，按住按键上方，用力往下使按键的四个引脚插入焊盘；</li>
+<li>将电路板翻转到反面，稳定电路板；</li>
+<li>用已经加热的烙铁加热焊盘，如图1-3-5所示；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开，观察焊锡是否圆润光滑；</li>
+</ol>
+<p>训练题：</p>
+<ol>
+<li><p>按键焊接时，是在电路板的哪（反 ）面进行焊接操作。</p>
+</li>
+<li><p>一个按键的焊接有（4 ）个焊点</p>
+</li>
+<li><p>电路板手工焊接的第一个元器件是（按键 ）</p>
+</li>
+<li><p>判断：按键有正负号。（<em>×</em> ）</p>
+</li>
+<li><p>判断：一个按键的4只引脚可分成两对，各自单独工作。（<em>×</em> ）</p>
+</li>
+<li><p>判断：按键安装到电路板上有上、下2种方向。（<em>×</em> ）</p>
+</li>
+<li><p>判断：这种4引脚按键，可随意挑选其中两只引脚，组成一对开关。（<em>×</em> ）</p>
+</li>
+<li><p>判断：按键安装到电路板上时有左、右2种方向。（<em>×</em> ）</p>
+</li>
+<li><p>电路板按键焊接分以下步骤，请填写正确排序是（  ECDAB ）。</p>
+<p>A. 送焊锡</p>
+<p>B. 焊锡离开，烙铁离开</p>
+<p>C. 将电路板翻转到反面，稳定电路板</p>
+<p>D. 用已经加热的烙铁加热焊盘</p>
+<p>E. 将按键插入电路板的正确位置</p>
+</li>
+</ol>
+<h3 id="2-3-晶体1焊接"><a href="#2-3-晶体1焊接" class="headerlink" title="2.3 晶体1焊接"></a>2.3 晶体1焊接</h3><p>晶体1可振荡频率为12 MHz，无方向，正面插入安装，2个焊点，安装位置CY1。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>将12 MHz晶体1插入电路板上相应的安装位置CY1，用手指按住晶振1的上方使其与电路板接触；</li>
+<li>翻转电路板至其反面，稳定电路板；</li>
+<li>用已经加热的烙铁加热焊盘；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开。</li>
+</ol>
+<p>训练题：</p>
+<ol>
+<li>12 M的晶体有（2 ）个引脚。</li>
+<li>12 M的晶体焊接时是安装在电路板的哪个位置（ CY1）</li>
+<li>判断：12 M晶体的12 M代表晶体厂商。（<em>×</em>）</li>
+<li>判断：12 M的晶体焊接时是从电路板反面插入安装。（<em>×</em>）</li>
+<li>判断：视频中，12 M晶体焊接是2人协作完成的。（<em>√</em>）</li>
+<li>判断：12 M晶体安装在电路板的正面，安装时无方向。（<em>√</em>）</li>
+<li> 判断：12 M晶体焊接完之后，不需要立刻剪短它的引脚。（<em>√</em>）</li>
+</ol>
+<h3 id="2-4-电池座焊接"><a href="#2-4-电池座焊接" class="headerlink" title="2.4 电池座焊接"></a>2.4 电池座焊接</h3><p>电池是维持电路板上的实时时钟的电源，纽扣电池无字的一面为负极、有字的为正极。</p>
+<p>电池座有方向，上电池时负极朝下、正极朝上装入电池座。电池座有2个焊点，安装位置为BAT。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>取电池座，将其贴放在电路板的正确位置，而不是将其插入，电池座并非直插式元件，没有过孔。</li>
+<li>电池座的焊接在正面，用手指按住电池座使电池座与电路板接触，按压到位，用电烙铁分别对焊盘的2个面加热。</li>
+<li>送焊锡。</li>
+<li>焊锡离开，烙铁离开。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li> 蜂鸣器与电池座焊接位置是相邻的，应先焊接电池座。若先焊接蜂鸣器，其在电路板上的位置会挡住部分电池座的焊接点。</li>
+<li>焊接电池座时，注意是给焊盘的一个面去加热，而不是一个点，再将焊锡送入其结合部位，再移开焊锡，停留1~2秒，等焊锡融化均匀，再移开烙铁。</li>
+</ol>
+<p>练习题：</p>
+<ol>
+<li>STC 电路板上电池座里电池的作用是（维持STC电路板上实时时钟的电源 ）</li>
+<li>电池座应安装在STC电路板正面的（ BAT ）位置。</li>
+<li>电池座的焊接为什么需要在蜂鸣器的焊接之前完成？（焊接完的蜂鸣器会挡住部分电池座的焊接点）</li>
+<li>电池座焊接完后，如何安装电池 ？（将有字的一面朝上，无字的一面朝下卡进电池座）</li>
+<li>判断：蜂鸣器与电池座位置靠近，先焊接蜂鸣器再焊接电池座。（<em>×</em> ）</li>
+<li>判断：电池座焊接时，应将其引脚在电路板的正面的正确位置插入。（ <em>×</em>）</li>
+<li>判断：电池座是没有直插引脚，电路板上也没有电池座引脚过孔。（<em>√</em> ）</li>
+<li>判断：焊接电池座时，是将其贴放在电路板的正确位置，而不是将其插入，因为它并非直插式元件，没有过孔。 （ <em>√</em>）</li>
+<li>判断：焊接电池座时，注意是给焊盘的一个面去加热，而不是一个点，再将焊锡送入其结合部位，再移开焊锡，停留1~2秒，等焊锡融化均匀，再移开烙铁。（<em>√</em> ）</li>
+<li>判断：电池有正负极，无字的一面是正极，有字的一面是负极。    （<em>×</em> ）</li>
+</ol>
+<h3 id="2-5-无源蜂鸣器焊接"><a href="#2-5-无源蜂鸣器焊接" class="headerlink" title="2.5 无源蜂鸣器焊接"></a>2.5 无源蜂鸣器焊接</h3><p>无源蜂鸣器，共2个焊点，无方向，有正负极，正面插入安装。</p>
+<p>为养成好习惯，应将蜂鸣器的正负号对应电路板上器件位置的正负号。安装位置在BZ。</p>
+<p> 焊接步骤：</p>
+<ol>
+<li>将蜂鸣器插入STC电路板的正确位置，用手指按住无源蜂鸣器的上方使无源蜂鸣器与电路板接触紧密；</li>
+<li>翻转电路板至反面，稳定电路板；</li>
+<li>用已经加热的烙铁加热焊盘（共2个）；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开。</li>
+<li>焊接完后，直接剪掉过长的引脚。</li>
+</ol>
+<p>训练题：</p>
+<ol>
+<li>关于视频中无源蜂鸣器的焊接，说法正确的是？（多人协助完成焊接 ）</li>
+<li>焊接无源蜂鸣器时，有（2 ）个焊点？</li>
+<li>视频中，如何处理无源蜂鸣器焊接完后过长的引脚？（焊接完后，直接剪掉过长的引脚 ）</li>
+<li>无源蜂鸣器在电路板的（反面 ）焊接。</li>
+<li>无源蜂鸣器焊接在电路板的（ BZ）位置</li>
+<li>焊接无源蜂鸣器时，要注意的哪些地方?（ABD）<br>A、焊接无源蜂鸣器之前，确保电池座已焊好<br>B、无源蜂鸣器尽管没有方向，但为养成好习惯应参照电路板上的正负号<br>C、无源蜂鸣器无方向，可以在电路板上随便放置<br>D、焊接无源蜂鸣器，最好请同学帮忙稳定电路板，协助完成焊接</li>
+<li>判断：无源蜂鸣器有2个引脚，器件上标有正负号，要与电路板上的正负号对应，不能随便焊接。（ <em>×</em>）</li>
+<li>判断：无源蜂鸣器无方向，但为养成好习惯，应确保蜂鸣器的正负号与电路板上该器件的位置指示的正负号一致。(<em>√</em> ）</li>
+</ol>
+<h3 id="2-6-数码管焊接"><a href="#2-6-数码管焊接" class="headerlink" title="2.6 数码管焊接"></a>2.6 数码管焊接</h3><p>学习板上的数码管有2个，是有方向的，正面插入安装，共24个焊点。</p>
+<p>安装位置在电路板的右上角 LED 1和 LED 2。</p>
+<p> 焊接步骤：</p>
+<ol>
+<li>取一个数码管与安装位置对准（注意数码管的引脚位置是有方向的，数码管上的小数点的位置对准电路板上安装位置的小数点位置），将其6个管脚插入电路板；</li>
+<li>取另一个数码管重复第一步；</li>
+<li>翻转电路板至反面，稳定电路板；</li>
+<li>用已经加热的烙铁加热焊盘；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>数码管安装到电路板上之前，应先检查数码管的引脚是否直，若引脚歪斜，用镊子将其掰直。</li>
+<li>两个数码管都插入后，检查数码管的小数点是否在下面，确认无误再开始焊接。</li>
+</ol>
+<p>训练题：</p>
+<ol>
+<li>一个数码管有（ 12 ）个引脚</li>
+<li>数码管在电路板上的正确摆放位置是（插放在电路板的正面，小数点朝下 ）</li>
+<li>数码管的焊接，总共有多少个焊点（ 24）</li>
+<li>数码管焊接时要注意哪些地方（ABCDE ）？<br>A、数码管安装在电路板的正面，而不是反面<br>B、在把数码管安装到电路板上之前，先检查数码管的引脚是否弯曲。<br>C、数码管有方向，不能插反了，数码管的小数点朝下面<br>D、2个数码管插入后，再检查是否有插反的<br>E、2个数码管插入后，再将2个数码管往下按到位</li>
+<li>判断：一个数码管有12个引脚，焊接安装时是有方向的，数码管上的小数点是在右下方。（ <em>√</em>）</li>
+<li>判断：把一个数码管插入电路板上后，焊接完成后再插入另一个数码管，再次焊接。（ <em>×</em>）</li>
+<li>判断：数码管安放在电路板上，其小数点朝上。（ <em>×</em>）</li>
+<li>判断：一个数码管有8个引脚，把其插入电路板是有方向的。（ <em>×</em>）</li>
+<li>判断：数码管焊接之前，可用镊子直接将其所有引脚弄竖直。（ <em>√</em>）</li>
+</ol>
+<h3 id="2-7-红外发射管焊接"><a href="#2-7-红外发射管焊接" class="headerlink" title="2.7 红外发射管焊接"></a>2.7 红外发射管焊接</h3><p>学习板上的红外发射管有1个，是有方向的，同时还有正负极（长的引脚为正极、短的引脚为负极）之分。</p>
+<p>正面插入安装，2个焊点。安装位置在电路板的左上角 IR_T 。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>取红外发射管，将其插入电路板上相应的安装位置（注意红外发射管两个引脚是有正负的，将其正极的引脚插入带有正号的焊盘中），不要将其插入到底，2个引脚需要留2~4 mm（不要把引脚完全插入焊盘）。</li>
+<li>检查红外发射管的安装位置、方向是否正确；</li>
+<li>2个引脚距离板面2~4 mm处将其掰倒；</li>
+<li>另一人协作，按住红外发射管，将电路板翻转，稳定电路板；</li>
+<li>当烙铁加热后，用烙铁的刀面给焊盘和接触的管脚加热；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开。</li>
+</ol>
+<p>注意：红外发射管需卧置于板面，将红外发射管的<strong>长脚一端</strong>从正面对着电路板左上角处的 <strong>IR-T 的 “+”</strong> ，<strong>短脚一端</strong>对着<strong>IR-T 的 “-”</strong> ，插到底，然后将其拉出一点点，再将其引脚向板子上合适的方向弯曲 90 °，让其倒置在学习板上。</p>
+<h3 id="2-8-红外接收管焊接"><a href="#2-8-红外接收管焊接" class="headerlink" title="2.8 红外接收管焊接"></a>2.8 红外接收管焊接</h3><p>学习板上的红外接收管有1个，是有方向的。</p>
+<p>正面插入安装（红外接收管突起的一面与电路板IR-R符号突起方向一致，将其按下到最底的位置）</p>
+<p>红外接收管是3个焊点，安装位置在电路板的左上角IR_R。</p>
+<p>焊接步骤：</p>
+<ol>
+<li><p>取红外接收器，将其插入电路板上正确的安装位置，注意红外接收器的三个引脚是有方向的，插入时要把它的圆形凸起部分朝电路板外面，如图1-3-8所示；</p>
+</li>
+<li><p>检查红外接收管的安装位置、方向是否正确；</p>
+</li>
+<li><p>另一人协作，按住红外接收管，将电路板翻转，稳定电路板。</p>
+</li>
+<li><p>当烙铁加热后，用烙铁的刀面给焊盘和接触的管脚加热；</p>
+</li>
+<li><p>送焊锡；</p>
+</li>
+<li><p>焊锡离开，烙铁离开；</p>
+</li>
+<li><p>剪去多余的引脚。</p>
+</li>
+</ol>
+<h3 id="2-9-霍尔传感器焊接"><a href="#2-9-霍尔传感器焊接" class="headerlink" title="2.9 霍尔传感器焊接"></a>2.9 霍尔传感器焊接</h3><p>霍尔传感器有1个，是有方向的，正面插入安装，梯形凸起部分朝电路板外面。</p>
+<p>它共3个焊点，安装在电路板的左上角HALL。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>取一个霍尔传感器，将其插入电路板的相应位置，并检查其安装位置与方向2是否正确方向；（正面插入、梯形凸起部分朝电路板外面）</li>
+<li>另一人协作，按住霍尔传感器，将学习板翻转，稳定学习板；</li>
+<li>当烙铁加热后，用烙铁的刀面给焊盘和接触的脚加热；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开；</li>
+<li>剪去多余的引脚。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>霍尔传感器安装是有方向的，按其黑色梯型窄边方向与STC学习板上HALL位置处窄边的方向一致的插入，不要插到最底，高度与红外发射管同高或略低一点的高度即可。</li>
+<li>焊接时注意，几个焊点比较靠近，注意焊接时，焊锡不要挨到一起。</li>
+</ol>
+<h3 id="2-10-温度传感器焊接"><a href="#2-10-温度传感器焊接" class="headerlink" title="2.10 温度传感器焊接"></a>2.10 温度传感器焊接</h3><p>温度传感器（热敏电阻）有1个，无方向，正面插入安装，2个焊点。安装位置在电路板上的数码管下方Rt处。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>取温度传感器（热敏电阻），将其正面插入电路板的Rt处（引脚要留3~5mm，不要把引脚完全插入焊盘）；</li>
+<li>将电路板翻转到反面，稳定电路板；</li>
+<li>烙铁加热后，用烙铁的刀面给焊盘和接触的脚加热；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开；</li>
+<li>剪去多余的引脚。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>温度传感器的安装高度与数码管相同，或者稍稍低于数码管，距离学习板约5 mm的高度，如图1-3-10所示。</li>
+<li>焊接时注意，几个焊点比较靠近，注意焊接时，焊锡不要挨到一起。</li>
+</ol>
+<h3 id="2-11-光敏传感器焊接"><a href="#2-11-光敏传感器焊接" class="headerlink" title="2.11 光敏传感器焊接"></a>2.11 光敏传感器焊接</h3><p>光敏传感器（光敏电阻）有1个，无方向，正面插入安装，2个焊点。安装位置在电路板上的数码管下方Rop处。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>取一个光敏电阻，将其插入正确位置，其引脚要留2-4mm（不要把引脚完全插入焊盘）；</li>
+<li>将电路板翻转到反面，稳定电路板；</li>
+<li>烙铁加热后，用烙铁的刀面给焊盘和接触的脚加热；</li>
+<li>送焊锡；</li>
+<li>焊锡离开，烙铁离开；</li>
+<li>剪去多余的引脚。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>光敏电阻没有正负极性之分，可以任意方向将其插入Rop处，注意不要全部按压到底，高度比之前焊接完的热敏电阻矮一点点（如图1-3-10所示），小心的翻转到板子背面，保持其距离不变，再开始焊接。</li>
+<li>焊接时注意，几个焊点比较靠近，注意焊接时，焊锡不要挨到一起。</li>
+</ol>
+<h3 id="2-12-振动传感器焊接"><a href="#2-12-振动传感器焊接" class="headerlink" title="2.12 振动传感器焊接"></a>2.12 振动传感器焊接</h3><p>振动传感器有1个，有方向，正面插入安装，2个焊点。安装位置在电路板上的数码管下方SV处。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>取一个振动传感器，将其插入电路板的正确位置，粗的一脚在SV左边，细的一脚在SV右边（如图1-3-11所示），且引脚要留3~4mm（不要把引脚完全插入焊盘）；</li>
+<li>将振动传感器朝电路板外的方向压倒并用手指压住，电路板翻转到反面，稳定电路板；</li>
+<li>当洛铁加热后，先用电烙铁对插入硬线的焊盘进行焊接，然后回到电路板正面，用镊子把软线夹住往上提1-2mm，再把电路板反过来对插入软线的焊盘进行焊接；</li>
+<li>剪去多余的引脚。</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li><p>焊接时注意振动传感器的两个引脚的材质是不同的，一个是软线，另一个是硬线。</p>
+</li>
+<li><p>振动传感器在学习板上处于横卧位，需在焊接之前将其粗的一脚掰成90°，然后再按正确方向插入。</p>
+</li>
+</ol>
+<p>软线易断，两线焊锡易粘连。</p>
+<h3 id="2-13-32768-Hz晶体2焊接"><a href="#2-13-32768-Hz晶体2焊接" class="headerlink" title="2.13 32768 Hz晶体2焊接"></a>2.13 32768 Hz晶体2焊接</h3><p>学习板上的32768Hz晶振2有1个，是给实时时钟提供基准频率的，无方向，</p>
+<p>正面插入安装，2个焊点。安装位置在电路板上最下方CY2处。</p>
+<p>焊接步骤：</p>
+<ol>
+<li>在电路板上的最下面一排找到CY2处，加热焊盘，先给焊盘上少量焊锡，如图1-3-12所示；</li>
+<li>再取晶体2，将其插入电路板上相应的安装位置，注意引脚要留2~3mm（不要把引脚完全插入焊盘）；插入后再将其掰倒横卧于板上；</li>
+<li>把晶体2朝电路板外侧的方向压倒并用镊子按压住，用烙铁加热长方形贴片焊盘，使焊盘上的锡融化，不能松动镊子。</li>
+<li>烙铁移开后，等锡凝固粘住晶振2以后再移开镊子。</li>
+<li>把电路板反过来，用烙铁对引脚进行焊接；</li>
+<li>送焊锡；焊锡离开，烙铁离开；</li>
+<li>剪去多余的引脚。（详见视频“12晶振2焊接”）</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li><p>32768Hz晶体在学习板上是处于横卧位（如图1-3-12所示），是将其插入CY2处，再将其掰倒卧于学习板上。</p>
+</li>
+<li><p>焊接时注意，几个焊点比较靠近，注意焊接时，焊锡不要挨到一起去。</p>
+</li>
+</ol>
+<h3 id="2-14-拓展接口插座焊接"><a href="#2-14-拓展接口插座焊接" class="headerlink" title="2.14 拓展接口插座焊接"></a>2.14 拓展接口插座焊接</h3><p>学习板上增加了一些拓展接口插座。</p>
+<p>增加拓展接口插座之后一方面影响电路板的美观，另一方面因插座的高度过高会导致携带不方便，应根据需要自由选择是否将其焊接。</p>
+<p>学习板有拓展接口3个，正面安装。安装位置在学习板的EXT、SM、485处。</p>
+<p> 焊接步骤：</p>
+<ol>
+<li>取一个拓展接口插座，把它插入电路板正面上相应的拓展接口插座安装位置并且引脚完全插入焊盘。</li>
+<li>把拓展接口插座朝电路板外的方向压倒并用手指压住，把电路板反过来，用电烙铁对每个引脚焊盘进行焊接。</li>
+</ol>
+<h3 id="2-15-电路板底座安装"><a href="#2-15-电路板底座安装" class="headerlink" title="2.15 电路板底座安装"></a>2.15 电路板底座安装</h3><p>电路板底座安装所需器材：底板（ 1）块，螺丝（ 8）个，六角铜柱（4 ）个，十字起子（ 1）把。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">单片机</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">你真的了解你的电脑吗</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> Sung
+      </li>
+    </ul>
+    <!-- <ul>
+      <li>
+        
+        
+        
+        powered_by
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul> -->
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Sung&#39;s Blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+  </div>
+</body>
+
+</html>
