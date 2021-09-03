@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">2.2k</span>
+            <span class="post-count">3.5k</span>
         </span>
     </span>
 
@@ -110,7 +110,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">7 min</span>
+            <span class="post-count">12 min</span>
         </span>
     </span>
 </div>
@@ -134,6 +134,7 @@ var _hmt = _hmt || [];
 <h3 id="2-CPU"><a href="#2-CPU" class="headerlink" title="2. CPU"></a>2. CPU</h3><p>CPU即中央处理器，是一台计算机的运算核心和控制核心。其功能主要是解释计算机指令以及处理计算机软件中的数据。</p>
 <p>CPU由<strong>运算器</strong>、<strong>控制器</strong>、<strong>寄存器</strong>、<strong>高速缓存</strong>及实现它们之间联系的数据、控制及状态的总线构成。</p>
 <p>作为整个系统的核心，CPU也是整个系统最高的执行单元，因此CPU已成为决定电脑性能的核心部件，很多用户都以它为标准来判断电脑的档次。</p>
+<p>CPU上的硅脂可以让CPU散热更好，运行时CPU温度会更低，如果CPU过热，注意硅脂。</p>
 <p><strong>工作过程</strong>：在控制器控制下，CPU问高速缓存要一条指令（如果高速缓存没有就向主存要，主存没有向磁盘要）， 通过寄存器和运算器去执行这个指令， 如果是个跳转指令的话，就问高速缓存要跳转的目标地址（地址经过MMU翻译成物理地址）的那一条指令， 继续执行。</p>
 <h4 id="2-1-生产CPU厂商"><a href="#2-1-生产CPU厂商" class="headerlink" title="2.1 生产CPU厂商"></a>2.1 生产CPU厂商</h4><ol>
 <li><p><strong>英特尔</strong></p>
@@ -194,9 +195,51 @@ var _hmt = _hmt || [];
 <p>RAM工作时可以随时从任何一个指定的地址写入（存入）或读出（取出）信息。</p>
 <p>它与ROM的最大区别是数据的易失性，即<strong>一旦断电所存储的数据将随之丢失</strong>。RAM在计算机和数字系统中用来暂时存储程序、数据和中间结果。</p>
 <p>工作过程：操作系统传给CPU一个虚拟地址，然后CPU用MMU将虚拟地址翻译为物理地址，在内存条里面访问真正的物理内存。</p>
-<h4 id="3-1-内存条代数以及分类"><a href="#3-1-内存条代数以及分类" class="headerlink" title="3.1 内存条代数以及分类"></a>3.1 内存条代数以及分类</h4><p>所谓几代只得内存条的类型，名字叫做Double Data Rate双倍速率同步动态随机存储器。简称为DDRx，目前最高是DDR4 也就是四代内存。</p>
-<p>当前最受欢迎的是DDR3和DDR4的内存，那么两代之间又有什么差别呢！</p>
-<p>代数越新性能越强吗？</p>
+<h4 id="3-1-内存条参数"><a href="#3-1-内存条参数" class="headerlink" title="3.1 内存条参数"></a>3.1 内存条参数</h4><ol>
+<li><p><strong>内存容量</strong>。内存条的容量就是能存储的数据多少。</p>
+<p>我们每打开一个软件，这些软件的数据一部分都会被保存到内存条中</p>
+<p>如果内存条被塞满，我们继续打开其他软件的时候，CPU就只能从速度慢的硬盘调取数据。</p>
+</li>
+<li><p><strong>内存条的颗粒</strong>。颗粒就是内存条的存储数据的东西。现在主流的颗粒生产商就是 三星、海力士、镁光这三家。</p>
+<p>由于颗粒在生产时候会有质量参差不齐的情况，所以一些成色极品的颗粒会被挑选出来做成高端超频内存条，而一些成色普通但合格的颗粒会被拿去做成普通内存条。</p>
+<p>至于怎么看颗粒的好坏，我们可以从内存条的频率和时序来做一个购买前的初步判断。</p>
+</li>
+<li><p><strong>频率</strong>。内存条的频率，它可以看成是内存条数据的传输速度，是内存条最重要的参数。</p>
+<p>频率越大，内存条一次能够运输的数据就越多。所以内存条超频的意思就是，让内存条超载运行，获得更多的数据传输量，当然主板得允许频率超载。</p>
+</li>
+<li><p><strong>时序</strong>。一般用CL表示，用官方的话说就是列寻址所需的时钟周期。也就是为数据传输准备花费的时间。</p>
+<p>一般来说，频率越大的内存条，时序CL值就越大。所以如果是相同频率的内存条，时序CL值是越小越好。</p>
+</li>
+</ol>
+<h4 id="3-2-单通道和双通道"><a href="#3-2-单通道和双通道" class="headerlink" title="3.2 单通道和双通道"></a>3.2 单通道和双通道</h4><p>一般来说，两根相同规格的内存条插在主板对应的位置上就可以组成双通道了。</p>
+<p>CPU与内存条之间的数据传输是有来有回的。</p>
+<p>单通道就相当于一条马路分左右车道，一个车道负责去，一个车道负责回。 虽然秩序井然但是由于马路（带宽）较窄，数据流量不会很大。</p>
+<p>双通道就相当于又修了一条同样的马路，这样的话，这两条马路一条负责收，一条负责发。马路整体（带宽）宽了一倍，流量自然也就增加了。</p>
+<p>双通道是能带来一些性能的提升的，特别是使用CPU核心显卡的用户，由于CPU要同时负责程序数据和显示数据的处理，需要的数据流量更大，所以双通道带来的双倍带宽才能满足这么大的数据流量的需求。</p>
+<h3 id="4-硬盘"><a href="#4-硬盘" class="headerlink" title="4. 硬盘"></a>4. 硬盘</h3><p>电脑硬盘 HDD（Hard Disk Drive），计算机最主要的存储设备，硬盘是电脑的仓库，是电脑主要存储媒介之一。</p>
+<h4 id="4-1-与内存的数据传输"><a href="#4-1-与内存的数据传输" class="headerlink" title="4.1 与内存的数据传输"></a>4.1 与内存的数据传输</h4><p><img src="/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/image-20210709224502077.png" alt="image-20210709224502077"></p>
+<p>硬盘与其它元器件之间的传输速度以及性能的限制在于<strong>数据协议、传输总线、物理接口</strong>三者的统一配合。</p>
+<ul>
+<li><p>协议（Protocol）：通信设备双方制定的一种数据传输方式，包括但不限于数据编码解码方式，使用的讯号类型，链接方式等。</p>
+</li>
+<li><p>总线（Bus）：PCB板中不同元器件之间交互数据的通路，由于总线承载能力有限，设备之间数据的传输速度也就会受到相应的限制，所以总线在单位时间内传输的数据量就被称为总线的带宽。一般情况下硬盘厂商在出品一个成熟的硬盘时协议与接口都会进行匹配，那么总线的速度也就一定程度决定了硬盘的传输速度。</p>
+</li>
+<li><p>接口（Interface）</p>
+</li>
+</ul>
+<h4 id="4-2-硬件分类"><a href="#4-2-硬件分类" class="headerlink" title="4.2 硬件分类"></a>4.2 硬件分类</h4><ul>
+<li>机械硬盘：使用磁头，需要电机加速旋转的过程，需要以恒定角速度（CAV）由外向内，由快到慢进行数据读取。</li>
+<li>固态硬盘（Solid State Disk）：采用闪存颗粒或DRAM颗粒，不使用磁头，启动快，不需要电机加速旋转的过程。</li>
+</ul>
+<h4 id="4-3-性能指标"><a href="#4-3-性能指标" class="headerlink" title="4.3 性能指标"></a>4.3 性能指标</h4><ol>
+<li>容量（Volume）</li>
+<li>转速（Rotational Speed）：单位为<code>rpm</code>，硬盘内电机主轴在盘片上一分钟内能完成的最大转数的旋转速度，转速越高寻找文件的速度也就越快，但是转速越快也就会导致发热量越高，电机磨损故障率越大。</li>
+<li>平均访问时间（Average Access Time）：指磁头从起始位置到达目标磁道位置并从目标磁道上寻找要读写的数据扇区所需时间，平均访问时间越少，寻找数据速度也就越快。</li>
+<li>传输速率（Data Transfer Rate）：单位为<code>MB/s</code></li>
+<li>内部传输率(Internal Transfer Rate) ：也称为持续传输率(Sustained Transfer Rate)，反映了硬盘缓冲区未用时的性能，内部传输率主要取决于硬盘的转速。</li>
+<li>外部传输率（External Transfer Rate）：也称为突发数据传输率（Burst Data Transfer Rate）或接口传输率（Interface Data Transfer Rate），是系统总线与硬盘缓冲区之间的数据传输率，外部数据传输率与硬盘接口类型和硬盘缓存的大小有关。</li>
+<li>缓存（Cache）：硬盘内部存储与外界接口之间的缓冲器，可以提高硬盘的整体性能，提升硬盘的读写速度。</li>
+</ol>
  
       <!-- reward -->
       
@@ -274,19 +317,19 @@ var _hmt = _hmt || [];
    
   <nav class="article-nav">
     
-      <a href="/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F/" class="article-nav-link">
+      <a href="/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F%E6%97%A5%E5%BF%97/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            单片机相关知识
+            小学期日志
           
         </div>
       </a>
     
     
-      <a href="/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%BC%8F%E6%B4%9E%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/" class="article-nav-link">
+      <a href="/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">计算机漏洞安全相关的概念</div>
+        <div class="article-nav-title">计算机安全相关的概念</div>
       </a>
     
   </nav>

