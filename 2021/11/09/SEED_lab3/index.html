@@ -14,7 +14,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    DVWA通关 |  Sung&#39;s Blog
+    SEED_lab3 |  Sung&#39;s Blog
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -71,7 +71,7 @@ var _hmt = _hmt || [];
     <main class="content on">
       <section class="outer">
   <article
-  id="post-DVWA通关"
+  id="post-SEED_lab3"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -82,18 +82,18 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  DVWA通关
+  SEED_lab3
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/10/24/DVWA%E9%80%9A%E5%85%B3/" class="article-date">
-  <time datetime="2021-10-23T16:00:00.000Z" itemprop="datePublished">2021-10-24</time>
+      <a href="/2021/11/09/SEED_lab3/" class="article-date">
+  <time datetime="2021-11-08T16:00:00.000Z" itemprop="datePublished">2021-11-09</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8/">软件安全</a>
   </div>
   
 <div class="word_count">
@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">57</span>
+            <span class="post-count">743</span>
         </span>
     </span>
 
@@ -110,7 +110,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
@@ -125,8 +125,56 @@ var _hmt = _hmt || [];
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="DVWA通关"><a href="#DVWA通关" class="headerlink" title="DVWA通关"></a>DVWA通关</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>DVWA 是一个入门的 Web 安全学习靶场，说简单也不简单，结合源码去学习的话，不仅可以入门安全也还可以学到不少安全加固的知识</p>
-<h2 id><a href="#" class="headerlink" title></a></h2> 
+  <h1 id="Buffer-Overflow-Attack-Lab"><a href="#Buffer-Overflow-Attack-Lab" class="headerlink" title="Buffer_Overflow_Attack_Lab"></a>Buffer_Overflow_Attack_Lab</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
+<p>这种漏洞可以由恶意用户使用来改变程序的流量控制，导致执行恶意代码</p>
+<p>本实验的目标是为学生提供对这种类型的漏洞的实用洞察力，并学习如何利用攻击中的漏洞</p>
+<h2 id="Lab-Environment-Setup"><a href="#Lab-Environment-Setup" class="headerlink" title="Lab Environment Setup"></a>Lab Environment Setup</h2><h3 id="关闭地址空间随机化"><a href="#关闭地址空间随机化" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h3><p>ALSR对程序内存中的一些关键数据区域进行随机化，包括栈的位置、堆和库的位置等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /sbin/sysctl -w kernel.randomize_va_space=0</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞程序"><a href="#漏洞程序" class="headerlink" title="漏洞程序"></a>漏洞程序</h3><p>实验所用的漏洞程序是<code>server-code</code>文件夹的<code>stack.c</code>程序。</p>
+<p>我们的任务是利用这个漏洞得到root权限。</p>
+<p>程序拥有root权限，运行在一个服务器中，它的标准输入被重定向到一个在远程用户和服务器之间的TCP连接。</p>
+<p>就是说，程序能从一个远程用户得到数据。</p>
+<p>要编译上述漏洞程序，我们需要使用<code>-fno-stack-protector</code>和<code>-z execstack</code>选项关闭StackGuard和非可执行堆栈保护，<code>L1</code>设置为具体的值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -DBUF_SIZE=$(L1) -o stack -z execstack -fno-stack-protector stack.c          <span class="comment"># 我设置的L1为250</span></span><br></pre></td></tr></table></figure>
+
+<p>在文件夹，通过<code>make</code>命令去按照<code>Makefile</code>编译程序，然后<code>make install</code>命令安装，让编译得到的二进制能够被容器使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/11/09/SEED_lab3/image-20211109151506071.png" alt="image-20211109151506071"></p>
+<p><code>server-code</code>文件夹里的<code>server.c</code>是服务器入口点，监听9090端口</p>
+<p>当收到TCP连接时，会将TCP收到的数据作为标准输入到<code>stack</code>程序，我们没必要去读<code>server.c</code>的源码。</p>
+<h3 id="容器搭建和命令"><a href="#容器搭建和命令" class="headerlink" title="容器搭建和命令"></a>容器搭建和命令</h3><p>起环境，docker容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dcbuild      <span class="comment"># alias for: docker-compose build</span></span><br><span class="line">dcup         <span class="comment"># alias for: docker-compose up</span></span><br><span class="line">dcdown       <span class="comment"># alias for: docker-compose down</span></span><br><span class="line">dockps       <span class="comment"># Alias for: docker ps --format &quot;&#123;&#123;.ID&#125;&#125; &#123;&#123;.Names&#125;&#125;&quot;</span></span><br><span class="line">docksh &lt;id&gt;  <span class="comment"># Alias for: docker exec -it &lt;id&gt; /bin/bash</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Task-1-Get-Familiar-with-the-Shellcode"><a href="#Task-1-Get-Familiar-with-the-Shellcode" class="headerlink" title="Task 1: Get Familiar with the Shellcode"></a>Task 1: Get Familiar with the Shellcode</h2><p>Shellcode通常被用在代码注入攻击。它基本上是一段启动shell的代码，通常用汇编语言编写。</p>
+<p>在本实验中只提供二进制版本的shellcode</p>
+<ol>
+<li><p>生成32位和64位二进制shellcode文件<code>codefile32</code>和<code>codefile64</code></p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211109161302510.png" alt="image-20211109161302510"></p>
+</li>
+<li><p>编译<code>call_shellcode.c</code>，我们可以使用<code>a32.out</code>和<code>a64.out</code>来分别调用上一步生成的shellcode文件<br><img src="/2021/11/09/SEED_lab3/image-20211109162148430.png" alt="image-20211109162148430"></p>
+</li>
+<li><p>测试shellcode<br><img src="/2021/11/09/SEED_lab3/image-20211109163524900.png" alt="image-20211109163524900"></p>
+</li>
+<li><p>修改shellcode，可以用来删除文件，<br><img src="/2021/11/09/SEED_lab3/image-20211109223939250.png" alt="image-20211109223939250"><br><img src="/2021/11/09/SEED_lab3/image-20211109223844600.png" alt="image-20211109223844600"></p>
+</li>
+</ol>
+<h2 id="Task-2-Level-1-Attack"><a href="#Task-2-Level-1-Attack" class="headerlink" title="Task 2: Level-1 Attack"></a>Task 2: Level-1 Attack</h2><p>第一个目标是10.9.0.0端口是9090，漏洞程序stack是32位程序。</p>
+<p>服务器将接受517字节的输入，会造成缓冲区溢出。</p>
+<ol>
+<li>先测试我们的服务器是否正常、<br><img src="/2021/11/09/SEED_lab3/image-20211109225003621.png" alt="image-20211109225003621"><br>正常返回，我们得到了栈帧指针的值<code>ebp</code>和buffer的地址</li>
+<li>我们修改位于<code>attack-code</code>文件夹下面的<code>exploit.py</code>，构造我们的payload<br><img src="/2021/11/09/SEED_lab3/image-20211109230829919.png" alt="image-20211109230829919"><br><img src="/2021/11/09/SEED_lab3/image-20211109231006268.png" alt="image-20211109231006268"></li>
+<li>监听9090端口，反向shell得到root权限<br><img src="/2021/11/09/SEED_lab3/image-20211109232608115.png" alt="image-20211109232608115"></li>
+</ol>
+<p>构造content，也就是最后badfile文件内容：</p>
+<ol>
+<li>先用NOP空指令将数组填充</li>
+<li>[0:offset]，就是NOP指令，正常数组值。</li>
+<li>[offset:offset+4]，就是ret指令返回的地址</li>
+<li>[517-len(shellcode):517]，填充shellcode</li>
+</ol>
+ 
       <!-- reward -->
       
     </div>
@@ -190,12 +238,12 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/10/24/DVWA%E9%80%9A%E5%85%B3/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/11/09/SEED_lab3/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lab/" rel="tag">Lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/" rel="tag">课程作业</a></li></ul>
 
     </footer>
   </div>
@@ -203,19 +251,10 @@ var _hmt = _hmt || [];
    
   <nav class="article-nav">
     
-      <a href="/2021/10/24/sql/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            (no title)
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/10/21/SEED_lab1/" class="article-nav-link">
+      <a href="/2021/10/28/SEED_lab2/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">SEED_lab1</div>
+        <div class="article-nav-title">SEED_lab2</div>
       </a>
     
   </nav>

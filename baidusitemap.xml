@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sun-ruijiang.github.io/2021/10/21/SEED_lab1/</loc>
-    <lastmod>2021-10-24</lastmod>
+    <loc>https://sun-ruijiang.github.io/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2021-11-10</lastmod>
   </url>
   <url>
-    <loc>https://sun-ruijiang.github.io/2021/10/24/sql/</loc>
-    <lastmod>2021-10-24</lastmod>
+    <loc>https://sun-ruijiang.github.io/2021/11/09/SEED_lab3/</loc>
+    <lastmod>2021-11-10</lastmod>
   </url>
   <url>
-    <loc>https://sun-ruijiang.github.io/2021/10/24/DVWA%E9%80%9A%E5%85%B3/</loc>
-    <lastmod>2021-10-24</lastmod>
+    <loc>https://sun-ruijiang.github.io/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2021-11-01</lastmod>
+  </url>
+  <url>
+    <loc>https://sun-ruijiang.github.io/2021/10/28/SEED_lab2/</loc>
+    <lastmod>2021-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://sun-ruijiang.github.io/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/</loc>
+    <lastmod>2021-10-25</lastmod>
   </url>
   <url>
     <loc>https://sun-ruijiang.github.io/2021/10/11/web%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2021-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://sun-ruijiang.github.io/2021/10/24/DVWA%E9%9D%B6%E5%9C%BA/</loc>
+    <lastmod>2021-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://sun-ruijiang.github.io/2021/10/21/SEED_lab1/</loc>
     <lastmod>2021-10-24</lastmod>
   </url>
   <url>
@@ -89,10 +105,6 @@
     <lastmod>2021-07-04</lastmod>
   </url>
   <url>
-    <loc>https://sun-ruijiang.github.io/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2021-07-04</lastmod>
-  </url>
-  <url>
     <loc>https://sun-ruijiang.github.io/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/</loc>
     <lastmod>2021-07-04</lastmod>
   </url>
@@ -111,10 +123,6 @@
   <url>
     <loc>https://sun-ruijiang.github.io/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC1%E7%AB%A0/</loc>
     <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://sun-ruijiang.github.io/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2021-06-11</lastmod>
   </url>
   <url>
     <loc>https://sun-ruijiang.github.io/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A2/</loc>

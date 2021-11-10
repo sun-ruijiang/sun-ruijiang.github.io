@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">270</span>
+            <span class="post-count">272</span>
         </span>
     </span>
 
@@ -126,7 +126,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
        
   <h1 id="web相关知识"><a href="#web相关知识" class="headerlink" title="web相关知识"></a>web相关知识</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对web相关知识的整理，包括自己熟悉的和不熟悉的。</p>
-<h2 id="Broken-Access-Control，越权访问"><a href="#Broken-Access-Control，越权访问" class="headerlink" title="Broken Access Control，越权访问"></a>Broken Access Control，越权访问</h2><h2 id="Cryptographic-Failures，加密失败"><a href="#Cryptographic-Failures，加密失败" class="headerlink" title="Cryptographic Failures，加密失败"></a>Cryptographic Failures，加密失败</h2><h2 id="Injection，注入"><a href="#Injection，注入" class="headerlink" title="Injection，注入"></a>Injection，注入</h2><h2 id="Insecure-Design，不安全的设计"><a href="#Insecure-Design，不安全的设计" class="headerlink" title="Insecure Design，不安全的设计"></a>Insecure Design，不安全的设计</h2><h2 id="Security-Misconfiguration，安全配置错误"><a href="#Security-Misconfiguration，安全配置错误" class="headerlink" title="Security Misconfiguration，安全配置错误"></a>Security Misconfiguration，安全配置错误</h2><h3 id="niginx配置不当导致的目录穿越"><a href="#niginx配置不当导致的目录穿越" class="headerlink" title="niginx配置不当导致的目录穿越"></a>niginx配置不当导致的目录穿越</h3><p>Nginx在配置别名（Alias）的时候，如果忘记加<code>/</code>，将造成一个目录穿越漏洞。</p>
+<h2 id="Broken-Access-Control，越权访问"><a href="#Broken-Access-Control，越权访问" class="headerlink" title="Broken Access Control，越权访问"></a>Broken Access Control，越权访问</h2><h2 id="Cryptographic-Failures，加密失败"><a href="#Cryptographic-Failures，加密失败" class="headerlink" title="Cryptographic Failures，加密失败"></a>Cryptographic Failures，加密失败</h2><h2 id="Injection，注入"><a href="#Injection，注入" class="headerlink" title="Injection，注入"></a>Injection，注入</h2><h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><h2 id="Insecure-Design，不安全的设计"><a href="#Insecure-Design，不安全的设计" class="headerlink" title="Insecure Design，不安全的设计"></a>Insecure Design，不安全的设计</h2><h2 id="Security-Misconfiguration，安全配置错误"><a href="#Security-Misconfiguration，安全配置错误" class="headerlink" title="Security Misconfiguration，安全配置错误"></a>Security Misconfiguration，安全配置错误</h2><h3 id="niginx配置不当导致的目录穿越"><a href="#niginx配置不当导致的目录穿越" class="headerlink" title="niginx配置不当导致的目录穿越"></a>niginx配置不当导致的目录穿越</h3><p>Nginx在配置别名（Alias）的时候，如果忘记加<code>/</code>，将造成一个目录穿越漏洞。</p>
 <p>修改<code>nginx.conf</code>，添加如下配置：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /file &#123;</span><br><span class="line">alias /var/www/html/example/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

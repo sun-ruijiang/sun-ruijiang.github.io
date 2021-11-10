@@ -14,7 +14,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-     Sung&#39;s Blog
+    Sqli-lab靶场 |  Sung&#39;s Blog
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -71,24 +71,37 @@ var _hmt = _hmt || [];
     <main class="content on">
       <section class="outer">
   <article
-  id="post-sql"
+  id="post-Sqli-lab靶场"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Sqli-lab靶场
+</h1>
+ 
+
+    </header>
      
     <div class="article-meta">
-      <a href="/2021/10/24/sql/" class="article-date">
-  <time datetime="2021-10-24T15:17:01.149Z" itemprop="datePublished">2021-10-24</time>
-</a>   
+      <a href="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/" class="article-date">
+  <time datetime="2021-05-24T16:00:00.000Z" itemprop="datePublished">2021-05-25</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CS-APP/">CS:APP</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">0</span>
+            <span class="post-count">514</span>
         </span>
     </span>
 
@@ -104,13 +117,49 @@ var _hmt = _hmt || [];
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-   
+  <h1 id="Sqli-lab靶场"><a href="#Sqli-lab靶场" class="headerlink" title="Sqli-lab靶场"></a>Sqli-lab靶场</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过win10 docker搭建，80端口映射到本机的8888端口。</p>
+<p>通过这个靶场可以系统学习sqli</p>
+<h2 id="Basic-Chanlleges"><a href="#Basic-Chanlleges" class="headerlink" title="Basic Chanlleges"></a>Basic Chanlleges</h2><p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025130228841-16351381501851.png" alt="image-20211025130228841"></p>
+<h3 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h3><p>GET传参-基于报错-单引号-字符串</p>
+<p><code>?id=1</code>有两个回显，存在注入点</p>
+<p><code>?id=1&#39;</code>出现报错，是<code>MySQL</code>报错，我们该学习如何去看报错<br><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025153901539.png" alt="image-20211025153901539"></p>
+<p>在上图的near后面是<code>&#39;&#39;1&#39;&#39; LIMIT 0,1&#39;</code>，我们去掉左右两个引号出错的的地方是<code>&#39;1&#39;&#39; LIMIT 0,1</code>，只有三个<code>&#39;</code>，所以语法错误。</p>
+<p>union 联合查询，将两个select语句的查询结果一起返回，回显到我们的页面。</p>
+<p>但是需要注意的是，两个select的列数要一样，才能回显。</p>
+<p><code>?id=&#39; union select 1,2,3--+</code>，不仅可以得到列数，还可以得到回显的位置</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162213822.png" alt="image-20211025162213822"></p>
+<p>所以2,3都是回显的位置，所以接下来可以使用hackbar的一些语句去获得mysql的数据了。</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162502494.png" alt="image-20211025162502494"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id&#x3D;-1&#39; UNION SELECT 1,2,(SELECT GROUP_CONCAT(username,password SEPARATOR 0x3c62723e) FROM users)--+</span><br></pre></td></tr></table></figure>
+
+<p>0x3c62723e是<code>&lt;br&gt;</code>的hex编码。</p>
+<p>将表名使用hex编码或者利用CHAR()函数，可以绕过单引号限制</p>
+<h3 id="Less-2"><a href="#Less-2" class="headerlink" title="Less-2"></a>Less-2</h3><p>GET传参-基于报错-基于整型</p>
+<p>根据报错判断出id是一个整型的注入点，不需要闭合，接下来就和上一题一样</p>
+<h3 id="Less-3"><a href="#Less-3" class="headerlink" title="Less-3"></a>Less-3</h3><p>GET传参-基于报错-带括号的单引号</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025184518768.png" alt="image-20211025184518768"></p>
+<p>根据报错判断闭合方式为<code>?id=1&#39;) </code>，其他同上</p>
+<h3 id="Less-4"><a href="#Less-4" class="headerlink" title="Less-4"></a>Less-4</h3><p>GET传参-基于报错-双引号</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025185000471.png" alt="image-20211025185000471"></p>
+<p>根据报错，闭合方式为<code>?id=1&quot;)</code>，其他同上</p>
+<h3 id="Less-5"><a href="#Less-5" class="headerlink" title="Less-5"></a>Less-5</h3><p>GET传参-二次注入-单引号-字符串</p>
+<p>与前面的改变是select没有回显，也就是说不能使用union联合注入查询数据库信息。</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025190605757.png" alt="image-20211025190605757"></p>
+<p>根据报错，与Less-1的闭合方式相同是<code>?id=1&#39;</code></p>
+<p>这道题需要用的是报错注入，hackbar自己提供了一个基于extractvalue()函数的报错注入</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025202543008.png" alt="image-20211025202543008"></p>
+<p>成功报错得到数据库名</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025202703212.png" alt="image-20211025202703212"></p>
+<h3 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h3><p>GET传参-二次注入-双引号-字符串</p>
+ 
       <!-- reward -->
       
     </div>
@@ -174,21 +223,32 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/10/24/sql/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/" rel="tag">课程作业</a></li></ul>
+
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
+      <a href="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A7/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            深入理解计算机系统——课程作业7
+          
+        </div>
+      </a>
     
-      <a href="/2021/10/24/DVWA%E9%80%9A%E5%85%B3/" class="article-nav-link">
+    
+      <a href="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">DVWA通关</div>
+        <div class="article-nav-title">深入理解计算机系统——课程作业6</div>
       </a>
     
   </nav>
