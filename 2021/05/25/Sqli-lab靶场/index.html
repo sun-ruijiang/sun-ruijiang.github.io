@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">514</span>
+            <span class="post-count">513</span>
         </span>
     </span>
 
@@ -138,7 +138,7 @@ var _hmt = _hmt || [];
 <p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162213822.png" alt="image-20211025162213822"></p>
 <p>所以2,3都是回显的位置，所以接下来可以使用hackbar的一些语句去获得mysql的数据了。</p>
 <p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162502494.png" alt="image-20211025162502494"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id&#x3D;-1&#39; UNION SELECT 1,2,(SELECT GROUP_CONCAT(username,password SEPARATOR 0x3c62723e) FROM users)--+</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=-1&#x27; UNION SELECT 1,2,(SELECT GROUP_CONCAT(username,password SEPARATOR 0x3c62723e) FROM users)--+</span><br></pre></td></tr></table></figure>
 
 <p>0x3c62723e是<code>&lt;br&gt;</code>的hex编码。</p>
 <p>将表名使用hex编码或者利用CHAR()函数，可以绕过单引号限制</p>

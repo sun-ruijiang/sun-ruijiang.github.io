@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">676</span>
+            <span class="post-count">833</span>
         </span>
     </span>
 
@@ -110,7 +110,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">2 min</span>
+            <span class="post-count">3 min</span>
         </span>
     </span>
 </div>
@@ -161,11 +161,20 @@ var _hmt = _hmt || [];
 <p>生成默认配置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$KERNEL</span></span><br><span class="line">make defconfig         <span class="comment"># 生成默认配置文件.config</span></span><br><span class="line">make kvm_guest.config  <span class="comment"># kvm配置</span></span><br></pre></td></tr></table></figure>
 
-<p>开启必要的配置选项</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>开启必要的内核配置选项以启动syzkaller，在<code>.config</code>文件末尾添加如下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Coverage collection.</span></span><br><span class="line">CONFIG_KCOV=y</span><br><span class="line"></span><br><span class="line"><span class="comment"># Debug info for symbolization.</span></span><br><span class="line">CONFIG_DEBUG_INFO=y</span><br><span class="line"></span><br><span class="line"><span class="comment"># Memory bug detector</span></span><br><span class="line">CONFIG_KASAN=y</span><br><span class="line">CONFIG_KASAN_INLINE=y</span><br><span class="line"></span><br><span class="line"><span class="comment"># Required for Debian Stretch</span></span><br><span class="line">CONFIG_CONFIGFS_FS=y</span><br><span class="line">CONFIG_SECURITYFS=y</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>编译内核，这个过程会比较漫长</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make olddefconfig    <span class="comment"># 将当前内核源码的新特性加入.config中去</span></span><br><span class="line">make -j`nproc`       <span class="comment"># 开始编译</span></span><br></pre></td></tr></table></figure>
 
+<p>出现<code>Kernel: arch/x86/boot/bzImage is ready  (#1)</code>标志已经完成。</p>
+<p>也可以以下命令查看是否成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="variable">$KERNEL</span>/vmlinux</span><br><span class="line"><span class="comment"># sample output - $KERNEL/vmlinux</span></span><br><span class="line">ls <span class="variable">$KERNEL</span>/arch/x86/boot/bzImage</span><br><span class="line"><span class="comment"># sample output - $KERNEL/arch/x86/boot/bzImage</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="配置-ext4-硬盘镜像文件"><a href="#配置-ext4-硬盘镜像文件" class="headerlink" title="配置 ext4 硬盘镜像文件"></a>配置 ext4 硬盘镜像文件</h3><p>安装<code>debootstrap</code>工具，可以用来构建最基本的系统。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install debootstrap</span><br></pre></td></tr></table></figure>
+
+<p>创建</p>
  
       <!-- reward -->
       

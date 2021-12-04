@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
 <li><p><code>ESI/EDI</code> 分别叫做”源/目标索引寄存器”(source/destination index)，因为在很多<strong>字符串操作</strong>指令中，<code>DS:ESI</code>指向<strong>源串</strong>,而<code>ES:EDI</code>指向<strong>目标串</strong>.</p>
 </li>
 <li><p><code>EBP</code> 是”基址指针”(BASE POINTER)，它最经常被用作高级语言函数调用的”<strong>框架指针</strong>“(frame pointer)， 在破解的时候,经常可以看见一个标准的函数起始代码（左为目标寄存器）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push ebp ;保存前一个函数帧指针ebp</span><br><span class="line">mov ebp,esp ;EBP设为当前帧指针</span><br><span class="line">sub esp, xxx ;预留xxx字节给函数临时变量.</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push ebp ;保存前一个函数帧指针ebp</span><br><span class="line">mov ebp,esp ;EBP设为当前帧指针</span><br><span class="line">sub esp, xxx ;预留xxx字节给函数临时变量.</span><br></pre></td></tr></table></figure></li>
 </ul>
 <ul>
 <li><code>ESP</code> 专门用作堆栈指针，被形象地称为<strong>栈顶指针</strong>，堆栈的顶部是地址小的区域，压入堆栈的数据越多，<strong>ESP也就越来越小</strong>。在<strong>32位系统</strong>中，<code>ESP</code><strong>每次减少4字节</strong>。</li>
@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
 <li><p><code>test</code>指令：测试指令，<code>test s2,s1</code>基于<code>s1&amp;s2</code>，只设置条件码</p>
 </li>
 <li><p><code>leave</code>指令：为返回准备栈，等价于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movl  %ebp,%esp            &#x2F;&#x2F;栈指针设置为帧指针</span><br><span class="line">popl  %ebp                 &#x2F;&#x2F;ebp存储一开始被保存的旧的ebp,esp指向返回地址的节点</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movl  %ebp,%esp            //栈指针设置为帧指针</span><br><span class="line">popl  %ebp                 //ebp存储一开始被保存的旧的ebp,esp指向返回地址的节点</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="栈帧图"><a href="#栈帧图" class="headerlink" title="栈帧图"></a>栈帧图</h2><p><img src="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.png" alt="栈帧图"></p>
 <p>用c语言描述函数：</p>
@@ -732,19 +732,19 @@ var _hmt = _hmt || [];
    
   <nav class="article-nav">
     
-      <a href="/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="article-nav-link">
+      <a href="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A2/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            数据通信实验报告
+            深入理解计算机系统——课程作业2
           
         </div>
       </a>
     
     
-      <a href="/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A2/" class="article-nav-link">
+      <a href="/2021/04/27/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BC%9A%E5%9C%BA%E5%AE%89%E6%8E%92%E9%97%AE%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">深入理解计算机系统——课程作业2</div>
+        <div class="article-nav-title">贪心算法——会场安排问题</div>
       </a>
     
   </nav>
