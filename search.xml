@@ -162,36 +162,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CTF攻防世界web新手区</title>
-    <url>/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/</url>
-    <content><![CDATA[<h1 id="CTF攻防世界web新手区"><a href="#CTF攻防世界web新手区" class="headerlink" title="CTF攻防世界web新手区"></a>CTF攻防世界web新手区</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>之前找到的ctfshow是一个刷题的网站，还行但是不够好，攻防世界直接体验拉满。</p>
-<h2 id="耍几道"><a href="#耍几道" class="headerlink" title="耍几道"></a>耍几道</h2><p><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808182101461.png" alt="image-20210808182101461"></p>
-<ol>
-<li><p>view source，直接F12开发者工具查看源码</p>
-</li>
-<li><p>robots，查看robots.txt找到flag文件，查看flag文件找到flag。<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808182214125.png" alt="image-20210808182214125"><br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808182313373.png" alt="image-20210808182313373"></p>
-</li>
-<li><p>backup，index.php.bak就是index.php的备份文件，得到flag。（.bak备份文件保证当源文件不小心被删掉或者出现故障导致无故自动退出时，还可以从.bak备份文件继续编辑，减少了误操作带来的损失。）<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808184007844.png" alt="image-20210808184007844"></p>
-</li>
-<li><p>cookie，就是burp抓包重放，查看response回应的cookie。<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808185255022.png" alt="image-20210808185255022"><br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808185210329.png" alt="image-20210808185210329"></p>
-</li>
-<li><p>disabled_button，一个前段的绕过，很简单直接把属性disabled去掉即可。</p>
-<p><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808185828168.png" alt="image-20210808185828168"></p>
-</li>
-<li><p>weak auth，这是我从来没有做过的，弱密码爆破，在burp抓包然后发到intruder模块爆破，选择爆破位置和模式，加载字典，开始爆破。<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808200134326.png" alt="image-20210808200134326"></p>
-</li>
-</ol>
-<p><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808200302716.png" alt="image-20210808200302716"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天就到这里吧，总之还是非常好的，而且有很多明星战队和赛事，<del>xman选拔赛我感觉是我现在的目标。</del></p>
-]]></content>
-      <categories>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CTF攻防世界web新手区2</title>
     <url>/2021/08/09/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA2/</url>
     <content><![CDATA[<h1 id="CTF攻防世界web新手区2"><a href="#CTF攻防世界web新手区2" class="headerlink" title="CTF攻防世界web新手区2"></a>CTF攻防世界web新手区2</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>昨天做了前6道题，其实有点仓促，今天把剩下的做完。</p>
@@ -262,6 +232,36 @@
       </tags>
   </entry>
   <entry>
+    <title>CTF攻防世界web新手区</title>
+    <url>/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/</url>
+    <content><![CDATA[<h1 id="CTF攻防世界web新手区"><a href="#CTF攻防世界web新手区" class="headerlink" title="CTF攻防世界web新手区"></a>CTF攻防世界web新手区</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>之前找到的ctfshow是一个刷题的网站，还行但是不够好，攻防世界直接体验拉满。</p>
+<h2 id="耍几道"><a href="#耍几道" class="headerlink" title="耍几道"></a>耍几道</h2><p><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808182101461.png" alt="image-20210808182101461"></p>
+<ol>
+<li><p>view source，直接F12开发者工具查看源码</p>
+</li>
+<li><p>robots，查看robots.txt找到flag文件，查看flag文件找到flag。<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808182214125.png" alt="image-20210808182214125"><br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808182313373.png" alt="image-20210808182313373"></p>
+</li>
+<li><p>backup，index.php.bak就是index.php的备份文件，得到flag。（.bak备份文件保证当源文件不小心被删掉或者出现故障导致无故自动退出时，还可以从.bak备份文件继续编辑，减少了误操作带来的损失。）<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808184007844.png" alt="image-20210808184007844"></p>
+</li>
+<li><p>cookie，就是burp抓包重放，查看response回应的cookie。<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808185255022.png" alt="image-20210808185255022"><br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808185210329.png" alt="image-20210808185210329"></p>
+</li>
+<li><p>disabled_button，一个前段的绕过，很简单直接把属性disabled去掉即可。</p>
+<p><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808185828168.png" alt="image-20210808185828168"></p>
+</li>
+<li><p>weak auth，这是我从来没有做过的，弱密码爆破，在burp抓包然后发到intruder模块爆破，选择爆破位置和模式，加载字典，开始爆破。<br><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808200134326.png" alt="image-20210808200134326"></p>
+</li>
+</ol>
+<p><img src="/2021/08/08/CTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA/image-20210808200302716.png" alt="image-20210808200302716"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天就到这里吧，总之还是非常好的，而且有很多明星战队和赛事，<del>xman选拔赛我感觉是我现在的目标。</del></p>
+]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DVWA靶场</title>
     <url>/2021/10/24/DVWA%E9%9D%B6%E5%9C%BA/</url>
     <content><![CDATA[<h1 id="DVWA靶场"><a href="#DVWA靶场" class="headerlink" title="DVWA靶场"></a>DVWA靶场</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>靶场通过phpstudy搭建。</p>
@@ -272,6 +272,30 @@
       </categories>
       <tags>
         <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EnglishSix</title>
+    <url>/2021/09/22/EnglishSix/</url>
+    <content><![CDATA[<h1 id="EnglishSix"><a href="#EnglishSix" class="headerlink" title="EnglishSix"></a>EnglishSix</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>六级在即，学英语</p>
+<h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><p>背单词时间表（获得网址：<a href="https://17gre.github.io/17GRE/">https://17gre.github.io/17GRE/</a> ）</p>
+<p><img src="/2021/09/22/EnglishSix/image-20210926125114701.png" alt="image-20210926125114701"></p>
+<p>早上学新单词，晚上复习旧单词。</p>
+<h2 id="Reading-Comprehension"><a href="#Reading-Comprehension" class="headerlink" title="Reading Comprehension"></a>Reading Comprehension</h2><p>阅读理解参考书：《杨鹏长难句文字》</p>
+<p><img src="/2021/09/22/EnglishSix/image-20210923144826224.png" alt="image-20210923144826224"></p>
+<p>四种训练方式：</p>
+<ol>
+<li>意群训练。</li>
+<li>不回视训练。</li>
+<li>合理化原则推理训练。</li>
+<li>速度与理解力的平衡点训练。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>English</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -291,30 +315,6 @@
 </ol>
 <h3 id="读写译"><a href="#读写译" class="headerlink" title="读写译"></a>读写译</h3><p>正确表达英语需要语法等的积累，选择一本语法书去读，看原文名著。</p>
 <p>尝试去写、翻译一篇文章。</p>
-]]></content>
-      <categories>
-        <category>English</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>EnglishSix</title>
-    <url>/2021/09/22/EnglishSix/</url>
-    <content><![CDATA[<h1 id="EnglishSix"><a href="#EnglishSix" class="headerlink" title="EnglishSix"></a>EnglishSix</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>六级在即，学英语</p>
-<h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2><p>背单词时间表（获得网址：<a href="https://17gre.github.io/17GRE/">https://17gre.github.io/17GRE/</a> ）</p>
-<p><img src="/2021/09/22/EnglishSix/image-20210926125114701.png" alt="image-20210926125114701"></p>
-<p>早上学新单词，晚上复习旧单词。</p>
-<h2 id="Reading-Comprehension"><a href="#Reading-Comprehension" class="headerlink" title="Reading Comprehension"></a>Reading Comprehension</h2><p>阅读理解参考书：《杨鹏长难句文字》</p>
-<p><img src="/2021/09/22/EnglishSix/image-20210923144826224.png" alt="image-20210923144826224"></p>
-<p>四种训练方式：</p>
-<ol>
-<li>意群训练。</li>
-<li>不回视训练。</li>
-<li>合理化原则推理训练。</li>
-<li>速度与理解力的平衡点训练。</li>
-</ol>
 ]]></content>
       <categories>
         <category>English</category>
@@ -1175,6 +1175,25 @@
         <tag>kernel</tag>
         <tag>fuzz</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>简历</title>
+    <url>/2021/12/06/sunruijiang/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="768b0990a3a832845b56dfb67c8e1f0aa04a1edc0aadbd5692fa82e17ca74665">b0bb00e0b67360894bf5193cb955669168551f9afa8273643671f35fcda219d194dc6419f9970ea98e924da97cd9e607e5b05eb55ebf206cefff9d199f5f8042ddfddeb2dc3bdfdec2aa4a78cbc4ebf7ff1034c2f917ceab0b6d1bdef2e85cae369f9cbffcf52526dc557ce822f06a757ce5d5b7f8df8699f3f79c0c9336f1e7a0f2c111e3c8947942b8017c1451791317f69b3777ab92092391ac9e121d68efd474224c9e68e11a70e03ab76f761227fdc22ad995409a18599272e7abf2058cb6bf1179107435261d84bced23f102ffde72ee2a0ddf76c66aed7e44e2624055d4e4e7c5f6a0fa4f86d7a7a8984d28161713d0328c372d433492807f5744731d4b2d1882a4c2038e50c9041c104f96e8266553ea77f96e33087d95da24a659ac4a82721ee49954235be3c96ef272c6f76fd620278c4097c0815ed0b1a1f4ab6ef86bf884aa069c939764359bd1103f2e9860886c890ec8b3aba893f94ecddd43fe9b8da7ab39f8356d17a3f732e676b8b3ff2f4784fc679a5752faffaac3dab18a36671cba873c14047b3ef0eefa841967e5ee4a182ca591b9374ca33379dfed680a2989c8e6636b5fd2bb619c037e9b57696000c4d799b17de601f23915d21f6e3772f278a25c87b9f793850b379675efcb8d7ec07449a7b79caf01f82977675e4d1e67fefb8147a55beebffa6f56ff5c488ab7e33e67e756c10a7a5bd48b26544f185f3216b37df159234f0c51e9f713379d0b556b7285b060e5d67288cfb589aa7d27b7a4e6c00f4cf77dc121fd27e66b2fc13e2a7574a6a58b6cb02a26ea3d0028bc72067ea0577ce9d86144b29de12dfd3bf40613fe9546325ec057eb332bbe9aeea83fd860d622056b0fe0639198c221e6663b92bcbcb8214df4ffa515c8ee1f92e17dd538563028624e101c0709364ea15c2c44fc726f6040fdf9f200ec3770d2be2d26420f5b201cb9e6495f9267ff5d8fd9ffb04b4310e1f7f75657498840be1c81789d708cea204992ba79dd05108e0c50db09809387e1adead3a2d2f95724f21f05f4c91a41357d9151590c6e244ff27b0174c96ae768fd30b932438f00b75d9e722d0d7b2282a20f69bb84103339e61d2c01ef358f13a7a3daae8b9f948d6230194230b8eb0675a23f088715ab350a450b53a4f6a98bbc0f18b526abfe907c1e3cd7184cf36dd372701fa697ea545fcaec2630534eabfa73cd644444d1531aa5f9065930343e315af0c333ac5fd974793ffdc449df4fa0167d51210e2938d83d51888223d1b032b660494b2c79c8916cff165e2787ad2d763e0a45c384e50156d7bb5aad5cfc8e00100d95ee50645b447096c923e32da8ee4a6219b88ce9dadebde465f36e703f3544ba383042eb6bfdd30e5131b7b0299038ae703a9abcafc57e1a00aab492e8b4c5786b6d33236e8bc30d5989cb00bb7c8a6de1cedc754c783616ce838638b7add721d6e6d26a123a3799accb0bd2beacc166e780db8ebcfb747d9e856ca4e7c43ee04f124273b92c3bcb7b80af642648248777d5633b9d057a1210a9a4580525afe6de4b08f705540e1c427626d6ae7959cf18e176cb9dd66eadf9690ed7232a9585593b2ddfa4ee9d8dbf35c6c59d3b9119b5ad1f9d7751ba78e5fa7c1a33f0c145150830aa47624d1621bbecd233688d130f625a74e6533ef39906e0db2f63a07a3633fa5f9e8cbc810610a11464708e346cbf8d57a000a4c366044172018b40bb297b044daacfcc769fb6bcc65a229de2138c4826ab8a6585495e5225363cac36426d7b5b1b59dcb0a74b81958ba82bed30178a372ef5160161c50db04d56c51b6333012e92bbfa1bc30e945bfdef9d5b664fd3a13dc14943a0213fee16ddd543c507e042fbf46ad6500586156e0e6c8f06e535318c9d70ad02da2432d8e4413279cab09215a26aa456ee4e0c68a8086ce0dbc0a81adcefa08807c0f59e8fa43823ecb5204957f9dafbaf503706a30698112b48b9ac4ecc92d307aea90c826a0ae05efbc75664244279f7e5ead169645ae13b19aa46066bc8d9b4bf929176efc987f9d1adce0cf8b71760ad39d91e6cf4b1df0906ed15261aa04abdf7235af3550868aaf63223e5b4b78c99fdb077f9f8c5fe4cf62486fdcb5f44573ef5fc0bf2599603a5409dee585a285046325d7cd25ba7d499c62b35be76493e642e700300cacdf46dbf74aae91dc98e2f7de49673748d56b9f139e6887d012da84c3cd771728ded0f9194852f8fc55a4c31ca9db48fa4ead998ceb7ced7b8c177ce5ba307f2253afe88efc7cd0f69484502296ca6e001485615e5e317e376b2793df98b0f2ac5388f64d926759f2bc3a1f186fa7e0cc74386c0d82126a90a22ce555a5cbc81d8b4e3ec25671c01e19924c989bf102d3e355eca2817b87c1a0e044f0d29cc7b8ba10854fd9f7a08fae65866dd290254830b2efdf02ac53063dd28f26b7d0f9c7abc8bf15deb348aacbe8121a91c9e3e76f6366702e925949942d1e5bbef58c59a3a4b3db62ce3788922a822b74f2c215e876cb7043ab76670c44a1f3851decb6272e46e8e975c132340b6f42a3068260e0fb460568353687f06b63701c77ec6c0595dfb846abfeb039d4935d51df24a87792f86551e96297c6bd5f59765312f7246e131196bc0f94255faa80dd9d3d5e7fb283ab46ee0cc129100759580fce5200f6e4a0f2a20cd749ceb25cefc5e8b5f2982cca233353c94194a379cabc7b75a9405ec6cc6e5037580a116a6c390845bde66545aa87c0335258ddcbc31464be0bfb61532200019ab1f5b84eeb779a8bfe50d3323d30c721de778f74a2727f227aa8c745cc0c0be891c82b3e1169d6aed4c8a5d391247925794c9c679210203022821050d1d5869d3871b96dc75f5280923f2d0dd555a17e0a7f79220bd48a20bf98c44558e0cb55e63dc43617c6bade55afc7de49acafe3da1e806b530eca9d5fd5479bb8f8f082d46de89fd3bfd9b1e4841c7243156e11961222953eeccbc1409e0a46cafecdca99e504e8d6521c6069c842f2396edf1e4d229c111682e4ee40ad2f743679883f8b6ee42b43b787335b5a055f2dc6cb0c3f7d6a1dfdae02f6e8031eac6f0704c823b8774e826117047db724e54b732613eedd57a70ad68145d324cd77aaa3c7ef3f9a55f41d39f434c2c4eb1972715330d9c293455276e4491d1783555067ba514e56a43898254432247313e36c605d3512b6d061bf1ab4f6e6f2c8da4560b6a6683f65b491d9ebbb0f24258e6a7e2d57618b0ec6e6de6db690565c32b62b732eddd748b1189bb064ae57373ee3ca395426381cb97216753733ab6570cf90762fc327415f36dec526b1d2bd8549152f23860febb2f91276b59114767849285218f0e74e09b9aa3f0aca4c3873cf8f1525d2f0b02b864f0604a188360a2e86d3101be8e5ba9e874d13f76e88c053b184f504e27c4e1bbf356676ec10b126112ce341ca12b95e1f95f0676f377422353b72f9233eb595aa8656312e7b38334c26cba2990eff5b31337ac22a6164adb247a261fe0baaa978e03771ceb10827fd34c78168dc5fd30b26e03f7c4d82c6cf456687ee2d571309baae6ef380de7f0a481ca8cb6e862ab590088b882d6fa8883d8cab7e513248c1911dacb566bd7651d54b06bf693ac87009ff0405dec11dce2be6808206ee3f2ba64e0c06ddd10d4d2825478d62110625a53191cdc86eddb52207259a81e3497180caed4ce7a5a8330df8c5f631494bd4eb6c29de0b1bdb81cda43d7d31fc7b62d0caeaaec577186fe1eb1b4fd283b3f700268b8a3129eebb6cedc3ccb387d341cf57dabb3eba876cf7f3d05c6eaf4d910169c6483f3af0e5347255b81e8a6cb641bb1781094ab23968d2e1798f8a99e15f2928a7c788cd2790a83d3e6ed4206106a5289e3d565f78ed6f18e74d11edb29d9d7b0e7fe842372c0458a99a791ed10cd192cc0efc5d506aa6f5b8f3c96a3a4552217f50ebd78eeb3922370246bee782fe0f827932fb9ec511ae1fe417bbf48849788997c91945e21e027a4f0758a84412138cee3918cdb0f670b047426d7095efccb7008a75a609a9d6b5c3557184dc13b2f56ecf389253d57674106aa96f82959e7b196a816305fcdbff6663bbe4970e6715588c5d7fc8f75691af8f94620d50fa486848ee127a37ec652517fa61ea337dd1de2862b36b2d5f20d350d294ba0285c2cb70d2a241749138f0da0752f64bd4051101c46742e2da405c221817bbfa592e6c69de51c689b705ef6ca307dadedac17a1bf8f79118a878ea1b06362a7e49c1338712308fc84d91ca70f7fd37ed18b59b612e7f5c1b66fe5abb71f5176f90503f3a67f0da7fe0aab3b83da0e8cadea6a8cbac44e7d87c0d60f9cbef89a2d0f55a4f8eeeb15abbead7f699c2c871833420f46de2b750ace7da6cc5335e7e2d9728efce16e4a08bd19824cdda9da1651ef4cc1af5dc0bf3e8f7fda8b47487563bb17c428c901e27d918e89f6f27b53c3eec9e7b15b389d8d1517ea510d3b181dbba5b7ece76d7cf9bc13f2f47d27dc88e973472949491e38b572d193e018f23d1cbea1a0c9331230b5bd24820f439a7b892831ba165f9eb5da01f63e54c8ac94f5d4d6dd7ff7e907c9cdea103c47d6d38057aaff22dc6f1e00405077f9ea5e8b0470d4f8ec8340f0844a70fd60118a284c37b79da494458d76cbf1089e21f42182187df168b722de7bacbaf2e53ebf44133e7cb05910c28d5a0bed27cb6d62554e7bd20a6836ab78c668e61ab922b3bf5c252f01fe228eabd29c0f9363ced23192b5b21be7ec8da09a9677b022792eac6589ce830f0d26e92f3457458be8f659029fc1aca96ac02a008118608125dd9db6d150eaaefcf28b38423dd7b368c88f261b909a8cf5d571cdfec89a39b194430d42ee599e9d30704df0bead2192fb01054adf85d6c9ac63a41fe5392a5a5442b70b6f108d46d0f9f7703332002996cba326cafa12a0b0b7ffd3f640dff4b7fe068c4d35a06c3fbb51a3842f54461979efafa9201ad8624afb89316faab6a8cd7add1490d9d31a93f78572b98aac9bfa8ae1f19304db9d5f400d76ff2aec92266d92336c04933259988649fd951f8b693929e2c88240cc68110067b4226f9905f06cefbec84901c65ad880305d22a643f3e986d3b73cd8435d79edd35b24d132de6879d7a2909a674c7eed5399360a54ce3d0a844ea685ead9b1d24c1e0d8feeb3aef894b64edbb346b9ef745cc7cfadc18dcee40c746a3ba05d9dcfdefa0fb333ea99ed2a5eca60a62071d114d17e1d04efd6e38bff42800058e6841bb1fb1ddc79305ccb6a8b79a9a51ccfd379648f79ba778f05307fb19bcb1d78c41cceb4b78fffd233b2c81c9300e193792d04638d056a1b0e9ed72b9422e2198c99f4c49fc1de991d9d4361130e22d4efcc85f4a03a8d14163eec128edc3f031f5209b9080262ec9899a2c6afbdfd75d5e8e9f89fbf5c22de21cf6ff43034097ba79ea9b7538f428ef333aeff528c60072f3a860bce8fd87075b286d31d2dd06fa1d78261430dfcb57f1eda011d2b40fe2633de0c02ab45c08f4b847ed7ea2c5e221116736a8d1316c4ef619e0a1cb9553a53653456880ab971d7035a622c15312d4a5ddf66cb6cd072882bfb2cc78f9ab0cccf60485c7aa9ab2f3db53d540dae7517332c4674ec4f35ad10682b53e1a79d2ceea2c714540dae05fe7d2b7bd4ae5bd6868f1d83b23e792c30d58dc169f6d75c1c51fdd8707ba8eff644ff1b3b5687131b0036162fef87a5baf8604d4dac18779eb06b69ea4f6ac25b16321f2838a58eb40dc950fb08b28ef0b6283470701243dbd0a9197a6fa9d64e3585b8495e2a5f621fde6d4a2b1fb24ce0be22524d1ddc09eae29ad9362eee155bb64f54e8813a1d2f4b61632fc5475cd34e4a72824e8254e83b48587ea285189daa68d1791facb25022495c8eb7d72a4bb05c65d6797fa0095fb33422fb394c9c95fad14490cd8711a830bffd2a5004c824cb06faf7840ecec35ba46f7441db754e935591b8656a206275ddc7e8a801e487f384d5ca7aedc39e26739a9835af548a05ae901f8011b12a40029429a52a9a0ff5701f3310d2f3d24509da093ccb56a030bddaa3ff543feb280443e7e299eef03be55f1c6127773a92639bef10c9469cc31c772888b313b3df2c48e91a90421bf14d26cf66fb934aa9435e1fbc8041e916e4d500b7d4a6d89e7318d9aafd5da74ece311334113eb439efd282c4bff2d148202bbc21590b759b5166f3f931c0dcbfc0d88ce4752a75e809b418a4fd2239ea092cbaccf4dc06f90c1b4fe12242997c8ac208ce6fe95984fc793a3fcc8bae2bbcc8ab2e43398e93c27b574121b55a74bbf7a16d228bc79c4449512d84794366b74b4f12b54e4ac0be14b6f493eda83e139f95d11dd19be0b9d31321505ac02d62aa1bc6fda9df1ad46f24af5e42dd2dadd364847d2d721c923381297d9b20cda992875f8e462691daed54505dc345b330ba97b3e1c9bbb64a81ae15743eaca5e5f33100e7a9edb87ef0b34e07db9f59a830a89dfbee2a65fcab9958e0df8a7d9dab744200f0b1d5c37ad3ef3b8f9cd4dd81f6558a3c5f7c1711e5dc41493b8c8dc657f0f420ba7144f248b3616781f9554242c135d0e807a560270d7765d5475ebebc1aaab94222c29770616817e1ca606ccf8c4599ae6c777c88cceea81fa98b0c44020af4586553b0511e7798a6bc009e98fd05d1df4f6ed640e41685274c330c6d690241c3a3d6b85dc64c2e2fd2baf66af4cfebd48920e0de6ace46a2d27775d71802601994fec75462fcbdce591f14225968c61074aac32c9ad0684fc720eb0309945d393197118209739fb08cff7db533892c8fc76a59bce04fb62e06459a093e35091756f8f0b44ac0272355bf657b40d356ffcdd26aef47169a8c6d41341efdac1ca352f216ae0304b0e0e7873d553b554de30b6063e5229f7ba0eedfde56f006c5ac2d165f0e3d5c201d6d64e9bfbc7fa357cc72905fce2a0c0220e9568a2724ea0b06bc65f55c5a6ce100b51a93a44fb33393afcca2f53eaabed01e9c72c16fea00d260b26fdfa6e74af03ae514be617f70eebfa0a7d560c80a623dba9b7ee596f9f12ae1f778b21743d3f967e92b7776f80de183649bfb64be9d75eaa0b5506fef089759f685d7f2c9b3eb62</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>Others</category>
+      </categories>
   </entry>
   <entry>
     <title>web相关知识</title>
@@ -3216,6 +3235,31 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
+    <title>深入理解计算机系统——课程作业6</title>
+    <url>/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/</url>
+    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业6"><a href="#深入理解计算机系统——课程作业6" class="headerlink" title="深入理解计算机系统——课程作业6"></a>深入理解计算机系统——课程作业6</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>今天做作业6</p>
+<h2 id="题一：家庭作业6-30"><a href="#题一：家庭作业6-30" class="headerlink" title="题一：家庭作业6.30"></a>题一：家庭作业6.30</h2><h3 id="A、地址格式"><a href="#A、地址格式" class="headerlink" title="A、地址格式"></a>A、地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525211625958.png" alt="image-20210525211625958"></p>
+<h3 id="B、读写操作顺序执行结果"><a href="#B、读写操作顺序执行结果" class="headerlink" title="B、读写操作顺序执行结果"></a>B、读写操作顺序执行结果</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525212521139.png" alt="image-20210525212521139"></p>
+<h2 id="题二：家庭作业6-31"><a href="#题二：家庭作业6-31" class="headerlink" title="题二：家庭作业6.31"></a>题二：家庭作业6.31</h2><h3 id="A、高速缓存C的大小"><a href="#A、高速缓存C的大小" class="headerlink" title="A、高速缓存C的大小"></a>A、高速缓存C的大小</h3><p><code>C = S * E * B = 128</code>，大小为128字节</p>
+<h3 id="B、地址格式"><a href="#B、地址格式" class="headerlink" title="B、地址格式"></a>B、地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213035291.png" alt="image-20210525213035291"></p>
+<h2 id="题三：家庭作业6-32"><a href="#题三：家庭作业6-32" class="headerlink" title="题三：家庭作业6.32"></a>题三：家庭作业6.32</h2><h3 id="A、0x0718地址格式"><a href="#A、0x0718地址格式" class="headerlink" title="A、0x0718地址格式"></a>A、0x0718地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213634359.png" alt="image-20210525213634359"></p>
+<h3 id="B、存储器引用"><a href="#B、存储器引用" class="headerlink" title="B、存储器引用"></a>B、存储器引用</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213953712.png" alt="image-20210525213953712"></p>
+<h2 id="题四：家庭作业6-37"><a href="#题四：家庭作业6-37" class="headerlink" title="题四：家庭作业6.37"></a>题四：家庭作业6.37</h2><h3 id="A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少"><a href="#A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少" class="headerlink" title="A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少"></a>A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少</h3><p>不命中率是100%，因为直接映射，<code>x</code>数组大小为<code>256 * 2 * 4 = 2048</code>字节，<code>x[0][i]</code>和<code>x[1][i]</code>对应同一个高速缓存数据块，所以每次都会容量不命中。</p>
+<h3 id="B、假设高速缓存的2048字节，其他同上"><a href="#B、假设高速缓存的2048字节，其他同上" class="headerlink" title="B、假设高速缓存的2048字节，其他同上"></a>B、假设高速缓存的2048字节，其他同上</h3><p>不命中率是12.5%，因为缓存足够大，所以只有冷不命中，也就是4/32 = 1/8</p>
+<h3 id="C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少"><a href="#C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少" class="headerlink" title="C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少"></a>C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少</h3><p>只有冷不命中，不命中率为12.5%。</p>
+<h3 id="D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？"><a href="#D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？" class="headerlink" title="D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？"></a>D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？</h3><p>不会降低，因为块大小不变时，冷不命中的概率不可能被减小。</p>
+<h3 id="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"><a href="#E、对于情况3，更大的块大小帮助降低不命中率吗？原因？" class="headerlink" title="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"></a>E、对于情况3，更大的块大小帮助降低不命中率吗？原因？</h3><p>会降低，因为一个块的大小增加，冷不命中的频率就降低。</p>
+<h2 id="题五：家庭作业6-42"><a href="#题五：家庭作业6-42" class="headerlink" title="题五：家庭作业6.42"></a>题五：家庭作业6.42</h2><p>每行只有4个字节，那只可能是循环中后三个命中，第一个不命中，不命中率为0.25。</p>
+<h2 id="题六：家庭作业6-43"><a href="#题六：家庭作业6-43" class="headerlink" title="题六：家庭作业6.43"></a>题六：家庭作业6.43</h2><p>每行只有4个字节，每次要写一个char，不命中率仍然为0.25</p>
+]]></content>
+      <categories>
+        <category>CS:APP</category>
+      </categories>
+      <tags>
+        <tag>课程作业</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深入理解计算机系统——课程作业5</title>
     <url>/2021/05/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A5/</url>
     <content><![CDATA[<h1 id="深入理解计算机系统——课程作业5"><a href="#深入理解计算机系统——课程作业5" class="headerlink" title="深入理解计算机系统——课程作业5"></a>深入理解计算机系统——课程作业5</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>突然要做作业不会做，昨天学了一手，今天开始写</p>
@@ -3241,31 +3285,6 @@ php反序列化漏洞。
 <li>三路并行，临时变量存储；</li>
 <li>关键路径决定的CPE是双精度乘法延迟的六分之一，但是因为加载操作每个周期一次，所以CPE还是1.</li>
 </ol>
-]]></content>
-      <categories>
-        <category>CS:APP</category>
-      </categories>
-      <tags>
-        <tag>课程作业</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深入理解计算机系统——课程作业6</title>
-    <url>/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/</url>
-    <content><![CDATA[<h1 id="深入理解计算机系统——课程作业6"><a href="#深入理解计算机系统——课程作业6" class="headerlink" title="深入理解计算机系统——课程作业6"></a>深入理解计算机系统——课程作业6</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>今天做作业6</p>
-<h2 id="题一：家庭作业6-30"><a href="#题一：家庭作业6-30" class="headerlink" title="题一：家庭作业6.30"></a>题一：家庭作业6.30</h2><h3 id="A、地址格式"><a href="#A、地址格式" class="headerlink" title="A、地址格式"></a>A、地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525211625958.png" alt="image-20210525211625958"></p>
-<h3 id="B、读写操作顺序执行结果"><a href="#B、读写操作顺序执行结果" class="headerlink" title="B、读写操作顺序执行结果"></a>B、读写操作顺序执行结果</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525212521139.png" alt="image-20210525212521139"></p>
-<h2 id="题二：家庭作业6-31"><a href="#题二：家庭作业6-31" class="headerlink" title="题二：家庭作业6.31"></a>题二：家庭作业6.31</h2><h3 id="A、高速缓存C的大小"><a href="#A、高速缓存C的大小" class="headerlink" title="A、高速缓存C的大小"></a>A、高速缓存C的大小</h3><p><code>C = S * E * B = 128</code>，大小为128字节</p>
-<h3 id="B、地址格式"><a href="#B、地址格式" class="headerlink" title="B、地址格式"></a>B、地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213035291.png" alt="image-20210525213035291"></p>
-<h2 id="题三：家庭作业6-32"><a href="#题三：家庭作业6-32" class="headerlink" title="题三：家庭作业6.32"></a>题三：家庭作业6.32</h2><h3 id="A、0x0718地址格式"><a href="#A、0x0718地址格式" class="headerlink" title="A、0x0718地址格式"></a>A、0x0718地址格式</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213634359.png" alt="image-20210525213634359"></p>
-<h3 id="B、存储器引用"><a href="#B、存储器引用" class="headerlink" title="B、存储器引用"></a>B、存储器引用</h3><p><img src="/2021/05/25/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A6/image-20210525213953712.png" alt="image-20210525213953712"></p>
-<h2 id="题四：家庭作业6-37"><a href="#题四：家庭作业6-37" class="headerlink" title="题四：家庭作业6.37"></a>题四：家庭作业6.37</h2><h3 id="A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少"><a href="#A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少" class="headerlink" title="A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少"></a>A、假设高速缓存的1024字节，直接映射，高速缓存块的大小是32字节，不命中率是多少</h3><p>不命中率是100%，因为直接映射，<code>x</code>数组大小为<code>256 * 2 * 4 = 2048</code>字节，<code>x[0][i]</code>和<code>x[1][i]</code>对应同一个高速缓存数据块，所以每次都会容量不命中。</p>
-<h3 id="B、假设高速缓存的2048字节，其他同上"><a href="#B、假设高速缓存的2048字节，其他同上" class="headerlink" title="B、假设高速缓存的2048字节，其他同上"></a>B、假设高速缓存的2048字节，其他同上</h3><p>不命中率是12.5%，因为缓存足够大，所以只有冷不命中，也就是4/32 = 1/8</p>
-<h3 id="C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少"><a href="#C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少" class="headerlink" title="C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少"></a>C、假设高速缓存的1024字节，两路组相连，高速缓存块的大小是32字节，不命中率是多少</h3><p>只有冷不命中，不命中率为12.5%。</p>
-<h3 id="D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？"><a href="#D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？" class="headerlink" title="D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？"></a>D、对于情况3，提高高速缓存大小帮助降低不命中率吗？原因？</h3><p>不会降低，因为块大小不变时，冷不命中的概率不可能被减小。</p>
-<h3 id="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"><a href="#E、对于情况3，更大的块大小帮助降低不命中率吗？原因？" class="headerlink" title="E、对于情况3，更大的块大小帮助降低不命中率吗？原因？"></a>E、对于情况3，更大的块大小帮助降低不命中率吗？原因？</h3><p>会降低，因为一个块的大小增加，冷不命中的频率就降低。</p>
-<h2 id="题五：家庭作业6-42"><a href="#题五：家庭作业6-42" class="headerlink" title="题五：家庭作业6.42"></a>题五：家庭作业6.42</h2><p>每行只有4个字节，那只可能是循环中后三个命中，第一个不命中，不命中率为0.25。</p>
-<h2 id="题六：家庭作业6-43"><a href="#题六：家庭作业6-43" class="headerlink" title="题六：家庭作业6.43"></a>题六：家庭作业6.43</h2><p>每行只有4个字节，每次要写一个char，不命中率仍然为0.25</p>
 ]]></content>
       <categories>
         <category>CS:APP</category>
@@ -3496,6 +3515,27 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
+    <title>算法期末复习</title>
+    <url>/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="算法期末复习"><a href="#算法期末复习" class="headerlink" title="算法期末复习"></a>算法期末复习</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本想整个《算法导论》来进行系统学习，后来发现高估自己了。</p>
+<p>还是用别人的思维导图吧。</p>
+<h2 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173740232.png" alt="算法概述"></p>
+<h2 id="递归分治"><a href="#递归分治" class="headerlink" title="递归分治"></a>递归分治</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219190206679.png" alt="递归与分治策略"></p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173858421.png" alt="动态规划"></p>
+<h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173922373.png" alt="贪心算法"></p>
+<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173946942.png" alt="回溯法"></p>
+<h2 id="分支界限"><a href="#分支界限" class="headerlink" title="分支界限"></a>分支界限</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219174007775.png" alt="分支限界法"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>转载于csdn： <a href="https://blog.csdn.net/ruvikm/article/details/111408012">算法期末复习</a></p>
+<p>可以到这个网站去看一个算法的运行过程：<a href="https://visualgo.net/">一个可视化算法网站</a></p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>考试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法导论——第2章</title>
     <url>/2021/06/11/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E2%80%94%E2%80%94%E7%AC%AC2%E7%AB%A0/</url>
     <content><![CDATA[<h1 id="算法导论——第2章-算法基础"><a href="#算法导论——第2章-算法基础" class="headerlink" title="算法导论——第2章 算法基础"></a>算法导论——第2章 算法基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本章将要<strong>介绍一个贯穿本书的框架</strong>，后续的算法设计与分析都是在这个框架中进行的。</p>
@@ -3583,52 +3623,6 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
-    <title>算法期末复习</title>
-    <url>/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="算法期末复习"><a href="#算法期末复习" class="headerlink" title="算法期末复习"></a>算法期末复习</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本想整个《算法导论》来进行系统学习，后来发现高估自己了。</p>
-<p>还是用别人的思维导图吧。</p>
-<h2 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173740232.png" alt="算法概述"></p>
-<h2 id="递归分治"><a href="#递归分治" class="headerlink" title="递归分治"></a>递归分治</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219190206679.png" alt="递归与分治策略"></p>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173858421.png" alt="动态规划"></p>
-<h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173922373.png" alt="贪心算法"></p>
-<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219173946942.png" alt="回溯法"></p>
-<h2 id="分支界限"><a href="#分支界限" class="headerlink" title="分支界限"></a>分支界限</h2><p><img src="/2021/06/17/%E7%AE%97%E6%B3%95%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/20201219174007775.png" alt="分支限界法"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>转载于csdn： <a href="https://blog.csdn.net/ruvikm/article/details/111408012">算法期末复习</a></p>
-<p>可以到这个网站去看一个算法的运行过程：<a href="https://visualgo.net/">一个可视化算法网站</a></p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>考试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机安全相关的概念</title>
-    <url>/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<h1 id="计算机安全相关的概念"><a href="#计算机安全相关的概念" class="headerlink" title="计算机安全相关的概念"></a>计算机安全相关的概念</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本专业相关概念，放在这里方便自己查询</p>
-<h2 id="POC"><a href="#POC" class="headerlink" title="POC"></a>POC</h2><p><em>POC，Proof of Concept</em>，中文意思是“观点证明”。</p>
-<p>这个短语会在漏洞报告中使用，漏洞报告中的<em>POC</em>则是一段说明或者一个攻击的样例，使得读者能够确认这个漏洞是真实存在的。</p>
-<h2 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h2><p><em>EXP，Exploit</em>，中文意思是“漏洞利用”。</p>
-<p>意思是一段对漏洞如何利用的详细说明或者一个演示的漏洞攻击代码，可以使得读者完全了解漏洞的机理以及利用的方法。</p>
-<h2 id="VUL"><a href="#VUL" class="headerlink" title="VUL"></a>VUL</h2><p><em>VUL，Vulnerability</em>的缩写，泛指漏洞。</p>
-<h2 id="CVE漏洞编号"><a href="#CVE漏洞编号" class="headerlink" title="CVE漏洞编号"></a>CVE漏洞编号</h2><p><em>CVE</em>的英文全称是<em>“Common Vulnerabilities &amp; Exposures”</em>，翻译为通用漏洞披露，例如CVE-2015-0057、CVE-1999-0001等等。</p>
-<p><em>CVE</em>就好像是一个字典表，为广泛认同的信息安全漏洞或者已经暴露出来的弱点给出一个公共的名称。</p>
-<p>如果在一个漏洞报告中指明的一个漏洞，如果有<em>CVE</em>名称，你就可以快速地在任何其它<em>CVE</em>兼容的数据库中找到相应修补的信息，解决安全问题。</p>
-<h2 id="0-DAY漏洞和0-DAY攻击"><a href="#0-DAY漏洞和0-DAY攻击" class="headerlink" title="0 DAY漏洞和0 DAY攻击"></a>0 DAY漏洞和0 DAY攻击</h2><p>在计算机领域中，<em>Zero-day exploit</em>通常是指还没有补丁的安全漏洞，而<em>Zero-day attack</em>则是指利用这种漏洞进行的攻击。</p>
-<p>提供该漏洞细节或者利用程序的人通常是该漏洞的发现者。</p>
-<p><em>Zero-day exploit</em>的利用程序对网络安全具有巨大威胁，因此零日漏洞不但是黑客的最爱，掌握多少零日漏洞也成为评价黑客技术水平的一个重要参数。</p>
-<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p><em>payload</em>，可以理解为一系列信息中最为关键的信息。</p>
-<p>对于程序员来说就是在程序中起关键作用的代码。</p>
-]]></content>
-      <categories>
-        <category>security</category>
-      </categories>
-      <tags>
-        <tag>Vulnerabilities</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>贪心算法——会场安排问题</title>
     <url>/2021/04/27/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E4%BC%9A%E5%9C%BA%E5%AE%89%E6%8E%92%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="贪心算法——会场安排问题"><a href="#贪心算法——会场安排问题" class="headerlink" title="贪心算法——会场安排问题"></a>贪心算法——会场安排问题</h1><h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>假设要在足够多的会场里安排一批活动，并希望使用尽可能少的会场。</p>
@@ -3661,6 +3655,31 @@ php反序列化漏洞。
       </categories>
       <tags>
         <tag>贪心算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机安全相关的概念</title>
+    <url>/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h1 id="计算机安全相关的概念"><a href="#计算机安全相关的概念" class="headerlink" title="计算机安全相关的概念"></a>计算机安全相关的概念</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本专业相关概念，放在这里方便自己查询</p>
+<h2 id="POC"><a href="#POC" class="headerlink" title="POC"></a>POC</h2><p><em>POC，Proof of Concept</em>，中文意思是“观点证明”。</p>
+<p>这个短语会在漏洞报告中使用，漏洞报告中的<em>POC</em>则是一段说明或者一个攻击的样例，使得读者能够确认这个漏洞是真实存在的。</p>
+<h2 id="EXP"><a href="#EXP" class="headerlink" title="EXP"></a>EXP</h2><p><em>EXP，Exploit</em>，中文意思是“漏洞利用”。</p>
+<p>意思是一段对漏洞如何利用的详细说明或者一个演示的漏洞攻击代码，可以使得读者完全了解漏洞的机理以及利用的方法。</p>
+<h2 id="VUL"><a href="#VUL" class="headerlink" title="VUL"></a>VUL</h2><p><em>VUL，Vulnerability</em>的缩写，泛指漏洞。</p>
+<h2 id="CVE漏洞编号"><a href="#CVE漏洞编号" class="headerlink" title="CVE漏洞编号"></a>CVE漏洞编号</h2><p><em>CVE</em>的英文全称是<em>“Common Vulnerabilities &amp; Exposures”</em>，翻译为通用漏洞披露，例如CVE-2015-0057、CVE-1999-0001等等。</p>
+<p><em>CVE</em>就好像是一个字典表，为广泛认同的信息安全漏洞或者已经暴露出来的弱点给出一个公共的名称。</p>
+<p>如果在一个漏洞报告中指明的一个漏洞，如果有<em>CVE</em>名称，你就可以快速地在任何其它<em>CVE</em>兼容的数据库中找到相应修补的信息，解决安全问题。</p>
+<h2 id="0-DAY漏洞和0-DAY攻击"><a href="#0-DAY漏洞和0-DAY攻击" class="headerlink" title="0 DAY漏洞和0 DAY攻击"></a>0 DAY漏洞和0 DAY攻击</h2><p>在计算机领域中，<em>Zero-day exploit</em>通常是指还没有补丁的安全漏洞，而<em>Zero-day attack</em>则是指利用这种漏洞进行的攻击。</p>
+<p>提供该漏洞细节或者利用程序的人通常是该漏洞的发现者。</p>
+<p><em>Zero-day exploit</em>的利用程序对网络安全具有巨大威胁，因此零日漏洞不但是黑客的最爱，掌握多少零日漏洞也成为评价黑客技术水平的一个重要参数。</p>
+<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p><em>payload</em>，可以理解为一系列信息中最为关键的信息。</p>
+<p>对于程序员来说就是在程序中起关键作用的代码。</p>
+]]></content>
+      <categories>
+        <category>security</category>
+      </categories>
+      <tags>
+        <tag>Vulnerabilities</tag>
       </tags>
   </entry>
   <entry>
