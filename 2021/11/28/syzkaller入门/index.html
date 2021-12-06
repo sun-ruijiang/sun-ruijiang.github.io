@@ -102,7 +102,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">897</span>
+            <span class="post-count">2.1k</span>
         </span>
     </span>
 
@@ -111,7 +111,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">9 min</span>
         </span>
     </span>
 </div>
@@ -129,7 +129,7 @@ var _hmt = _hmt || [];
   <h1 id="syzkaller-入门"><a href="#syzkaller-入门" class="headerlink" title="syzkaller 入门"></a>syzkaller 入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>用户通过 syscall 来访问操作系统提供的功能和资源，syzkaller 专门用来测试那些内核系统调用实现（简称syscall）中的bug。</p>
 <p>Fuzzing 是一种自动化的方法，它将随机值作为输入提供给一个软件，希望能够发现开发者未曾尝试过的有问题的输入组合导致的错误。</p>
 <p>syzkaller 不会盲目地生成测试输入，我们通过描述 syscall 的参数期望被如何使用来限制我们的集合。通过这样做，我们可以利用可用资源在更大的调用集上提供随机测试。</p>
-<p>用到的另一个 fuzzing 优化技术被叫做代码覆盖率引导的 fuzzing。这项技术测量每个输入所实现的代码覆盖率，尝试最大化输入的代码覆盖率。每个增加代码覆盖率的输入都会被变异，以便增加测试的总体范围（即访问更多函数，分支）。对于一个 fuzz 目标的输入集被称为语料库（即原始的测试用例）。</p>
+<p>用到的另一个 fuzzing 优化技术被叫做代码覆盖率引导的 fuzzing。这项技术测量每个输入所实现的代码覆盖率，尝试让输入的代码覆盖率最大。每个增加代码覆盖率的输入都会被变异，以便增加测试的总体范围（即访问更多函数，分支）。对于一个 fuzz 目标的输入集被称为语料库（即原始的测试用例）。</p>
 <p>Syzkaller是一个无监督的内核 fuzzer ，它使用上述两种技术fuzz Syscalls。</p>
 <p>在这篇文章中，我将分享我的一些使用经验。</p>
 <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/google/syzkaller">google/syzkaller: syzkaller is an unsupervised coverage-guided kernel fuzzer (github.com)</a></p>
@@ -137,7 +137,7 @@ var _hmt = _hmt || [];
 <p>环境：</p>
 <ul>
 <li>vmware虚拟机：Ubuntu 20.04</li>
-<li>请确保有足够的空间（40 G 空间可以）</li>
+<li>请确保有足够的空间（40 G 空间可以，但是不要放在机械硬盘里面，虚拟机会很慢）</li>
 </ul>
 <p>使用 syzkaller 需要以下组件：</p>
 <ul>
@@ -168,17 +168,86 @@ var _hmt = _hmt || [];
 <p>编译内核，这个过程会比较漫长</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make olddefconfig    <span class="comment"># 将当前内核源码的新特性加入.config中去</span></span><br><span class="line">make -j`nproc`       <span class="comment"># 开始编译</span></span><br></pre></td></tr></table></figure>
 
-<p>出现<code>Kernel: arch/x86/boot/bzImage is ready  (#1)</code>标志已经完成。</p>
+<p>出现<code>Kernel: arch/x86/boot/bzImage is ready  (#3)</code>标志已经完成。</p>
 <p>也可以以下命令查看是否成功：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="variable">$KERNEL</span>/vmlinux</span><br><span class="line"><span class="comment"># sample output - $KERNEL/vmlinux</span></span><br><span class="line">ls <span class="variable">$KERNEL</span>/arch/x86/boot/bzImage</span><br><span class="line"><span class="comment"># sample output - $KERNEL/arch/x86/boot/bzImage</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><p>安装<code>debootstrap</code>工具，可以用来构建最基本的系统。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install debootstrap</span><br></pre></td></tr></table></figure>
 
-<p>创建 Debian Stretch Linux 镜像（<code>$IMAGE</code> 替换为你想要的目录）</p>
+<p>创建 Debian Stretch Linux 镜像，<code>$IMAGE</code> 替换为你想要的目录，执行以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$IMAGE</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$IMAGE</span>/</span><br><span class="line">wget https://raw.githubusercontent.com/google/syzkaller/master/tools/create-image.sh -O create-image.sh</span><br><span class="line">chmod +x create-image.sh</span><br><span class="line">./create-image.sh</span><br></pre></td></tr></table></figure>
 
 <p>完成后应该可以找到<code>$IMAGE/stretch.img</code> 这个文件就是构建好的磁盘镜像文件</p>
+<p>或者创建 Debian Buster Linux 镜像，执行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./create-image.sh --distribution buster</span><br></pre></td></tr></table></figure>
+
+<p>安装额外的工具，一些在VM中有用的包和工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./create-image.sh --feature full  <span class="comment"># 要安装一组我们认为有用的工具，请执行(请随意编辑脚本中的工具列表) </span></span><br><span class="line">./create-image.sh --add-perf      <span class="comment"># 要安装perf（不需要运行syzkaller；需要$kernel指向内核源）：</span></span><br></pre></td></tr></table></figure>
+
+<p>问题：我在这一步因为空间不够导致报错</p>
+<p>如果想要去删除这个镜像，重新安装，在<code>$IMAGE</code>目录下面不能成功删除<code>chroot/</code>，需要在<code>/mnt/</code>目录下面删除。</p>
+<h3 id="安装-QEMU"><a href="#安装-QEMU" class="headerlink" title="安装 QEMU"></a>安装 QEMU</h3><p>使用以下命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install qemu-system-x86</span><br></pre></td></tr></table></figure>
+
+<p>在 VMware 上使用 Linux 则应当在设置中把 <code>虚拟化 Intel VT-x/EPT 或 AMD-V/RVI(V)</code> 打开</p>
+<p>如果安装过 windows docker 或者 wsl2 的需要关闭hype-v，这会导致 docker 和 wsl 2 不能正常工作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /<span class="built_in">set</span> hypervisorlaunchtype off  <span class="comment"># 以管理员身份运行命令提示符执行命令，彻底关闭hype-v</span></span><br></pre></td></tr></table></figure>
+
+<p>验证内核是否能够启动（注意<code>$KERNEL</code>和<code>IMAGE</code>的路径）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-x86_64 \</span><br><span class="line">	-m 2G \</span><br><span class="line">	-smp 2 \</span><br><span class="line">	-kernel <span class="variable">$KERNEL</span>/arch/x86/boot/bzImage \</span><br><span class="line">	-append <span class="string">&quot;console=ttyS0 root=/dev/sda earlyprintk=serial net.ifnames=0&quot;</span> \</span><br><span class="line">	-drive file=<span class="variable">$IMAGE</span>/stretch.img,format=raw \</span><br><span class="line">	-net user,host=10.0.2.10,hostfwd=tcp:127.0.0.1:10021-:22 \</span><br><span class="line">	-net nic,model=e1000 \</span><br><span class="line">	-enable-kvm \</span><br><span class="line">	-nographic \</span><br><span class="line">	-pidfile vm.pid \</span><br><span class="line">	2&gt;&amp;1 | tee vm.log</span><br></pre></td></tr></table></figure>
+
+<p>以 root 账户登录，没有密码</p>
+<p><img src="/2021/11/28/syzkaller%E5%85%A5%E9%97%A8/image-20211205114827224.png" alt="image-20211205114827224"></p>
+<p>在另一个 shell 中验证是否能 ssh 连接虚拟机：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i <span class="variable">$IMAGE</span>/stretch.id_rsa -p 10021 -o <span class="string">&quot;StrictHostKeyChecking no&quot;</span> root@localhost</span><br></pre></td></tr></table></figure>
+
+<p>关闭正在运行中的<code>QWMU</code>实例：</p>
+<ol>
+<li>按下<code>Ctrl + A</code>然后<code>x</code></li>
+<li>或者使用命令：<code>kill $(cat vm.pid)</code></li>
+</ol>
+<p>验证QEMU工作，内核启动并且ssh也可以连接之后，我们可以关闭QEMU然后尝试去运行syzkaller了</p>
+<h3 id="配置-syzkaller-并尝试运行"><a href="#配置-syzkaller-并尝试运行" class="headerlink" title="配置 syzkaller 并尝试运行"></a>配置 syzkaller 并尝试运行</h3><p>我们需要为 syzkaller 编写额外的配置文件<code>my.cfg</code>，这里需要注意替换环境变量为你自己的路径：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;target&quot;</span>: <span class="string">&quot;linux/amd64&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;http&quot;</span>: <span class="string">&quot;127.0.0.1:56741&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;workdir&quot;</span>: <span class="string">&quot;$GOPATH/src/github.com/google/syzkaller/workdir&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;kernel_obj&quot;</span>: <span class="string">&quot;$KERNEL&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;image&quot;</span>: <span class="string">&quot;$IMAGE/stretch.img&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;sshkey&quot;</span>: <span class="string">&quot;$IMAGE/stretch.id_rsa&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;syzkaller&quot;</span>: <span class="string">&quot;$GOPATH/src/github.com/google/syzkaller&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;procs&quot;</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="attr">&quot;type&quot;</span>: <span class="string">&quot;qemu&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;vm&quot;</span>: &#123;</span><br><span class="line">		<span class="attr">&quot;count&quot;</span>: <span class="number">4</span>,</span><br><span class="line">		<span class="attr">&quot;kernel&quot;</span>: <span class="string">&quot;$KERNEL/arch/x86/boot/bzImage&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;cpu&quot;</span>: <span class="number">2</span>,</span><br><span class="line">		<span class="attr">&quot;mem&quot;</span>: <span class="number">2048</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在<code>$GOPATH/src/github.com/google/syzkaller/</code>目录下，运行 syzkaller manage：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir workdir                      <span class="comment"># workdir 是配置文件里面填的工作目录</span></span><br><span class="line">./bin/syz-manager -config=my.cfg   <span class="comment"># my.cfg  是额外的配置文件的名字</span></span><br></pre></td></tr></table></figure>
+
+<p>启动成功后，我们可以通过访问 <code>localhost:56741</code> 来获取 syzkaller 的状态</p>
+<p><img src="/2021/11/28/syzkaller%E5%85%A5%E9%97%A8/image-20211205125050369.png" alt="image-20211205125050369"></p>
+<p>问题：qemu崩溃，报错如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-x86_64: error: failed to <span class="built_in">set</span> MSR 0x48b to 0x159ff00000000</span><br><span class="line">qemu-system-x86_64: /build/qemu-EmNSP4/qemu-4.2/target/i386/kvm.c:2947: kvm_put_msrs: Assertion `ret == cpu-&gt;kvm_msr_buf-&gt;nmsrs<span class="string">&#x27; failed.</span></span><br></pre></td></tr></table></figure>
+
+<p>最简单的解决方法是在 syz-manager 配置文件中将<code>qemu_args</code>设置为<code>-enable-kvm</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;target&quot;</span>: <span class="string">&quot;linux/amd64&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;http&quot;</span>: <span class="string">&quot;127.0.0.1:56741&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;workdir&quot;</span>: <span class="string">&quot;$GOPATH/src/github.com/google/syzkaller/workdir&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;kernel_obj&quot;</span>: <span class="string">&quot;$KERNEL&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;image&quot;</span>: <span class="string">&quot;$IMAGE/stretch.img&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;sshkey&quot;</span>: <span class="string">&quot;$IMAGE/stretch.id_rsa&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;syzkaller&quot;</span>: <span class="string">&quot;$GOPATH/src/github.com/google/syzkaller&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;procs&quot;</span>: <span class="number">8</span>,</span><br><span class="line">	<span class="attr">&quot;type&quot;</span>: <span class="string">&quot;qemu&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;vm&quot;</span>: &#123;</span><br><span class="line">		<span class="attr">&quot;count&quot;</span>: <span class="number">4</span>,</span><br><span class="line">		<span class="attr">&quot;kernel&quot;</span>: <span class="string">&quot;$KERNEL/arch/x86/boot/bzImage&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;cpu&quot;</span>: <span class="number">2</span>,</span><br><span class="line">		<span class="attr">&quot;mem&quot;</span>: <span class="number">2048</span>,</span><br><span class="line">        <span class="attr">&quot;qemu_args&quot;</span>: <span class="string">&quot;-enable-kvm&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="syzkaller-如何工作"><a href="#syzkaller-如何工作" class="headerlink" title="syzkaller 如何工作"></a>syzkaller 如何工作</h2><p>syzkaller系统的流程结构如下图所示，红色标签表示相应的配置选项。</p>
+<p><img src="/2021/11/28/syzkaller%E5%85%A5%E9%97%A8/process_structure-16386838438732.png" alt="Process structure for syzkaller"></p>
+<ul>
+<li><code>syz-manager</code> ：控制整个 syzkaller 模糊测试系统<ul>
+<li>启动、监视并且重启多个虚拟机，并在这些虚拟机里面通过<code>sshd</code>调用<code>syz-fuzzer</code></li>
+<li>使用<code>RPC</code>与虚拟机中的<code>syz-fuzzer</code>交流实现的覆盖率和fuzzing过程中的任何跟踪信息，比如crash和corpus.。</li>
+<li>将得到的信息存储在本地<code>workdir</code>目录下</li>
+<li>通过设置<code>http</code>公开一个基于web的界面，在这个界面可以浏览存储的信息</li>
+</ul>
+</li>
+<li><code>syz-fuzzer</code> ：负责引导整个 fuzz 的过程：<ul>
+<li>输入的生成，变异，语料最小化等。</li>
+<li>启动 <code>syz-executor</code> 进程进行 fuzz</li>
+<li>从被 fuzz 的 kernel 的 <code>/sys/kernel/debug/kcov</code> 获得覆盖的相关信息</li>
+<li>通过<code>RPC</code>将触发新代码覆盖的输入发送回<code>syz-manager</code></li>
+</ul>
+</li>
+<li><code>syz-executor</code>：负责执行单个输入（一系列 syscalls）<ul>
+<li>从<code>syz-fuzzer</code>接收程序并执行，然后返回结果</li>
+<li>它被设计为尽可能简单（为了不干扰 fuzzing 进程），用C++编写，编译为静态二进制，并使用共享内存进行通信。</li>
+</ul>
+</li>
+</ul>
+<h2 id="描述-syscalls"><a href="#描述-syscalls" class="headerlink" title="描述 syscalls"></a>描述 syscalls</h2><p><code>syz-fuzzer</code>进程根据描述的 syscalls 生成由<code>syz-executor</code>执行的程序。</p>
  
       <!-- reward -->
       
