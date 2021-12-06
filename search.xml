@@ -1865,8 +1865,7 @@
 <p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20210816082430767.png" alt="image-20210816082430767"></p>
 <p><code>flag: QCTF&#123;sq1_inJec7ion_ezzz&#125;</code></p>
 <h3 id="NaNa"><a href="#NaNa" class="headerlink" title="NaNa"></a>NaNa</h3><p>附件下载后的内容如下：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	_=<span class="string">&#x27;function$()&#123;e=getEleById(&quot;c&quot;).value;length==16^be0f23233ace98aa$c7be9)&#123;tfls_aie&#125;na_h0lnrg&#123;e_0iit\&#x27;_ns=[t,n,r,i];for(o=0;o&lt;13;++o)&#123;	[0]);.splice(0,1)&#125;&#125;&#125;	\&#x27;&lt;input id=&quot;c&quot;&gt;&lt; onclick=$()&gt;Ok&lt;/&gt;\&#x27;);delete _var &quot;,&quot;docu.)match(/&quot;];/)!=null=[&quot;	write(s[o%4]buttonif(e.ment&#x27;</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(Y <span class="keyword">in</span> $=<span class="string">&#x27;	&#x27;</span>)</span><br><span class="line">		<span class="keyword">with</span>(_.split($[Y]))  _=join(pop());</span><br><span class="line">	<span class="built_in">eval</span>(_)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
+<p><img src="/2021/08/10/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E8%BF%9B%E9%98%B6%E5%8C%BA/image-20211206181425358.png" alt="image-20211206181425358"></p>
 <p>上面有很多红点没法显示，是因为编码的问题，不过每个字符都是不一样的。</p>
 <p>代码执行过程：</p>
 <ol>
