@@ -988,7 +988,9 @@
 <li><p>具体使用：随便粘贴一张图到文章中，即可正确显示在本地和网页。</p>
 </li>
 </ul>
-<h3 id="问题：title不能出现”-“字符"><a href="#问题：title不能出现”-“字符" class="headerlink" title="问题：title不能出现”: “字符"></a>问题：title不能出现”: “字符</h3><p><img src="/2021/04/04/hexo%E5%86%99%E4%BD%9C%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/image-20211203215119693.png" alt="image-20211203215119693"> </p>
+<h2 id="使用过程中的问题"><a href="#使用过程中的问题" class="headerlink" title="使用过程中的问题"></a>使用过程中的问题</h2><h3 id="问题：title不能出现”-“字符"><a href="#问题：title不能出现”-“字符" class="headerlink" title="问题：title不能出现”: “字符"></a>问题：title不能出现”: “字符</h3><p><img src="/2021/04/04/hexo%E5%86%99%E4%BD%9C%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/image-20211203215119693.png" alt="image-20211203215119693"> </p>
+<h3 id="问题：不能使用搜索功能"><a href="#问题：不能使用搜索功能" class="headerlink" title="问题：不能使用搜索功能"></a>问题：不能使用搜索功能</h3><p><img src="/2021/04/04/hexo%E5%86%99%E4%BD%9C%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/image-20211206183302190.png" alt="image-20211206183302190"></p>
+<p>检查<code>public</code>下面的<code>search.xml</code>查看报错，vs code 打开报错的是哪篇博客，搜索<code>0x02</code>字符，删除或者换成截图。</p>
 ]]></content>
       <categories>
         <category>Others</category>
@@ -3683,15 +3685,364 @@ php反序列化漏洞。
       </tags>
   </entry>
   <entry>
-    <title>111111</title>
-    <url>/2021/12/05/%E8%AF%95%E4%B8%80%E4%B8%8B/</url>
-    <content><![CDATA[<h1 id="试一下"><a href="#试一下" class="headerlink" title="试一下"></a>试一下</h1>]]></content>
+    <title>Shell 脚本编程</title>
+    <url>/2021/12/07/Shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="Shell-脚本编程"><a href="#Shell-脚本编程" class="headerlink" title="Shell 脚本编程"></a>Shell 脚本编程</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Shell 运行于 terminal 中，是用户使用 Linux 的桥梁。这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
+<p>本篇博客用来记录 Shell 脚本的学习。如果过时、错误、新学会的东西，我知道的就会去修改增加。</p>
+<p>我写的一些shell脚本地址：<a href="https://github.com/sun-ruijiang/some-shell-scripts">sun-ruijiang/some-shell-scripts: 一些有用的shell脚本 (github.com)</a></p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>系统：WSL 1 Ubuntu 20.04</li>
+<li>编辑器：VS code</li>
+<li>插件：shellman（智能补全） + shellcheck（自动检错） + shell-format（格式化文档），在VS code内部 terminal 执行 Shell script。</li>
+</ul>
+<h2 id="Shell-的-hello-word"><a href="#Shell-的-hello-word" class="headerlink" title="Shell 的 hello word"></a>Shell 的 hello word</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo &quot;Hello world&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>#!</code>是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行</p>
+<p><code>echo</code>命令用于向窗口输出文本。</p>
+<p>如何执行？</p>
+<p>一是作为可执行程序去执行，这种方式默认解释器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod +x ./test.sh  <span class="comment"># 使脚本具有执行权限</span></span><br><span class="line">./test.sh           <span class="comment"># 执行脚本</span></span><br></pre></td></tr></table></figure>
+
+<p>二是作为解释器参数执行，这种方式需要制定解释器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/bin/sh test.sh</span><br><span class="line">/bin/php test.php</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/12/07/Shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/image-20211207103135839.png" alt="image-20211207103135839"></p>
+<h2 id="Shell-基础"><a href="#Shell-基础" class="headerlink" title="Shell 基础"></a>Shell 基础</h2><h3 id="Shell-变量"><a href="#Shell-变量" class="headerlink" title="Shell 变量"></a>Shell 变量</h3><h4 id="定义赋值"><a href="#定义赋值" class="headerlink" title="定义赋值"></a>定义赋值</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 直接赋值</span></span><br><span class="line">variable_name=&quot;example&quot;  # 注意不能有空格</span><br><span class="line"><span class="meta">#</span><span class="bash"> 语句赋值</span></span><br><span class="line">for variable_name in `ls /etc`</span><br><span class="line">for variable_name in $(ls /etc)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 只读变量</span></span><br><span class="line">readonly variable_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="读取元素"><a href="#读取元素" class="headerlink" title="读取元素"></a>读取元素</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo $variable_name</span><br><span class="line">echo $&#123;variable_name&#125;   # 推荐加上&#123;&#125;以区分外界</span><br></pre></td></tr></table></figure>
+
+<h4 id="重置变量"><a href="#重置变量" class="headerlink" title="重置变量"></a>重置变量</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unset variable_name    # 不能删除只读变量</span><br></pre></td></tr></table></figure>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ol>
+<li>环境变量，可以在创建他们的 Shell 及其派生出来的任意子进程 Shell 中使用，退出这个 Shell 环境变量就会丢失。如果想要永久保存这些环境变量，可以在用户家目录下的<code>.bashrc</code>（对当前用户生效）或者<code>/etc/profile</code>（对所有用户生效）文件中定义，在用户登录时这些变量会被初始化。</li>
+<li>局部变量，仅在当前 Shell 进程中有效，其他 Shell 启动的程序不能访问。</li>
+<li>shell 变量，初始化的shell的变量，既有环境变量，又有局部变量。</li>
+</ol>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">your_name=&quot;runoob&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用双引号拼接</span></span><br><span class="line">greeting=&quot;hello, $&#123;your_name&#125; !&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用单引号拼接，单引号不会使用Shell变量</span></span><br><span class="line">greeting=&#x27;hello, &#x27;$your_name&#x27; !&#x27;</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">string=&quot;abcd&quot;</span><br><span class="line">echo $&#123;#string&#125; #输出 4</span><br></pre></td></tr></table></figure>
+
+<h4 id="提取子字符串"><a href="#提取子字符串" class="headerlink" title="提取子字符串"></a>提取子字符串</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">string=&quot;runoob is a great site&quot;</span><br><span class="line">echo $&#123;string:1:4&#125; # 从字符串第 2 个字符开始截取 4 个字符：unoo</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找子字符串"><a href="#查找子字符串" class="headerlink" title="查找子字符串"></a>查找子字符串</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">string=&quot;runoob is a great site&quot;</span><br><span class="line">echo $(expr index &quot;$string&quot; io)  # 查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：输出 4。</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 空格分隔</span></span><br><span class="line">array_name=(value0 value1 value2 value3)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 单独定义</span></span><br><span class="line">array_name[0]=value0</span><br><span class="line">array_name[1]=value1</span><br><span class="line">array_name[n]=valuen</span><br></pre></td></tr></table></figure>
+
+<h4 id="读取数组"><a href="#读取数组" class="headerlink" title="读取数组"></a>读取数组</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">valuen=$&#123;array_name[n]&#125;   </span><br><span class="line">echo $&#123;array_name[@]&#125;     # 使用@符号可以获取数组中的所有元素</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取数组的长度"><a href="#获取数组的长度" class="headerlink" title="获取数组的长度"></a>获取数组的长度</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 取得数组元素的个数</span></span><br><span class="line">length=$&#123;#array_name[@]&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">length=$&#123;#array_name[*]&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 取得数组单个元素的长度</span></span><br><span class="line">lengthn=$&#123;#array_name[n]&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 单行注释</span></span><br><span class="line"></span><br><span class="line">:&lt;&lt;EOF</span><br><span class="line">多行注释</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<h3 id="Shell-传递参数"><a href="#Shell-传递参数" class="headerlink" title="Shell 传递参数"></a>Shell 传递参数</h3><p>我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。</p>
+<p>n 代表一个数字，0为输入的文件名（包括路径，这个不算参数），1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……</p>
+<p>另外，还有几个特殊字符用来处理参数：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数处理</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$#</td>
+<td align="left">传递到脚本的参数个数</td>
+</tr>
+<tr>
+<td align="left">$*</td>
+<td align="left">显示所有向脚本传递的参数。 以”$1 $2 … $n”的形式输出所有参数。</td>
+</tr>
+<tr>
+<td align="left">$$</td>
+<td align="left">脚本运行的当前进程ID号</td>
+</tr>
+<tr>
+<td align="left">$!</td>
+<td align="left">后台运行的最后一个进程的ID号</td>
+</tr>
+<tr>
+<td align="left">$@</td>
+<td align="left">显示所有向脚本传递的参数。 以”$1”  “$2” … “$n”的形式输出所有参数。</td>
+</tr>
+<tr>
+<td align="left">$-</td>
+<td align="left">显示Shell使用的当前选项，与<a href="https://www.runoob.com/linux/linux-comm-set.html">set命令</a>功能相同。</td>
+</tr>
+<tr>
+<td align="left">$?</td>
+<td align="left">显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td>
+</tr>
+</tbody></table>
+<h3 id="Shell-基本运算符"><a href="#Shell-基本运算符" class="headerlink" title="Shell 基本运算符"></a>Shell 基本运算符</h3><p>expr已经过时了，考虑重新用<code>$(())</code>、<code>$&#123;&#125;</code>、<code>[[]]</code>。</p>
+<h4 id="算数运算符（只支持数字）"><a href="#算数运算符（只支持数字）" class="headerlink" title="算数运算符（只支持数字）"></a>算数运算符（只支持数字）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">val=$((2 + 2))</span><br><span class="line">val=$((2 * 2))</span><br><span class="line">val=$((2 / 2))</span><br><span class="line">val=$((2 * 2))</span><br><span class="line">val=$((2 % 2))</span><br><span class="line">val=$((2 == 2))</span><br><span class="line">val=$((2 != 2))</span><br></pre></td></tr></table></figure>
+
+<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h4><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-eq</td>
+<td align="left">检测两个数是否相等，相等返回 true。</td>
+<td align="left">[ $a -eq $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-ne</td>
+<td align="left">检测两个数是否不相等，不相等返回 true。</td>
+<td align="left">[ $a -ne $b ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-gt</td>
+<td align="left">检测左边的数是否大于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -gt $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-lt</td>
+<td align="left">检测左边的数是否小于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -lt $b ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-ge</td>
+<td align="left">检测左边的数是否大于等于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -ge $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-le</td>
+<td align="left">检测左边的数是否小于等于右边的，如果是，则返回 true。</td>
+<td align="left">[ $a -le $b ] 返回 true。</td>
+</tr>
+</tbody></table>
+<h4 id="布尔运算符"><a href="#布尔运算符" class="headerlink" title="布尔运算符"></a>布尔运算符</h4><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">!</td>
+<td align="left">非运算，表达式为 true 则返回 false，否则返回 true。</td>
+<td align="left">[ ! false ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-o</td>
+<td align="left">或运算，有一个表达式为 true 则返回 true。</td>
+<td align="left">[ $a -lt 20 -o $b -gt 100 ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-a</td>
+<td align="left">与运算，两个表达式都为 true 才返回 true。</td>
+<td align="left">[ $a -lt 20 -a $b -gt 100 ] 返回 false。</td>
+</tr>
+</tbody></table>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&amp;&amp;</td>
+<td align="left">逻辑的 AND</td>
+<td align="left">[[ $a -lt 100 &amp;&amp; $b -gt 100 ]] 返回 false</td>
+</tr>
+<tr>
+<td align="left">||</td>
+<td align="left">逻辑的 OR</td>
+<td align="left">[[ $a -lt 100</td>
+</tr>
+</tbody></table>
+<h4 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h4><table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">说明</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">=</td>
+<td align="left">检测两个字符串是否相等，相等返回 true。</td>
+<td align="left">[ $a = $b ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">!=</td>
+<td align="left">检测两个字符串是否不相等，不相等返回 true。</td>
+<td align="left">[ $a != $b ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-z</td>
+<td align="left">检测字符串长度是否为0，为0返回 true。</td>
+<td align="left">[ -z $a ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-n</td>
+<td align="left">检测字符串长度是否不为 0，不为 0 返回 true。</td>
+<td align="left">[ -n “$a” ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">检测字符串是否为空，不为空返回 true。</td>
+<td align="left">[ $a ] 返回 true。</td>
+</tr>
+</tbody></table>
+<h4 id="文件测试运算符"><a href="#文件测试运算符" class="headerlink" title="文件测试运算符"></a>文件测试运算符</h4><table>
+<thead>
+<tr>
+<th align="left">操作符</th>
+<th align="left">说明</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-b file</td>
+<td align="left">检测文件是否是块设备文件，如果是，则返回 true。</td>
+<td align="left">[ -b $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-c file</td>
+<td align="left">检测文件是否是字符设备文件，如果是，则返回 true。</td>
+<td align="left">[ -c $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-d file</td>
+<td align="left">检测文件是否是目录，如果是，则返回 true。</td>
+<td align="left">[ -d $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-f file</td>
+<td align="left">检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。</td>
+<td align="left">[ -f $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-g file</td>
+<td align="left">检测文件是否设置了 SGID 位，如果是，则返回 true。</td>
+<td align="left">[ -g $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-k file</td>
+<td align="left">检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。</td>
+<td align="left">[ -k $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-p file</td>
+<td align="left">检测文件是否是有名管道，如果是，则返回 true。</td>
+<td align="left">[ -p $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-u file</td>
+<td align="left">检测文件是否设置了 SUID 位，如果是，则返回 true。</td>
+<td align="left">[ -u $file ] 返回 false。</td>
+</tr>
+<tr>
+<td align="left">-r file</td>
+<td align="left">检测文件是否可读，如果是，则返回 true。</td>
+<td align="left">[ -r $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-w file</td>
+<td align="left">检测文件是否可写，如果是，则返回 true。</td>
+<td align="left">[ -w $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-x file</td>
+<td align="left">检测文件是否可执行，如果是，则返回 true。</td>
+<td align="left">[ -x $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-s file</td>
+<td align="left">检测文件是否为空（文件大小是否大于0），不为空返回 true。</td>
+<td align="left">[ -s $file ] 返回 true。</td>
+</tr>
+<tr>
+<td align="left">-e file</td>
+<td align="left">检测文件（包括目录）是否存在，如果是，则返回 true。</td>
+<td align="left">[ -e $file ] 返回 true。</td>
+</tr>
+</tbody></table>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h4 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if-elif-else"></a>if-elif-else</h4><p>注意：如果else没有执行语句，就不要写。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">a=10</span><br><span class="line">b=1</span><br><span class="line">if [[ $a == &quot;$&#123;b&#125;0&quot; ]]; then</span><br><span class="line">    echo &quot;a 等于 b&quot;</span><br><span class="line">elif [ $a -gt $b ]; then</span><br><span class="line">    echo &quot;a 大于 b&quot;</span><br><span class="line">elif [ $a -lt $b ]; then</span><br><span class="line">    echo &quot;a 小于 b&quot;</span><br><span class="line">else</span><br><span class="line">    echo &quot;没有符合的条件&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<h4 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">command=&#x27;ls&#x27;</span><br><span class="line">for loop in $($&#123;command&#125;); do</span><br><span class="line">    echo &quot;The value is: $&#123;loop&#125;&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h4 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">int=$((1 + 0))</span><br><span class="line">while ((int &lt;= 5)); do</span><br><span class="line">    echo $int</span><br><span class="line">    ((int++))</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h4 id="until-循环"><a href="#until-循环" class="headerlink" title="until 循环"></a>until 循环</h4><p>直到条件为true时停止</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">a=0</span><br><span class="line">until [ ! $a -lt 10 ]; do  # 1 &lt; 10</span><br><span class="line">    echo $a</span><br><span class="line">    a=$((a + 1))</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h4 id="case-esac"><a href="#case-esac" class="headerlink" title="case-esac"></a>case-esac</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo &#x27;输入:&#x27;</span><br><span class="line">read -r aNum</span><br><span class="line">case $aNum in</span><br><span class="line">1)</span><br><span class="line">    echo &#x27;你选择了 1&#x27;</span><br><span class="line">    ;;</span><br><span class="line">2)</span><br><span class="line">    echo &#x27;你选择了 2&#x27;</span><br><span class="line">    ;;</span><br><span class="line">3)</span><br><span class="line">    echo &#x27;你选择了 3&#x27;</span><br><span class="line">    ;;</span><br><span class="line">4)</span><br><span class="line">    echo &#x27;你选择了 4&#x27;</span><br><span class="line">    ;;</span><br><span class="line">&quot;google&quot;)</span><br><span class="line">    echo &quot;Google 搜索&quot;</span><br><span class="line">    ;;</span><br><span class="line">*)</span><br><span class="line">    echo &#x27;你没有输入 1 到 4 之间的数字&#x27;</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="break-和-continue"><a href="#break-和-continue" class="headerlink" title="break 和 continue"></a>break 和 continue</h4><p>break 命令跳出所有循环</p>
+<p>continue 命令仅仅跳出当前循环，执行下一个循环</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">funWithReturn() &#123;</span><br><span class="line">    echo &quot;这个函数会对输入的两个数字进行相加运算...&quot;</span><br><span class="line">    echo &quot;输入第一个数字: &quot;</span><br><span class="line">    read -r aNum</span><br><span class="line">    echo &quot;输入第二个数字: &quot;</span><br><span class="line">    read -r anotherNum</span><br><span class="line">    echo &quot;两个数字分别为 $aNum 和 $anotherNum !&quot;</span><br><span class="line">    return $((aNum + anotherNum))</span><br><span class="line">&#125;</span><br><span class="line">funWithReturn</span><br><span class="line">echo &quot;输入的两个数字之和为 $? !&quot;       # $?为上一个命令状态返回码，会被覆盖</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入-输出重定向"><a href="#输入-输出重定向" class="headerlink" title="输入/输出重定向"></a>输入/输出重定向</h3><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">command &gt; file</td>
+<td align="left">将输出重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">command &lt; file</td>
+<td align="left">将输入重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">command &gt;&gt; file</td>
+<td align="left">将输出以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">n &gt; file</td>
+<td align="left">将文件描述符为 n 的文件重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">n &gt;&gt; file</td>
+<td align="left">将文件描述符为 n 的文件以追加的方式重定向到 file。</td>
+</tr>
+<tr>
+<td align="left">n &gt;&amp; m</td>
+<td align="left">将输出文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td align="left">n &lt;&amp; m</td>
+<td align="left">将输入文件 m 和 n 合并。</td>
+</tr>
+<tr>
+<td align="left">&lt;&lt; tag</td>
+<td align="left">将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
+</tr>
+</tbody></table>
+<p>注意：文件描述符 0 通常是标准输入（STD IN），1 是标准输出（STD OUT），2 是标准错误输出（STD ERR）。</p>
+<h3 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h3><p>和其他语言一样，Shell 也可以包含外部脚本。这样可以很方便的封装一些公用的代码作为一个独立的文件。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">. filename      # 注意点号和文件名中间有一空格</span><br><span class="line">source filename</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>如果有C/C++基础，这些都是非常快速地学会的，接下来是我编写的一些脚本</p>
+<h4 id="WSL-1-下的-GDB-插件切换"><a href="#WSL-1-下的-GDB-插件切换" class="headerlink" title="WSL 1 下的 GDB 插件切换"></a>WSL 1 下的 GDB 插件切换</h4><p><code>select.sh</code>文件，思路是将<code>.gdbinit</code>替换<code>source ~/software/my_dbg/peda/peda.py</code>这一行的文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">echo -e &quot;Please choose one mode of GDB?\n1.peda    2.gef    3.pwndbg&quot;</span><br><span class="line">read -r -p &quot;Input your choice:&quot; num</span><br><span class="line">case &quot;$&#123;num&#125;&quot; in</span><br><span class="line">1)</span><br><span class="line">    name=&#x27;1&#x27;</span><br><span class="line">    ;;</span><br><span class="line">2)</span><br><span class="line">    name=&#x27;2&#x27;</span><br><span class="line">    ;;</span><br><span class="line">3)</span><br><span class="line">    name=&#x27;3&#x27;</span><br><span class="line">    ;;</span><br><span class="line">*)</span><br><span class="line">    echo -e &quot;Error!!!!\nPleasse input right number!&quot;</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br><span class="line">gdbinitfile=~/.gdbinit</span><br><span class="line"></span><br><span class="line">peda=&quot;source ~/software/my_dbg/peda/peda.py&quot;</span><br><span class="line">gef=&quot;source /home/sung/software/my_dbg/gef/.gdbinit-gef.py&quot;</span><br><span class="line">pwndbg=&quot;source /home/sung/software/my_dbg/pwndbg/gdbinit.py&quot;</span><br><span class="line"></span><br><span class="line">sign=$(cat $gdbinitfile | grep -n &quot;# this place is controled by user&#x27;s shell&quot;)</span><br><span class="line">number=$&#123;sign:0:1&#125;</span><br><span class="line">location=$((number + 1))</span><br><span class="line"></span><br><span class="line">if [ $name -eq &quot;1&quot; ]; then</span><br><span class="line">    sed -i &quot;$&#123;location&#125;c $peda&quot; $gdbinitfile</span><br><span class="line">    echo -e &quot;Please enjoy the peda!\n&quot;</span><br><span class="line">elif [ $name -eq &quot;2&quot; ]; then</span><br><span class="line">    sed -i &quot;$&#123;location&#125;c $gef&quot; $gdbinitfile</span><br><span class="line">    echo -e &quot;Please enjoy the gef!\n&quot;</span><br><span class="line">else</span><br><span class="line">    sed -i &quot;$&#123;location&#125;c $pwndbg&quot; $gdbinitfile</span><br><span class="line">    echo -e &quot;Please enjoy the pwndbg!\n&quot;</span><br><span class="line">fi</span><br><span class="line">/usr/bin/gdb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后通过<code>alias</code>工具设置<code>alias gdb=~/software/my_dbg/select.sh</code></p>
+<p><img src="/2021/12/07/Shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/image-20211208091656121.png" alt="image-20211208091656121"></p>
+<p><code>setup.sh</code>文件，实现永久化，需要在<code>~/.bashrc</code>里追加这个内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo alias gdb=&#x27;~/software/my_dbg/select.sh&#x27; &gt;&gt; ~/.bashrc</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
-        <category>Others</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>tutorial</tag>
+        <tag>Linux</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
 </search>
