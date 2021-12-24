@@ -15,7 +15,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    你真的了解你的电脑吗 |  Sung&#39;s Blog
+    使用 PyDracula 制作 GUI |  Sung&#39;s Blog
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
     <main class="content on">
       <section class="outer">
   <article
-  id="post-你真的懂你的电脑吗"
+  id="post-PyDracula"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -83,18 +83,18 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  你真的了解你的电脑吗
+  使用 PyDracula 制作 GUI
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/" class="article-date">
-  <time datetime="2021-06-29T16:00:00.000Z" itemprop="datePublished">2021-06-30</time>
+      <a href="/2021/12/20/PyDracula/" class="article-date">
+  <time datetime="2021-12-19T16:00:00.000Z" itemprop="datePublished">2021-12-20</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Others/">Others</a>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
   </div>
   
 <div class="word_count">
@@ -102,7 +102,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">3.5k</span>
+            <span class="post-count">418</span>
         </span>
     </span>
 
@@ -111,7 +111,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">12 min</span>
+            <span class="post-count">1 min</span>
         </span>
     </span>
 </div>
@@ -126,121 +126,42 @@ var _hmt = _hmt || [];
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="你真的了解你的电脑吗？"><a href="#你真的了解你的电脑吗？" class="headerlink" title="你真的了解你的电脑吗？"></a>你真的了解你的电脑吗？</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>认识计算机，了解自己的电脑。</p>
-<p>因为下意识它是个比较复杂的问题，很久以来，我一直去回避这个问题。</p>
-<p>我想认真地去看看我的笔记本，它到底是怎么组成的，褪去它神秘的面纱。</p>
-<h2 id="从装机的角度了解电脑"><a href="#从装机的角度了解电脑" class="headerlink" title="从装机的角度了解电脑"></a>从装机的角度了解电脑</h2><h3 id="1-电脑组成"><a href="#1-电脑组成" class="headerlink" title="1. 电脑组成"></a>1. 电脑组成</h3><p><strong>电脑外设：</strong>显示器、主机、鼠标、键盘等。</p>
-<p><strong>电脑内部：</strong>CPU、内存条、硬盘、显卡、声卡、网卡、电源、主板、散热扇。</p>
-<p>接下来会选择其中几项进行介绍。</p>
-<h3 id="2-CPU"><a href="#2-CPU" class="headerlink" title="2. CPU"></a>2. CPU</h3><p>CPU即中央处理器，是一台计算机的运算核心和控制核心。其功能主要是解释计算机指令以及处理计算机软件中的数据。</p>
-<p>CPU由<strong>运算器</strong>、<strong>控制器</strong>、<strong>寄存器</strong>、<strong>高速缓存</strong>及实现它们之间联系的数据、控制及状态的总线构成。</p>
-<p>作为整个系统的核心，CPU也是整个系统最高的执行单元，因此CPU已成为决定电脑性能的核心部件，很多用户都以它为标准来判断电脑的档次。</p>
-<p>CPU上的硅脂可以让CPU散热更好，运行时CPU温度会更低，如果CPU过热，注意硅脂。</p>
-<p><strong>工作过程</strong>：在控制器控制下，CPU问高速缓存要一条指令（如果高速缓存没有就向主存要，主存没有向磁盘要）， 通过寄存器和运算器去执行这个指令， 如果是个跳转指令的话，就问高速缓存要跳转的目标地址（地址经过MMU翻译成物理地址）的那一条指令， 继续执行。</p>
-<h4 id="2-1-生产CPU厂商"><a href="#2-1-生产CPU厂商" class="headerlink" title="2.1 生产CPU厂商"></a>2.1 生产CPU厂商</h4><ol>
-<li><p><strong>英特尔</strong></p>
-<p>英特尔公司是全球最大的半导体芯片制造商，它成立于1968年，具有44年产品创新和市场领导的历史。1971年，英特尔推出了全球第一个微处理器。微处理器所带来的计算机和互联网革命，改变了整个世界</p>
-</li>
-<li><p><strong>AMD</strong></p>
-<p>AMD公司专门为计算机、通信和消费电子行业设计和制造各种创新的微处理器（CPU、GPU、APU、主板芯片组、电视卡芯片等)、闪存和低功率处理器解决方案，AMD 致力为技术用户——从企业、政府机构到个人消费者——提供基于标准的、以客户为中心的解决方案。</p>
-<p>AMD是目前业内唯一一个可以提供高性能CPU、高性能独立显卡GPU、主板芯片组三大组件的半导体公司，为了明确其优势，AMD提出3A平台的新标志，在笔记本领域有“AMD VISION”标志的就表示该电脑采用3A构建方案。AMD 有超过70% 的收入都来自于国际市场，是一家真正意义上的跨国公司。</p>
-</li>
-<li><p><strong>其它</strong></p>
-<p>Cyrix、IBM公司、国产龙芯、VIA中国威盛</p>
-</li>
-</ol>
-<h4 id="2-2-Intel处理器型号"><a href="#2-2-Intel处理器型号" class="headerlink" title="2.2 Intel处理器型号"></a>2.2 Intel处理器型号</h4><p><strong>英特尔处理器：</strong>奔腾 、赛扬 、酷睿 、至强。其中奔腾和赛扬系列定位低端，酷睿系列又细分为酷睿i3、i5、i7、以及i9。分别代表中低端、中高端、高端以及超高端。至强系列主要应用为服务器处理器。</p>
-<p><strong>酷睿系列（CORE）：</strong>通常分为i3、i5、i7、以及i9，分别对应中低端、中高端、高端以及超高端。字母i代表是英特尔(intel)公司的CPU，一般来说i后面这位数字越大，代表的性能越好，但不是绝对的，<strong>还要结合后面的几位数字来综合考虑</strong>。</p>
-<ol>
-<li><strong>i几之后第一位数字</strong>，代表是第几代CPU，从2代到9代，每一代都会有更多的新技术，通常来说数字越大，性能越好。</li>
-<li>第二部分是一组数字，如果是3位数字，则是该型号第一代产品；如果是4位数字，第一个数字表示是第几代产品</li>
-<li>一般还能看到，<strong>这组数字之后还会附带有字母后缀</strong>，通常是一位或两位字母或者数字与字母的组合，用来区分处理器的类型或版本。</li>
-</ol>
-<blockquote>
-<p>不带后缀：表示CPU已锁频，也就是它的最高频率已经固定，性能也是相对稳定的。</p>
-<p>K：表示CPU不锁频，可以对CPU进行超频操作，发挥它更高的性能。</p>
-<p>S：表示低电压的台式机处理器。</p>
-<p>T：表示超低电压的台式机处理器。</p>
-<p>P：表示已屏蔽核显的台式机处理器。</p>
-<p>F：表示没有核显的台式机处理器。</p>
-<p>X：表示最高性能的台式机处理器。</p>
-<p>M：表示标准电压的笔记本双核处理器，可拆卸。</p>
-<p>QM：表示标准电压的笔记本四核处理器，可拆卸。</p>
-<p>U：表示低电压的笔记本处理器，可拆卸。</p>
-<p>Y：表示超低电压的笔记本处理器，且不可拆卸。</p>
-<p>XM：表示最高性能的笔记本处理器，可拆卸。</p>
-<p>H：表示高电压的处理器，且不可拆卸。</p>
-<p>HQ：表示高电压的笔记本四核处理器，可拆卸</p>
-</blockquote>
-<ol start="4">
-<li><p>另外，<strong>影响 CPU 性能的一个重要指标是频率。</strong>一般说来，频率越高的 CPU 性能越强。不过，这要同时结合 CPU 的其他参数来比较：是第几代，有几核等。</p>
-<p>举个简单的例子，一个四核的 CPU 虽然频率小于 双核 CPU，但它的性能可能会高于后者。同样的道理，一个一代的 CPU 虽然频率稍高，但它的性能可能要落后于一个四代的 CPU。</p>
-</li>
-<li><p><strong>影响 CPU 性能的另一项关键指标是核心数</strong>，当然，核心数越多越好。不过要注意，这里的核心数是指物理核心数。比如，双核四线程是物理双核而不是物理四核。如i3全系列都是双核四线程，i5台式机大多为四核四线程，i7台式机多为四核八线程。（笔记本i5是双核）</p>
-</li>
-<li><p>最后，请注意是否具有一些“辅助技术”，例如超线程技术。一般说来， i3 不带超线程技术，而 i5、i7 不仅带有超线程技术，还具备睿频加速技术，因而性能会更胜一筹。<strong>超线程技术</strong>可以让<strong>一个物理核模拟两个虚拟核，每个核两个线程</strong>。通过超线程技术可以实现单个物理核实现线程级别的并行计算，但是<strong>性能比不上两个物理核</strong>。</p>
-</li>
-</ol>
-<p>核心、线程和进程的关系：</p>
-<ol>
-<li><p>每个线程分配给独立的核心，线程同时运行，这就是并行。<br>多个线程在单个核心运行，同一时间一个线程运行，系统不停切换线程，看起来像同时运行，实际上是线程不停切换，这就是并发。</p>
-</li>
-<li><p>线程是共享本线程的资源和地址空间。<br>进程相互之间是独立的地址空间和资源。<br>如果一个进程崩溃不会对其他进程影响，而一个线程崩溃，这个进程就崩溃了。<br>线程的开销包括：上下文切换、创建和收回、保存。</p>
-</li>
-</ol>
-<h4 id="2-3-我的笔记本的CPU"><a href="#2-3-我的笔记本的CPU" class="headerlink" title="2.3 我的笔记本的CPU"></a>2.3 我的笔记本的CPU</h4><p>根据上面的知识，我们可以判断自己的CPU属于什么类型，性能如何。</p>
-<p><img src="/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/image-20210704152323225.png" alt="image-20210704152323225"></p>
-<p>以我的笔记本的CPU为例：<strong>Intel core i7 第九代高电压处理器，不可拆卸，6核12线程，基准速度是2.59 GHz。</strong></p>
-<h3 id="3-内存条"><a href="#3-内存条" class="headerlink" title="3. 内存条"></a>3. 内存条</h3><p>随机存取存储器（英语：Random Access Memory，缩写：RAM），也叫<strong>主存</strong>，是与CPU直接交换数据的<strong>内部存储器</strong>。</p>
-<p>它可以随时读写（刷新时除外），而且速度很快，通常作为操作系统或其他正在运行中的程序的临时数据存储介质。</p>
-<p>RAM工作时可以随时从任何一个指定的地址写入（存入）或读出（取出）信息。</p>
-<p>它与ROM的最大区别是数据的易失性，即<strong>一旦断电所存储的数据将随之丢失</strong>。RAM在计算机和数字系统中用来暂时存储程序、数据和中间结果。</p>
-<p>工作过程：操作系统传给CPU一个虚拟地址，然后CPU用MMU将虚拟地址翻译为物理地址，在内存条里面访问真正的物理内存。</p>
-<h4 id="3-1-内存条参数"><a href="#3-1-内存条参数" class="headerlink" title="3.1 内存条参数"></a>3.1 内存条参数</h4><ol>
-<li><p><strong>内存容量</strong>。内存条的容量就是能存储的数据多少。</p>
-<p>我们每打开一个软件，这些软件的数据一部分都会被保存到内存条中</p>
-<p>如果内存条被塞满，我们继续打开其他软件的时候，CPU就只能从速度慢的硬盘调取数据。</p>
-</li>
-<li><p><strong>内存条的颗粒</strong>。颗粒就是内存条的存储数据的东西。现在主流的颗粒生产商就是 三星、海力士、镁光这三家。</p>
-<p>由于颗粒在生产时候会有质量参差不齐的情况，所以一些成色极品的颗粒会被挑选出来做成高端超频内存条，而一些成色普通但合格的颗粒会被拿去做成普通内存条。</p>
-<p>至于怎么看颗粒的好坏，我们可以从内存条的频率和时序来做一个购买前的初步判断。</p>
-</li>
-<li><p><strong>频率</strong>。内存条的频率，它可以看成是内存条数据的传输速度，是内存条最重要的参数。</p>
-<p>频率越大，内存条一次能够运输的数据就越多。所以内存条超频的意思就是，让内存条超载运行，获得更多的数据传输量，当然主板得允许频率超载。</p>
-</li>
-<li><p><strong>时序</strong>。一般用CL表示，用官方的话说就是列寻址所需的时钟周期。也就是为数据传输准备花费的时间。</p>
-<p>一般来说，频率越大的内存条，时序CL值就越大。所以如果是相同频率的内存条，时序CL值是越小越好。</p>
-</li>
-</ol>
-<h4 id="3-2-单通道和双通道"><a href="#3-2-单通道和双通道" class="headerlink" title="3.2 单通道和双通道"></a>3.2 单通道和双通道</h4><p>一般来说，两根相同规格的内存条插在主板对应的位置上就可以组成双通道了。</p>
-<p>CPU与内存条之间的数据传输是有来有回的。</p>
-<p>单通道就相当于一条马路分左右车道，一个车道负责去，一个车道负责回。 虽然秩序井然但是由于马路（带宽）较窄，数据流量不会很大。</p>
-<p>双通道就相当于又修了一条同样的马路，这样的话，这两条马路一条负责收，一条负责发。马路整体（带宽）宽了一倍，流量自然也就增加了。</p>
-<p>双通道是能带来一些性能的提升的，特别是使用CPU核心显卡的用户，由于CPU要同时负责程序数据和显示数据的处理，需要的数据流量更大，所以双通道带来的双倍带宽才能满足这么大的数据流量的需求。</p>
-<h3 id="4-硬盘"><a href="#4-硬盘" class="headerlink" title="4. 硬盘"></a>4. 硬盘</h3><p>电脑硬盘 HDD（Hard Disk Drive），计算机最主要的存储设备，硬盘是电脑的仓库，是电脑主要存储媒介之一。</p>
-<h4 id="4-1-与内存的数据传输"><a href="#4-1-与内存的数据传输" class="headerlink" title="4.1 与内存的数据传输"></a>4.1 与内存的数据传输</h4><p><img src="/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/image-20210709224502077.png" alt="image-20210709224502077"></p>
-<p>硬盘与其它元器件之间的传输速度以及性能的限制在于<strong>数据协议、传输总线、物理接口</strong>三者的统一配合。</p>
-<ul>
-<li><p>协议（Protocol）：通信设备双方制定的一种数据传输方式，包括但不限于数据编码解码方式，使用的讯号类型，链接方式等。</p>
-</li>
-<li><p>总线（Bus）：PCB板中不同元器件之间交互数据的通路，由于总线承载能力有限，设备之间数据的传输速度也就会受到相应的限制，所以总线在单位时间内传输的数据量就被称为总线的带宽。一般情况下硬盘厂商在出品一个成熟的硬盘时协议与接口都会进行匹配，那么总线的速度也就一定程度决定了硬盘的传输速度。</p>
-</li>
-<li><p>接口（Interface）</p>
+  <h1 id="使用-PyDracula-制作-GUI"><a href="#使用-PyDracula-制作-GUI" class="headerlink" title="使用 PyDracula 制作 GUI"></a>使用 PyDracula 制作 GUI</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PyDracula 项目地址：<a target="_blank" rel="noopener" href="https://github.com/Wanderson-Magalhaes/Modern_GUI_PyDracula_PySide6_or_PyQt6">Wanderson-Magalhaes/Modern_GUI_PyDracula_PySide6_or_PyQt6 (github.com)</a></p>
+<p>效果图</p>
+<p><img src="/2021/12/20/PyDracula/112993874-0b647700-9140-11eb-8670-61322d70dbe3.png" alt="PyDracula_Default_Dark"></p>
+<p>非常好看的一个界面，我们可以使用它来制作自己需要的GUI</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
+<li>操作系统：kali linux</li>
+<li>编辑器：VS code </li>
+<li>Python版本： 3.9.2 64-bit</li>
+<li>依赖包：PySide6 <ul>
+<li>使用pip安装：<code>pip install --user PySide6</code></li>
+<li>designer位置：<code>~/.local/lib/python3.9/site-packages/PySide6/designer</code></li>
+<li>uic位置：<code>~/.local/lib/python3.9/site-packages/PySide6/Qt/libexec/uic</code></li>
+<li>rcc位置：<code>~/.local/lib/python3.9/site-packages/PySide6/Qt/libexec/rcc</code></li>
+</ul>
 </li>
 </ul>
-<h4 id="4-2-硬件分类"><a href="#4-2-硬件分类" class="headerlink" title="4.2 硬件分类"></a>4.2 硬件分类</h4><ul>
-<li>机械硬盘：使用磁头，需要电机加速旋转的过程，需要以恒定角速度（CAV）由外向内，由快到慢进行数据读取。</li>
-<li>固态硬盘（Solid State Disk）：采用闪存颗粒或DRAM颗粒，不使用磁头，启动快，不需要电机加速旋转的过程。</li>
+<h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>我们直接将项目clone下来，在环境准备好的前提，我们可以直接运行<code>main.py</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Wanderson-Magalhaes/Modern_GUI_PyDracula_PySide6_or_PyQt6.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h4><ul>
+<li><strong>main.py</strong>: 应用程序初始化文件</li>
+<li><strong>main.ui</strong>: Qt Designer 界面项目</li>
+<li><strong>resouces.qrc</strong>: Qt Designer 资源，可以在这个文件添加你的资源</li>
+<li><strong>setup.py</strong>: 安装 cx-Freeze 编译应用程序（为 Windows 配置）</li>
+<li><strong>themes/</strong>: 在该目录添加 .qss 主题文件，目前有 light 和 dark 两种主题。</li>
+<li><strong>modules/</strong>: 运行 GUI 需要的一些模块<ul>
+<li><strong>modules/app_funtions.py</strong>: 在该文件添加应用程序功能</li>
+<li><strong>modules/app_settings.py</strong>: 用于配置用户界面的全局变量</li>
+<li><strong>modules/resources_rc.py</strong>: 使用命令 <code>~/.local/lib/python3.9/site-packages/PySide6/Qt/libexec/rcc resources.qrc -o resources_rc.py -g python </code>生成，供 main.py 使用</li>
+<li><strong>modules/ui_functions.py</strong>: 此处仅添加与用户界面/GUI相关的功能。</li>
+<li><strong>modules/ui_main.py</strong>: 与Qt Designer导出的用户界面相关的文件</li>
 </ul>
-<h4 id="4-3-性能指标"><a href="#4-3-性能指标" class="headerlink" title="4.3 性能指标"></a>4.3 性能指标</h4><ol>
-<li>容量（Volume）</li>
-<li>转速（Rotational Speed）：单位为<code>rpm</code>，硬盘内电机主轴在盘片上一分钟内能完成的最大转数的旋转速度，转速越高寻找文件的速度也就越快，但是转速越快也就会导致发热量越高，电机磨损故障率越大。</li>
-<li>平均访问时间（Average Access Time）：指磁头从起始位置到达目标磁道位置并从目标磁道上寻找要读写的数据扇区所需时间，平均访问时间越少，寻找数据速度也就越快。</li>
-<li>传输速率（Data Transfer Rate）：单位为<code>MB/s</code></li>
-<li>内部传输率(Internal Transfer Rate) ：也称为持续传输率(Sustained Transfer Rate)，反映了硬盘缓冲区未用时的性能，内部传输率主要取决于硬盘的转速。</li>
-<li>外部传输率（External Transfer Rate）：也称为突发数据传输率（Burst Data Transfer Rate）或接口传输率（Interface Data Transfer Rate），是系统总线与硬盘缓冲区之间的数据传输率，外部数据传输率与硬盘接口类型和硬盘缓存的大小有关。</li>
-<li>缓存（Cache）：硬盘内部存储与外界接口之间的缓冲器，可以提高硬盘的整体性能，提升硬盘的读写速度。</li>
-</ol>
+</li>
+<li><strong>images/</strong>: 在转换成 .py 文件之前，将所有的图片图标放在这个文件夹下面，然后执行 <code>pyside6-rcc resources.qrc -o resources_rc.py</code></li>
+</ul>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>根据项目中给出的youtube视频<a target="_blank" rel="noopener" href="https://youtu.be/9DnaHg4M_AM%EF%BC%8C%E7%BB%93%E5%90%88Readme%E5%92%8C%E6%BA%90%E7%A0%81%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%94%B9%E5%8A%A8%EF%BC%9A">https://youtu.be/9DnaHg4M_AM，结合Readme和源码，主要改动：</a></p>
  
       <!-- reward -->
       
@@ -305,12 +226,12 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/06/30/%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%87%82%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E5%90%97/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sun-ruijiang.github.io/2021/12/20/PyDracula/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/computer/" rel="tag">computer</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PyQt6/" rel="tag">PyQt6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PySide6/" rel="tag">PySide6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li></ul>
 
     </footer>
   </div>
@@ -318,19 +239,10 @@ var _hmt = _hmt || [];
    
   <nav class="article-nav">
     
-      <a href="/2021/07/06/%E5%B0%8F%E5%AD%A6%E6%9C%9F%E6%97%A5%E5%BF%97/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            小学期日志
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/06/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5/" class="article-nav-link">
+      <a href="/2021/12/18/LRU%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">计算机安全相关的概念</div>
+        <div class="article-nav-title">LRU算法实验报告</div>
       </a>
     
   </nav>
