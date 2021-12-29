@@ -102,7 +102,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">418</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -111,7 +111,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">5 min</span>
         </span>
     </span>
 </div>
@@ -142,26 +142,93 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 </ul>
-<h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>我们直接将项目clone下来，在环境准备好的前提，我们可以直接运行<code>main.py</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Wanderson-Magalhaes/Modern_GUI_PyDracula_PySide6_or_PyQt6.git</span><br></pre></td></tr></table></figure>
+<h3 id="简单运行"><a href="#简单运行" class="headerlink" title="简单运行"></a>简单运行</h3><p>我们直接将项目clone下来，在环境准备好的前提，我们可以直接运行<code>main.py</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Wanderson-Magalhaes/Modern_GUI_PyDracula_PySide6_or_PyQt6.git</span><br><span class="line">/bin/python3 /Modern_GUI_PyDracula_PySide6_or_PyQt6/main.py</span><br></pre></td></tr></table></figure>
 
-<h4 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h4><ul>
+
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><ul>
 <li><strong>main.py</strong>: 应用程序初始化文件</li>
 <li><strong>main.ui</strong>: Qt Designer 界面项目</li>
-<li><strong>resouces.qrc</strong>: Qt Designer 资源，可以在这个文件添加你的资源</li>
+<li><strong>resouces.qrc</strong>: Qt Designer 资源，可以在这个文件添加你的资源，可以在 resource browser看到改动</li>
 <li><strong>setup.py</strong>: 安装 cx-Freeze 编译应用程序（为 Windows 配置）</li>
 <li><strong>themes/</strong>: 在该目录添加 .qss 主题文件，目前有 light 和 dark 两种主题。</li>
 <li><strong>modules/</strong>: 运行 GUI 需要的一些模块<ul>
-<li><strong>modules/app_funtions.py</strong>: 在该文件添加应用程序功能</li>
+<li><strong>modules/app_funtions.py</strong>: 在该文件添加应用程序功能，添加到 main.py</li>
 <li><strong>modules/app_settings.py</strong>: 用于配置用户界面的全局变量</li>
-<li><strong>modules/resources_rc.py</strong>: 使用命令 <code>~/.local/lib/python3.9/site-packages/PySide6/Qt/libexec/rcc resources.qrc -o resources_rc.py -g python </code>生成，供 main.py 使用</li>
+<li><strong>modules/resources_rc.py</strong>: 使用命令 <code>~/.local/lib/python3.9/site-packages/PySide6/Qt/libexec/rcc resources.qrc -o resources_rc.py -g python </code>生成，供 ui_main.py使用</li>
 <li><strong>modules/ui_functions.py</strong>: 此处仅添加与用户界面/GUI相关的功能。</li>
 <li><strong>modules/ui_main.py</strong>: 与Qt Designer导出的用户界面相关的文件</li>
 </ul>
 </li>
-<li><strong>images/</strong>: 在转换成 .py 文件之前，将所有的图片图标放在这个文件夹下面，然后执行 <code>pyside6-rcc resources.qrc -o resources_rc.py</code></li>
+<li><strong>images/</strong>: 在给 resouces.qrc 添加资源之前，将所有的图片图标放在这个文件夹下面</li>
 </ul>
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>根据项目中给出的youtube视频<a target="_blank" rel="noopener" href="https://youtu.be/9DnaHg4M_AM%EF%BC%8C%E7%BB%93%E5%90%88Readme%E5%92%8C%E6%BA%90%E7%A0%81%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%94%B9%E5%8A%A8%EF%BC%9A">https://youtu.be/9DnaHg4M_AM，结合Readme和源码，主要改动：</a></p>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>通过以下内容学习：</p>
+<ul>
+<li><p>youtube视频：<a target="_blank" rel="noopener" href="https://youtu.be/9DnaHg4M_AM">https://youtu.be/9DnaHg4M_AM</a></p>
+</li>
+<li><p>结合项目Readme和源码注释</p>
+</li>
+</ul>
+<p>首先用<code>Qt designer</code>打开<code>main.ui</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.<span class="built_in">local</span>/lib/python3.9/site-packages/PySide6/designer main.ui</span><br></pre></td></tr></table></figure>
+
+<p>接下来介绍几个必要的修改</p>
+<h4 id="添加新界面"><a href="#添加新界面" class="headerlink" title="添加新界面"></a>添加新界面</h4><p>通过<code>stackedWidget</code>控件<code>After Current Page</code>添加页面：</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229145118482.png" alt="image-20211229145118482"></p>
+<p>在一个新的界面中不能直接复制别的控件，只能在该界面中去通过<code>Ctrl+拖动</code>复制</p>
+<p>然后添加一个<code>label</code>控件，写上页面标签内容，这样就可以改变页面的布局了</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229145657501.png" alt="image-20211229145657501"></p>
+<h4 id="main-ui生成ui-main-py"><a href="#main-ui生成ui-main-py" class="headerlink" title="main.ui生成ui_main.py"></a>main.ui生成ui_main.py</h4><p><img src="/2021/12/20/PyDracula/image-20211229154128547.png" alt="image-20211229154128547"></p>
+<p>生成并替换<code>module/ui_main.py</code>之后，修改导入库（否则报错），运行<code>main.py</code>，此时应该成功显示界面。</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229150942101.png" alt="image-20211229150942101"></p>
+<h4 id="切换界面"><a href="#切换界面" class="headerlink" title="切换界面"></a>切换界面</h4><p>界面需要通过不同的按钮来切换选择，所以我们需要添加<code>Pushbutton</code>，这个可以直接复制<br><img src="/2021/12/20/PyDracula/image-20211229150633884.png" alt="image-20211229150633884"></p>
+<p>然后修改按钮的名字，生成并替换<code>module/ui_main.py</code>，此时应该正常运行，但是没有功能。</p>
+<p>最后添加切换界面功能：</p>
+<p>首先，<code>mian.py</code>文件中添加信号<code>clicked</code>和槽函数<code>self.buttonClick</code></p>
+<p><img src="/2021/12/20/PyDracula/image-20211229151157732.png" alt="image-20211229151157732"></p>
+<p>意思就是，<code>ui</code>的<code>btn_home</code>按钮一旦接受到<code>clicked</code>点击信号，那么就会通过<code>connect</code>调用槽函数<code>self.buttonClick</code></p>
+<p>调用设置好之后，我们具体写<code>self.buttonClick</code>到底该干什么，我们找到函数</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229151820177.png" alt="image-20211229151820177"></p>
+<p>可以看到函数通过<code>if</code>语句选择显示界面，显示<code>home</code>界面为例，先通过<code>stackedWidget</code>控件的<code>setCurrentWidget</code>方法设置界面为<code>home</code>，这个<code>home</code>，就是我们在designer添加的页面名。</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229152118501.png" alt="image-20211229152118501"></p>
+<h4 id="资源文件以及图片切换"><a href="#资源文件以及图片切换" class="headerlink" title="资源文件以及图片切换"></a>资源文件以及图片切换</h4><p>我们从文件结构中知道<code>main.ui</code>使用的资源文件是<code>resouces.qrc</code>，我们看下内容是什么</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229152341728.png" alt="image-20211229152341728"></p>
+<p><code>qresource</code>标签的<code>prefix</code>属性是资源浏览器分类目录，比如<code>file</code>标签是文件路径，如图所示</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229152753917.png" alt="image-20211229152753917"></p>
+<p>如何切换图片？我们要知道如何显示一个图片</p>
+<p>比如<code>home</code>中的大图，这是通过<code>home</code>的<code>styleSheet</code>属性添加的</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229152957827.png" alt="image-20211229152957827"></p>
+<p>比如按钮的小图标，也是通过<code>styleSheet</code>属性添加的</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229153208187.png" alt="image-20211229153208187"></p>
+<p>所以我们要修改这个图片只需要选择资源，然后<code>copy path</code>，将它写到<code>styleSheet</code>中，就完成了</p>
+<p>最后为了让python文件使用资源，需要使用<code>qcc</code>生成<code>resources_rc.py</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -o resources_rc.py</span></span><br><span class="line"><span class="comment"># -g python ，默认生成c++ code</span></span><br><span class="line">~/.<span class="built_in">local</span>/lib/python3.9/site-packages/PySide6/Qt/libexec/rcc resources.qrc -o resources_rc.py -g python</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="添加功能"><a href="#添加功能" class="headerlink" title="添加功能"></a>添加功能</h4><p>添加功能有很多方法，但是原理是一样的：</p>
+<p>第一种，类似切换界面功能一样添加，这种是调用了作者已经写好的一个<code>buttonClick</code>函数，然后在<code>modules/app_funtions.py</code>文件添加具体功能。</p>
+<p>举例：给<code>btn_save</code>按钮添加<code>test</code>功能</p>
+<p>前面不再赘述，可以看到，按下按钮会调用一个<code>test</code>函数，参数是<code>self.ui</code>也就是全局变量<code>widgets</code></p>
+<p><img src="/2021/12/20/PyDracula/image-20211229154907075.png" alt="image-20211229154907075"></p>
+<p>然后打开<code>modules/app_funtions.py</code>，我们写上<code>test</code>函数定义</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229155055913.png" alt="image-20211229155055913"></p>
+<p><code>self</code>参数就是前面的<code>widgets</code>，<code>creditsLabel</code>是一个标签控件，可以看到我们成功输出了内容</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229155324423.png" alt="image-20211229155324423"></p>
+<p>这种方法作者推荐的，比较条理，好看懂。</p>
+<p>第二种，直接在<code>main.ui</code>中添加信号和槽，然后在<code>main.py</code>中具体去写槽函数</p>
+<p>举例：给<code>加密按钮</code>添加<code>DES_encrypt</code>槽函数</p>
+<p>如图所示，添加信号和槽</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229155945152.png" alt="image-20211229155945152"></p>
+<p>成功之后在<code>View</code>中选择<code>Signal/Slot Editor</code>查看</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229155827444.png" alt="image-20211229155827444"></p>
+<p>生成<code>ui_main</code>后在<code>main.py</code>直接写函数</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229160141882.png" alt="image-20211229160141882"></p>
+<p>原理是一样的，只是<code>clicked.connect</code>不在<code>main.py</code>而是在<code>ui_main.py</code>中，这种方法偏向designer设计（其实是之前没看懂作者的意思）</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实还有很多没有去写，作者提供的<code>Setting</code>参数，qss主题替换（这个视频里有），但是大体上完成一个GUI是够了。</p>
+<p>具体布局还要自己去设计，要想设计好看，一定要看控件属性，比如<code>styleSheet</code>、·<code>maximusize</code>、<code>holdertext</code>等等。</p>
+<p>希望大家都能设计出好看的GUI，我们的最终效果如下</p>
+<p><img src="/2021/12/20/PyDracula/image-20211229160945196.png" alt="image-20211229160945196"></p>
  
       <!-- reward -->
       
